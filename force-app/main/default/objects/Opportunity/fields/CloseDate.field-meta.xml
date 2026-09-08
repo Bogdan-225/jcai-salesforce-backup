@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CloseDate</fullName>
+    <inlineHelpText>本日の日付でも適当に入力してもらってOKです。
+こちらの項目は使いませんが仕様上消せないため、自動的に2037年5月1日となるよう上書きされるようになっています。</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+</CustomField>

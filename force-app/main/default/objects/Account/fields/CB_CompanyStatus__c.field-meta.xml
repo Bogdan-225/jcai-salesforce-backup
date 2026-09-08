@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_CompanyStatus__c</fullName>
+    <label>Company Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Operating</fullName>
+                <default>false</default>
+                <label>Operating</label>
+            </value>
+            <value>
+                <fullName>Operating Subsidiary</fullName>
+                <default>false</default>
+                <label>Operating Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Out of Business</fullName>
+                <default>false</default>
+                <label>Out of Business</label>
+            </value>
+            <value>
+                <fullName>Acquired</fullName>
+                <default>false</default>
+                <label>Acquired</label>
+            </value>
+            <value>
+                <fullName>Liquidating</fullName>
+                <default>false</default>
+                <label>Liquidating</label>
+            </value>
+            <value>
+                <fullName>Reorganizing</fullName>
+                <default>false</default>
+                <label>Reorganizing</label>
+            </value>
+            <value>
+                <fullName>No Longer Investing</fullName>
+                <default>false</default>
+                <label>No Longer Investing</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

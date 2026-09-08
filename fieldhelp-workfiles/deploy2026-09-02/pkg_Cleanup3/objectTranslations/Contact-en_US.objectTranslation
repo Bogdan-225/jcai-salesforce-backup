@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Checked automatically when an email address is present and Unavailable is blank (i.e. the person can be emailed). Formula field - cannot be edited manually.</help>
+        <name>Emailable__c</name>
+    </fields>
+</CustomObjectTranslation>

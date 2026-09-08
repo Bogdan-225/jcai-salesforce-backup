@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Online Sales</label>
+    <navType>Standard</navType>
+    <tabs>standard-OnlineSalesHome</tabs>
+    <tabs>Buy_Needs__c</tabs>
+    <tabs>Matching__c</tabs>
+    <tabs>longlist__c</tabs>
+    <tabs>standard-SalesforceContract</tabs>
+    <tabs>standard-SalesforceInvoice</tabs>
+    <tabs>standard-SalesforceProductCatalog</tabs>
+    <tabs>test_obj__c</tabs>
+    <tabs>standard-ConsumptionCards</tabs>
+    <tabs>M_Acase__c</tabs>
+    <tabs>MatchingCandidate__c</tabs>
+    <tabs>Project__c</tabs>
+    <tabs>Establishments__c</tabs>
+    <tabs>ContractFile__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

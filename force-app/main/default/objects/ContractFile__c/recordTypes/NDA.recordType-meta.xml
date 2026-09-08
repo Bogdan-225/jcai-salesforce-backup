@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NDA</fullName>
+    <active>true</active>
+    <label>NDA</label>
+    <picklistValues>
+        <picklist>ContractScope__c</picklist>
+        <values>
+            <fullName>個別契約 Individual Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>包括契約 Master Agreement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ContractType__c</picklist>
+        <values>
+            <fullName>単発 One-time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>自動更新 Automatic renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

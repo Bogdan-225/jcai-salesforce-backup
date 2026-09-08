@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_memo__c</fullName>
+    <inlineHelpText>グループ会社との取引がある、要注意先買手などのメモを記入するメモ項目</inlineHelpText>
+    <label>メモ</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>TextArea</type>
+</CustomField>

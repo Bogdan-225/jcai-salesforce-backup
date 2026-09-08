@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>buyNeedsSearchView88776678</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>InternationalArea_BuyNeeds__c</columns>
+    <columns>DomesticArea_BuyNeeds__c</columns>
+    <columns>InterNationalIndustry_BuyNeeds__c</columns>
+    <columns>DomesticIndustry_BuyNeeds__c</columns>
+    <columns>InternationalFreeDescription_BuyNeeds__c</columns>
+    <columns>DomesticFreeDescription_BuyNeeds__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>InternationalArea_BuyNeeds2__c</field>
+        <operation>includes</operation>
+        <value>シンガポール,マレーシア,インドネシア,タイ,ベトナム</value>
+    </filters>
+    <label>買収ニーズ検索用</label>
+</ListView>

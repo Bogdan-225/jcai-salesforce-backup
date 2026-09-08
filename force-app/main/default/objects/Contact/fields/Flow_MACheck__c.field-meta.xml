@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_MACheck__c</fullName>
+    <formula>Account.contactExistFlag__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>※フロー用_M＆A担当者</label>
+    <type>Checkbox</type>
+</CustomField>

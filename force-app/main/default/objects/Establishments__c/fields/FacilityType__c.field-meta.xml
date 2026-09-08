@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FacilityType__c</fullName>
+    <label>施設種別</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>病院</fullName>
+                <default>false</default>
+                <label>病院</label>
+            </value>
+            <value>
+                <fullName>診療所</fullName>
+                <default>false</default>
+                <label>診療所</label>
+            </value>
+            <value>
+                <fullName>薬局</fullName>
+                <default>false</default>
+                <label>薬局</label>
+            </value>
+            <value>
+                <fullName>その他</fullName>
+                <default>false</default>
+                <label>その他</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

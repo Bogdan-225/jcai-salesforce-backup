@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_EBITDA_USDmm__c</fullName>
+    <description>EBITDA(USD百万)。CapIQ由来のテキスト値(マイナスは括弧表記が混在)。旧数値版CB_EBITDAUSDmm__cは2026-08-20に本項目へ統合し削除(値はバックアップ保管)。</description>
+    <externalId>false</externalId>
+    <label>EBITDA(USD M)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

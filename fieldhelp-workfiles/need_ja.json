@@ -1,0 +1,1772 @@
+[
+ {
+  "sheet": "Accounts",
+  "row": 2,
+  "label": "Account Name",
+  "api": "Name",
+  "obj": "Account",
+  "master": null,
+  "en": "Account Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 3,
+  "label": "SFID18",
+  "api": "SFID18__c",
+  "obj": "Account",
+  "master": "SFID18",
+  "en": "SFID18",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 4,
+  "label": "Website",
+  "api": "Website",
+  "obj": "Account",
+  "master": null,
+  "en": "Website",
+  "type": "url"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 6,
+  "label": "Parent Account ID",
+  "api": "ParentId",
+  "obj": "Account",
+  "master": null,
+  "en": "Parent Account ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 7,
+  "label": "Account Description",
+  "api": "Description",
+  "obj": "Account",
+  "master": null,
+  "en": "Account Description",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 8,
+  "label": "Account Phone",
+  "api": "Phone",
+  "obj": "Account",
+  "master": null,
+  "en": "Account Phone",
+  "type": "phone"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 9,
+  "label": "Country",
+  "api": "Country__c",
+  "obj": "Account",
+  "master": "Country",
+  "en": "Country",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 10,
+  "label": "Address",
+  "api": "CB_Address__c",
+  "obj": "Account",
+  "master": "Address",
+  "en": "Address",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 16,
+  "label": "Sector(GICS)",
+  "api": "SectorGICS__c",
+  "obj": "Account",
+  "master": "Sector(GICS)",
+  "en": "Sector(GICS)",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 17,
+  "label": "Industry Group(GICS)",
+  "api": "Industry_GroupGICS__c",
+  "obj": "Account",
+  "master": "Industry Group(GICS)",
+  "en": "Industry Group(GICS)",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 18,
+  "label": "Industry(GICS)",
+  "api": "IndustryGICS__c",
+  "obj": "Account",
+  "master": "Industry(GICS)",
+  "en": "Industry(GICS)",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 19,
+  "label": "Sub-Industry(GICS)",
+  "api": "SubIndustryGICS__c",
+  "obj": "Account",
+  "master": "Sub-Industry(GICS)",
+  "en": "Sub-Industry(GICS)",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 20,
+  "label": "Industry(Text)",
+  "api": "CB_IndustryText__c",
+  "obj": "Account",
+  "master": "Industry(Text)",
+  "en": "Industry(Text)",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 21,
+  "label": "Market Cap(USD mm)",
+  "api": "CB_MarketCapUSDmm__c",
+  "obj": "Account",
+  "master": "Market Cap(USD mm)",
+  "en": "Market Cap(USD mm)",
+  "type": "double"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 22,
+  "label": "Number of Employees",
+  "api": "NumberOfEmployees",
+  "obj": "Account",
+  "master": null,
+  "en": "Employees",
+  "type": "int"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 23,
+  "label": "EBITDA(USD M)",
+  "api": "CB_EBITDA_USDmm__c",
+  "obj": "Account",
+  "master": "EBITDA(USD M)",
+  "en": "EBITDA(USD M)",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 24,
+  "label": "Current Period",
+  "api": "CB_CurrentPeriod__c",
+  "obj": "Account",
+  "master": "Current Period",
+  "en": "Current Period",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 25,
+  "label": "Previous Period",
+  "api": "CB_PreviousPeriod__c",
+  "obj": "Account",
+  "master": "Previous Period",
+  "en": "Previous Period",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 26,
+  "label": "Two Periods Prior",
+  "api": "CB_TwoPeriodsPrior__c",
+  "obj": "Account",
+  "master": "Two Periods Prior",
+  "en": "Two Periods Prior",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 27,
+  "label": "Current Revenue(USD M)",
+  "api": "CB_CurrentRevenueUSDmm__c",
+  "obj": "Account",
+  "master": "Current Revenue(USD M)",
+  "en": "Current Revenue(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 28,
+  "label": "Previous Period Revenue(USD M)",
+  "api": "CB_PreviousPeriodRevenue_USDmm__c",
+  "obj": "Account",
+  "master": "Previous Period Revenue(USD M)",
+  "en": "Previous Period Revenue(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 29,
+  "label": "Two Periods Prior Revenue(USD M)",
+  "api": "CB_TwoPeriodsPrior_RevenueUSDmm__c",
+  "obj": "Account",
+  "master": "Two Periods Prior Revenue(USD M)",
+  "en": "Two Periods Prior Revenue(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 30,
+  "label": "Fund Type",
+  "api": "FundType__c",
+  "obj": "Account",
+  "master": "Fund Type",
+  "en": "Fund Type",
+  "type": "multipicklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 31,
+  "label": "Fund Status",
+  "api": "FundStatus__c",
+  "obj": "Account",
+  "master": "Fund Status",
+  "en": "Fund Status",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 32,
+  "label": "Fund",
+  "api": "Fund__c",
+  "obj": "Account",
+  "master": "Fund",
+  "en": "Fund",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 37,
+  "label": "Power Buyer",
+  "api": "PowerBuyer__c",
+  "obj": "Account",
+  "master": "Power Buyer",
+  "en": "Power Buyer",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 43,
+  "label": "DUNS Number",
+  "api": "CB_DunsNumber__c",
+  "obj": "Account",
+  "master": "DUNS Number",
+  "en": "DUNS Number",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 44,
+  "label": "CIQ ID",
+  "api": "CB_CIQId__c",
+  "obj": "Account",
+  "master": "CIQ ID",
+  "en": "CIQ ID",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 45,
+  "label": "Ticker Symbol",
+  "api": "TickerSymbol",
+  "obj": "Account",
+  "master": null,
+  "en": "Ticker Symbol",
+  "type": "string"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 46,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Account",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 47,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Account",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 48,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Account",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 88,
+  "label": "Account Source",
+  "api": "AccountSource",
+  "obj": "Account",
+  "master": null,
+  "en": "Account Source",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 151,
+  "label": "NDA",
+  "api": "NDADateCheck__c",
+  "obj": "Account",
+  "master": "NDA",
+  "en": "NDA",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Accounts",
+  "row": 161,
+  "label": "Record Type ID",
+  "api": "RecordTypeId",
+  "obj": "Account",
+  "master": null,
+  "en": "Record Type ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 2,
+  "label": "Full Name",
+  "api": "Name",
+  "obj": "Contact",
+  "master": null,
+  "en": "Full Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 3,
+  "label": "Title",
+  "api": "Title",
+  "obj": "Contact",
+  "master": null,
+  "en": "Title",
+  "type": "string"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 4,
+  "label": "Mobile Phone",
+  "api": "MobilePhone",
+  "obj": "Contact",
+  "master": null,
+  "en": "Mobile Phone",
+  "type": "phone"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 5,
+  "label": "Email",
+  "api": "Email",
+  "obj": "Contact",
+  "master": null,
+  "en": "Email",
+  "type": "email"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 6,
+  "label": "Lead Source",
+  "api": "LeadSource",
+  "obj": "Contact",
+  "master": null,
+  "en": "Lead Source",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 18,
+  "label": "To/CC",
+  "api": "ToCC__c",
+  "obj": "Contact",
+  "master": "To/CC",
+  "en": "To/CC",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 20,
+  "label": "LinkedIn",
+  "api": "LinkedIn__c",
+  "obj": "Contact",
+  "master": "LinkedIn",
+  "en": "LinkedIn",
+  "type": "url"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 22,
+  "label": "Apollo_Data Source",
+  "api": "Apollo_DataSource__c",
+  "obj": "Contact",
+  "master": "Apollo_Data Source",
+  "en": "Apollo_Data Source",
+  "type": "string"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 23,
+  "label": "Birthdate",
+  "api": "Birthdate",
+  "obj": "Contact",
+  "master": null,
+  "en": "Birthdate",
+  "type": "date"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 24,
+  "label": "Department",
+  "api": "Department",
+  "obj": "Contact",
+  "master": null,
+  "en": "Department",
+  "type": "string"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 25,
+  "label": "Do Not Call",
+  "api": "DoNotCall",
+  "obj": "Contact",
+  "master": null,
+  "en": "Do Not Call",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 26,
+  "label": "Email Opt Out",
+  "api": "HasOptedOutOfEmail",
+  "obj": "Contact",
+  "master": null,
+  "en": "Email Opt Out",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 27,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Contact",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 28,
+  "label": "Account ID",
+  "api": "AccountId",
+  "obj": "Contact",
+  "master": null,
+  "en": "Account ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 29,
+  "label": "Assistant's Name",
+  "api": "AssistantName",
+  "obj": "Contact",
+  "master": null,
+  "en": "Assistant's Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 30,
+  "label": "Business Fax",
+  "api": "Fax",
+  "obj": "Contact",
+  "master": null,
+  "en": "Business Fax",
+  "type": "phone"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 31,
+  "label": "Reports To ID",
+  "api": "ReportsToId",
+  "obj": "Contact",
+  "master": null,
+  "en": "Reports To ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 32,
+  "label": "Business Phone",
+  "api": "Phone",
+  "obj": "Contact",
+  "master": null,
+  "en": "Business Phone",
+  "type": "phone"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 33,
+  "label": "Asst. Phone",
+  "api": "AssistantPhone",
+  "obj": "Contact",
+  "master": null,
+  "en": "Asst. Phone",
+  "type": "phone"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 34,
+  "label": "Fax Opt Out",
+  "api": "HasOptedOutOfFax",
+  "obj": "Contact",
+  "master": null,
+  "en": "Fax Opt Out",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 35,
+  "label": "Mailing Address",
+  "api": "MailingAddress",
+  "obj": "Contact",
+  "master": null,
+  "en": "Mailing Address",
+  "type": "address"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 36,
+  "label": "Other Address",
+  "api": "OtherAddress",
+  "obj": "Contact",
+  "master": null,
+  "en": "Other Address",
+  "type": "address"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 37,
+  "label": "Contact Description",
+  "api": "Description",
+  "obj": "Contact",
+  "master": null,
+  "en": "Contact Description",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 38,
+  "label": "Last Stay-in-Touch Save Date",
+  "api": "LastCUUpdateDate",
+  "obj": "Contact",
+  "master": null,
+  "en": "Last Stay-in-Touch Save Date",
+  "type": "datetime"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 39,
+  "label": "Last Stay-in-Touch Request Date",
+  "api": "LastCURequestDate",
+  "obj": "Contact",
+  "master": null,
+  "en": "Last Stay-in-Touch Request Date",
+  "type": "datetime"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 40,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Contact",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 41,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Contact",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contacts",
+  "row": 44,
+  "label": "Home Phone",
+  "api": "HomePhone",
+  "obj": "Contact",
+  "master": null,
+  "en": "Home Phone",
+  "type": "phone"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 2,
+  "label": "Stage",
+  "api": "StageName",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Stage",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 4,
+  "label": "Name",
+  "api": "Name",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 5,
+  "label": "Account Name",
+  "api": "AccountId",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Account ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 10,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 45,
+  "label": "On-Hold Reason",
+  "api": "OnHoldReason__c",
+  "obj": "Opportunity",
+  "master": "On-Hold Reason",
+  "en": "On-Hold Reason",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 53,
+  "label": "Check_ActivitiesByStage",
+  "api": "Check_ActivitiesByStage__c",
+  "obj": "Opportunity",
+  "master": "Check_ActivitiesByStage",
+  "en": "Check_ActivitiesByStage",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 54,
+  "label": "Check_DocUploaded_FS",
+  "api": "Check_DocUploaded_FS__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_FS",
+  "en": "Check_DocUploaded_FS",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 55,
+  "label": "Check_DocUploaded_Teaser",
+  "api": "Check_DocUploaded_Teaser__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_Teaser",
+  "en": "Check_DocUploaded_Teaser",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 56,
+  "label": "Check_DocUploaded_IM",
+  "api": "Check_DocUploaded_IM__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_IM",
+  "en": "Check_DocUploaded_IM",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 57,
+  "label": "Check_DocUploaded_Agenda",
+  "api": "Check_DocUploaded_Agenda__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_Agenda",
+  "en": "Check_DocUploaded_Agenda",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 58,
+  "label": "Check_DocUploaded_Valuation",
+  "api": "Check_DocUploaded_Valuation__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_Valuation",
+  "en": "Check_DocUploaded_Valuation",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 59,
+  "label": "Check_MatchingStage",
+  "api": "Check_MatchingStage__c",
+  "obj": "Opportunity",
+  "master": "Check_MatchingStage",
+  "en": "Check_MatchingStage",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 60,
+  "label": "Check_DocUploaded_QA",
+  "api": "Check_DocUploaded_QA__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_QA",
+  "en": "Check_DocUploaded_QA",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 61,
+  "label": "Check_DocUploaded_LOI",
+  "api": "Check_DocUploaded_LOI__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_LOI",
+  "en": "Check_DocUploaded_LOI",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 62,
+  "label": "Check_DocUploaded_MOU",
+  "api": "Check_DocUploaded_MOU__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_MOU",
+  "en": "Check_DocUploaded_MOU",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 63,
+  "label": "Check_DocUploaded_SPA",
+  "api": "Check_DocUploaded_SPA__c",
+  "obj": "Opportunity",
+  "master": "Check_DocUploaded_SPA",
+  "en": "Check_DocUploaded_SPA",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 64,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 66,
+  "label": "Probability (%)",
+  "api": "Probability",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Probability (%)",
+  "type": "percent"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 68,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 69,
+  "label": "Close Date",
+  "api": "CloseDate",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Close Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 70,
+  "label": "Record Type ID",
+  "api": "RecordTypeId",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Record Type ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 84,
+  "label": "Next Step",
+  "api": "NextStep",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Next Step",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 85,
+  "label": "Sell-Side Progress",
+  "api": "CB_SellsideProgress__c",
+  "obj": "Opportunity",
+  "master": "Sell-Side Progress",
+  "en": "Sell-Side Progress",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 86,
+  "label": "NDA",
+  "api": "NDA__c",
+  "obj": "Opportunity",
+  "master": "NDA",
+  "en": "NDA",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 87,
+  "label": "Buy-Side Progress",
+  "api": "CB_BuysideProgress__c",
+  "obj": "Opportunity",
+  "master": "Buy-Side Progress",
+  "en": "Buy-Side Progress",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 88,
+  "label": "Teaser URL",
+  "api": "TeaserURL__c",
+  "obj": "Opportunity",
+  "master": "Teaser URL",
+  "en": "Teaser URL",
+  "type": "url"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 89,
+  "label": "Meeting Memo",
+  "api": "CB_MeetingMemo__c",
+  "obj": "Opportunity",
+  "master": "Meeting Memo",
+  "en": "Meeting Memo",
+  "type": "url"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 91,
+  "label": "Revenue",
+  "api": "Valuation_Revenue__c",
+  "obj": "Opportunity",
+  "master": "Revenue",
+  "en": "Revenue",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 92,
+  "label": "Depreciation",
+  "api": "Valuation_Depreciation__c",
+  "obj": "Opportunity",
+  "master": "Depreciation",
+  "en": "Depreciation",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 93,
+  "label": "Profit Before Tax",
+  "api": "Valuation_PBT__c",
+  "obj": "Opportunity",
+  "master": "Profit Before Tax",
+  "en": "Profit Before Tax",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 94,
+  "label": "Profit After Tax",
+  "api": "Valuation_PAT__c",
+  "obj": "Opportunity",
+  "master": "Profit After Tax",
+  "en": "Profit After Tax",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 95,
+  "label": "Cash",
+  "api": "Valuation_Cash__c",
+  "obj": "Opportunity",
+  "master": "Cash",
+  "en": "Cash",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 96,
+  "label": "Debt",
+  "api": "Valuation_Debt__c",
+  "obj": "Opportunity",
+  "master": "Debt",
+  "en": "Debt",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 97,
+  "label": "Equity",
+  "api": "Valuation_Equity__c",
+  "obj": "Opportunity",
+  "master": "Equity",
+  "en": "Equity",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 98,
+  "label": "Fiscal Year End",
+  "api": "Valuation_FiscalYearEnd__c",
+  "obj": "Opportunity",
+  "master": "Fiscal Year End",
+  "en": "Fiscal Year End",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 99,
+  "label": "EV(USD M)",
+  "api": "EV_USDmm__c",
+  "obj": "Opportunity",
+  "master": "EV(USD M)",
+  "en": "EV(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 100,
+  "label": "Valuation Methods",
+  "api": "Valuation_Methods__c",
+  "obj": "Opportunity",
+  "master": "Valuation Methods",
+  "en": "Valuation Methods",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 101,
+  "label": "Valuation Date",
+  "api": "Valuation_Date__c",
+  "obj": "Opportunity",
+  "master": "Valuation Date",
+  "en": "Valuation Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 102,
+  "label": "Country",
+  "api": "CB_SP_Country__c",
+  "obj": "Opportunity",
+  "master": "Country",
+  "en": "Country",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 103,
+  "label": "Website",
+  "api": "SP_Website__c",
+  "obj": "Opportunity",
+  "master": "Website",
+  "en": "Website",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 104,
+  "label": "FolderURL(Company)",
+  "api": "SP_FolderURLCompany__c",
+  "obj": "Opportunity",
+  "master": "FolderURL(Company)",
+  "en": "FolderURL(Company)",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 105,
+  "label": "Potential Buyers",
+  "api": "CB_P_PotentialBuyers__c",
+  "obj": "Opportunity",
+  "master": "Potential Buyers",
+  "en": "Potential Buyers",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 106,
+  "label": "Acquiring Company",
+  "api": "CB_P_AcquiringCompany__c",
+  "obj": "Opportunity",
+  "master": "Acquiring Company",
+  "en": "Acquiring Company",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 107,
+  "label": "Acquiring Company(Matching Info)",
+  "api": "CB_P_AcquiringCompanyMatchingInfo__c",
+  "obj": "Opportunity",
+  "master": "Acquiring Company(Matching Info)",
+  "en": "Acquiring Company(Matching Info)",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 109,
+  "label": "Description",
+  "api": "Description",
+  "obj": "Opportunity",
+  "master": null,
+  "en": "Description",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 110,
+  "label": "BizBank(Published Date)",
+  "api": "CB_BizBank__c",
+  "obj": "Opportunity",
+  "master": "BizBank(Published Date)",
+  "en": "BizBank(Published Date)",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 112,
+  "label": "M&A Needs",
+  "api": "MANeeds__c",
+  "obj": "Opportunity",
+  "master": "M&amp;A Needs",
+  "en": "M&A Needs",
+  "type": "reference"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 114,
+  "label": "Fees(USD M)",
+  "api": "CB_Fees_USDmm__c",
+  "obj": "Opportunity",
+  "master": "Fees(USD M)",
+  "en": "Fees(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 115,
+  "label": "Fee x Probability(USD M)",
+  "api": "Fee_Probability_USDmm__c",
+  "obj": "Opportunity",
+  "master": "Fee x Probability(USD M)",
+  "en": "Fee x Probability(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 116,
+  "label": "EV Value(USD M)",
+  "api": "CB_EVValue_USDmm__c",
+  "obj": "Opportunity",
+  "master": "EV Value(USD M)",
+  "en": "EV Value(USD M)",
+  "type": "double"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 117,
+  "label": "Spreadsheet Progress Log",
+  "api": "CB_SpreadsheetProgressLog__c",
+  "obj": "Opportunity",
+  "master": "Spreadsheet Progress Log",
+  "en": "Spreadsheet Progress Log",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 118,
+  "label": "Inquiry_Company",
+  "api": "Inquiry_Company_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Company",
+  "en": "Inquiry_Company",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 119,
+  "label": "Inquiry_Name",
+  "api": "Inquiry_Name_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Name",
+  "en": "Inquiry_Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 120,
+  "label": "Inquiry_Email",
+  "api": "Inquiry_Email_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Email",
+  "en": "Inquiry_Email",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 121,
+  "label": "Inquiry_Mobile",
+  "api": "Inquiry_Mobile_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Mobile",
+  "en": "Inquiry_Mobile",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 122,
+  "label": "Inquiry_Work",
+  "api": "Inquiry_Work_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Work",
+  "en": "Inquiry_Work",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 123,
+  "label": "Inquiry_Postalcode",
+  "api": "Inquiry_Postalcode_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Postalcode",
+  "en": "Inquiry_Postalcode",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 124,
+  "label": "Inquiry_Address",
+  "api": "Inquiry_Address_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Address",
+  "en": "Inquiry_Address",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 125,
+  "label": "Inquiry_Department",
+  "api": "Inquiry_Department_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Department",
+  "en": "Inquiry_Department",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 126,
+  "label": "Inquiry_Title",
+  "api": "Inquiry_Title_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Title",
+  "en": "Inquiry_Title",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 127,
+  "label": "Inquiry_Subject",
+  "api": "Inquiry_Subject_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Subject",
+  "en": "Inquiry_Subject",
+  "type": "string"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 128,
+  "label": "Inquiry_Body",
+  "api": "Inquiry_Body_En__c",
+  "obj": "Opportunity",
+  "master": "Inquiry_Body",
+  "en": "Inquiry_Body",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 131,
+  "label": "Criteria(Text)",
+  "api": "S_CriteriaText__c",
+  "obj": "Opportunity",
+  "master": "Criteria(Text)",
+  "en": "Criteria(Text)",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Opportunities",
+  "row": 132,
+  "label": "Start Date",
+  "api": "StartDate__c",
+  "obj": "Opportunity",
+  "master": "Start Date",
+  "en": "Start Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 2,
+  "label": "Matching No.",
+  "api": "Name",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Matching No.",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 5,
+  "label": "Currency ISO Code",
+  "api": "CurrencyIsoCode",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Currency ISO Code",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Matches",
+  "row": 8,
+  "label": "NDA",
+  "api": "NDADateCheck__c",
+  "obj": "Matching__c",
+  "master": "NDA",
+  "en": "NDA",
+  "type": "boolean"
+ },
+ {
+  "sheet": "Matches",
+  "row": 24,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 26,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 34,
+  "label": "Record Type ID",
+  "api": "RecordTypeId",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Record Type ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 35,
+  "label": "Contact",
+  "api": "TM_Contact__c",
+  "obj": "Matching__c",
+  "master": "Contact",
+  "en": "Contact",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 36,
+  "label": "Country(Buyer)",
+  "api": "CB_M_CountryBuyer__c",
+  "obj": "Matching__c",
+  "master": "Country(Buyer)",
+  "en": "Country(Buyer)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 37,
+  "label": "FolderURL(Company)",
+  "api": "M_FolderURLCompany__c",
+  "obj": "Matching__c",
+  "master": "FolderURL(Company)",
+  "en": "FolderURL(Company)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 38,
+  "label": "Progress(Date, Description)",
+  "api": "CB_TM_Progress__c",
+  "obj": "Matching__c",
+  "master": "Progress(Date, Description)",
+  "en": "Progress(Date, Description)",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Matches",
+  "row": 39,
+  "label": "NextStep",
+  "api": "TM_NextStep__c",
+  "obj": "Matching__c",
+  "master": "NextStep",
+  "en": "NextStep",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Matches",
+  "row": 40,
+  "label": "Start Date",
+  "api": "CB_StartDate__c",
+  "obj": "Matching__c",
+  "master": "Start Date",
+  "en": "Start Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 41,
+  "label": "NDA Date",
+  "api": "NDADate__c",
+  "obj": "Matching__c",
+  "master": "NDA Date",
+  "en": "NDA Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 42,
+  "label": "Toss Up Date",
+  "api": "CB_T_TossUpDate__c",
+  "obj": "Matching__c",
+  "master": "Toss Up Date",
+  "en": "Toss Up Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 43,
+  "label": "Top Mtg Date",
+  "api": "CB_M_TopMtgDate__c",
+  "obj": "Matching__c",
+  "master": "Top Mtg Date",
+  "en": "Top Mtg Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 44,
+  "label": "Buyer FA Agreement Date",
+  "api": "BuyerFAAgreementDate__c",
+  "obj": "Matching__c",
+  "master": "Buyer FA Agreement Date",
+  "en": "Buyer FA Agreement Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 45,
+  "label": "Folder URL(Project)",
+  "api": "TM_FolderURLProject__c",
+  "obj": "Matching__c",
+  "master": "Folder URL(Project)",
+  "en": "Folder URL(Project)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 52,
+  "label": "Folder URL(Project)",
+  "api": "TM_FolderURLProject__c",
+  "obj": "Matching__c",
+  "master": "Folder URL(Project)",
+  "en": "Folder URL(Project)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 55,
+  "label": "Folder URL(Target)",
+  "api": "T_FolderURLTarget__c",
+  "obj": "Matching__c",
+  "master": "Folder URL(Target)",
+  "en": "Folder URL(Target)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 56,
+  "label": "Bank of Yokohama(Approached Date)",
+  "api": "CB_Yokohama__c",
+  "obj": "Matching__c",
+  "master": "Bank of Yokohama(Approached Date)",
+  "en": "Bank of Yokohama(Approached Date)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 57,
+  "label": "Bank of Kyoto(Approached Date)",
+  "api": "CB_Kyoto__c",
+  "obj": "Matching__c",
+  "master": "Bank of Kyoto(Approached Date)",
+  "en": "Bank of Kyoto(Approached Date)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 58,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Matching__c",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 59,
+  "label": "Target Company",
+  "api": "T_TargetCompany__c",
+  "obj": "Matching__c",
+  "master": "Target Company",
+  "en": "Target Company",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 61,
+  "label": "Country(Target)",
+  "api": "CB_T_CountryTarget__c",
+  "obj": "Matching__c",
+  "master": "Country(Target)",
+  "en": "Country(Target)",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 62,
+  "label": "Target Memo",
+  "api": "T_TargetMemo__c",
+  "obj": "Matching__c",
+  "master": "Target Memo",
+  "en": "Target Memo",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Matches",
+  "row": 63,
+  "label": "Response Date",
+  "api": "CB_T_ResponseDate__c",
+  "obj": "Matching__c",
+  "master": "Response Date",
+  "en": "Response Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 64,
+  "label": "Valuation Date",
+  "api": "CB_T_ValuationDate__c",
+  "obj": "Matching__c",
+  "master": "Valuation Date",
+  "en": "Valuation Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Matches",
+  "row": 65,
+  "label": "Valuation Detail",
+  "api": "CB_T_ValuationDetail__c",
+  "obj": "Matching__c",
+  "master": "Valuation Detail",
+  "en": "Valuation Detail",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Matches",
+  "row": 66,
+  "label": "Method",
+  "api": "CB_T_Method__c",
+  "obj": "Matching__c",
+  "master": "Method",
+  "en": "Method",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Matches",
+  "row": 67,
+  "label": "Sourcing Info",
+  "api": "T_SourcingInfo__c",
+  "obj": "Matching__c",
+  "master": "Sourcing Info",
+  "en": "Sourcing Info",
+  "type": "reference"
+ },
+ {
+  "sheet": "Matches",
+  "row": 68,
+  "label": "Power Buyer",
+  "api": "T_PowerBuyer__c",
+  "obj": "Matching__c",
+  "master": "Power Buyer",
+  "en": "Power Buyer",
+  "type": "string"
+ },
+ {
+  "sheet": "Matches",
+  "row": 69,
+  "label": "SFID18",
+  "api": "SFID18__c",
+  "obj": "Matching__c",
+  "master": "SFID18",
+  "en": "SFID18",
+  "type": "string"
+ },
+ {
+  "sheet": "M&A Needs",
+  "row": 2,
+  "label": "M&A Need Name",
+  "api": "Name",
+  "obj": "Buy_Needs__c",
+  "master": null,
+  "en": "買収ニーズ名",
+  "type": "string"
+ },
+ {
+  "sheet": "M&A Needs",
+  "row": 5,
+  "label": "Website",
+  "api": "N_Website__c",
+  "obj": "Buy_Needs__c",
+  "master": "Website",
+  "en": "Website",
+  "type": "string"
+ },
+ {
+  "sheet": "M&A Needs",
+  "row": 8,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Buy_Needs__c",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "M&A Needs",
+  "row": 34,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Buy_Needs__c",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "M&A Needs",
+  "row": 35,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Buy_Needs__c",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 3,
+  "label": "Establishment Name",
+  "api": "Name",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Establishment Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 61,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 62,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 63,
+  "label": "SCUEL_ID",
+  "api": "Scuel_Id__c",
+  "obj": "Establishments__c",
+  "master": "SCUEL_ID",
+  "en": "SCUEL_ID",
+  "type": "textarea"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 65,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 66,
+  "label": "Last Modified Date",
+  "api": "LastModifiedDate",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Last Modified Date",
+  "type": "datetime"
+ },
+ {
+  "sheet": "Establishments",
+  "row": 79,
+  "label": "Currency ISO Code",
+  "api": "CurrencyIsoCode",
+  "obj": "Establishments__c",
+  "master": null,
+  "en": "Currency ISO Code",
+  "type": "picklist"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 2,
+  "label": "Record Type ID",
+  "api": "RecordTypeId",
+  "obj": "ContractFile__c",
+  "master": null,
+  "en": "Record Type ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 3,
+  "label": "Contract Name",
+  "api": "Name",
+  "obj": "ContractFile__c",
+  "master": null,
+  "en": "Contract Name",
+  "type": "string"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 6,
+  "label": "Contract End Date",
+  "api": "EndDate",
+  "obj": "Contract",
+  "master": null,
+  "en": "Contract End Date",
+  "type": "date"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 9,
+  "label": "Owner ID",
+  "api": "OwnerId",
+  "obj": "Contract",
+  "master": null,
+  "en": "Owner ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 16,
+  "label": "Created By ID",
+  "api": "CreatedById",
+  "obj": "Contract",
+  "master": null,
+  "en": "Created By ID",
+  "type": "reference"
+ },
+ {
+  "sheet": "Contracts",
+  "row": 17,
+  "label": "Last Modified By ID",
+  "api": "LastModifiedById",
+  "obj": "Contract",
+  "master": null,
+  "en": "Last Modified By ID",
+  "type": "reference"
+ }
+]

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>getCompanyProfileForMatchingIntl</name>
+        <label>(海外マッチング用)会社概要を算出</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CompanyProfileForMatchingIntl__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CompanyProfileForMatchingIntl</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>リソースの数式内容を変更</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CompanyProfileForMatchingIntl</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Description} &amp;
+{!$Record.CB_Description_Long__c} &amp;
+TEXT({!$Record.SectorGICS__c}) &amp;
+TEXT({!$Record.Industry_GroupGICS__c})&amp;
+TEXT({!$Record.IndustryGICS__c}) &amp;
+TEXT({!$Record.SubIndustryGICS__c})&amp;
+{!$Record.CB_IndustryText__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Old_CompanyProfileForMatchingIntl</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Name} &amp;
+{!$Record.Description} &amp;
+{!$Record.CB_Description_Long__c} &amp;
+TEXT({!$Record.Country__c}) &amp;
+TEXT({!$Record.SectorGICS__c}) &amp;
+TEXT({!$Record.Industry_GroupGICS__c})&amp;
+TEXT({!$Record.IndustryGICS__c}) &amp;
+TEXT({!$Record.SubIndustryGICS__c})&amp;
+{!$Record.CB_IndustryText__c}  &amp;
+TEXT({!$Record.NumberofEmployees__c}) &amp;
+{!$Record.TickerSymbol} &amp;
+IF(TEXT({!$Record.CB_CompanyStatus__c}) = &quot;Operating&quot;, &quot;Operating;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyStatus__c}) = &quot;Operating Subsidiary&quot;, &quot;Operating Subsidiary;&quot;, &quot;&quot;) &amp; 
+IF(TEXT({!$Record.CB_CompanyStatus__c}) = &quot;Active&quot;, &quot;Active;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Public Company&quot;, &quot;Public Company;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Private Company&quot;, &quot;Private Company;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Private Investment Firm&quot;, &quot;Private Investment Firm;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Private Fund&quot;, &quot;Private Fund;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Public Investment Firm&quot;, &quot;Public Investment Firm;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Corporate Investment Arm&quot;, &quot;Corporate Investment Arm;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Financial Service Investment Arm&quot;, &quot;Financial Service Investment Arm;&quot;, &quot;&quot;) &amp;
+IF(TEXT({!$Record.CB_CompanyType__c}) = &quot;Assets/Products&quot;, &quot;Assets/Products;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>(海外マッチング用)会社概要を更新するフロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>(海外マッチング用)会社概要を更新するフロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>getCompanyProfileForMatchingIntl</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>012RA00000AVG7ZYAX</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

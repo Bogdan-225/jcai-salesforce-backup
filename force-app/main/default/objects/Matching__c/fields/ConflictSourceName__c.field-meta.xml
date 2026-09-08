@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConflictSourceName__c</fullName>
+    <description>内部制御用。自動終了時に重複元の案件名(DealName__c)を記録し、復活時の活動件名に使用してクリアする。人は編集しない想定。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For internal control. Used by the auto-termination/reinstatement process. Do not edit.</inlineHelpText>
+    <label>重複元案件名(内部)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

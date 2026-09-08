@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stalled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>停滞中案件フラグ。トップ面談/Post Top MTG/MOU-LOI/DDのフェーズで、フェーズ変更・活動履歴(ToDo/行動)の作成・編集から30日超経過するとスケジュールフローが自動ON。活動再開・フェーズ変更で自動OFF。手動編集不可（stalled-deal-flag PJ 2026-08-03）。</description>
+    <inlineHelpText>Automatically turned on when a deal in Top Meeting through DD stage has had no stage change or activity update for 30 days (recalculated daily; do not edit manually).</inlineHelpText>
+    <label>停滞中案件</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_CompanyType__c</fullName>
+    <label>Company Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Government Institution</fullName>
+                <default>false</default>
+                <label>Government Institution</label>
+            </value>
+            <value>
+                <fullName>Public Company</fullName>
+                <default>false</default>
+                <label>Public Company</label>
+            </value>
+            <value>
+                <fullName>Private Company</fullName>
+                <default>false</default>
+                <label>Private Company</label>
+            </value>
+            <value>
+                <fullName>Private Investment Firm</fullName>
+                <default>false</default>
+                <label>Private Investment Firm</label>
+            </value>
+            <value>
+                <fullName>Private Fund</fullName>
+                <default>false</default>
+                <label>Private Fund</label>
+            </value>
+            <value>
+                <fullName>Public Investment Firm</fullName>
+                <default>false</default>
+                <label>Public Investment Firm</label>
+            </value>
+            <value>
+                <fullName>Foundation/Charitable Institution</fullName>
+                <default>false</default>
+                <label>Foundation/Charitable Institution</label>
+            </value>
+            <value>
+                <fullName>Educational Institution</fullName>
+                <default>false</default>
+                <label>Educational Institution</label>
+            </value>
+            <value>
+                <fullName>Corporate Investment Arm</fullName>
+                <default>false</default>
+                <label>Corporate Investment Arm</label>
+            </value>
+            <value>
+                <fullName>Public Fund</fullName>
+                <default>false</default>
+                <label>Public Fund</label>
+            </value>
+            <value>
+                <fullName>Trade Association</fullName>
+                <default>false</default>
+                <label>Trade Association</label>
+            </value>
+            <value>
+                <fullName>Financial Service Investment Arm</fullName>
+                <default>false</default>
+                <label>Financial Service Investment Arm</label>
+            </value>
+            <value>
+                <fullName>Labor Union</fullName>
+                <default>false</default>
+                <label>Labor Union</label>
+            </value>
+            <value>
+                <fullName>Religious Institution</fullName>
+                <default>false</default>
+                <label>Religious Institution</label>
+            </value>
+            <value>
+                <fullName>Arts Institution</fullName>
+                <default>false</default>
+                <label>Arts Institution</label>
+            </value>
+            <value>
+                <fullName>Assets/Products</fullName>
+                <default>false</default>
+                <label>Assets/Products</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

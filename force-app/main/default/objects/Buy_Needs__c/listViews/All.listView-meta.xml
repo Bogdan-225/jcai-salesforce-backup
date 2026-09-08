@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>N_AccountName__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NeedsType__c</columns>
+    <columns>NAME</columns>
+    <columns>AreaCB__c</columns>
+    <columns>AreaDOM__c</columns>
+    <columns>AreaText__c</columns>
+    <columns>ClassificationText__c</columns>
+    <columns>MainCategory__c</columns>
+    <columns>MiddleCategory__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>有効</value>
+    </filters>
+    <label>すべて選択</label>
+</ListView>

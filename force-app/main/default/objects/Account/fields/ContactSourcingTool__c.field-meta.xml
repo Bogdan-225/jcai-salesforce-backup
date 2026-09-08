@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactSourcingTool__c</fullName>
+    <description>キーパーソン連絡先探索に使用したデータソース(複数選択)。買い手コンタクト自動処理が更新する(手動編集不可)。</description>
+    <inlineHelpText>Data sources used for key-contact sourcing on this account. Both values are selected when both tools were used. Do not edit manually.</inlineHelpText>
+    <label>連絡先探索ツール</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apollo</fullName>
+                <default>false</default>
+                <label>Apollo</label>
+            </value>
+            <value>
+                <fullName>Cognism</fullName>
+                <default>false</default>
+                <label>Cognism</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

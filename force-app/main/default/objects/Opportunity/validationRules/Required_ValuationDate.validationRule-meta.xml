@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_ValuationDate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;XBorderType&quot;,
+    ISCHANGED(StageName),
+    ISPICKVAL(PRIORVALUE(StageName), &quot;案件化&quot;),
+    ISBLANK( Valuation_Date__c )
+)</errorConditionFormula>
+    <errorDisplayField>Valuation_Date__c</errorDisplayField>
+    <errorMessage>Valuation Date is required to change the stage.</errorMessage>
+</ValidationRule>

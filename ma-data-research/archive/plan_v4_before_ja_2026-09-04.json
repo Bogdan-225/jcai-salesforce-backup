@@ -1,0 +1,331 @@
+[
+  {
+    "region": "JAPAN",
+    "provider": "EDINET API v2 — Financial Services Agency (金融庁)",
+    "main_area": "Japan statutory disclosure: all ~5,100 annual-report filers (listed + large unlisted). M&A signals: 臨時報告書 (extraordinary reports: mergers, splits, share exchanges, business transfers, subsidiary changes), 公開買付届出書 (TOB), 大量保有報告書 (5% reports), 有価証券報告書 acquisitions.",
+    "tiers": [
+      {
+        "label": "FREE (official)",
+        "price": "JPY 0. Free Subscription-Key, no paid tier exists (CONFIRMED in API spec v2.9 and terms).",
+        "what_we_get": "Complete daily document list with all metadata + every in-period document in 5 renditions (XBRL ZIP, PDF, attachments, English ZIP, CSV). Window: annual/semi-annual reports 10 years; extraordinary reports, TOB and 5% reports 5 years. Nothing withheld from free users. Start archiving now — no vendor sells a longer Japanese filing archive.",
+        "api": "YES — official REST/JSON, key in query string, 10-year rolling window on the list API.",
+        "verdict": "GOOD FIT: official REST API with free key, complete document list plus every filing in XBRL/PDF/CSV, no paid tier, nothing withheld. Real deal data: extraordinary reports (mergers, splits, share exchanges, business transfers), TOB filings, 5% reports. Only weakness is the archive window (5 years for the M&A forms), which is why the daily archiver must start now. Terms: EDINET content is reusable under the Public Data License 1.0 (commercial use allowed, attribution required); the terms ban scraping the web UI, so collection must go through the API, which is what we do. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID complement (optional, decide at month 3)",
+        "price": "JPX TDnet API: JPY 70,000/month flat + stepped fee by documents retrieved (≤300 docs JPY 0; 301-2,000 JPY 50,000) ≈ JPY 0.85M-1.45M/yr. TDnetDBS browse-only: JPY 33,400/month. EDINET DB (3rd party): Pro JPY 47,800/yr single user; Business tier quote only.",
+        "what_we_get": "TDnet: timely-disclosure feed (適時開示) where M&A, TOB and business-transfer announcements appear first, 5 years of history, free public test server. Free TDnet site keeps only 31 days. EDINET DB: ~75 REST endpoints of pre-parsed EDINET financials (~10 years) — convenience, not new data.",
+        "api": "YES — TDnet API (REST, POST, access key on contract; Swagger spec public). EDINET DB REST with X-API-Key.",
+        "verdict": "ACCEPTABLE OPTIONAL: TDnet API has a real REST API, 5 years of timely-disclosure history and deal announcements appear here first; cost about JPY 0.85M-1.45M/yr (USD 6-10k) sits at the USD 10k ceiling. TDnet on Snowflake (JPY 340k+/month) is too expensive. EDINET DB adds no new data (pre-parsed EDINET). Decide after measuring the gap at month 3; not needed to start."
+      }
+    ],
+    "note": "Core Japan source. Decision: build on the free API; measure the TDnet gap after 3 months before paying. MARR Pro / MARR Online (Recof Data) checked 2026-09-04: terms prohibit automated access (bots, crawlers, scrapers) and, on the standard licence, loading data into another system, database or AI (Art. 15); Excel export is capped per contract. Usable only under a separate data-licence agreement (Art. 15(5)), quote only. Not added to the plan."
+  },
+  {
+    "region": "USA",
+    "provider": "SEC EDGAR — U.S. Securities and Exchange Commission",
+    "main_area": "All SEC registrants incl. Asian foreign private issuers with ADRs. M&A signals: 8-K Items 1.01 / 2.01 / 5.01, S-4 mergers, SC TO-T / SC 14D-9 tender offers, SC 13D 5% stakes, DEFM14A merger proxies.",
+    "tiers": [
+      {
+        "label": "FREE (official, only tier)",
+        "price": "USD 0. No API key, no registration (CONFIRMED). Rule: declare a User-Agent with contact e-mail; 10 requests/second.",
+        "what_we_get": "Every filing document since 1993 (daily index from 1994), full-text search since 2001, REST JSON APIs (submissions, companyfacts, companyconcept, frames), nightly bulk ZIPs (submissions ~1.5 GB, companyfacts). Richest free M&A source in the world.",
+        "api": "YES — official REST/JSON at data.sec.gov + bulk ZIPs; full-text search endpoint public but undocumented.",
+        "verdict": "GOOD FIT: the best free source anywhere - official JSON APIs plus nightly bulk ZIPs, no key, filings back to 1993 and full-text search from 2001. Deal data is rich (8-K Items 1.01/2.01, S-4, tender-offer and 13D filings). Only cost is parsing effort and the 10 req/s limit."
+      },
+      {
+        "label": "PAID complement (optional)",
+        "price": "sec-api.io Business Internal Use: USD 199/month billed annually (USD 2,388/yr). Financial Modeling Prep M&A API: Premium USD 708/yr, Ultimate USD 1,788/yr.",
+        "what_we_get": "sec-api.io: pre-parsed 8-K item extraction, full-text search API at 20 req/s, real-time WebSocket stream of new filings, ticker/CIK/CUSIP mapping — saves parsing effort only. FMP: a ready-made 'latest M&A' JSON endpoint derived from filings, history unconfirmed.",
+        "api": "YES — REST with API key (both).",
+        "verdict": "ACCEPTABLE OPTIONAL: sec-api.io Business at USD 2,388/yr is cheap and has a documented REST API with 8-K item extraction and real-time streaming, but it only re-packages data we already get free. FMP M&A endpoint (USD 708-1,788/yr) has unconfirmed history. Buy only if engineering time is the bottleneck."
+      }
+    ],
+    "note": "Core USA source. Decision: free EDGAR is sufficient; paid wrappers only if engineering time is the constraint."
+  },
+  {
+    "region": "EUROPE (EU-27 + UK, Switzerland, Norway)",
+    "provider": "No single official pan-European M&A register exists — 5 candidate options below (decision pending). Full detail: Providers sheet, group E.",
+    "main_area": "No. There is no single official pan-European body or system that records M&A deals in the way SEC EDGAR or EDINET do. The closest EU-level thing today is the European Commission DG COMP merger case register (competition-cases.ec.europa.eu), but it only captures concentrations above the EU Merger Regulation turnover thresholds - a few hundred large deals a year, not the mid-market. Everything else is fragmented across ~30 national Officially Appointed Mechanisms (OAMs) under the Transparency Directive, and takeover bids are explicitly left to national authorities under Directive 2004/25/EC (CONFIRMED: no EU-wide takeover register). The fix is coming but slowly: ESMA's European Single Access Point (Regulation (EU) 2023/2859) starts collecting Transparency-Directive and prospectus data on 10 July 2026 and must be publicly live by 10 July 2027, free of charge and API-based - but Takeover Bids Directive material only joins in Phase 3 from 10 January 2030 (CONFIRMED via AMF). Practical answer for Europe: stack DG COMP + EUR-Lex/Cellar for large deals, national OAMs for listed-company disclosure, and a paid pan-European deal database (Orbis M&A) for private mid-market deals.",
+    "tiers": [
+      {
+        "label": "FREE — Option 1: European Commission DG Competition",
+        "price": "Large EU/EEA merger control cases above EUMR turnover thresholds, 1990 to today, with decision texts and OJ notices.\nPrice: free (official).",
+        "what_we_get": "Entire register free: case metadata, decisions, press releases, daily updates, XLSX export of search results, per-case email alerts, and OJ notices harvestable via the open Cellar SPARQL endpoint. CC BY 4.0 reuse.",
+        "api": "Partial - no official case API; Cellar SPARQL (no key) for OJ notices",
+        "verdict": "NOT SUITABLE as main source, but LEGALLY CLEAN: only concentrations above EU Merger Regulation turnover thresholds, i.e. a few hundred large cases a year, no mid-market, no official case API. Reuse of the register is expressly permitted under CC BY 4.0 (Commission Decision 2011/833/EU), so harvesting it is allowed. Keep as free ground truth to test a vendor's European recall. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "FREE — Option 2: National Officially Appointed Mechanisms under Transparency Directive 2004/109/EC",
+        "price": "Listed-company statutory disclosure across EU-27, UK, Norway and Switzerland: major holdings, offer documents, MAR releases, reports.\nPrice: free (official).",
+        "what_we_get": "All content free to view. France gives a free keyless REST API with direct PDF links (10k calls/day); Netherlands gives free CSV/XML export; UK NSM gives free CSV export of search results.",
+        "api": "Partial - France yes (free, no key); NL export only; UK/DE/IT/ES/NO/CH no",
+        "verdict": "NOT SUITABLE - scraping does not rescue it: about 30 separate national systems, and the terms check shows most of the web-only ones forbid harvesting. UK FCA NSM bans any \"scraper, robot, bot, spider, data mining\" without written consent; LSE RNS bans \"any programmatic, scripted or other mechanical means\"; Italy (1Info, eMarket STORAGE) allows personal non-commercial use only and bars reproduction; Switzerland SIX requires written consent for any commercial use; Norway NewsWeb/Euronext bans spiders and \"systematic retrieval to create databases\"; Germany (Unternehmensregister, Bundesanzeiger) is protected by the database right (s. 87a UrhG) and needs publisher consent. Only France (free API), Netherlands (CSV/XML export) and Spain CNMV (free use, faithful reproduction permitted) are usable, and they cover three markets with listed-company disclosure only. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID — Option 3: Moody's Orbis M&A (ex-Zephyr) — enterprise tier, quote only",
+        "price": "Pan-European private and listed M&A deal history including rumours, with no minimum deal size - the mid-market gap-filler.\nPrice: NOT PUBLISHED by Moody's (CONFIRMED - no price on any vendor page fetched).",
+        "what_we_get": "European deals from 1997, global from 2001; roughly 2m deals and rumours; terms, advisers, stakes, linked to Orbis financials both sides. Price not published - request the G-Cloud 14 list. LICENCE RISK: Moody's copyright notice prohibits AI/ML training by default — needs written carve-out and qualified legal review.",
+        "api": "Partial - platform first; API/bulk unconfirmed, must be contracted",
+        "verdict": "DEEPEST EUROPE DATA BUT: enterprise pricing, not published (INFERRED above USD 50k/yr); API/bulk delivery for Orbis M&A unconfirmed and must be contracted; Moody's terms prohibit AI/ML training by default. Fallback only if Tracxn's European recall proves poor - then request the UK G-Cloud 14 price list and a licence carve-out."
+      },
+      {
+        "label": "FREE — Option 4: ESMA registers today + ESAP (European Single Access Point) from July 2027",
+        "price": "EU-wide prospectus and instrument reference data now; from July 2027 ESAP becomes the EU single access point for issuer disclosure.\nPrice: free (official).",
+        "what_we_get": "Free keyless Solr/JSON API over the EU prospectus register and FIRDS, with documented full-dataset extraction URLs. ESAP will be free by law, API-first, in all EU languages.",
+        "api": "Yes - Solr/JSON, no key, today; ESAP API from 2027",
+        "verdict": "NOT DEAL DATA TODAY: ESMA registers hold prospectuses and instrument reference data, not acquisitions. ESAP (the future EU single access point) goes public only in July 2027 and takeover-bid material joins in January 2030; its predecessor (EEAP) was suspended in 2018. Put on the calendar for a 2027 review, not usable now."
+      },
+      {
+        "label": "FREE — Option 5: BRIS (EU e-Justice register interconnection) + UK Companies House API",
+        "price": "Company identity and ownership backbone across EU-27, EEA and the UK - entity resolution, not deal data.\nPrice: free (official).",
+        "what_we_get": "Free real-time company search across 30 national registers via one EU portal; free Companies House REST API and monthly bulk data for the UK.",
+        "api": "BRIS: No - web only. Companies House: Yes - free REST + bulk",
+        "verdict": "NO DEAL DATA: BRIS is a company-identity lookup (name, number, status, address) across 30 national registers - it never says who bought whom. No API, no bulk download, no programmatic access. UK Companies House API is useful only for UK entity resolution, not for deals."
+      },
+      {
+        "label": "PAID — Option 6 (RECOMMENDED): Tracxn — Europe covered by the same licence as USA + Asia",
+        "price": "No separate Europe cost: the same Tracxn contract already under evaluation for USA + Asia private deals (see Tracxn block at the bottom). Premium seats: quote (INFERRED ~USD 4.3K/yr median account). Data Solutions API / bulk: volume-based quote, INFERRED USD 10K-50K/yr. Free Lite tier usable for the recall test.",
+        "what_we_get": "Europe is Tracxn's second-largest region (CONFIRMED from Tracxn's own geography pages, 2-3 Sep 2026): 2,832,571 companies tracked, 71,013 acquisitions, 104,458 investors, 55,007 IPOs - nearly 5x the Asia acquisition count (14,521) and second only to the USA (99,313). Structured deal records (acquirer, target, date, terms where disclosed) incl. private-to-private deals that never appear in any filing system; one schema and one API across USA, Europe and Asia.",
+        "api": "YES — REST API plus scheduled SFTP dumps, Snowflake share or BigQuery sync for Data Solutions customers; Salesforce integration and MCP connector. Lite (free) has no API.",
+        "verdict": "GOOD OPTION because it meets all three criteria at once: one option, real depth (71k European acquisitions, 2.8M companies) and quick programmatic access (REST + bulk). It costs nothing extra beyond the licence already being considered (note: seat plans pass the USD 10k/yr ceiling, but the Data Solutions API pack was inferred at USD 10k-50k/yr and needs a quote), removes a second integration and a second vendor negotiation, and covers the private mid-market that every free official source misses. Caveat to verify in the trial: Tracxn is tech/startup-skewed, so measure recall on traditional European mid-market deals against the free DG COMP case list before signing."
+      }
+    ],
+    "note": "DECISION PENDING. Recommendation: Option 6 (Tracxn, same licence as USA + Asia). Options 1-5 rejected as the main Europe source - see Verdict column. Keep Option 1 (DG COMP) as free ground truth for the recall test; Option 3 (Orbis M&A) as the paid fallback; Option 4 (ESAP) for a 2027 review."
+  },
+  {
+    "region": "INDIA",
+    "provider": "BSE / NSE corporate announcements + CCI Combination Orders Register + MCA company master (data.gov.in) + SEBI takeover filings",
+    "main_area": "Listed-company M&A announcements (BSE/NSE), all merger-control cases above CCI thresholds with party names and orders, company registry master data, SAST open-offer documents.",
+    "tiers": [
+      {
+        "label": "FREE (official)",
+        "price": "INR 0. BSE/NSE pages public; CCI register public (CONFIRMED); data.gov.in free API key (INFERRED); SEBI site public.",
+        "what_we_get": "BSE/NSE: full announcement feeds with PDFs, but both sites returned HTTP 403 to automated fetches — needs browser-based harvesting. CCI: filterable table of combination cases (parties, form, dates, status, order PDFs), English. MCA master data via data.gov.in REST. SEBI: open-offer letters, site bot-blocked.",
+        "api": "PARTIAL — BSE/NSE only undocumented JSON endpoints (blocked server-side); data.gov.in official REST (INFERRED); CCI and SEBI no API.",
+        "verdict": "ACCEPTABLE WITH CAVEAT (re-rated 2026-09-04, scraping route): no official free API, but two of the four sources may be harvested. CCI Combination register and SEBI SAST filings: terms, disclaimer and copyright policy read in full, nothing on automated access; the standard Indian government copyright policy asks for permission by e-mail plus source acknowledgement when content is reproduced or published, internal analysis is not addressed. BSE: no scraping clause, but the Disclaimer bans \"reproduction, redistribution or transmission, for consideration or otherwise\" without BSE's express written consent, so ask BSE before storing announcements. NSE: Terms of Use expressly prohibit \"systematic or automated data collection activities (including scraping, data mining, data extraction and data harvesting)\" - off limits; use the paid NSE feed instead. Practical: BSE/NSE return HTTP 403 to servers (browser emulation needed); CCI/SEBI are plain government sites. CCI orders remain the cleanest free M&A list. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional) - Option A: NSE official data feed",
+        "price": "NSE Data & Analytics (official): EOD Corporate Announcement feed USD 8,000/yr international (INR 500,000 domestic); real-time Corporate Data USD 17,500/yr (CONFIRMED, price page updated 2026-06-11). BSE: tariff sheet exists (Feb 2025) but figures unreadable - INFERRED similar. MCA21 per-document fees (unconfirmed).",
+        "what_we_get": "NSE: daily file of all NSE-listed corporate announcements with category and PDF links, delivered over SFTP - the supported alternative to scraping. BSE: equivalent product, price to be requested. MCA: filed annual returns and financials per company.",
+        "api": "YES - NSE official SFTP data feed (CONFIRMED); BSE feed INFERRED; no REST API.",
+        "verdict": "GOOD FIT: NSE sells an OFFICIAL machine-readable corporate-announcement feed (EOD, SFTP) at USD 8,000/yr for international clients - under the USD 10k ceiling, deal-bearing (acquisitions, schemes of arrangement, open offers) and supported. Real-time variant (USD 17,500/yr) exceeds the ceiling. It is an announcement feed, so parsing/normalisation effort stays with us; licence scope (internal use, model input) to be confirmed by counsel."
+      },
+      {
+        "label": "PAID (optional) - Option B: Venture Intelligence (web database + Excel export, no API)",
+        "price": "Quote only for the full database; indicative app pricing is in the low tier (under USD 10k/yr). Small Chennai-based vendor (TSJ Media), direct request for a data licence is realistic.",
+        "what_we_get": "India-specific deal database: 15,000+ M&A deals and 25,000+ PE/VC deals from 1999, joined to financials on about 800,000 companies, English. Includes private-to-private deals that never reach BSE/NSE announcements.",
+        "api": "NO API. Web database plus spreadsheet export (download is contemplated in the contract's refund clause).",
+        "verdict": "ACCEPTABLE WITH CAVEAT (added 2026-09-04 under the web-portal rule): terms read in full contain no clause on scraping, crawling or automated access, and spreadsheet download is part of the product. Licence is \"internal and non-commercial use\"; sharing within the subscribing entity is expressly allowed without permission, but \"AI tools\" are listed among the prohibited recipients, so loading exports into the prediction model needs a written carve-out from the vendor. Complements Option A (listed announcements) with private deals and 25 years of history. Price to confirm. [Terms check 2026-09-04: deep/scraping_tos]"
+      }
+    ],
+    "note": "Asia focus market. Free route: harvest CCI + SEBI (terms silent), ask BSE for consent, do not scrape NSE (terms prohibit it). Paid: NSE feed (Option A) is the supported route for listed announcements; Venture Intelligence (Option B) adds private deals and history."
+  },
+  {
+    "region": "SOUTH KOREA",
+    "provider": "OpenDART — Financial Supervisory Service (금융감독원) [+ KIND/KRX RSS, KFTC, data.go.kr]",
+    "main_area": "All DART filers (KOSPI, KOSDAQ, KONEX + non-listed public filers) from 1999. M&A signals: DS005 주요사항보고서 endpoints — merger decision, split, share exchange/transfer, business transfer/acquisition, stake acquisition; DS004 major-holding disclosures.",
+    "tiers": [
+      {
+        "label": "FREE (official, only tier)",
+        "price": "KRW 0. Free crtfc_key after registration; no paid tier exists (CONFIRMED). Corporate applicants state company name, registration number and requesting system.",
+        "what_we_get": "All 6 API groups, structured JSON/XML for M&A decisions with party names and terms, original filings as ZIP. Plus KIND RSS (free incremental feed), KFTC merger-review press releases (free, case titles), data.go.kr share-issuance API (10,000 req/day).",
+        "api": "YES — official REST, JSON/XML, key as query parameter.",
+        "verdict": "GOOD FIT: official REST API (JSON/XML) with free key and no paid tier, structured M&A decision endpoints with party names and terms, disclosures from 1999. Best free Asian source after EDINET/EDGAR. Only cost is Korean-language handling."
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "KRX OpenAPI (openapi.krx.co.kr): free with membership and approved key (CONFIRMED) - market data only. KRX Information Data System paid products: quote only. DeepSearch Finorma: quote only.",
+        "what_we_get": "KRX structured/unstructured data products; Finorma 1.5M private companies via REST — only if private-company features are needed.",
+        "api": "YES (quote-based).",
+        "verdict": "NOT NEEDED: openapi.krx.co.kr is free but holds only market/trading/index data (about 34 endpoints, no disclosures, no M&A). KRX paid data products are quote-only and add no deal data beyond OpenDART. DeepSearch Finorma is quote-only; consider only if private-company features are required."
+      }
+    ],
+    "note": "Best free official API in Asia after EDGAR/EDINET. Korean-language documents."
+  },
+  {
+    "region": "CHINA (mainland)",
+    "provider": "CNINFO 巨潮资讯网 (CSRC-designated disclosure site) + SSE/SZSE disclosure + SAMR merger-control notices",
+    "main_area": "A-share listed companies (Shanghai, Shenzhen, Beijing) — restructuring, acquisition and equity-transfer announcements; SAMR 经营者集中 (concentration) case notices for all deals above thresholds; GSXT company registry (bot-blocked).",
+    "tiers": [
+      {
+        "label": "FREE (official web, unofficial endpoints)",
+        "price": "CNY 0. Public sites, no login (CONFIRMED). No official free API.",
+        "what_we_get": "Full-text announcement search with PDFs, filters by market/board/industry. Open-source tooling (AKShare, MIT licence) wraps the undocumented CNINFO hisAnnouncement and SZSE annList POST endpoints. SAMR simplified/unconditional case lists (JS-rendered). Simplified Chinese only.",
+        "api": "NO official — undocumented POST endpoints used by open-source scrapers (live, but unsupported and may break).",
+        "verdict": "ACCEPTABLE WITH CAVEAT: no official API, but the undocumented CNINFO hisAnnouncement endpoint works today (90,603 hits for major-asset-restructuring announcements on 2026-09-04) and carries real deal announcements (restructuring, acquisitions, equity transfers) with PDFs, free. Risks: unsupported endpoint can change or be blocked; Simplified Chinese only; cross-border data-transfer rules (PIPL/DSL) need qualified legal review before exporting data from China. Terms check: CNINFO's only public legal text is an accuracy/liability disclaimer plus a copyright footer; nothing on crawlers, automated access, reprinting or commercial use, so the undocumented endpoint passes the \"not prohibited\" rule (silence is not permission - the operator also sells a paid data platform). [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "Tushare Pro: anns_d announcements interface CNY 1,000/yr flat (separate permission); points tiers CNY 200/500/1,000/1,500 for 2k/5k/10k/15k points (CONFIRMED). webapi.cninfo.com.cn: every catalog path returns HTTP 401, no price, no API doc (CONFIRMED). ITjuzi enterprise data: quote (individual CNY 798/yr).",
+        "what_we_get": "Tushare anns_d: full announcement list for all A-share companies with title and PDF link, 10+ years, token REST/SDK; no parsed M&A fields - classification is on us. AKShare (free, MIT): stock_notice_report wraps the Eastmoney list with an asset-restructuring category filter. CNINFO WebAPI: unknown. ITjuzi: China private-market deals since 2013.",
+        "api": "YES — Tushare REST/SDK with token; CNINFO WebAPI (UNCONFIRMED details).",
+        "verdict": "ACCEPTABLE, CHEAP: Tushare Pro has NO structured M&A tables (CONFIRMED from its full interface index), but its anns_d interface gives all listed-company announcements (title + PDF URL, 10+ years) via a supported token API for a flat CNY 1,000/yr - a stable substitute for the unofficial CNINFO endpoint. CNINFO WebAPI is login-walled with no published price or docs (UNKNOWN). ITjuzi: China private-market deals, enterprise quote."
+      }
+    ],
+    "note": "Cross-border data-transfer rules (PIPL/DSL) need qualified legal review before exporting Chinese company data."
+  },
+  {
+    "region": "HONG KONG SAR",
+    "provider": "HKEXnews — Hong Kong Exchanges and Clearing [+ Companies Registry e-Services]",
+    "main_area": "All HKEX-listed issuers incl. many mainland-Chinese companies: connected/notifiable transactions, takeovers, disclosure of interests, CCASS shareholding. English + Chinese.",
+    "tiers": [
+      {
+        "label": "FREE (official web)",
+        "price": "HKD 0. Public site, no login (CONFIRMED). Companies Registry quick name search free (INFERRED); document images paid per search.",
+        "what_we_get": "Title and full-text (content) search of all announcements with PDFs; Disclosure of Interests; CCASS holdings. Pages are JS-driven — requires headless-browser harvesting.",
+        "api": "NO — no official API, free or paid, for HKEXnews (CONFIRMED).",
+        "verdict": "NOT SUITABLE - terms prohibit scraping: the HKEX Terms of Use (which also govern HKEXnews) state users are \"not permitted to conduct ... any text or data mining or web scraping\", ban \"programmatic, scripted or other mechanical means to access\" and \"systematic retrieval to create ... databases\", and license downloads only for personal use on a non-networked disk, \"whether or not for gain\". No API, no RSS. Deal data is rich (notifiable/connected transactions, takeovers) but the only compliant routes are written permission from HKEX or the paid IIS feed below. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "FREE - Option B (added 2026-09-04): SFC Takeovers - Executive decisions and statements + Takeovers Bulletin",
+        "price": "HKD 0. Public web pages on sfc.hk, no registration (CONFIRMED). Chronological list with linked PDFs from 7 April 2000 to today (about 26 years).",
+        "what_we_get": "Curated, M&A-specific regulatory record: Takeovers Executive rulings and statements on general and partial offers, whitewash waivers, concert-party and chain-principle findings, cold-shoulder orders and censures under the Codes on Takeovers and Mergers and Share Buy-backs. English and Chinese.",
+        "api": "NO - browsable web list, no API, no RSS found.",
+        "verdict": "ACCEPTABLE, NARROW COMPLEMENT: the SFC disclaimer expressly permits materials to be \"downloaded or printed for personal use or for use within an individual firm or organisation\", and nothing bans automated access; reproduction for third parties or commercial purposes needs SFC consent (internal model input sits in that grey zone - counsel to confirm). Coverage is only public takeovers that reached the Executive, not the full stream of HKEX notifiable transactions, so it is a free, permissive, 26-year label set for HK takeovers rather than a replacement for HKEXnews. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "HKEX Issuer Information feed Service (IIS): HKD 45,000/quarter redistribution fee, connection included, subscriber fee N/A (CONFIRMED from the HKEX vendor fee table) - about USD 23k/yr.",
+        "what_we_get": "Official real-time machine-readable feed of all HKEXnews issuer announcements (headline, category, document) with published transmission specifications; covers notifiable and connected transactions, takeovers, disclosure of interests.",
+        "api": "YES - official data feed with public specs (CONFIRMED); no REST API.",
+        "verdict": "GOOD DATA, ABOVE CEILING: HKEX Issuer Information feed Service (IIS) is an official machine-readable feed of all issuer announcements with public transmission specs, but the published fee is HKD 45,000 per quarter (about USD 23k/yr) - above the USD 10k ceiling. Announcement feed, not a curated deal database, so parsing effort stays with us. Revisit only if budget allows or HK proves essential for mainland-China deals."
+      }
+    ],
+    "note": "Important because HK is the offshore venue for mainland-China listed M&A. HKEXnews scraping is prohibited by its terms (checked 2026-09-04); SFC takeover decisions added as a permissive free complement; full announcement coverage only via HKEX consent or the paid IIS feed (above ceiling)."
+  },
+  {
+    "region": "TAIWAN",
+    "provider": "TWSE OpenAPI + TPEx OpenAPI (exchanges) + MOPS 公開資訊觀測站 + TFTC combination decisions",
+    "main_area": "TWSE-listed and TPEx (OTC) companies: daily 重大訊息 (material information incl. mergers, acquisitions, equity transfers), full statutory filing library on MOPS; Taiwan FTC merger-control decisions; GCIS company registry open data (510 datasets, 60 APIs).",
+    "tiers": [
+      {
+        "label": "FREE (official, only tier)",
+        "price": "TWD 0. No registration, no key (CONFIRMED — no auth scheme in either OpenAPI spec).",
+        "what_we_get": "TWSE: 54 endpoints incl. t187ap04_L daily material information (company code, subject, applicable clause, event date). TPEx: ~250 endpoints. MOPS: historical material-information search across all years (web forms only). TFTC: searchable decision database with PDFs. Traditional Chinese, ROC-calendar dates.",
+        "api": "YES — official REST/JSON, no auth (TWSE, TPEx, GCIS). MOPS and TFTC web only.",
+        "verdict": "GOOD FIT WITH ONE CAVEAT: official REST API, no key, structured daily material-information records (subject, applicable clause, event date) that include mergers, acquisitions and equity transfers, free, and the OpenAPI data is released under Taiwan's Open Government Data licence. Caveat: the endpoint is a same-day snapshot only (CONFIRMED 2026-09-04, 102 rows all dated today, no date parameter) and the historical archive lives on MOPS web forms, which cannot be scraped: MOPS has no terms of its own and falls under the TWSE Terms of Use, which prohibit downloading data \"by means including but not limited to automated devices, scripts, automated programs, spiders, crawlers or extraction programs\" unless TWSE consents. Start the daily archiver immediately; request written TWSE consent if the back-file is needed. [Terms check 2026-09-04: deep/scraping_tos]"
+      }
+    ],
+    "note": "No paid tier needed."
+  },
+  {
+    "region": "SINGAPORE",
+    "provider": "SGX Company Announcements + data.gov.sg ACRA entity dataset",
+    "main_area": "SGX-listed issuers' announcements (acquisitions, disposals, takeovers) + full ACRA register of ~2.1M entities with UEN (registered and deregistered, 1881-2026).",
+    "tiers": [
+      {
+        "label": "FREE (official)",
+        "price": "SGD 0. SGX public page (CONFIRMED). data.gov.sg ACRA: free forever for commercial use under the Open Data Licence (CONFIRMED); optional API key raises limits. Official SGXNews real-time announcement feed: quote only, no published price (CONFIRMED).",
+        "what_we_get": "SGX: announcement feed via the undocumented api.sgx.com/announcements/v1.0 endpoint (used by open-source tools) or the web page. ACRA: 221.9 MB CSV download or CKAN datastore_search API — ideal for Singapore entity resolution.",
+        "api": "PARTIAL — data.gov.sg official REST (CONFIRMED); SGX endpoint undocumented.",
+        "verdict": "NOT SUITABLE WITHOUT SGX CONSENT (downgraded 2026-09-04 after the terms check; was ACCEPTABLE WITH CAVEAT): the api.sgx.com announcements endpoint works and is used by open-source tools, but the SGX Terms of Use say \"You may not obtain, or attempt to obtain, any Materials or other information through any means not intentionally made available on or through our Website\", which describes an undocumented backend endpoint exactly, and limit use to \"your own personal and non-commercial use\". The words scrape/crawl never appear and robots.txt is open, so a robots-only check would wrongly pass it. Routes: ask SGX for written consent, or price the official SGXNews feed (quote-only). ACRA dataset (data.gov.sg) is unaffected: open licence, entity data only. [Terms check 2026-09-04: deep/scraping_tos]"
+      }
+    ],
+    "note": "English-language; good entity master for the SEA hub (ACRA). SGX announcement endpoint blocked by SGX terms (2026-09-04): needs consent or the paid SGXNews feed."
+  },
+  {
+    "region": "INDONESIA",
+    "provider": "IDX (Indonesia Stock Exchange) Company Announcements / Keterbukaan Informasi + OJK open-data portal",
+    "main_area": "IDX-listed companies' material-information disclosures and financial reports; OJK capital-market open data (M&A content UNCONFIRMED).",
+    "tiers": [
+      {
+        "label": "FREE (official web)",
+        "price": "IDR 0 (INFERRED — could not be confirmed: every idx.co.id URL returned HTTP 403 to automated fetches).",
+        "what_we_get": "Browsable announcements and disclosures; OJK data.ojk.go.id sector datasets. Requires browser-based access and Indonesian-language handling.",
+        "api": "NO — no official public API or developer portal found (CONFIRMED).",
+        "verdict": "ACCEPTABLE WITH CAVEAT: the undocumented IDX GetAnnouncement endpoint works today (CONFIRMED 2026-09-04) and returns issuer announcements incl. material transactions, free; but the site blocks generic automated access (Cloudflare), Indonesian language, and no official API - breakage risk. OJK open data has no company-level deal content. LEGAL RISK (terms check 2026-09-04): the IDX Terms of Use are reported by search-engine indexes to prohibit web scraping and crawling expressly and to allow quotation only for non-commercial purposes with source and access date cited; the page itself is behind Cloudflare and could not be read first-hand. Confirm the wording in a browser; if confirmed, this row turns red like SGX. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "IDX official price list (eff. 2020-01-02): real-time market-data feeds only, no announcement product (CONFIRMED).",
+        "what_we_get": "No announcement/disclosure data product offered; real-time trading data only.",
+        "api": "n/a for announcements.",
+        "verdict": "UNKNOWN: the official IDX price list (effective 2020-01-02) prices only real-time trading feeds; no announcement data product exists to buy (CONFIRMED). Nothing to evaluate."
+      }
+    ],
+    "note": "Low confidence; verify with a browser session before committing effort."
+  },
+  {
+    "region": "THAILAND",
+    "provider": "SET News & Disclosure Center (Stock Exchange of Thailand) + SET Information Services (SETSMART)",
+    "main_area": "SET / mai listed companies' news and disclosures (acquisitions, disposals, tender offers), filterable by source (SET, TSD, mai, TFEX, SEC), security type and date (up to 5 years).",
+    "tiers": [
+      {
+        "label": "FREE (official web)",
+        "price": "THB 0 (CONFIRMED — no login or paywall on the news page).",
+        "what_we_get": "Company news and disclosures with 5-year date filter; Thai and English site.",
+        "api": "NO for announcements. Thai SEC Open Data API exists (api.sec.or.th, subscription-key header, portal secopendata.sec.or.th) but holds no listed-company announcement or deal data (CONFIRMED).",
+        "verdict": "ACCEPTABLE WITH CAVEAT (re-rated 2026-09-04, scraping route; was NOT SUITABLE): the SET Terms and Conditions contain no clause on scraping, crawling, robots or automated access, and downloading content \"for your own personal and non-commercial use\" is expressly permitted, so harvesting the News & Disclosure Center (web-only, filter by source/date, up to 5 years) is not prohibited by method. Caveat: permitted use is personal and non-commercial, and copying or transferring content \"to any third person\" needs SET's prior written permission - the same pattern as Bursa Malaysia; an internal analytical copy is arguably outside the ban, but request SET's written permission or a counsel opinion before production. Settrade.com (SET group mirror) inherits the same terms; Kaohoon International (free English news) has no readable terms (UNVERIFIED). [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "SETSMART corporate: USD 300 setup + USD 420 / 750 / 1,000 per user per month by tier (CONFIRMED). SMART Marketplace API: catalogue published, no announcement product.",
+        "what_we_get": "SETSMART: terminal access to listed-company data, financials, corporate actions. SMART Marketplace API: trading data, One Report, ESG, corporate actions, fundamentals - no announcements.",
+        "api": "YES for market/fundamental data via SMART Marketplace; NO announcement/deal feed.",
+        "verdict": "NOT SUITABLE: SETSMART is a per-user terminal (USD 300 setup + USD 420-1,000 per user per month, i.e. USD 5k-12k/yr per seat) and the SMART Marketplace API catalogue has trading data, One Report, ESG, corporate actions and fundamentals but NO news/announcement product - so no programmatic deal data even when paying."
+      }
+    ],
+    "note": ""
+  },
+  {
+    "region": "MALAYSIA",
+    "provider": "Bursa Malaysia Company Announcements (+ Securities Commission Malaysia take-over code)",
+    "main_area": "Bursa-listed companies' announcements covering acquisitions, disposals and take-overs under the Malaysian Code on Take-Overs and Mergers 2016.",
+    "tiers": [
+      {
+        "label": "FREE (official web)",
+        "price": "MYR 0 (INFERRED — every bursamalaysia.com URL returned HTTP 403 to automated fetches).",
+        "what_we_get": "Browsable announcement search; English. Site actively blocks automated access — browser harvesting only.",
+        "api": "NO — no public API found (CONFIRMED).",
+        "verdict": "ACCEPTABLE WITH CAVEAT: the undocumented Bursa /api/v1/announcements/search endpoint works today (2.09M records, CONFIRMED 2026-09-04) and carries acquisition/disposal/take-over announcements, free, English; but the site blocks generic bots and the endpoint is unsupported. Terms check: Bursa's terms have no scraping or automation clause; they permit viewing and one printed copy for personal, non-commercial use and prohibit copying, storing in an electronic retrieval system or downloading content \"to any third person\" without written consent - an internal copy is arguably outside the wording, Malaysian counsel to confirm. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID (optional)",
+        "price": "Bursa Malaysia historical data package M11 Summary of Corporate Exercise, sub-package M11C Others (Acquisitions, Private Placement, Special Issue): MYR 1,000/yr (about USD 260), data from 2008 (CONFIRMED). Full institutional market-data licences: quote.",
+        "what_we_get": "Historical summary of corporate exercises incl. acquisitions, by listed company, from 2008, delivered as files on subscription.",
+        "api": "NO API - bulk file delivery by subscription form (CONFIRMED).",
+        "verdict": "ACCEPTABLE, VERY CHEAP: Bursa historical package M11 \"Summary of Corporate Exercise\" includes M11C \"Others (Acquisitions, Private Placement, Special Issue)\" from 2008 at MYR 1,000/yr (about USD 260) - official, deal-relevant, delivered as a data file by subscription form (bulk export, not API). Good low-cost history complement to the free endpoint."
+      }
+    ],
+    "note": "Low confidence."
+  },
+  {
+    "region": "VIETNAM",
+    "provider": "HOSE / HNX exchange disclosure + State Securities Commission (SSC) + National Business Registration Portal",
+    "main_area": "Listed-company disclosures under Circular 96/2020/TT-BTC (M&A, tender offers, major-shareholder notices) and the national company register.",
+    "tiers": [
+      {
+        "label": "FREE (official web)",
+        "price": "VND 0 for exchange/regulator pages (INFERRED); business-registration portal has a fee schedule for some information services (CONFIRMED a fee section exists, scope UNCONFIRMED).",
+        "what_we_get": "UNCONFIRMED — HOSE is a client-rendered SPA, HNX failed TLS verification, SSC unreadable. Registration portal offers company search and an English toggle.",
+        "api": "PARTIAL - HOSE RSS only (api.hsx.vn NewsFeed, category 21 = listed-issuer news, ~10 latest items, no history, CONFIRMED 2026-09-04); HNX/SSC none.",
+        "verdict": "ACCEPTABLE WITH CAVEAT (re-rated 2026-09-04, scraping route; was NOT SUITABLE): HNX and the SSC publish no terms of use at all (footer copyright and publishing-licence lines only, no robots.txt), so nothing prohibits automated collection of their disclosure pages; HOSE's terms could not be read (JavaScript site, footer never renders, robots.txt fully permissive) - verify in a browser before harvesting. Silence is not permission: Vietnamese copyright still protects the compilations and HNX sells an information-services feed. The real limit is quality: web pages in Vietnamese, HOSE RSS carries only about 10 items, no deal database. Free aggregators worth an in-browser terms check: VietstockFinance (one search across HOSE, HNX and UPCoM disclosures) and CafeF (business archive back to 2007, reports private and foreign-buyer deals). [Terms check 2026-09-04: deep/scraping_tos]"
+      }
+    ],
+    "note": "Lowest confidence of the Asian markets. Scraping not prohibited by HNX/SSC (no terms exist); HOSE terms unread. Needs a browser-based re-check of HOSE and of the two aggregators."
+  },
+  {
+    "region": "USA + ASIA (private deals)",
+    "provider": "Tracxn (paid commercial database) — possibility, decide later",
+    "main_area": "Private-to-private deals that never appear in filings: 226K+ acquisitions, 7.7M+ companies, 1.8M+ funding rounds; strong on India / SEA / China startups, thin on traditional Japanese SMEs (~14,500 Japan acquisitions vs ~99,000 US).",
+    "tiers": [
+      {
+        "label": "FREE — Tracxn Lite",
+        "price": "USD 0 (self-serve signup; non-commercial use; 'may become unavailable in the future' — CONFIRMED).",
+        "what_we_get": "Metered browsing of the full curated database: 200 export credits/month, 1 report download/day, no API, no Live Deals, no sharing. Enough to measure recall against our EDGAR/EDINET deal set before buying.",
+        "api": "NO — Lite explicitly excludes API.",
+        "verdict": "NOT SUITABLE FOR PRODUCTION: Lite has no API, 200 export credits/month, non-commercial terms and may be withdrawn. GOOD for one purpose only - the recall test against our EDGAR/EDINET deal set before any purchase. Terms check: Tracxn's Terms of Use ban \"web crawlers, robots, spiders, or any automated methods to ... scrape, extract, index, download large amounts of data\" unless permitted through its APIs, and the pricing page labels Lite \"For personal use\" - so the web-portal route is closed; only the paid API/bulk pack counts. [Terms check 2026-09-04: deep/scraping_tos]"
+      },
+      {
+        "label": "PAID — Premium seats / Data Solutions",
+        "price": "No public rate card. Premium: quote; INFERRED ~USD 4.3K/yr median account from Tracxn FY26 annual report. Data Solutions (API / SFTP / Snowflake / BigQuery): volume-based quote, 'Internal Usage' vs 'Commercial Redistribution' licence packs; INFERRED mid tier USD 10K-50K/yr for an Asia acquisitions pack.",
+        "what_we_get": "Premium: unrestricted access, Deal Flow CRM, Live Deals, custom taxonomy, Salesforce integration, MCP connector. Data Solutions: REST APIs, scheduled SFTP dumps, Snowflake share or BigQuery sync of companies, legal entities, investors, funding rounds and acquisitions — the only route to bulk private-deal records for model training (licence clause naming internal model training required).",
+        "api": "YES — REST + bulk delivery for paying customers (auth/limits not public).",
+        "verdict": "GOOD DATA, PRICE TO CONFIRM: strong private-deal coverage (226k acquisitions; Europe 71k, USA 99k, Asia 14.5k) with REST API and bulk delivery for paying customers, one schema across all regions. Premium seats (INFERRED ~USD 4.3k/yr median account) pass the USD 10k ceiling; the Data Solutions API/bulk pack was inferred at USD 10k-50k/yr and may exceed it - get the quote first. Weak on traditional Japanese SMEs."
+      }
+    ],
+    "note": "Optional paid layer for private deals. Decision deferred: measure recall on Lite first; substitute candidates Mergr (USD 1,800/yr/seat, US/EU PE-heavy) or SPEEDA (Japan)."
+  }
+]

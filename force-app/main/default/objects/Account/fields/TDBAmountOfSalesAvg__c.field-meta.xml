@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TDBAmountOfSalesAvg__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  (
+    IF(NOT(ISBLANK(TDBAmountOfSales3__c)), 1, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales2__c)), 1, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales__c)), 1, 0)
+  ) &gt; 0,
+  (
+    IF(NOT(ISBLANK(TDBAmountOfSales3__c)), TDBAmountOfSales3__c, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales2__c)), TDBAmountOfSales2__c, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales__c)), TDBAmountOfSales__c, 0)
+  ) /
+  (
+    IF(NOT(ISBLANK(TDBAmountOfSales3__c)), 1, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales2__c)), 1, 0) +
+    IF(NOT(ISBLANK(TDBAmountOfSales__c)), 1, 0)
+  ),
+  NULL
+)</formula>
+    <label>TDB三期売上高平均</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

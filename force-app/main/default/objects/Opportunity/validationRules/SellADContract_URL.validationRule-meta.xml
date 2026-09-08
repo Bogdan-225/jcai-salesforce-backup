@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellADContract_URL</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    /* 項目が空白でない場合のみチェックを行う */
+    NOT(ISBLANK( SellADContract_URL__c )),
+
+    /* 以下の「許可する条件」のいずれにも当てはまらない(NOT)場合にエラーとする */
+    NOT(
+        OR(
+            /* パターン1: google.com と usp=sharing の両方を含む */
+            AND(
+                CONTAINS( SellADContract_URL__c , &quot;google.com&quot;),
+                CONTAINS( SellADContract_URL__c , &quot;usp=sharing&quot;)
+            ),
+            /* パターン2: box.com/s/ を含む */
+            CONTAINS( SellADContract_URL__c , &quot;box.com/s/&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>SellADContract_URL__c</errorDisplayField>
+    <errorMessage>GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す])</errorMessage>
+</ValidationRule>

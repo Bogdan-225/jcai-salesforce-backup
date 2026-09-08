@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_OnHoldReason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(StageName, &quot;On Hold&quot;),
+ISPICKVAL(StageName, &quot;保留&quot;)),
+ISBLANK(OnHoldReason__c)
+)</errorConditionFormula>
+    <errorDisplayField>OnHoldReason__c</errorDisplayField>
+    <errorMessage>[On-Hold Reason]は必須です。</errorMessage>
+</ValidationRule>

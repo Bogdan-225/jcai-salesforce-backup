@@ -1,0 +1,177 @@
+[
+  {
+    "site": "Stock Exchange of Thailand (SET)",
+    "region": "Thailand",
+    "homepage": "https://www.set.or.th",
+    "terms_urls_checked": [
+      "https://www.set.or.th/en/terms-and-conditions"
+    ],
+    "robots_txt": {
+      "url": "https://www.set.or.th/robots.txt",
+      "fetched": true,
+      "summary": "User-agent: * / Allow: / with Disallow on /*/preview/, /preview/, /config/, /data/, /dat/, /_partial/, /commons/, /set/. Public News & Disclosure pages under /en/market/news-and-alert/ are NOT disallowed, but /data/ and /set/ are - some backend/JSON paths used by the site may fall under those prefixes, so check the exact endpoint path before crawling."
+    },
+    "stance": "CONDITIONAL",
+    "clause_verbatim": "you may only view, download, upload the Contents and print any document of the Contents for your own personal and non-commercial use ... You may not copy, store or download either in hard copy, copy in electronics format or in any other forms for the purpose in transmit, transfer, perform, broadcast, publish, reproduce, create a derivative work from, display, distribute, sell, license, rent, lease or otherwise transfer any of Contents to any third person",
+    "commercial_use_or_redistribution": "Prohibited without prior written permission. Use of Contents is limited to the user's own personal and non-commercial use; any transfer, distribution, publication, reproduction, sale or licensing of Contents to a third person is barred, whether or not for commercial gain. All Contents are stated to be protected by intellectual property rights under Thai and other law, and SET Group trade names/marks require prior written consent.",
+    "practical_notes": "The terms contain NO language about scraping, crawling, robots, spiders, bots, data mining, harvesting or automated tools - the restriction is framed around copying/redistribution rather than method of access. Downloading for one's own use is expressly permitted. The blocker for a commercial M&A database is therefore the non-commercial/no-redistribution limb, not automated access as such. Written permission from SET would cure it. robots.txt is permissive for the disclosure pages.",
+    "confidence": "high",
+    "sources": [
+      "https://www.set.or.th/robots.txt",
+      "https://www.set.or.th/en/terms-and-conditions"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Ho Chi Minh Stock Exchange (HOSE)",
+    "region": "Vietnam",
+    "homepage": "https://www.hsx.vn",
+    "terms_urls_checked": [
+      "https://www.hsx.vn/ (homepage footer - not renderable)",
+      "https://r.jina.ai/https://www.hsx.vn/ (footer not rendered)",
+      "https://r.jina.ai/https://www.hsx.vn/Modules/Rss/Web/NewsRss"
+    ],
+    "robots_txt": {
+      "url": "https://www.hsx.vn/robots.txt",
+      "fetched": true,
+      "summary": "Fully permissive: 'User-agent: *' followed by an empty 'Disallow:' - i.e. no path on the site is disallowed to any crawler, including listed-issuer news. No crawl-delay and no sitemap directive."
+    },
+    "stance": "UNVERIFIED",
+    "clause_verbatim": "",
+    "commercial_use_or_redistribution": "Not established. No terms-of-use, copyright or disclaimer page could be read.",
+    "practical_notes": "www.hsx.vn is a JavaScript single-page application; every fetch (direct HTTPS, and via the r.jina.ai reader) returned only the page title and logo, with no footer, no navigation and no legal links. WebSearch restricted to hsx.vn surfaced only PDFs of trading rules and index ground rules, no 'Dieu khoan su dung' page. web.archive.org is not reachable from this tool, so the archived footer could not be checked. Note that some HOSE PDFs carry their own document-level copyright notice prohibiting reproduction without consent, but that is per-document and was not read in full. TREAT AS UNRESOLVED: the only positive signal is a fully permissive robots.txt, which is a technical signal and not a contract. Recommend a manual browser check of the hsx.vn footer before any collection decision.",
+    "confidence": "low",
+    "sources": [
+      "https://www.hsx.vn/robots.txt",
+      "https://www.hsx.vn/"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Hanoi Stock Exchange (HNX)",
+    "region": "Vietnam",
+    "homepage": "https://www.hnx.vn",
+    "terms_urls_checked": [
+      "https://www.hnx.vn/vi-vn/ (homepage footer)",
+      "https://www.hnx.vn/vi-vn/dich-vu-cctt.html (information services)",
+      "https://r.jina.ai/https://www.hnx.vn/vi-vn/"
+    ],
+    "robots_txt": {
+      "url": "https://www.hnx.vn/robots.txt",
+      "fetched": false,
+      "summary": "HTTP 404 on both https://www.hnx.vn/robots.txt and https://hnx.vn/robots.txt - the site publishes no robots.txt at all, so there is no technical exclusion signal either way."
+    },
+    "stance": "SILENT",
+    "clause_verbatim": "© 2016 Bản quyền thuộc \"Sở Giao dịch Chứng khoán Hà Nội\". [EN gloss: 'Copyright 2016 belongs to the Hanoi Stock Exchange.'] -- The site also cites licence 'Giấy phép số 151/GP-BC ngày 29/8/2005' for providing information on the Internet.",
+    "commercial_use_or_redistribution": "No express clause found. Only a bare copyright assertion in the footer. One fetch of the 'Dich vu cung cap thong tin' (information services) page additionally reported the line 'Liên hệ với Sở Giao dịch Chứng khoán Hà Nội khi phát hành thông tin từ Website này' [EN gloss: 'Contact the Hanoi Stock Exchange when publishing information from this website'], which would be a republication-notification condition - but a second targeted fetch of the same footer did NOT reproduce that line, so it is REPORTED BUT UNCONFIRMED and must not be relied on as quoted. HNX separately operates a paid information-services offering, which implies data licensing exists for bulk/commercial use.",
+    "practical_notes": "No dedicated Terms of Use, Disclaimer or 'Dieu khoan su dung' page exists in the footer; the footer links are only Dich vu cung cap thong tin (/dich-vu-cctt.html), RSS (/rss.html), Lien ket and Lien he. Nothing anywhere mentions scraping, crawling, robots, bots, automated access or data mining. Absence of robots.txt plus absence of terms means there is no contractual prohibition to point to, but equally no permission - Vietnamese copyright law still applies to the compilation. The existence of a commercial information-services line is the main commercial-risk flag: bulk extraction may be seen as substituting for a paid feed. Recommend confirming the republication line directly with HNX.",
+    "confidence": "medium",
+    "sources": [
+      "https://www.hnx.vn/vi-vn/",
+      "https://www.hnx.vn/vi-vn/dich-vu-cctt.html"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "State Securities Commission of Vietnam (SSC / UBCKNN)",
+    "region": "Vietnam",
+    "homepage": "https://ssc.gov.vn",
+    "terms_urls_checked": [
+      "https://ssc.gov.vn/ (redirects to http://ssc.gov.vn/webcenter/portal/ubck)",
+      "https://r.jina.ai/https://ssc.gov.vn/webcenter/portal/ubck"
+    ],
+    "robots_txt": {
+      "url": "https://ssc.gov.vn/robots.txt",
+      "fetched": false,
+      "summary": "HTTP 404 on both https://ssc.gov.vn/robots.txt and https://www.ssc.gov.vn/robots.txt - no robots.txt published. Note the portal 302-redirects https to http, which is itself a sign of an old Oracle WebCenter deployment."
+    },
+    "stance": "SILENT",
+    "clause_verbatim": "Số giấy phép: 300/GP-BC, Bộ Thông tin và Truyền thông cấp ngày 01/7/2004 [EN gloss: 'Licence No. 300/GP-BC, issued by the Ministry of Information and Communications on 1 July 2004'] - this publishing-licence line, plus the named responsible official, is the only legal notice in the footer.",
+    "commercial_use_or_redistribution": "No express clause found. The SSC portal footer carries no copyright restriction, no reuse condition and no source-attribution requirement. Vietnamese government portals commonly impose a 'Ghi ro nguon' (cite the source) condition in a separate 'Quy che' document, but no such page was found on ssc.gov.vn and none should be assumed.",
+    "practical_notes": "Footer contains only: Sitemap, RSS, contact info, user guide, hotline, and outbound links to dangcongsan.vn, chinhphu.vn, quochoi.vn, mof.gov.vn, vnx.vn, hnx.vn, hsx.vn, vsd.vn, srtc.org.vn. No Terms of Use, no Disclaimer, no automated-access language anywhere. As a government body publishing statutory disclosure, the content is largely official state material. No robots.txt and no terms means no contractual bar was found - but this is 'nothing found', not 'permission granted'. A targeted search for an SSC 'Quy che' reuse regulation returned only generic Vietnamese regulations for other ministries, none of which bind SSC's site.",
+    "confidence": "medium",
+    "sources": [
+      "http://ssc.gov.vn/webcenter/portal/ubck"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Singapore Exchange (SGX)",
+    "region": "Singapore",
+    "homepage": "https://www.sgx.com",
+    "terms_urls_checked": [
+      "https://www.sgx.com/terms-use",
+      "https://r.jina.ai/https://www.sgx.com/terms-use",
+      "https://www.sgx.com/terms-use-website (no separate content)"
+    ],
+    "robots_txt": {
+      "url": "https://www.sgx.com/robots.txt",
+      "fetched": true,
+      "summary": "Fully permissive: 'User-agent: * / Allow: /' plus 'Sitemap: https://www.sgx.com/sitemap.xml'. Header comment says last updated 15 September 2022. Nothing is disallowed, including company announcements. NOTE the sharp divergence: robots.txt is wide open while the Terms of Use are the most restrictive in this group - robots.txt is a technical signal, not a contract, and does not override the terms."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "You may not obtain, or attempt to obtain, any Materials or other information through any means not intentionally made available on or through our Website or Mobile App. -- and -- You may access and view our Website and Mobile App and may save an electronic copy or print out a copy of the Materials, solely for your own personal and non-commercial use. -- and -- you may not copy, store (either in hardcopy or in an electronic retrieval system), adapt, alter, translate, transmit, disseminate, distribute, perform, broadcast, publish, reproduce, publicly display, hyperlink, sell, license, rent, lease or otherwise transfer any of the Materials",
+    "commercial_use_or_redistribution": "Prohibited. Permitted use is expressly 'solely for your own personal and non-commercial use'. Transfer of Materials is barred 'whether for direct commercial purpose or monetary gain or otherwise'. Deep-linking is separately banned: 'You may not deep-link to our Website or Mobile App', with the terms specifically calling out pages containing prices, documents of listed issuers or third parties, SGXNET announcements and Catalodge, and dynamically created content. Caching, linking, embedding, mirroring and framing of Pages or Materials are prohibited. For the Stock Screener: 'You are not authorized or permitted to furnish or redistribute such information or software in any form or manner to any third party.'",
+    "practical_notes": "IMPORTANT - the literal words scrape, crawl, robot, spider, automated, bot, data mining, harvest, extract and systematic are ALL ABSENT from the SGX Terms of Use; the prohibition is achieved functionally by the 'means not intentionally made available' clause. That clause is directly on point for the undocumented api.sgx.com backend endpoint the team was considering: an internal JSON API that is not a published, intentionally-offered interface is precisely a means not intentionally made available. Combined with personal/non-commercial-only permitted use, an explicit deep-link ban naming SGXNET announcements, and an explicit no-caching/no-mirroring clause, SGX is the clearest 'do not scrape' of the seven. SGX licenses market data commercially, so a data licence is the intended route. Highest legal risk in this group.",
+    "confidence": "high",
+    "sources": [
+      "https://www.sgx.com/robots.txt",
+      "https://www.sgx.com/terms-use"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Indonesia Stock Exchange (IDX / BEI)",
+    "region": "Indonesia",
+    "homepage": "https://www.idx.co.id",
+    "terms_urls_checked": [
+      "https://www.idx.co.id/en/terms-of-use/ (403 direct; CAPTCHA via reader)",
+      "https://www.idx.co.id/id/syarat-penggunaan (CAPTCHA via reader)",
+      "https://www.idx.co.id/en-us/term-and-condition/ (CAPTCHA via reader)",
+      "https://idx.co.id/en/terms-of-use/ (CAPTCHA via reader)",
+      "https://www.idx.co.id/media/lbxk4zpy/final-general-term-of-use-version-0-3-2024-efektif-1-january-2024-1.pdf (403)"
+    ],
+    "robots_txt": {
+      "url": "https://www.idx.co.id/robots.txt",
+      "fetched": false,
+      "summary": "HTTP 403 direct; the r.jina.ai reader returned a Cloudflare CAPTCHA interstitial instead of the file. robots.txt content could not be established. The site is aggressively bot-protected at the edge, which is itself a strong deliberate anti-automation signal independent of the written terms."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "[NOT READ FIRST-HAND - RECONSTRUCTED FROM SEARCH-ENGINE INDEXES OF THE TERMS PAGE, DO NOT QUOTE AS VERBATIM] The IDX Terms of Use are indexed as stating that quotation of information or data for non-commercial purposes is permitted provided the full source and the user's date of access are cited, but that the use of web scraping / crawling methods is not permitted; and that users may not use or distribute information or data obtained from the website to third parties for commercial purposes without prior written permission from the Indonesia Stock Exchange or the original owner of the data.",
+    "commercial_use_or_redistribution": "Reported as prohibited without prior written permission from IDX or the original data owner. Non-commercial quotation is reported as permitted only with full source citation and the access date. IDX operates a commercial data business (IDX Data Services, data.idx.co.id) and publishes a separate 'General Term of Use' licence document (final-general-term-of-use v0.3, effective 1 January 2024), which is the intended commercial route.",
+    "practical_notes": "THE ONLY SITE IN THIS GROUP WITH AN EXPLICIT, WORD-FOR-WORD SCRAPING BAN - but the page itself is behind Cloudflare and could NOT be read directly. Tried: direct https (403), r.jina.ai reader on four URL variants (all returned the CAPTCHA interstitial), www and non-www, English and Indonesian paths, and the licence PDF (403). web.archive.org is not reachable from this tool. Three independent search-engine reads of https://www.idx.co.id/en/terms-of-use/ and https://www.idx.co.id/id/syarat-penggunaan agreed on the same substance, which is why the stance is PROHIBITS rather than UNVERIFIED, but the wording above is a reconstruction and MUST be re-read in a real browser and quoted exactly before it is relied on in any decision memo. The GetAnnouncement backend endpoint sits behind the same Cloudflare protection. Practical read: do not scrape IDX; licence via IDX Data Services.",
+    "confidence": "medium",
+    "sources": [
+      "https://www.idx.co.id/en/terms-of-use/",
+      "https://www.idx.co.id/id/syarat-penggunaan",
+      "https://www.idx.co.id/media/lbxk4zpy/final-general-term-of-use-version-0-3-2024-efektif-1-january-2024-1.pdf"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Bursa Malaysia",
+    "region": "Malaysia",
+    "homepage": "https://www.bursamalaysia.com",
+    "terms_urls_checked": [
+      "https://www.bursamalaysia.com/term_conditions_of_use_disclaimer_and_linking_policy",
+      "https://www.bursamalaysia.com/disclaimer_company_announcement",
+      "https://www.bursamalaysia.com/misc/terms_of_use (404)"
+    ],
+    "robots_txt": {
+      "url": "https://www.bursamalaysia.com/robots.txt",
+      "fetched": true,
+      "summary": "Fetched via the r.jina.ai reader (403 direct). Contents: 'User-agent: * / Disallow: /locomotive/* / Disallow: /market/listed-companies/company-announcements/subscribe/*'. The company-announcements LISTING itself is not disallowed - only the /subscribe/ sub-path and the CMS /locomotive/ path. So robots.txt does not technically exclude announcement crawling."
+    },
+    "stance": "CONDITIONAL",
+    "clause_verbatim": "Users may view the Website and its Contents and print one copy of the Website, or particular parts of the Website, solely for personal and non-commercial use, research or information. Users are strictly prohibited from copying, storing (either in hardcopy or in an electronic retrieval system), downloading, transmitting, transferring, publishing, reproducing, broadcasting, displaying, distributing, selling, licensing any part of the Contents to any third person whether for commercial purposes, for pecuniary gain or otherwise, without the prior written consent of Bursa Malaysia.",
+    "commercial_use_or_redistribution": "Prohibited without the prior written consent of Bursa Malaysia. Permitted use is confined to viewing and printing ONE copy for personal and non-commercial use, research or information. The prohibition expressly covers 'storing ... in an electronic retrieval system' and 'downloading', which is the limb that a scraped internal database would engage. The separate Company Announcements disclaimer adds that announcements are provided 'on an as is basis', that Bursa acts as 'a passive conduit', and that it makes no warranty as to correctness, accuracy, timeliness, completeness or fitness for purpose.",
+    "practical_notes": "No mention anywhere of scrape, crawl, robot, spider, bot, data mining, harvest, extract or 'systematic retrieval' - the restriction is drafted around acts (copying, storing in an electronic retrieval system, downloading, distributing) rather than around method of access, so it bites on the RESULT of scraping rather than the scraping itself. Note the tension: the clause permits personal non-commercial viewing but the 'strictly prohibited from ... storing ... downloading' limb is qualified by 'to any third person', so a purely internal copy is arguably not caught - this is a genuine construction question and is exactly the kind of point that should go to Malaysian counsel rather than be resolved here. Site returns 403 to plain clients; the r.jina.ai reader prefix worked for both the terms page and robots.txt. Written consent from Bursa would remove the ambiguity.",
+    "confidence": "high",
+    "sources": [
+      "https://www.bursamalaysia.com/robots.txt",
+      "https://www.bursamalaysia.com/term_conditions_of_use_disclaimer_and_linking_policy",
+      "https://www.bursamalaysia.com/disclaimer_company_announcement"
+    ],
+    "checked": "2026-09-04"
+  }
+]

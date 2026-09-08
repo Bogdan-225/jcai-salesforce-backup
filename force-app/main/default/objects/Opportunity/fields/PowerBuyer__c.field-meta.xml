@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PowerBuyer__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Power Buyer</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>譲渡案件 (Power Buyer)</relationshipLabel>
+    <relationshipName>PowerBuyer</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

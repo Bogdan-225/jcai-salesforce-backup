@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConflictSourceName__c</fullName>
+    <description>DealConflictがONになった時の重複元案件名を記録(OFF時の活動件名用・フロー管理・手動編集不可)</description>
+    <externalId>false</externalId>
+    <label>重複元案件名(内部)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

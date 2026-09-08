@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emailable__c</fullName>
+    <description>メール(Email)が入力されており、かつ連絡不可(No_Contact__c)が空白のとき true。メール送付が可能な状態を表す。取引先の「メール可能担当者数」は、この項目が true の取引先責任者を集計している。</description>
+    <formula>NOT(ISBLANK(Email)) &amp;&amp; ISBLANK(TEXT(No_Contact__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>メールアドレスが入力され、かつ「連絡不可」が空白（＝メール送付できる状態）のとき、自動でチェックが付きます。数式項目のため手動編集はできません。</inlineHelpText>
+    <label>メール可能</label>
+    <type>Checkbox</type>
+</CustomField>

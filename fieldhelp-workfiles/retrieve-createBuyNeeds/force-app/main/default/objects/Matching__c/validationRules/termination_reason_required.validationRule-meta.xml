@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>termination_reason_required</fullName>
+    <active>true</active>
+    <description>終了理由必須の規則</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(phase_match__c, &quot;マッチ終了&quot;),
+ISBLANK(termination_reason__c)
+)</errorConditionFormula>
+    <errorDisplayField>termination_reason__c</errorDisplayField>
+    <errorMessage>マッチ終了を選択した場合、終了理由は必須です。</errorMessage>
+</ValidationRule>

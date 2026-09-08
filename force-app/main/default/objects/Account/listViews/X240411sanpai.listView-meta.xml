@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X240411sanpai</fullName>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>TDBLocation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DMPATTERN240411__c</field>
+        <operation>contains</operation>
+        <value>240411_産廃_全国_中園</value>
+    </filters>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>宮澤 志麻子さん依頼リスト240815_産廃_全国_中園</label>
+</ListView>

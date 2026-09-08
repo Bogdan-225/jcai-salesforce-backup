@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSRAmountOfSales_average__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        TSRAmountOfSales1__c=0,
+        TSRAmountOfSales2__c=0,
+        TSRAmountOfSales3__c=0
+    ),
+    0,
+    (
+        IF(OR(ISBLANK(TSRAmountOfSales1__c), TSRAmountOfSales1__c = 0), 0, TSRAmountOfSales1__c) +
+        IF(OR(ISBLANK(TSRAmountOfSales2__c), TSRAmountOfSales2__c = 0), 0, TSRAmountOfSales2__c) +
+        IF(OR(ISBLANK(TSRAmountOfSales3__c), TSRAmountOfSales3__c = 0), 0, TSRAmountOfSales3__c)
+    )
+    /
+    (
+        IF(OR(ISBLANK(TSRAmountOfSales1__c), TSRAmountOfSales1__c = 0), 0, 1) +
+        IF(OR(ISBLANK(TSRAmountOfSales2__c), TSRAmountOfSales2__c = 0), 0, 1) +
+        IF(OR(ISBLANK(TSRAmountOfSales3__c), TSRAmountOfSales3__c = 0), 0, 1)
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TSR三期売上高平均</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

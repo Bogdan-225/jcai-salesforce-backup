@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X250702sawegs</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>TSRRepKanji__c</columns>
+    <columns>TSRLocation__c</columns>
+    <columns>TDBLocation__c</columns>
+    <columns>representative_phone__c</columns>
+    <columns>representative_phone_memo__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TDBParent__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>domestic_is_memo__c</field>
+        <operation>contains</operation>
+        <value>掘り起こし_250625_②</value>
+    </filters>
+    <label>遠藤リスト250703_掘り起こし</label>
+</ListView>

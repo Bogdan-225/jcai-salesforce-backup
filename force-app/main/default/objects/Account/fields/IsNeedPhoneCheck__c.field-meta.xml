@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsNeedPhoneCheck__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>電話番号が間違えている可能性があるため、検索し正しいかどうかを確認してから架電をしてください。
+正しいことが確認出来たらチェックを外してください。</inlineHelpText>
+    <label>電話番号チェック必須</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

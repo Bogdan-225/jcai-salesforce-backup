@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PJ_Frost_Out_Out_Call</fullName>
+    <columns>CB_M_CountryBuyer__c</columns>
+    <columns>Buy_Company__c</columns>
+    <columns>LastCalledRep__c</columns>
+    <columns>phase_match__c</columns>
+    <columns>status__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>OppID__c</columns>
+    <columns>Sell__c</columns>
+    <columns>Sell_OwnerfullName__c</columns>
+    <columns>termination_reason__c</columns>
+    <columns>other_termination_reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OppID__c</field>
+        <operation>equals</operation>
+        <value>006RA00000Wy5tMYAR</value>
+    </filters>
+    <filters>
+        <field>phase_match__c</field>
+        <operation>equals</operation>
+        <value>アプローチ,MG対応,NN準備</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Matching__c.Matching_Out_Out</value>
+    </filters>
+    <filters>
+        <field>CB_M_CountryBuyer__c</field>
+        <operation>contains</operation>
+        <value>India,China,South Korea,Taiwan,Hong Kong,Singapore,Australia,Indonesia,Vietnam,Malaysia,Philippines,Thailand,New Zealand,Fiji,Marshall Islands</value>
+    </filters>
+    <label>PJ Frost_Out-Out_Call</label>
+    <sharedTo>
+        <role>IS_Buy</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HanshaCheck__c</fullName>
+    <label>反社チェック結果</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>問題なし</fullName>
+                <default>false</default>
+                <label>問題なし</label>
+            </value>
+            <value>
+                <fullName>要再調査</fullName>
+                <default>false</default>
+                <label>要再調査</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

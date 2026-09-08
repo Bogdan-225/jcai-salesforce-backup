@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_CorporateNumber</fullName>
+    <active>true</active>
+    <description>国内レコード新規作成時のみ法人番号必須</description>
+    <errorConditionFormula>AND(
+    ISNEW(),
+    RecordType.Name = &quot;国内&quot;,
+    ISBLANK( CorporateNumber__c )
+)</errorConditionFormula>
+    <errorDisplayField>CorporateNumber__c</errorDisplayField>
+    <errorMessage>法人番号を入力してください。</errorMessage>
+</ValidationRule>

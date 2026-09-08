@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2603_5_30vt5</fullName>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>TDBLocation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>domestic_is_memo__c</field>
+        <operation>equals</operation>
+        <value>舗装工事業_2603</value>
+    </filters>
+    <filters>
+        <field>SellCallNGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>遠藤リスト2603_舗装工事業_5-30億</label>
+</ListView>

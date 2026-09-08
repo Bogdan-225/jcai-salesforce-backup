@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>起点となった案件。</description>
+    <label>(新)譲渡案件</label>
+    <referenceTo>Project__c</referenceTo>
+    <relationshipLabel>契約書（新譲渡案件）</relationshipLabel>
+    <relationshipName>Contracts_New</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>has_high_volume_prescription_site__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>年間処方箋枚数1万枚以上の事業所を一件でも持っているか</description>
+    <label>年間処方箋枚数1万枚以上</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

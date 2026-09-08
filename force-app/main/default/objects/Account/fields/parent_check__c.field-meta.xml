@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>parent_check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>直近成約データから完全社名一致で親会社を入力した先のうち、同社名が2社以上あった先につけられるフラグ。手動で精査予定先</inlineHelpText>
+    <label>親会社重複フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

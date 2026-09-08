@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X260123f</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>TSRRepKanji__c</columns>
+    <columns>TSRLocation__c</columns>
+    <columns>TDBLocation__c</columns>
+    <columns>representative_phone__c</columns>
+    <columns>representative_phone_memo__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>TDBParent__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>domestic_is_memo__c</field>
+        <operation>equals</operation>
+        <value>学習塾 5億以上_2601</value>
+    </filters>
+    <filters>
+        <field>newMatching__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>SellCallNGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>渡辺リスト2601_学習塾</label>
+</ListView>

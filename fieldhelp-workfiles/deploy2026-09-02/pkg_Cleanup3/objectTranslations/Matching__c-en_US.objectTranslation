@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>For internal control. Auto-termination marker (used to decide reinstatement). Do not edit.</help>
+        <name>AutoTerminated__c</name>
+    </fields>
+    <fields>
+        <help>For internal control. Used by the auto-termination/reinstatement process. Do not edit.</help>
+        <name>ConflictSourceName__c</name>
+    </fields>
+    <fields>
+        <help>System administrators only. When checked, the worker fetches emails via Apollo. The checkbox clears automatically when processing starts (prevents duplicate runs).</help>
+        <name>MailFetchTarget__c</name>
+    </fields>
+</CustomObjectTranslation>

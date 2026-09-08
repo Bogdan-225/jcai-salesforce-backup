@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Matching__c.Buy_Company__c</members>
+        <members>Matching__c.CB_T_TossUpDate__c</members>
+        <members>Matching__c.ExternalID1st__c</members>
+        <members>Matching__c.LastCalledRep__c</members>
+        <members>Matching__c.NDADateCheck__c</members>
+        <members>Matching__c.Purpose__c</members>
+        <members>Matching__c.Sell_ApproachStatus__c</members>
+        <members>Matching__c.Sell_Company__c</members>
+        <members>Matching__c.Sell_StageName__c</members>
+        <members>Matching__c.Sell__c</members>
+        <members>Matching__c.Status_Date__c</members>
+        <members>Matching__c.TDBAmountOfSales__c</members>
+        <members>Matching__c.TDBMajorClassification__c</members>
+        <members>Matching__c.TDBMiddleClassification__c</members>
+        <members>Matching__c.TDBProfit__c</members>
+        <members>Matching__c.TM_Contact__c</members>
+        <members>Matching__c.phase_match__c</members>
+        <members>Matching__c.status__c</members>
+        <members>Matching__c.termination_reason__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Matching__c-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <version>62.0</version>
+</Package>

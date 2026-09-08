@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X250421_DMager</fullName>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>TSRRepKanji__c</columns>
+    <columns>TDBLocation__c</columns>
+    <columns>TSRLocation__c</columns>
+    <columns>DMPATTERN240329__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DMPATTERN240329__c</field>
+        <operation>equals</operation>
+        <value>遊技場_中園_2507</value>
+    </filters>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>西尾リスト250624_遊戯場DM先</label>
+</ListView>

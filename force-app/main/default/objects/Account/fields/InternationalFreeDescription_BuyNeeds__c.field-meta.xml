@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InternationalFreeDescription_BuyNeeds__c</fullName>
+    <inlineHelpText>過去データ参照のみ。今後は[買収ニーズ]オブジェクトで管理をお願いします。</inlineHelpText>
+    <label>自由記述欄(海外買)</label>
+    <length>1500</length>
+    <trackFeedHistory>true</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>15</visibleLines>
+</CustomField>

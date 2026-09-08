@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_MOU_LOI</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    ISPICKVAL(StageName, &quot;DD&quot;),
+    Check_DocUploaded_MOU__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>LOIとMOUを[Upload Files]ボタンからアップロードしてください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_GroupGICS__c</fullName>
+    <label>Industry Group(GICS)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>SectorGICS__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>IndustryGroupGICS</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Real Estate</controllingFieldValue>
+            <valueName>Equity Real Estate Investment Trusts (REITs)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Real Estate</controllingFieldValue>
+            <valueName>Real Estate Management and Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Energy</controllingFieldValue>
+            <valueName>Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Materials</controllingFieldValue>
+            <valueName>Materials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Capital Goods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Commercial  and Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Discretionary</controllingFieldValue>
+            <valueName>Automobiles and Components</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Discretionary</controllingFieldValue>
+            <valueName>Consumer Durables and Apparel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Discretionary</controllingFieldValue>
+            <valueName>Consumer Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Discretionary</controllingFieldValue>
+            <valueName>Consumer Discretionary Distribution and Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Staples</controllingFieldValue>
+            <valueName>Consumer Staples Distribution and Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Staples</controllingFieldValue>
+            <valueName>Food, Beverage and Tobacco</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Staples</controllingFieldValue>
+            <valueName>Household and Personal Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Health Care Equipment and Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Pharmaceuticals, Biotechnology and Life Sciences</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financials</controllingFieldValue>
+            <valueName>Banks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financials</controllingFieldValue>
+            <valueName>Financial Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financials</controllingFieldValue>
+            <valueName>Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Information Technology</controllingFieldValue>
+            <valueName>Software and Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Information Technology</controllingFieldValue>
+            <valueName>Technology Hardware and Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Information Technology</controllingFieldValue>
+            <valueName>Semiconductors and Semiconductor Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Communication Services</controllingFieldValue>
+            <valueName>Telecommunication Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Communication Services</controllingFieldValue>
+            <valueName>Media and Entertainment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Utilities</controllingFieldValue>
+            <valueName>Utilities</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

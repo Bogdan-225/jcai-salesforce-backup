@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_FS</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        RecordType.DeveloperName = &quot;XBorderType&quot;,
+        RecordType.DeveloperName = &quot;CB_Project&quot;
+    ),
+    ISCHANGED(StageName),
+    TEXT(PRIORVALUE(StageName)) = &quot;FS Request&quot;,
+    CASE(
+        StageName,
+        &quot;リード反響&quot;, 1.0,
+        &quot;NDA締結&quot;, 2.0,
+        &quot;FS Request&quot;, 3.0,
+        &quot;バリュエーション済み&quot;, 4.0,
+        &quot;案件化&quot;, 5.0,
+        &quot;ISマッチング中&quot;, 6.0,
+        &quot;MGマッチング中&quot;, 6.0,
+        &quot;Pre Top MTG&quot;, 7.0,
+        &quot;トップ面談&quot;, 8.0,
+        &quot;Post Top MTG&quot;, 9.0,
+        &quot;MOU/LOI&quot;, 10.0,
+        &quot;DD&quot;, 11.0,
+        &quot;SPA&quot;, 12.0,
+        &quot;CP&quot;, 13.0,
+        &quot;成約&quot;, 14.0,
+        &quot;案件終了&quot;, 14.0,
+        &quot;Converted to Buyer&quot;, 14.0,
+        &quot;On Hold&quot;, 14.0,
+        99.0
+    ) &gt;= 4.0,
+    NOT(
+        OR(
+            Check_DocUploaded_FS__c,
+            AND(
+                NOT(ISBLANK(Valuation_Cash__c)),
+                NOT(ISBLANK(Valuation_Debt__c)),
+                NOT(ISBLANK(Valuation_Depreciation__c)),
+                NOT(ISBLANK(Valuation_Equity__c)),
+                NOT(ISBLANK(Valuation_PBT__c)),
+                NOT(ISBLANK(Valuation_PAT__c)),
+                NOT(ISBLANK(Valuation_Revenue__c))
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>FSを[Upload Files]ボタンからアップロード、または[Financial Info]の項目をすべて記入してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_MANeeds</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    TEXT(StageName) = &quot;Converted to Buyer&quot;,
+    ISBLANK(MANeeds__c)
+)</errorConditionFormula>
+    <errorDisplayField>MANeeds__c</errorDisplayField>
+    <errorMessage>[買収ニーズ]オブジェクトからニーズを作成し、[譲渡案件]オブジェクトの[M&amp;A Needs]項目から選択してください。</errorMessage>
+</ValidationRule>

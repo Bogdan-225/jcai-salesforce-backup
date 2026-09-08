@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_CheckFieldsWhenSuccess</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+    ISPICKVAL(StageName, &quot;成約&quot;),
+   
+    OR(
+        Confirm_BuyersBank_POC__c = False,
+        Confirm_SellersBank_POC__c = False,
+        UpdateShareholderRegistry__c = False,
+        VerifyWireTransferPayment__c = False
+    )
+)</errorConditionFormula>
+    <errorMessage>[最終確認]チェック項目をすべて確認してください。</errorMessage>
+</ValidationRule>

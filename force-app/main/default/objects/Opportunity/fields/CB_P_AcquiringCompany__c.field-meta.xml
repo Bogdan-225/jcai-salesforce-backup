@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_P_AcquiringCompany__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CB(Cross Border)レコードタイプのP(Project)オブジェクト用。
+MOUフェーズ以降に相手(買収企業)を指定するための項目。</description>
+    <inlineHelpText>Select the buyers who are in the final stages or closing.</inlineHelpText>
+    <label>Acquiring Company</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Acquiring Company</relationshipLabel>
+    <relationshipName>AcquiringCompany</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

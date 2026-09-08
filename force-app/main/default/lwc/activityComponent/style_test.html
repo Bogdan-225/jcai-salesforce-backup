@@ -1,0 +1,232 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./activityComponent.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="card">
+				<div class="head">
+					<div class="title">活動</div>
+					<div class="funcs">
+						<div class="func"></div>
+						<div class="func"></div>
+						<div class="func"></div>
+					</div>
+				</div>
+				<div class="filters">
+					<label key={op.label} class="filter">
+						<input
+							type="checkbox"
+							checked="true"
+							class="filter_check"
+						/>
+						<div class="active">
+							<span></span>
+							<span> {op.label} </span>
+						</div>
+					</label>
+					<label key={op.label} class="filter">
+						<input type="checkbox" class="filter_check" />
+						<div>
+							<span></span>
+							<span> {op.label} </span>
+						</div>
+					</label>
+					<label key={op.label} class="filter">
+						<input
+							type="checkbox"
+							checked="true"
+							class="filter_check"
+						/>
+						<div>
+							<span></span>
+							<span> {op.label} </span>
+						</div>
+					</label>
+				</div>
+				<div class="body">
+					<div class="items">
+						<div key={act.Id} class="item">
+							<div class="header">
+								<div class="action_icon">
+									<lightning-icon
+										icon-name="action:call"
+										alternative-text="Approved"
+										title="Approved"
+									></lightning-icon>
+								</div>
+								<div class="info">
+									<div class="activity_date">
+										2026/10/10 10:10:10
+									</div>
+									<div class="subject">subject</div>
+									<div class="user_info">
+										<div class="user_icon"></div>
+										<span class="user-name"
+											>{act.Owner.Name}</span
+										>
+									</div>
+								</div>
+							</div>
+							<div class="body">
+								<span class="description">
+									説明
+									1/8（谷口）：女性受付：HPから問い合わせ依頼<br />
+									1/9（谷口）：男性受け：HPから入力いただき担当者より折り返しとなる。→HPへご案内送付<br />
+									<br />
+									2/27（佐々木）AS-AV列記載の宛先へ郵送<br />
+									3/108
+									10:13（松井）受付男性、代表様へ資料確認依頼→受付男性、資料は本人に届きます。確認し、必要なら連絡します。とのこと<br />
+									4/15
+									16:53（今元）受付男性ご対応：お送りした資料の確認についてとコシミズ砕氷へ接続依頼→本人に資料は届いているはずの為、ご連絡をお待ちくださいと仰せ
+								</span>
+							</div>
+							<div class="task">
+								<div class="task_info">
+									<div class="task_date">
+										<div class="start">
+											2025/06/14 14:22:10
+										</div>
+										~
+										<div class="end">
+											2025/06/14 14:22:10
+										</div>
+									</div>
+
+									<div class="user_info">
+										<div class="user_icon"></div>
+										<span class="user-name"
+											>{act.Owner.Name}</span
+										>
+									</div>
+								</div>
+								<div class="task_status"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="first arrow deactive">&lt;&lt;</div>
+					<div class="prev arrow deactive">&lt;</div>
+					<div class="now">
+						<input type="text" value="2" /> <span>of 4</span>
+					</div>
+					<div class="next arrow">&gt;</div>
+					<div class="last arrow">&gt;&gt;</div>
+					<div class="per">
+						<span> ROWS PER PAGE</span>
+						<select name="" id="">
+							<option value="10">10</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="input_panel" if:true={call_panel}>
+					<div class="head">
+						<div class="title">電話の記録</div>
+						<div class="funcs">
+							<div
+								class="func close"
+								onclick={toggle_call_panel}
+							></div>
+						</div>
+					</div>
+					<div class="body">
+						<lightning-record-edit-form
+							object-api-name="activity_dummy__c"
+						>
+							<div
+								class="input_form slds-form-element slds-form-element_stacked"
+							>
+								<div class="combo">
+									<div class="left">
+										<div class="headline">活動の記録</div>
+										<div class="form_body">
+											<div class="input_box">
+												<div class="label">aaa</div>
+												<div class="input">
+													<input type="text" />
+												</div>
+											</div>
+											<div class="input_box">
+												<div class="label">aaa</div>
+												<div class="input">
+													<input type="text" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="right">
+										<div class="headline">
+											タスクの登録
+											<div
+												class="add_task"
+												onclick={add_task}
+											>
+												増やす
+											</div>
+										</div>
+										<div class="insert_tasks">
+											<div
+												class="insert_task"
+												key={task.id}
+											>
+												<div class="task_inner">
+													<div class="task_head">
+														タスク{index}
+														<div
+															class="remove"
+															onclick={remove_task}
+															data-index={index}
+														>
+															けす
+														</div>
+													</div>
+													<div class="form_body">
+														<div class="input_box">
+															<div class="label">
+																aaa
+															</div>
+															<div class="input">
+																<input
+																	type="text"
+																/>
+															</div>
+														</div>
+														<div class="input_box">
+															<div class="label">
+																aaa
+															</div>
+															<div class="input">
+																<input
+																	type="text"
+																/>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</lightning-record-edit-form>
+					</div>
+					<div class="_footer">
+						<lightning-button
+							label="追加"
+							onclick={create_call}
+						></lightning-button>
+						<lightning-button
+							label="ts"
+							onclick={test}
+						></lightning-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

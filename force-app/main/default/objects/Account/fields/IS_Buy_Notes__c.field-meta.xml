@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IS_Buy_Notes__c</fullName>
+    <inlineHelpText>共通項目のため、架電リストを跨いで記録が保持されます。正しい電話番号や部署直通番号など、今後のリストにも活用できる情報をメモするためにご利用ください。(※古い情報も残っているので日付を入れながら最新情報を心がけてください。)</inlineHelpText>
+    <label>IS(Buy)メモ</label>
+    <length>1000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

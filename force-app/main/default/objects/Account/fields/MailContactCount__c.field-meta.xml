@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MailContactCount__c</fullName>
+    <description>この取引先に紐づく取引先責任者のうち、メール(Email)が入力されており、かつ連絡不可(No_Contact__c)が空白の件数。Contactのレコードトリガーフローで自動更新される。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>メールアドレスがあり連絡不可でない取引先責任者の数（自動計算）</inlineHelpText>
+    <label>メール可能担当者数</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>speedma_umu__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>スピードM&amp;Aに登録されている担当者の場合はチェックを入れてください。</inlineHelpText>
+    <label>スピードM&amp;A登録</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

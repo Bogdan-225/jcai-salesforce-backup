@@ -1,0 +1,393 @@
+{
+  "regulator": "CCI",
+  "full_name": "Competition Commission of India",
+  "homepage": "https://www.cci.gov.in",
+  "checked_on": "2026-09-08",
+  "access_summary": "Everything worked over plain curl with a browser User-Agent: homepage, every /combination/* section page and every PDF returned HTTP 200, and no rate-limiting, CAPTCHA or WAF challenge was encountered across roughly 40 requests. The register tables themselves are NOT in the delivered HTML - each one is a jQuery DataTables widget in serverSide mode, so the page ships only <th> headers and an empty <tbody> (WebFetch confirmed it sees headers but zero rows). The rows come from undocumented server-side DataTables JSON endpoints at the SAME URL as the page (e.g. GET https://www.cci.gov.in/combination/orders-section31?draw=1&start=0&length=2000&columns[0][data]=DT_RowIndex...), which return application/json when called with X-Requested-With: XMLHttpRequest; these worked perfectly under curl and return the complete dataset in one call (the whole 1,460-row Section 31 register came back as a single 1.8 MB JSON). Archive.org was not needed and in fact has no snapshots of the register pages (only of /combination/press-release), so all findings below are from the live site.",
+  "overall_summary": "CCI is a genuinely good free source of India M&A deal records and, unusually for a regulator, also of company-level narrative information. The core asset is the merger-control (\"combination\") register under Section 31/Form III at /combination/orders-section31: 1,460 cases covering the entire regime from the first filing on 8 July 2011 (C-2011/07/01, Reliance Industries) through 28 August 2026, at 90-140 notifications per year (2024: 128, 2025: 137, 2026 YTD: 75). Four further registers slice the same case database: Green Channel notices (147 cases from Oct 2019), Section 43A/44 gun-jumping and false-statement penalty orders (68 cases from 2012), Cases Approved with Modifications i.e. remedy cases (33 cases from 2014), and a live pending-deal tracker, Notices Under Review (26 open cases as of 07/09/2026). A separate combination press-release feed carries 498 releases from Nov 2020, 493 of which are combination approvals. All of it is English-only, freely downloadable as JSON plus linked PDFs, with no login and no throttling. The main gaps are financial: nowhere does CCI publish turnover, assets, EBITDA or deal consideration - market shares appear only as banded ranges like [10-15]%, and orders explicitly invoke the Section 57 confidentiality regime. Deal size is therefore absent, so CCI cannot substitute for a deal-value database; it also only covers transactions large enough to trip the Section 5 thresholds (or the post-2024 deal-value threshold), so it is a filter on large-cap and mid-to-large-cap India-nexus deals, not a complete deal universe. There is no sector/industry tag per case in the register (sector splits exist only as annual aggregates in the Annual Report), and roughly 47% of recent register rows name only the notifying acquirer, so the target must be extracted from the linked PDF. Set against BSE/NSE prohibiting scraping, CCI is the strongest free, terms-permissible India source found so far for structured deal records with rich party narratives.",
+  "company_info_verdict": "Yes - CCI gives substantially more than bare deal records. Every case from 2016 onward carries a party-filed public summary PDF (Regulation 13(2)) naming acquirer, target and seller, describing each party's products, services, businesses, group affiliation and Indian footprint, and stating the relevant markets; the Section 31(1) order PDF adds the Commission's own party descriptions, group-perimeter discussion, subsidiary names, shareholding structures, horizontal/vertical overlap analysis and named competitors. Section 43A penalty orders go further still, laying out group and family/trust ownership chains and transaction history. What is systematically absent is quantitative company data: no turnover, assets, revenue or headcount figures, no deal consideration or valuation, and market shares only as [x-y]% bands, with commercially sensitive passages blanked out as asterisk runs in the non-confidential versions.",
+  "blockers": [
+    "Register tables are not in the HTML - a naive HTML scraper gets column headers and zero rows. Rows must be pulled from the undocumented server-side DataTables JSON endpoint at the same URL with an X-Requested-With: XMLHttpRequest header (or the page must be rendered with a headless browser).",
+    "The DataTables endpoints are internal/undocumented, not a published API: parameter names, column bindings and the response shape can change without notice, and the response embeds raw HTML fragments (summary_files, order_files, files) that need unescaping and parsing.",
+    "No turnover, assets, revenue or deal consideration anywhere. Market shares are published only as banded ranges ([0-5]%, [10-15]% etc.), and orders state that party information is confidential under Section 57 of the Competition Act.",
+    "No sector or industry field per case. Sector classification exists only as year-level aggregates inside Annual Report PDFs (Table A3), so per-deal sector must be inferred from the party descriptions.",
+    "About 47% of 2025-26 register rows list only the notifying acquirer in Notifying Parties (e.g. 'Honda Motor Co., Ltd.', 'CDPQ Infrastructures Asia III Inc.'), with no target. Target identification requires parsing the linked summary/order PDF or the matching press release.",
+    "No public summary PDFs before 2015: 0 of 240 cases for 2011-2014 have a summary, 13 of 124 in 2015, near-complete from 2016. Pre-2015 company information therefore depends solely on the order PDF.",
+    "A minority of the oldest order PDFs are scanned images with no text layer and would need OCR (confirmed on the 2011 Walt Disney/UTV order, images/caseorders/en/1652513658.pdf). Spot checks of 2012, 2014, 2016, 2018, 2020, 2022 and 2024 orders all had text layers, so this looks confined to some 2011-era documents.",
+    "No RSS feed, no sitemap.xml (HTTP 404), and no Excel/CSV download anywhere - only the JSON endpoints and PDFs.",
+    "There is no deal-value-threshold (DVT) marker. Post-2024-amendment DVT filings enter the same register as ordinary Form I/II notices with no distinguishing field, so DVT deals cannot be isolated from structured data alone.",
+    "robots.txt disallows /images/combination_pre_filling_form_consultations/, /images/internship/, /images/stakeholdersconsultations/ and their /public/ twins. None of the data paths used here (/combination/*, /images/caseorders/, /images/summaryorders/, /images/pressrelease/, /images/annualreport/) are disallowed.",
+    "Terms and Conditions are silent on automated access or scraping (re-verified 2026-09-08). However the Copyright Policy states material 'may be reproduced free of charge after taking proper permission by sending a mail to us' with the source 'prominently acknowledged' - so internal ingestion appears unrestricted, but onward republication of CCI text in client-facing products should be cleared by email with CCI and attributed. This is a legal call for counsel, not a technical one."
+  ],
+  "sections": [
+    {
+      "name": "Combination Orders register - Under Section 31 / Form III (the main register)",
+      "url": "https://www.cci.gov.in/combination/orders-section31",
+      "what_it_is": "The master register of every merger-control notification decided by CCI since the combination regime started on 1 June 2011. One row per notified transaction, with links to the party-filed public summary PDF and to the Commission's order PDF. Statuses cover approvals under Section 31(1), deemed approvals, invalid notices, withdrawals, transactions called off, exemptions and cases still under review.",
+      "data_form": "search UI (HTML shell) backed by a JSON endpoint; rows link to PDF documents",
+      "column_headers": [
+        "No.",
+        "Combination Registration No.",
+        "Notifying Parties",
+        "Form",
+        "Date of Notification",
+        "Status",
+        "Decision Date",
+        "Summary as submitted by Party/Parties",
+        "Order"
+      ],
+      "example_row": [
+        "28",
+        "C-2026/04/1411",
+        "Honda Motor Co., Ltd.",
+        "II",
+        "10/04/2026",
+        "Approved",
+        "23/06/2026",
+        "View Documents -> images/summaryorders/en/summary1775822661.pdf (172.08 KB)",
+        "View Documents -> images/caseorders/en/order1784634701.pdf (192.26 KB)"
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/order/details/order/1741/0/orders-section31",
+        "https://www.cci.gov.in/images/caseorders/en/order1784634701.pdf",
+        "https://www.cci.gov.in/images/summaryorders/en/summary1775822661.pdf"
+      ],
+      "example_document_contents": "Section 31(1) order, Honda Motor Co., Ltd. / Astemo, Ltd., C-2026/04/1411, 7 pages, dated 23 June 2026. Structure: header with Combination Registration No. and 'Notice under Section 6(2) ... given by Honda Motor Co., Ltd.'; CORAM (Chairperson Ms. Ravneet Kaur and two Members); I. Background - filing date 10 April 2026, the underlying Share Purchase Agreement and Shareholders' Agreement both dated 16 December 2025, the seller (Hitachi, Ltd.) and third shareholder (JICC-01 Investment Business Limited Partnership), and the Regulation 14 request-for-information correspondence with dates; II. Parties to the Combination - acquirer described as 'a limited liability joint stock corporation incorporated under the Companies Act of Japan as Honda Giken Kogyo Kabushiki Kaisha ... flagship company of the Honda Group', its Indian activities enumerated, target incorporation year (2009), merger/integration history (2021), and its joint-control shareholders; III. Identification of Overlaps and Relevant Markets - 19 delineated upstream component markets and 3 downstream markets, named Indian operating subsidiaries (Honda Cars India Limited, Honda Motorcycle and Scooter India Pvt. Ltd., Honda India Power Products Ltd.); IV. Assessment - market shares given ONLY as bands, e.g. '[20-25]% in Upstream Market 1', '[0-5]% in the PV segment', with named competitors (Hero Motocorp, Bajaj Auto, TVS, Maruti Suzuki, Hyundai, Tata Motors, Mahindra); then approval, a revocation reservation, and an express statement that 'The information provided by the Acquirer shall be treated as confidential in terms of ... Section 57 of the Act'. Deal structure IS given precisely ('acquisition of 21% voting interest ... the Acquirer's voting rights in the Target will increase from 40% to 61%'). NO turnover, asset, revenue or consideration figures appear anywhere in the document.",
+      "filters": "form_type (I | II | III), order_status (2=Approved, 3=Notice Not Valid, 4=Deemed approved (Regulation 5A), 5=No AAEC, 6=Approved with modification, 7=Transaction called off, 8=Notice withdrawn, 9=Deemed Approved (Section 6(5)), 10=Exempt, 11=Under Review/Information incomplete & RFI issued), search_type (blank = free text on party name, or 'caseno'), searchString, fromdate/todate. All verified working on the JSON endpoint: form_type=II -> 150 rows; order_status=6 -> 33 rows; searchString=Honda -> 4 rows; searchString=1411&search_type=caseno -> 1 row; fromdate=2025-01-01&todate=2025-12-31 -> 137 rows. Dates MUST be YYYY-MM-DD (the DD/MM/YYYY format shown in the UI returns 0 rows), and caseno search takes only the numeric suffix, not the full 'C-2026/04/1411' string.",
+      "history_from": "8 July 2011 - oldest row is C-2011/07/01, 'Reliance Industries Ltd. Reliance Industrial Infrastructure Ltd.', Form I, notified 08/07/2011, Approved 26/07/2011. This is the very start of the Indian merger-control regime, so coverage is complete from day one.",
+      "volume_estimate": "1,460 rows total. By registration year: 2011:20, 2012:85, 2013:45, 2014:90, 2015:124, 2016:111, 2017:75, 2018:87, 2019:95, 2020:91, 2021:91, 2022:102, 2023:103, 2024:128, 2025:137, 2026 YTD (to 28 Aug):75. Form split: I 1,286, II 150, III 15. Status split: Approved 1,148, Deemed approved (Reg 5A) 109, Notice Not Valid 66, Deemed Approved (s.6(5)) 38, Approved with modification 33, No AAEC 30, Notice withdrawn 12, Transaction called off 2, Exempt 1. Document coverage: 1,226 rows have an order PDF, 1,087 have a summary PDF, 881 have both.",
+      "formats": "JSON (application/json) from the DataTables endpoint; linked documents are PDF. No CSV/Excel export. JSON fields per row: id, lang, order_type, form_type, section_id, party_name, date_of_order, notification_date, decision_date, combination_no, description, order_file_content, summary_file_content, media_file_content, order_status_id, order_status, plus HTML fragments summary_files/order_files/media_file. order_file_content and summary_file_content are HTML-escaped JSON arrays of {title, file_name, file_size} - file_name is a path like images/caseorders/en/order1784634701.pdf that resolves directly under https://www.cci.gov.in/.",
+      "company_info": "Row level: notifying party name(s) only - about 47% of 2025-26 rows carry a single name, normally the acquirer, so the target is often absent from the structured row. Document level (rich): acquirer, target and seller names; each party's incorporation jurisdiction and year; group affiliation and flagship/parent status; enumerated products, services and Indian business lines; named Indian operating subsidiaries; joint-control and shareholding arrangements; delineated relevant product and geographic markets; banded market shares and named competitors. No turnover, assets, revenue, headcount or deal price.",
+      "access_test": "curl HTTP 200 on the page (37,951 bytes) and HTTP 200 application/json on the JSON endpoint (1,805,824 bytes for all 1,460 rows in one call); WebFetch ok for the page but returns headers and zero data rows; JS needed yes for the visible table, no if the JSON endpoint is called directly; archive.org no snapshot of this URL.",
+      "confidence": "CONFIRMED",
+      "notes": "Endpoint form: GET https://www.cci.gov.in/combination/orders-section31?draw=1&start=0&length=2000&order[0][column]=0&order[0][dir]=desc&columns[0][data]=DT_RowIndex&columns[1][data]=combination_no&columns[2][data]=party_name&columns[3][data]=form_type&columns[4][data]=notification_date&columns[5][data]=order_status&columns[6][data]=decision_date&columns[7][data]=summary_files&columns[8][data]=order_files (each columns[i] also needs [name], and a matching [search][value] pair is safest), sent with X-Requested-With: XMLHttpRequest and a Referer of the page. length=2000 returned all 1,460 rows, so the whole register can be mirrored in a single request - no pagination loop needed. A 'Media' column exists in the HTML but is commented out; the media_file_content field is null on every row inspected. This register is a superset: order_type values are 'Under Section 31' (1,280), 'Green Channel Notices' (147) and 'Cases Approved with Modifications' (33), i.e. the Green Channel and modification registers below are views on the same table."
+    },
+    {
+      "name": "Green Channel Notices",
+      "url": "https://www.cci.gov.in/combination/green-channel",
+      "what_it_is": "Register of combinations self-assessed and filed under the Green Channel route (introduced August 2019), which are deemed approved on filing because the parties assert no horizontal, vertical or complementary overlap. Each row links to the party-filed public summary PDF. There is no CCI order - approval is automatic - so this is the closest thing CCI has to a raw deal-notification feed.",
+      "data_form": "search UI (HTML shell) backed by a JSON endpoint; rows link to PDF summaries",
+      "column_headers": [
+        "No.",
+        "Combination Registration No.",
+        "Notifying Parties",
+        "Form I",
+        "Date of Notification",
+        "Status",
+        "Summary as submitted by Party/Parties",
+        "Media"
+      ],
+      "example_row": [
+        "1",
+        "C-2026/08/1459",
+        "CDPQ Infrastructures Asia III Inc.",
+        "I",
+        "28/08/2026",
+        "Deemed Approved (Section 6(5))",
+        "View Documents -> images/summaryorders/en/summary1787912202.pdf (100.34 KB)",
+        ""
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/order/details/summary/1799/0/green-channel",
+        "https://www.cci.gov.in/images/summaryorders/en/summary1787912202.pdf"
+      ],
+      "example_document_contents": "Green Channel summary under Regulation 13(2) of the CCI (Combinations) Regulations, 2024, for C-2026/08/1459. Sections: A. Name of the Parties - acquirer 'CDPQ Infrastructures Asia III Inc.' and target 'Altius Telecom Infrastructure Trust'; B. Nature and Purpose - 'The Acquirer proposes to acquire certain unitholding in the Target'; C. Products, Services and Business(es) - the acquirer described as an investment vehicle and direct wholly-owned subsidiary of Caisse de depot et placement du Quebec ('La Caisse'), a Quebec-headquartered institutional fund manager for Quebec public and para-public pension and insurance plans, with its three named Indian subsidiaries (CDPQ India Private Limited, Ivanhoe Cambridge Investment Advisory (India) Private Limited, SITQ India Private Limited); the target described as an infrastructure investment trust registered with SEBI under the InvIT Regulations 2014, formerly Data Infrastructure Trust, engaged through subsidiaries and SPVs in passive telecom infrastructure services in India; D. Respective markets - no overlaps asserted, notified under Section 6(4) read with Rule 3 of the Competition (Criteria of Combination) Rules, 2024. Two pages, no financial figures, no consideration, no market shares. Note this summary names the TARGET, which the register row does not.",
+      "filters": "Same DataTables parameter set as the Section 31 register (form_type, order_status, search_type, searchString, fromdate/todate); the page exposes a filter panel. Only form_type=I is meaningful here since Green Channel is a Form I route.",
+      "history_from": "3 October 2019 - oldest row is C-2019/10/691, 'BAC Acquisitions Private Limited (BACQ) & Chaitanya India Fin Credit Private Limited (CIFCPL)', notified and deemed approved 03/10/2019. That is essentially the start of the Green Channel scheme (August 2019).",
+      "volume_estimate": "147 rows. By year: 2019:5, 2020:16, 2021:25, 2022:25, 2023:26, 2024:20, 2025:18, 2026 YTD:12. Roughly 20-25% of all combination filings per the Annual Report.",
+      "formats": "JSON from the endpoint; summaries as PDF. Same field set as the Section 31 endpoint, with order_type = 'Green Channel Notices'.",
+      "company_info": "Row level: notifying party only. Document level: acquirer and target named, each party's corporate form, ultimate parent and fund/sponsor identity, named Indian subsidiaries, business lines, regulatory status (e.g. SEBI-registered InvIT), and the asserted absence of overlaps. Because Green Channel cases are by definition overlap-free, the summaries are shorter than Section 31 summaries and contain no market-share discussion. No financials.",
+      "access_test": "curl HTTP 200 on the page (38,616 bytes) and HTTP 200 application/json on the endpoint (137,929 bytes, all 147 rows in one call); WebFetch would return headers only (same JS pattern as the main register); JS needed yes for the visible table, no via the endpoint; archive.org no snapshot.",
+      "confidence": "CONFIRMED",
+      "notes": "JSON endpoint is the same URL as the page, with columns bound to DT_RowIndex, combination_no, party_name, form_type, notification_date, order_status, summary_files. Statuses seen: 'Deemed approved (Regulation 5A)' for older rows and 'Deemed Approved (Section 6(5))' for rows under the 2024 regime. A sibling page /combination/green-channel-view exists (HTTP 200) but contains only explanatory text about the scheme, no table. These 147 rows are also present inside the Section 31 register JSON with order_type='Green Channel Notices', so a single pull of the main register captures them."
+    },
+    {
+      "name": "Notices Under Review - live pending-deal tracker",
+      "url": "https://www.cci.gov.in/combination/notice-under-review",
+      "what_it_is": "The list of combination notices currently open before CCI - filed but not yet decided. Each row links to the party-filed public summary PDF, which means a pending, not-yet-approved transaction with named acquirer and target is publicly disclosed here, often within days of filing. This is the most time-sensitive M&A feed on the site.",
+      "data_form": "search UI (HTML shell) backed by a JSON endpoint; rows link to PDF summaries",
+      "column_headers": [
+        "No.",
+        "Combination Registration No.",
+        "Notifying Parties",
+        "Form I/II",
+        "Date of Notification",
+        "Status",
+        "Summary as submitted by Party/Parties",
+        "Order"
+      ],
+      "example_row": [
+        "1",
+        "C-2026/09/1464",
+        "KONE OYJ  and Vertical Topco I S.A.",
+        "II",
+        "07/09/2026",
+        "Under Review",
+        "Summary (226.99 KB) -> images/summaryorders/en/summary1788776591.pdf",
+        ""
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/order/details/summary/1804/0/notice-under-review",
+        "https://www.cci.gov.in/images/summaryorders/en/summary1788776591.pdf"
+      ],
+      "example_document_contents": "Not opened individually, but the summary_file_content field is populated on all 26 open cases and points to the same images/summaryorders/en/ Regulation 13(2) summary format confirmed in detail for the Section 31 and Green Channel sections above (parties incl. target, nature and purpose of the combination, products/services/businesses of each party, relevant markets; no financials, no consideration). PARTLY CONFIRMED for this section specifically.",
+      "filters": "Same DataTables parameter set as the other registers (form_type, order_status, search_type, searchString, fromdate/todate). order_status values observed on live rows: 1 = 'Under Review ', 11 = 'Under Review/Information incomplete & RFI issued'.",
+      "history_from": "Not an archive - a rolling snapshot of open cases only. On 2026-09-08 the oldest open case was C-2026/05/1430 ('Concessoc 41 SAS', notified 27/05/2026) and the newest C-2026/09/1464 ('KONE OYJ and Vertical Topco I S.A.', notified 07/09/2026), i.e. a ~3.5-month window. Rows leave this list when decided and reappear in the Section 31 register.",
+      "volume_estimate": "26 open cases on 2026-09-08. Given ~130-140 filings a year and a rolling window of about 3-4 months, expect a steady 20-35 rows. To build a history the endpoint must be polled (e.g. daily); nothing here is retained after decision.",
+      "formats": "JSON from the endpoint; summaries as PDF. Same field set as the main register, order_type = 'Notices under review'.",
+      "company_info": "Row level: notifying party names (sometimes both sides, e.g. 'KONE OYJ and Vertical Topco I S.A.'). Document level: the Regulation 13(2) summary with acquirer, target, seller, business descriptions and relevant markets. No financials. Value here is timeliness rather than depth - a pending deal signal with party identity, weeks or months before the order publishes.",
+      "access_test": "curl HTTP 200 on the page (36,003 bytes) and HTTP 200 application/json on the endpoint (27,134 bytes, all 26 rows); WebFetch would return headers only; JS needed yes for the visible table, no via the endpoint; archive.org no snapshot.",
+      "confidence": "CONFIRMED",
+      "notes": "Endpoint columns: DT_RowIndex, combination_no, party_name, form_type, notification_date, order_status, summary_files, order_files. Reached via the site menu path Combination > Green Channel > Notices Under Review, but the list is not Green-Channel-specific - it carries both Form I and Form II cases. This is the single most valuable section for pipeline/early-signal use and is the one that most justifies a scheduled poll."
+    },
+    {
+      "name": "Orders under Section 43A and 44 - gun-jumping and false-statement penalty orders",
+      "url": "https://www.cci.gov.in/combination/orders-section43a_44",
+      "what_it_is": "Register of penalty proceedings: Section 43A orders for failure to notify a combination or for consummating before approval (gun-jumping), and Section 44 orders for making false statements or omitting material information in a notice. These are the longest and most factually detailed combination documents CCI publishes, because the Commission has to reconstruct what the parties actually did and when.",
+      "data_form": "search UI (HTML shell) backed by a JSON endpoint; rows link to PDF orders",
+      "column_headers": [
+        "No.",
+        "Combination Registration No.",
+        "Description",
+        "Under Section",
+        "Decision Date",
+        "Order",
+        "Media"
+      ],
+      "example_row": [
+        "1",
+        "C-2025/05/1283",
+        "Manipal Health Systems Private Limited and Manipal Education and Medical Group India Private Limited",
+        "43A",
+        "20/05/2026",
+        "View Documents -> images/caseorders/en/order1779368902.pdf (306.87 KB)",
+        ""
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/order/details/order/1760/0/orders-section43a_44",
+        "https://www.cci.gov.in/images/caseorders/en/order1779368902.pdf"
+      ],
+      "example_document_contents": "Section 43A order, C-2025/05/1283, Manipal Health Systems Private Limited and Manipal Education and Medical Group India Private Limited, 17 pages, dated 20 May 2026, marked 'Non-Confidential'. Contains: CORAM (Chairperson and three Members) and the named advocates appearing; A. Background with the notice date (09 May 2025) and the earlier Section 31(1) approval given 'without prejudice to any proceeding under Section 43A'; a 'Description of the Parties' block giving, for each entity, its private/listed status, business lines (hospital services, research services, telemedicine, home healthcare, medical tourism; management services), and its full ownership chain - Manipal Global Health Services and MEMG Family Office LLP as shareholders, RSP Trust (India), the named individual members of the Pai Family, and the statement that the family is the ultimate parent of the Pai Family Group; a chronology of the transaction and prior dealings including a concrete financial event ('in 2023, the Target defaulted on its debentures valued at INR 2,000 crores'); the Show Cause Notice and the parties' response; the Section 5 assets/turnover notifiability analysis; and the operative penalty - 'the Commission decides to impose a penalty of INR 50,00,000'. Commercially sensitive sentences are blanked as runs of asterisks (e.g. '.******************************************'), which is how CCI redacts in non-confidential versions.",
+      "filters": "The page carries the same DataTables filter machinery. The distinguishing field in the JSON is 'section' (values '43A' and '44'). Verified working: the endpoint accepts the standard draw/start/length and columns[] parameters.",
+      "history_from": "3 January 2013 - oldest row is C-2012/11/92, '1. Dewan Housing Finance Corporation Ltd, 2. First Blue Home Finance Ltd.', notified 19/11/2012, decided 03/01/2013.",
+      "volume_estimate": "68 rows over 14 years - lumpy: 2012:1, 2013:3, 2014:4, 2015:17, 2016:4, 2017:6, 2018:3, 2019:1, 2020:2, 2021:7, 2022:4, 2023:2, 2024:2, 2025:1 (by registration year of the underlying case). Low volume, high information density per document.",
+      "formats": "JSON from the endpoint; orders as PDF (this example 306 KB, 17 pages). Field set as the main register plus 'section'; note notification_date and date_of_order here appear in ISO form ('2026-05-20', '2012-11-19') rather than DD/MM/YYYY, so date parsing must handle both.",
+      "company_info": "The richest company-level content on the site: full ownership and control chains including holding companies, family offices, LLPs, trusts and named individuals; private vs listed status; enumerated business lines; prior transaction history between the parties; and occasional hard financial facts that surface incidentally (the INR 2,000 crore debenture default above). Still no systematic turnover or asset figures, and sensitive passages are asterisk-redacted.",
+      "access_test": "curl HTTP 200 on the page (35,912 bytes) and HTTP 200 application/json on the endpoint (61,819 bytes, all 68 rows); order PDF curl HTTP 200 (306,872 bytes) with a clean text layer via pdftotext (40,582 chars); WebFetch would return headers only for the page; JS needed yes for the visible table, no via the endpoint; archive.org no snapshot.",
+      "confidence": "CONFIRMED",
+      "notes": "Endpoint columns: DT_RowIndex, combination_no, description, section, decision_date, order_files. Unlike the other registers this one is NOT contained in the Section 31 register JSON (order_type = 'Under Section 43A and 44' does not appear there), so it must be pulled separately. Useful as a secondary signal too: a 43A order means a transaction closed without or before clearance, which is a compliance-risk marker on the parties involved."
+    },
+    {
+      "name": "Cases Approved with Modifications (remedy cases)",
+      "url": "https://www.cci.gov.in/combination/cases-approved-with-modification",
+      "what_it_is": "Register of the small set of combinations cleared only after the parties offered modifications/remedies (divestitures, behavioural commitments) under Section 31(3)-(7). These are the deals CCI actually found problematic, so the orders contain the deepest competitive-assessment content - segment-by-segment market shares with named competitors and the remedy package itself.",
+      "data_form": "search UI (HTML shell) backed by a JSON endpoint; rows link to PDF orders and summaries",
+      "column_headers": [
+        "No.",
+        "Case No.",
+        "Parties Name",
+        "Date of  Order"
+      ],
+      "example_row": [
+        "1",
+        "C-2025/07/1299",
+        "Torrent Pharmaceuticals Limited",
+        "View Documents -> images/caseorders/en/order1770108518.pdf (445.40 KB)"
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/order/details/order/1605/0/cases-approved-with-modification",
+        "https://www.cci.gov.in/images/caseorders/en/order1770108518.pdf",
+        "https://www.cci.gov.in/images/summaryorders/en/summary1752666564.pdf"
+      ],
+      "example_document_contents": "Modification order for C-2025/07/1299, Torrent Pharmaceuticals Limited / J. B. Chemicals & Pharmaceuticals Limited, ~76,000 characters of text. Headed sections: I. Background; II. Parties to the Combination; III. Notice under Section 29(1) of the Act (i.e. the Phase-II show-cause stage); IV. Activities of the Parties and areas of horizontal overlaps/vertical linkages; V. Competition Assessment - FDFs, then the modification analysis under Regulation 25(4). The competitive assessment is molecule-market by molecule-market and gives, for each, the parties' banded shares plus named rivals with their banded shares - e.g. 'the market shares of Torrent and JB are estimated to be in the range of [20-25] % and [10-15] % respectively', with 'IPCA with an estimated market share of [20-25] % and Ajanta with an estimated share of [10-15] %'; other named competitors include Aristo, Emcure, Intas, Lupin, Himalaya and Apex; one market shows a combined share of [95-100] %. One competitor figure appears unbanded ('IPCA Labs has risen to the second position with a 32% market share'). No asterisk redactions in this document, and no turnover, asset or consideration figures. The matching public summary (summary1752666564.pdf, 2 pages) names acquirer and target, states the structure ('acquisition of shareholding by the Acquirer in the Target and the subsequent amalgamation of the Target with the Acquirer'), gives the strategic rationale (access to the India chronic-segment franchise, entry into ophthalmology, entry into the CDMO sector) and describes each party's business (FDFs, APIs, CDMO services).",
+      "filters": "The page carries the standard DataTables filter panel; the endpoint accepts the same draw/start/length and columns[] parameters. Only 33 rows, so filtering is largely unnecessary.",
+      "history_from": "29 September 2014 - oldest row is C-2014/04/164, 'Notice given by MIAL, IOCL, BPCL, HPCL & MAFFFL', notified 03/04/2014, order 29/09/2014.",
+      "volume_estimate": "33 rows total. By year: 2014:3, 2015:1, 2016:6, 2017:2, 2018:5, 2019:3, 2020:2, 2022:4, 2023:3, 2024:3, 2025:1. Roughly 2% of all notifications - about 0-6 a year.",
+      "formats": "JSON from the endpoint; orders and summaries as PDF (this order 445 KB). Same field set as the main register, order_type = 'Cases Approved with Modifications'.",
+      "company_info": "Row level: case number and party name only. Document level: the most quantitative competitive picture CCI publishes - banded market shares for both parties in each affected market, named competitors with their own banded shares, the products/molecules involved, and the divestiture or behavioural remedy imposed. Combined with the summary PDF you also get deal structure and strategic rationale. Still no turnover, assets or consideration.",
+      "access_test": "curl HTTP 200 on the page (35,533 bytes) and HTTP 200 application/json on the endpoint (39,323 bytes, all 33 rows); order PDF curl HTTP 200 (445,399 bytes) with a clean text layer (75,973 chars); summary PDF curl HTTP 200 (99,428 bytes, 2,217 chars of text); WebFetch would return headers only for the page; JS needed yes for the visible table, no via the endpoint; archive.org no snapshot.",
+      "confidence": "CONFIRMED",
+      "notes": "Endpoint columns: DT_RowIndex, combination_no, party_name, order_files - note the mismatch with the displayed headers: the fourth header reads 'Date of  Order' (with a double space) but is bound to order_files, so the column actually renders a document link, not a date. Decision dates for these cases are available from the same rows' decision_date field in the JSON, or from the Section 31 register, which contains all 33 of these rows with order_type='Cases Approved with Modifications'. So a single pull of the main register captures this section too."
+    },
+    {
+      "name": "Combination Press Releases",
+      "url": "https://www.cci.gov.in/combination/press-release",
+      "what_it_is": "Feed of CCI press releases, in practice almost entirely combination approvals. Each release is a one- to two-page PDF issued on or near the approval date that names the parties, describes the transaction structure step by step, and gives a short prose profile of each company - typically the most readable company-level description CCI publishes, and often issued weeks before the detailed order.",
+      "data_form": "article list (HTML shell) backed by a JSON endpoint; each row links to a PDF press release",
+      "column_headers": [
+        "No.",
+        "Title",
+        "Date",
+        "Document"
+      ],
+      "example_row": [
+        "1",
+        "CCI directs Trustees' Association of India, IDBI Trusteeship Services Limited, Axis Trustee Services Limited and SBI CAP Trustee Company Limited to cease and desist from anti-competitive conduct",
+        "02/09/2026",
+        "View Documents -> images/pressrelease/en/press-release1788351730.pdf (651.76 KB)"
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/press-release/details/689/0",
+        "https://www.cci.gov.in/images/pressrelease/en/press-release1788333582.pdf",
+        "https://www.cci.gov.in/images/pressrelease/en/pr412020-21-0pdf1652425240.pdf"
+      ],
+      "example_document_contents": "Press Release No. 51/2026-27, 01 September 2026, 2 pages: 'CCI approves acquisition of up to 100% equity shareholding of Apollo Fertility Centre Pvt. Ltd (AFCPL) and Apollo Specialty Hospitals Pvt. Ltd. (ASHPL) by Kids Clinic India Ltd. (KCIL) and related transactions'. It breaks the deal into three lettered steps (the Apollo acquisition; issuance of equity shares and optionally convertible debentures representing 9.9% of KCIL on a fully diluted basis to Apollo Health and Lifestyle Limited as part consideration; and a further equity issuance to Arvon Investments Pte. Ltd.), then profiles each company: KCIL as a public limited company running the 'Cloudnine' super-specialty hospital chain in maternity, gynaecology, paediatrics and fertility, with its cities listed (Bengaluru, Delhi NCR, Mumbai, Pune, Chennai, Hyderabad, Lucknow, Ludhiana, Chandigarh); AHLL as a primary-care-clinic and diagnostics operator 100% held by Apollo Hospitals Enterprise Limited, itself listed with 'the promoter group holding 28.02% shareholding, and the public shareholders hold the remaining 71.98%'; AFCPL as an Apollo Group fertility-clinic chain wholly held by AHLL, with named service lines (IVF, embryo freezing, genetic testing); and Arvon as an indirect wholly owned subsidiary of Temasek acting purely as an investment holding company. Ends 'Detailed order of the Commission will follow.' A second release checked (No. 41/2020-21, 20 November 2020, Reliance Retail Ventures / Future Group) follows the identical template, listing all six Future Group transferor companies by name and describing the retail, wholesale, logistics and warehousing businesses being acquired. No consideration or valuation is stated in either.",
+      "filters": "The page carries a DataTables shell; the endpoint accepts the standard draw/start/length and columns[] parameters and returns all 498 rows in one call. No structured date or category filter was found on this endpoint - filter client-side on order_date and on the title text.",
+      "history_from": "20 November 2020 - oldest row is id 167, 'CCI approves acquisition by Reliance Retail Ventures Limited (\"RRVL\"), Reliance Retail and Fashion Lifestyle Limited (\"RRVL WOS\") of the retail and wholesale undertaking and the logistics and warehousing undertaking of the Future Group under Section 31(1) of the Competition Act, 2002'. Pre-2020 press releases are not in this feed (older ones exist under /media-gallery/press-release and /antitrust/press-release/details/{id}).",
+      "volume_estimate": "498 rows. By year: 2020:7 (from November), 2021:67, 2022:58, 2023:65, 2024:109, 2025:117, 2026 YTD:75. Of the 498, 493 titles are combination-related (approves / acquisition / merger / combination) and only 5 are antitrust or administrative, so this is effectively a combination-approval feed. Note it runs ~110-120/year against ~130-140 filings, so coverage is high but not every case gets a release.",
+      "formats": "JSON from the endpoint; releases as PDF (typically 60-650 KB, 1-2 pages, clean text layer). JSON fields: id, lang, title (contains HTML), order_date, description, file_content (escaped JSON array with file_name under images/pressrelease/en/), DT_RowIndex, files.",
+      "company_info": "Best-in-class narrative company profiles for the effort involved: legal name and abbreviation, listed vs unlisted status, brand names, business and service lines, geographic footprint by city, parent and ultimate parent (including funds such as Temasek), inter-company shareholding percentages, and promoter-group vs public shareholding splits for listed parties. Plus the deal structure broken into steps, including instrument types (equity, optionally convertible debentures) and percentage stakes. No price, valuation or turnover.",
+      "access_test": "curl HTTP 200 on the page (34,691 bytes) and HTTP 200 application/json on the endpoint (440,334 bytes, all 498 rows); two press-release PDFs curl HTTP 200 (150,991 and 97,928 bytes) with clean text layers; WebFetch not separately tested on this page but the HTML shell follows the same JS-table pattern; JS needed yes for the visible list, no via the endpoint; archive.org yes - snapshot available at http://web.archive.org/web/20260823033155/https://www.cci.gov.in/combination/press-release (the only combination page found with any snapshot).",
+      "confidence": "CONFIRMED",
+      "notes": "Endpoint columns: DT_RowIndex, title, order_date, files. Titles carry inline HTML (<span class=\"blue\">) and HTML entities that must be stripped. Because the press release usually predates the published order, this feed plus Notices Under Review together give the earliest public signal on a deal; the register then supplies the authoritative outcome. Best joined to the register on party name and date - the press release does not carry the Combination Registration No. in the structured row (though the PDF text sometimes does not either), so matching is fuzzy."
+    },
+    {
+      "name": "Annual Reports - combination statistics",
+      "url": "https://www.cci.gov.in/annual-report",
+      "what_it_is": "CCI's statutory annual reports. Relevant here because they carry the only official aggregate statistics on combinations: sector-wise distribution of notices filed, and receipt/disposal tables broken down by outcome. These are the only place a per-sector view of Indian merger-control activity exists, since the register itself has no sector field.",
+      "data_form": "HTML table (JSON-backed) listing PDF reports; the statistics themselves are tables inside the PDFs",
+      "column_headers": [
+        "No.",
+        "Title",
+        "Date of Issue",
+        "Document "
+      ],
+      "example_row": [
+        "1",
+        "Annual Report 2024-25",
+        "11/12/2025 15:00:00",
+        "annual-report-2024-251765448016.pdf (40,955.90 KB)"
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/images/annualreport/en/annual-report-2023-241734695318.pdf",
+        "https://www.cci.gov.in/images/annualreport/en/annual-report-2024-251765448016.pdf"
+      ],
+      "example_document_contents": "Annual Report 2023-24 (1.65 MB, ~294,000 characters of text, clean text layer). Combination content sits in section F 'Matters received regarding Combination' plus Table A3 in the overview. Table A3 'Sector-wise distribution of combination notices filed (Excluding invalidated/withdrawn)' gives three years side by side - for 2023-24: Finance and Markets 30, Pharmaceuticals & Health Care 18, Auto & Auto Components 08, Information Technology and Services 03, PVC & Chemicals 03, Power & Power Generation 03, Mining & Metals 02, Media & Entertainment 01, Food & Refined Oil 00, Miscellaneous 40, total 108 (2022-23: 93, 2021-22: 87). Table F1 'Receipt and disposal of Combination notices' gives opening balance, notices received, suo motu notices, and disposals split into without modification / with modification / by rejection / invalid-or-withdrawn, plus closing balance and average working days to disposal. Table F2 gives the year's counts, e.g. 'Number of combinations approved by the Commission: 101', 'Number of combination notices ordered for enquiry: Nil', with a footnote that 4 notices were invalidated or withdrawn. Narrative text adds the Form split (of 112 notices received, 105 in Form-I including Green Channel and 7 in Form-II), the pending count at year end (19), the Green Channel share trend (~19% FY2020-21 rising to ~27% FY2021-22, ~25% FY2022-23, ~22% FY2023-24), the cumulative Green Channel filings (100 as at 31 March 2024) and cumulative invalidations/withdrawals (71).",
+      "filters": "None on the list beyond DataTables client-side paging. The statistics inside the PDFs are not queryable - they must be parsed out of the PDF text.",
+      "history_from": "Annual Report 2009-10 is the oldest in the list, so reports pre-date the combination regime; combination statistics begin with the 2011-12 report onwards. Latest is Annual Report 2024-25, issued 11/12/2025.",
+      "volume_estimate": "16 reports. One per year, published roughly 8-12 months after the financial year ends. File sizes range from ~1.6 MB to ~41 MB (the 2024-25 edition).",
+      "formats": "JSON list from https://www.cci.gov.in/fetch-annual-report-list; reports as PDF with text layers. JSON fields: id, lang, title, description, date_of_issue, file_content, DT_RowIndex, files. Note the 'files' HTML fragment uses a relative href of the form public/images/annualreport/en/... while the file_content path is images/annualreport/en/... - both resolve under https://www.cci.gov.in/.",
+      "company_info": "None at company level - aggregate statistics only. Its value is as the sector taxonomy and denominator: it lets you sanity-check a scraped register against official counts and gives an official sector breakdown that the register lacks.",
+      "access_test": "curl HTTP 200 on the page (30,544 bytes) and HTTP 200 application/json on https://www.cci.gov.in/fetch-annual-report-list (10,892 bytes, all 16 rows); the 2023-24 report PDF curl HTTP 200 (1,651,321 bytes) with a clean text layer; WebFetch not separately tested; JS needed yes for the visible list, no via the endpoint; archive.org not checked.",
+      "confidence": "CONFIRMED",
+      "notes": "The list endpoint is at a DIFFERENT URL from the page (fetch-annual-report-list rather than the page URL) - the only section found with that pattern; every combination register instead posts back to its own page URL. The 2024-25 report is ~41 MB and was not downloaded; the 2023-24 report was, and the table structures cited above come from it."
+    },
+    {
+      "name": "Combination legal framework - Notifications",
+      "url": "https://www.cci.gov.in/combination/legal-framwork/notifications",
+      "what_it_is": "List of government notifications and gazette S.O.s governing combinations - threshold revisions, de minimis/small-target exemptions, commencement notifications for the Competition (Amendment) Act, 2023 (including the deal-value-threshold provisions), and related instruments. Reference material for interpreting the register, not deal data.",
+      "data_form": "HTML table (JSON-backed) linking to PDF notifications",
+      "column_headers": [
+        "No.",
+        "Notifications",
+        "Date",
+        "Document"
+      ],
+      "example_row": [
+        "1",
+        "Notification regarding Coming into effect of relevant provisions of the sections i.e. 6 to 8 (both inclusive), 21 to 24 (both inclusive), 28, 30, 34 & 38 of the Competition (Amendment) Act, 2023 (9 of 2023), S.O. 3846(E)",
+        "10/09/2024",
+        "images/combinationlegalframeworknotification/en/notification1725... .pdf"
+      ],
+      "example_links": [
+        "https://www.cci.gov.in/combination/legal-framwork/notifications",
+        "https://www.cci.gov.in/combination/legal-framwork/regulations",
+        "https://www.cci.gov.in/combination/legal-framwork/act"
+      ],
+      "example_document_contents": "Individual notification PDFs were not opened. From the titles and dates in the JSON these are gazette notifications and S.O.s - e.g. the 10/09/2024 commencement notification bringing Sections 6 to 8, 21 to 24, 28, 30, 34 and 38 of the Competition (Amendment) Act, 2023 into effect, which is the instrument behind the deal-value-threshold regime. Content is legal text, not deal or company data.",
+      "filters": "DataTables shell only (client-side); the endpoint accepts the standard draw/start/length and columns[] parameters.",
+      "history_from": "4 March 2011 - the oldest row's date, i.e. the original threshold and exemption notifications issued just before the combination regime commenced on 1 June 2011.",
+      "volume_estimate": "23 rows over 15 years - a handful of instruments per decade.",
+      "formats": "JSON from the endpoint (columns DT_RowIndex, title, order_date, files); notifications as PDF under images/combinationlegalframeworknotification/en/.",
+      "company_info": "None. Included because it is the authoritative source for the notifiability thresholds that determine which deals appear in the register at all, and therefore for interpreting coverage.",
+      "access_test": "curl HTTP 200 on the page (35,488 bytes) and HTTP 200 application/json on the endpoint (all 23 rows returned); WebFetch not tested; JS needed yes for the visible table, no via the endpoint; archive.org not checked.",
+      "confidence": "CONFIRMED",
+      "notes": "Sibling pages /combination/legal-framwork/act and /combination/legal-framwork/regulations return HTTP 200 and hold the Act and the CCI (Combinations) Regulations, 2024 - the latter is what mandates the Regulation 13(2) public summaries that make the register useful for company information."
+    },
+    {
+      "name": "Deal Value Threshold (DVT) filings - NO dedicated section exists",
+      "url": "https://www.cci.gov.in/combination/orders-section31",
+      "what_it_is": "Sought but not found. Following the Competition (Amendment) Act, 2023 and the Competition (Criteria of Combination) Rules, 2024, transactions above the INR 2,000 crore deal-value threshold with substantial business operations in India became notifiable. CCI publishes NO separate register, list or flag for DVT filings: they enter the ordinary Section 31 register as Form I or Form II notices, and neither the JSON row schema nor the displayed columns contain any DVT indicator. The only way to identify a DVT case is to read the notifiability provision cited in the summary or order PDF (e.g. 'notified under Section 6(4) ... read with Rule 3 of the Competition (Criteria of Combination) Rules, 2024' versus 'notifiable under Section 5(a)(i)(A)').",
+      "data_form": "search UI",
+      "column_headers": [],
+      "example_row": [],
+      "example_links": [
+        "https://www.cci.gov.in/combination/legal-framwork/notifications",
+        "https://www.cci.gov.in/images/summaryorders/en/summary1787912202.pdf"
+      ],
+      "example_document_contents": "No DVT-specific document set exists. Evidence for the workaround above: the CDPQ/Altius Green Channel summary states the transaction 'is being notified under Section 6(4) of the Competition Act, 2002 (as amended) read with Rule 3 of the Competition (Criteria of Combination) Rules, 2024', whereas the Honda/Astemo summary states it 'is notifiable under Section 5(a)(i)(A) of the Competition Act, 2002 (as amended)' - i.e. the asset/turnover route. So the notifiability basis IS recoverable, but only from PDF text.",
+      "filters": "None applicable - no DVT filter exists on any endpoint.",
+      "history_from": "N/A. The DVT regime took effect with the 10 September 2024 commencement notification, so any DVT cases sit within the 2024-2026 rows of the ordinary register.",
+      "volume_estimate": "Unknown from CCI's structured data. Would have to be counted by text-mining the notifiability paragraph of every summary/order PDF from late 2024 onward (roughly 340 cases).",
+      "formats": "N/A",
+      "company_info": "N/A",
+      "access_test": "No such URL exists. Probed and 404: /combination/orders, /combination/notices, /combination/summary-of-combination. Full menu enumerated from the /combination/orders-section31 sidebar and no DVT page is present; the register JSON schema was fully enumerated and contains no DVT field. JS needed no; archive.org n/a.",
+      "confidence": "CONFIRMED (as a confirmed negative - the absence of a DVT section and of any DVT field was verified directly)",
+      "notes": "Recorded deliberately as a negative finding. If DVT-tagging matters to the team, it is a PDF text-mining task, not a scraping task."
+    },
+    {
+      "name": "Pre-Filing Consultations - form only, NO public data",
+      "url": "https://www.cci.gov.in/combination/pre-filling-consultations",
+      "what_it_is": "Explains CCI's informal pre-filing consultation (PFC) process and hosts an online request form. Checked because a PFC log would be an extremely early deal signal - it is not published. The page carries only explanatory text, a 94 KB PFC Guidance Note, and a submission form whose fields (Name of the Applicant, Organisation/Law Firm, Acquirers / Targets / Merging Parties, Nature of PFC, Whether PFC request is for Green Channel, Nature of Transaction: Acquisition of Shares / Acquisition of Assets / Merger-Amalgamations, Scope and Structure of the Proposed Combination, Section/Industry, Relevant Markets, Key Issue) are inputs, not published outputs. No table, no list of consultations held, no JSON endpoint.",
+      "data_form": "search UI (submission form; no data listing)",
+      "column_headers": [],
+      "example_row": [],
+      "example_links": [
+        "https://www.cci.gov.in/combination/pre-filling-consultations"
+      ],
+      "example_document_contents": "Only a 'PFC Guidence Note' PDF (94.14 KB) describing the process. No case-level or party-level documents are published in this section.",
+      "filters": "None - there is nothing to filter.",
+      "history_from": "N/A - nothing is archived or published here.",
+      "volume_estimate": "Zero public records. PFC counts are sometimes mentioned narratively in Annual Reports but not as a per-case list.",
+      "formats": "HTML page plus one guidance-note PDF.",
+      "company_info": "None. Party names submitted through the form are not published.",
+      "access_test": "curl HTTP 200 (50,864 bytes); no <th> elements and no DataTables ajax URL found in the HTML, confirming there is no data table; WebFetch not needed; JS needed no; archive.org not checked. NOTE: robots.txt explicitly disallows /images/combination_pre_filling_form_consultations/ and /public/images/combination_pre_filling_form_consultations/ - do not crawl those paths.",
+      "confidence": "CONFIRMED (confirmed negative)",
+      "notes": "Recorded so the team does not spend effort here. The robots.txt disallow on the associated image directory is the only crawl restriction on the site that touches anything combination-related, and nothing of data value sits behind it."
+    }
+  ],
+  "sources": [
+    "https://www.cci.gov.in/",
+    "https://www.cci.gov.in/robots.txt",
+    "https://www.cci.gov.in/sitemap.xml",
+    "https://www.cci.gov.in/contents/sitemap",
+    "https://www.cci.gov.in/contents/termncond",
+    "https://www.cci.gov.in/contents/copyright",
+    "https://www.cci.gov.in/combination",
+    "https://www.cci.gov.in/combination/orders-section31",
+    "https://www.cci.gov.in/combination/orders-section43a_44",
+    "https://www.cci.gov.in/combination/cases-approved-with-modification",
+    "https://www.cci.gov.in/combination/green-channel",
+    "https://www.cci.gov.in/combination/green-channel-view",
+    "https://www.cci.gov.in/combination/notice-under-review",
+    "https://www.cci.gov.in/combination/press-release",
+    "https://www.cci.gov.in/combination/faqs",
+    "https://www.cci.gov.in/combination/pre-filling-consultations",
+    "https://www.cci.gov.in/combination/legal-framwork/notifications",
+    "https://www.cci.gov.in/combination/combination/filing-of-combination-notice/introduction",
+    "https://www.cci.gov.in/combination/order/details/order/1741/0/orders-section31",
+    "https://www.cci.gov.in/annual-report",
+    "https://www.cci.gov.in/fetch-annual-report-list",
+    "https://www.cci.gov.in/images/caseorders/en/order1784634701.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/order1779368902.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/order1770108518.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652513658.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652524326.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652516578.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652419924.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652339858.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/1652181294.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/order1680688422.pdf",
+    "https://www.cci.gov.in/images/caseorders/en/order1744021448.pdf",
+    "https://www.cci.gov.in/images/summaryorders/en/summary1775822661.pdf",
+    "https://www.cci.gov.in/images/summaryorders/en/summary1773144670.pdf",
+    "https://www.cci.gov.in/images/summaryorders/en/summary1752666564.pdf",
+    "https://www.cci.gov.in/images/summaryorders/en/summary1787912202.pdf",
+    "https://www.cci.gov.in/images/pressrelease/en/press-release1788333582.pdf",
+    "https://www.cci.gov.in/images/pressrelease/en/pr412020-21-0pdf1652425240.pdf",
+    "https://www.cci.gov.in/images/annualreport/en/annual-report-2023-241734695318.pdf",
+    "https://archive.org/wayback/available?url=www.cci.gov.in/combination/orders-section31",
+    "https://archive.org/wayback/available?url=www.cci.gov.in/combination/green-channel",
+    "https://archive.org/wayback/available?url=www.cci.gov.in/combination/press-release"
+  ]
+}

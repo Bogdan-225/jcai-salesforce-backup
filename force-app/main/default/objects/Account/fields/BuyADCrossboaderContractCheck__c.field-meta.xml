@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BuyADCrossboaderContractCheck__c</fullName>
+    <formula>AND(
+NOT(ISBLANK(BuyADCrossboader_documents__c)),
+NOT(ISBLANK( BuyADCrossboader_date__c  )))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>クロスボーダー買ADチェック</label>
+    <type>Checkbox</type>
+</CustomField>

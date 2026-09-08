@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OwnerImporting__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>スプレッドシートインポート時にSFにアカウントが存在しない場合のデータ退避先項目</inlineHelpText>
+    <label>※インポート用_取引先所有者</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

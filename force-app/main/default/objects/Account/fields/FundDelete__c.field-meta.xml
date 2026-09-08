@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FundDelete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>使わない</description>
+    <inlineHelpText>Fund or Not</inlineHelpText>
+    <label>Fund(Delete)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

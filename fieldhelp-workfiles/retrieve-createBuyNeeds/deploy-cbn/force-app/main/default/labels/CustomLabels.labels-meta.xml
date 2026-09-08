@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CBN_Cancel</fullName>
+        <categories>CreateBuyNeeds</categories>
+        <language>ja</language>
+        <protected>false</protected>
+        <shortDescription>Cancel button (Create Buy Needs quick action)</shortDescription>
+        <value>キャンセル</value>
+    </labels>
+    <labels>
+        <fullName>CBN_Save</fullName>
+        <categories>CreateBuyNeeds</categories>
+        <language>ja</language>
+        <protected>false</protected>
+        <shortDescription>Save button (Create Buy Needs quick action)</shortDescription>
+        <value>保存</value>
+    </labels>
+</CustomLabels>

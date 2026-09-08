@@ -1,0 +1,196 @@
+<template>
+	<div class="card">
+		<template if:false={loaded}>
+			<div class="loading_modal">
+				<div class="ani"></div></div
+		></template>
+		<div class="head">
+			<div class="title">{label_title}</div>
+			<c-activity-buttons-bar
+				record-id={recordId}
+				onactivitycreated={handle_activity_created}
+			></c-activity-buttons-bar>
+		</div>
+		<!--
+		<div class="filters">
+			<template for:each={type_options} for:item="op">
+				<label key={op.label} class="filter">
+					<input
+						type="checkbox"
+						value={op.label}
+						checked={op.checked}
+						onchange={handle_filter_change}
+					/>
+					<div class={op.classname}>
+						<span></span>
+						<span> {op.label} </span>
+					</div>
+				</label>
+			</template>
+		</div>
+	-->
+
+		<div class="body">
+			<div class="noitems" if:false={has_item}>
+				該当する活動はありません
+			</div>
+			<template if:true={has_item}>
+				<div class="items">
+					<template
+						for:each={activities}
+						for:item="act"
+						for:index="parent_index"
+					>
+						<div key={act.Id} class="item">
+							<div class="header">
+								<div
+									class={act.call_status_classname}
+									if:true={act.types.sell_side_call}
+								>
+									{act.CallStatus}
+								</div>
+								<div
+									class={act.call_status_classname}
+									if:true={act.types.buy_side_call}
+								>
+									{act.CallStatus}
+								</div>
+								<div class="action_icon">
+									<!-- 電話系アイコン -->
+									<div
+										class="icon-wrapper call-icon"
+										if:true={act.types.call}
+									>
+										<lightning-icon
+											icon-name="utility:call"
+											alternative-text="電話"
+											title="電話"
+											size="small"
+										></lightning-icon>
+									</div>
+									<div
+										class="icon-wrapper call-icon buy_side"
+										if:true={act.types.buy_side_call}
+									>
+										<lightning-icon
+											icon-name="utility:call"
+											alternative-text="電話"
+											title="電話"
+											size="small"
+										></lightning-icon>
+									</div>
+									<div
+										class="icon-wrapper call-icon sell_side"
+										if:true={act.types.sell_side_call}
+									>
+										<lightning-icon
+											icon-name="utility:call"
+											alternative-text="電話"
+											title="電話"
+											size="small"
+										></lightning-icon>
+									</div>
+									<!-- メールアイコン -->
+									<div
+										class="icon-wrapper email-icon"
+										if:true={act.types.email}
+									>
+										<lightning-icon
+											icon-name="utility:email"
+											alternative-text="メール"
+											title="メール"
+											size="small"
+										></lightning-icon>
+									</div>
+									<!-- 手紙アイコン -->
+									<div
+										class="icon-wrapper letter-icon"
+										if:true={act.types.letter}
+									>
+										<span class="letter-text"
+											>&#12306;</span
+										>
+									</div>
+									<!-- リマインダーアイコン -->
+									<div
+										class="icon-wrapper reminder-icon"
+										if:true={act.types.reminder}
+									>
+										<lightning-icon
+											icon-name="utility:reminder"
+											alternative-text="リマインダー"
+											title="リマインダー"
+											size="small"
+										></lightning-icon>
+									</div>
+									<!-- メモアイコン -->
+									<div
+										class="icon-wrapper memo-icon"
+										if:true={act.types.memo}
+									>
+										<lightning-icon
+											icon-name="action:new_custom18"
+											alternative-text="メモ"
+											title="メモ"
+											size="small"
+										></lightning-icon>
+									</div>
+								</div>
+								<div class="info">
+									<div class="activity_date">
+										{act.call_date_and_time}
+									</div>
+									<div
+										class="subject clickable-subject"
+										if:true={act.is_subj}
+										data-activity-id={act.Id}
+										onclick={handleSubjectClick}
+									>
+										{act.Subject}
+									</div>
+									<div class="user_info">
+										<div class="user_icon">
+											<img
+												src={act.Owner.SmallPhotoUrl}
+												alt="User Photo"
+												class="user-photo"
+											/>
+										</div>
+										<span class="user-name"
+											>{act.Owner.Name}</span
+										>
+									</div>
+								</div>
+							</div>
+
+							<div class="body" if:true={act.is_desc}>
+								<lightning-formatted-rich-text
+									value={act.Description}
+								></lightning-formatted-rich-text>
+							</div>
+
+							<div class="tasks">
+								<template
+									for:each={act.tasks}
+									for:item="task"
+									for:index="task_index"
+								>
+									<c-task-item
+										task={task}
+										key={task.Id}
+									></c-task-item>
+								</template>
+							</div>
+						</div>
+					</template>
+				</div>
+			</template>
+		</div>
+		<c-mini-pager
+			now_page={now_page}
+			max_item={total_count}
+			per_page={per_page}
+			onchangevalue={handle_page_change}
+		></c-mini-pager>
+	</div>
+</template>

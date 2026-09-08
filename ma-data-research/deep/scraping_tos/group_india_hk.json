@@ -1,0 +1,137 @@
+[
+  {
+    "site": "BSE India (BSE Limited)",
+    "region": "India",
+    "homepage": "https://www.bseindia.com",
+    "terms_urls_checked": [
+      "https://www.bseindia.com/static/about/disclaimer",
+      "https://www.bseindia.com/static/about/terms_condition",
+      "https://www.bseindia.com/static/about/anndisclaimer",
+      "https://www.bseindia.com/sitemap.xml"
+    ],
+    "robots_txt": {
+      "url": "https://www.bseindia.com/robots.txt",
+      "fetched": false,
+      "summary": "No real robots.txt exists. The URL returns HTTP 200 with Content-Type: text/html - the Angular SPA shell (the site's IIS rewrite catches all unknown paths), not a robots file. Therefore there are NO crawl directives at all: nothing is technically disallowed, but nothing is technically allowed either. WebFetch on the URL returned 403 (WAF); curl with a browser User-Agent returned the HTML shell."
+    },
+    "stance": "CONDITIONAL",
+    "clause_verbatim": "Any person who is accessing or has accessed any information or data from the Website acknowledges and agrees that all proprietary rights, statutory or otherwise, in the information received by such person shall remain the exclusive property of BSE. Any reproduction, redistribution or transmission, for consideration or otherwise, of any such information contained on the Website is strictly prohibited and would constitute a breach of the laws of India. [Copyright Notice] Except as otherwise noted on this Website, the contents of this Website are copyrighted (c) 2001 by BSE. All rights are reserved. No part of the information on this Website, including text, graphics and html code, may be reproduced or transmitted in any form by any means, without the express written consent of BSE.",
+    "commercial_use_or_redistribution": "YES - directly addressed and highly restrictive. Reproduction, redistribution or transmission of any information from the site is 'strictly prohibited' whether 'for consideration or otherwise' (i.e. the ban is NOT limited to commercial use - non-commercial and internal reuse are caught by the same words). The Copyright Notice allows reproduction/transmission only 'without the express written consent of BSE' being obtained first. The separate /static/about/terms_condition page is a software (freeware download) licence, not a website-data licence, and permits redistribution of the SOFTWARE only, unmodified and free of charge. The Announcements Disclaimer (/static/about/anndisclaimer) is purely a warranty/liability disclaimer plus a user indemnity - it contains no reuse permission.",
+    "practical_notes": "BSE has no dedicated 'Terms of Use' page for the website; the governing document is the Disclaimer page, whose closing Copyright Notice is the operative clause. There is NO clause anywhere mentioning scraping, crawling, robots, spiders, bots, data mining or automated access - the prohibition bites on the copying/storage step, not the access step. In practice: scraping announcements and storing them in an internal CRM is a 'reproduction' and arguably a 'transmission', so on a literal reading it needs BSE's express written consent; the conditional classification reflects that consent is the stated route, not that the activity is freely allowed. Technically: www.bseindia.com is an Angular SPA whose content is fetched from api.bseindia.com, so a plain HTTP client gets an empty shell - a headless browser or direct calls to the JSON API are needed. A WAF returns 403 to default non-browser clients; a browser User-Agent got through in testing. Note BSE also runs api.bseindia.com, which is undocumented and unlicensed - using it is not covered by any published terms.",
+    "confidence": "medium",
+    "sources": [
+      "https://www.bseindia.com/static/about/disclaimer",
+      "https://www.bseindia.com/static/about/terms_condition",
+      "https://www.bseindia.com/static/about/anndisclaimer",
+      "https://www.bseindia.com/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "NSE India (National Stock Exchange of India Ltd)",
+    "region": "India",
+    "homepage": "https://www.nseindia.com",
+    "terms_urls_checked": [
+      "https://www.nseindia.com/static/nse-terms-of-use",
+      "https://www.nseindia.com/website-policies",
+      "https://www.nseindia.com/static/nse-disclaimer"
+    ],
+    "robots_txt": {
+      "url": "https://www.nseindia.com/robots.txt",
+      "fetched": true,
+      "summary": "Permissive: 'User-agent: *  Allow: /  Disallow: /market-data-test  Sitemap: https://www.nseindia.com/sitemap.xml'. The corporate-announcements paths (/companies-listing/corporate-filings-announcements and the /api/ endpoints behind them) are NOT disallowed. Note the sharp contradiction: robots.txt technically invites crawling while the Terms of Use expressly ban it. robots.txt is a technical signal only and does not override the contractual terms."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "User is granted a non-exclusive, non-transferable, limited right to access the Website / Mobile Application and avail the services provided by NSE through the Website / Mobile Application. User is prohibited to conduct any systematic or automated data collection activities (including scraping, data mining, data extraction and data harvesting) on or in relation to our Website / Mobile Application.",
+    "commercial_use_or_redistribution": "YES - separate and equally restrictive. Terms of Use: 'User agrees that any information or content or data on the Website / Mobile Application shall not be copied, modified, reverse engineer, reproduced, uploaded, transmitted, posted, stored (either in hardcopy or in an electronic retrieval system), adapted, altered, translated, disseminated, distributed, displayed, performed, broadcasted, published, hyperlinked, sold, marketed, licensed, rented, leased or distributed in any form, without prior written permission of NSE. Unless the information or Content is available for download, not to aggregate, copy or duplicate in any manner any of the content or information which is available on Website / Mobile Application.' Website Policies (Copyright): 'Except as specifically permitted herein the Exchange is the owner of copyright in all information featured on this website and no portion of the information on this website may be reproduced on or transmitted to or stored in any other website or in other form of electronic retrieval system or by in any other form or by in any other means.' Note 'stored ... in an electronic retrieval system' squarely covers loading announcements into an internal database/CRM.",
+    "practical_notes": "This is the clearest India-side prohibition and it is unambiguous - no permission-based carve-out is offered in the ToU text for automated collection (only the copying/storage clause offers a 'prior written permission of NSE' route). The Terms of Use text does NOT contain an explicit cross-reference deferring to a separate 'NSE Data & Analytics' redistribution policy - NSE Data & Analytics appears only as a group-company link in site navigation - so the website ToU stands on its own; a commercial data licence would have to be negotiated separately with NSE Data & Analytics / NSE Indices. Technically: NSE sits behind Akamai bot management and normally requires a cookie-primed browser session; a browser User-Agent sufficed for the static policy pages in this test, but the /api/ announcement endpoints typically reject cold clients. Legal position and technical feasibility diverge here - the site is scrapable but the terms forbid it.",
+    "confidence": "high",
+    "sources": [
+      "https://www.nseindia.com/static/nse-terms-of-use",
+      "https://www.nseindia.com/website-policies",
+      "https://www.nseindia.com/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Competition Commission of India (CCI)",
+    "region": "India",
+    "homepage": "https://www.cci.gov.in",
+    "terms_urls_checked": [
+      "https://www.cci.gov.in/contents/termncond",
+      "https://www.cci.gov.in/contents/copyright",
+      "https://www.cci.gov.in/contents/disclaimer",
+      "https://www.cci.gov.in/contents/hyperlinks"
+    ],
+    "robots_txt": {
+      "url": "https://www.cci.gov.in/robots.txt",
+      "fetched": true,
+      "summary": "'User-agent: *' with Disallow only on six image directories: /images/combination_pre_filling_form_consultations/, /images/internship/, /public/images/combination_pre_filling_form_consultations/, /public/images/internship/, /images/stakeholdersconsultations/, /public/images/stakeholdersconsultations/. The Combination Orders register and all order PDFs are NOT disallowed. Caveat: the disallowed 'combination_pre_filling_form_consultations' path is combinations-adjacent (pre-filing consultation material), so avoid that specific directory."
+    },
+    "stance": "SILENT",
+    "clause_verbatim": "[Terms and Conditions, full operative text] This Portal is hosted by National Informatics Centre, Government of India for Competiton Commission of India(CCI). Though all efforts have been made to ensure the accuracy and currency of the content on this Portal, the same should not be construed as a statement of law or used for any legal purposes... In no event will the Government or Competiton Commission of India/National Informatics Centre be liable for any expense, loss or damage... arising out of or in connection with the use of this Portal. [Copyright Policy, full text] Material featured on Competition Commission of India (CCI) may be reproduced free of charge after taking proper permission by sending a mail to us. However, the material has to be reproduced accurately and not to be used in a derogatory manner or in a misleading context. Wherever the material is being published or issued to others, the source must be prominently acknowledged.",
+    "commercial_use_or_redistribution": "Partially addressed, and not on commercial/non-commercial lines. The standard Indian government (GIGW / india.gov.in boilerplate) Copyright Policy makes reproduction free of charge but subject to three conditions: (1) prior permission obtained by email, (2) accurate reproduction, no derogatory or misleading use, and (3) prominent source acknowledgement wherever the material is published or issued to others. No distinction is drawn between commercial and non-commercial use, and there is no redistribution ban. Third-party-copyright material on the site is carved out and needs consent from the respective rights holder.",
+    "practical_notes": "Terms and Conditions, Disclaimer and Hyper Linking Policy were read in full and contain nothing whatsoever about automated access, scraping, crawling, robots, bots, data mining, harvesting or systematic retrieval - they are purely accuracy/liability disclaimers plus a linking policy. The only reuse constraint is the Copyright Policy above. Practical read: harvesting Combination Orders for internal analysis is not addressed by any clause; the permission-by-email + attribution conditions attach to reproduction/publication of the material, so they bite if extracts are put into client-facing documents rather than kept internal. Consider sending the courtesy permission email to CCI if outputs will be published. Technically the site is plain server-rendered (Drupal-style) HTML, fetched fine with a normal client, no bot protection observed - polite rate-limiting is the main courtesy obligation.",
+    "confidence": "high",
+    "sources": [
+      "https://www.cci.gov.in/contents/termncond",
+      "https://www.cci.gov.in/contents/copyright",
+      "https://www.cci.gov.in/contents/disclaimer",
+      "https://www.cci.gov.in/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "SEBI (Securities and Exchange Board of India)",
+    "region": "India",
+    "homepage": "https://www.sebi.gov.in",
+    "terms_urls_checked": [
+      "https://www.sebi.gov.in/website-policy.html",
+      "https://www.sebi.gov.in/terms-conditions.html (404)",
+      "https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doDisclaimer=yes (302 to homepage)"
+    ],
+    "robots_txt": {
+      "url": "https://www.sebi.gov.in/robots.txt",
+      "fetched": true,
+      "summary": "'User-agent: *  Disallow:  Disallow: /js  Disallow: /hindi/js  Disallow: /css  Disallow: /hindi/css'. Only static asset directories are excluded. All content paths - including takeover/SAST filings under /sebiweb/ - are permitted. Effectively an open robots.txt."
+    },
+    "stance": "SILENT",
+    "clause_verbatim": "[Website Policy > Terms of Use, full operative text] This Website is designed, developed and hosted by Securities and Exchange Board of India (SEBI). Though all efforts have been made to ensure the accuracy and currency of the content on this Website, the same should not be construed as a statement of law or used for any legal purposes... In no event will SEBI be liable for any expense, loss or damage... arising out of or in connection with the use of this Website. [Copyright Policy, full text] Material featured on this Website may be reproduced free of charge after taking proper permission by sending a mail to us. However, the material has to be reproduced accurately and not to be used in a derogatory manner or in a misleading context. Wherever the material is being published or issued to others, the source must be prominently acknowledged.",
+    "commercial_use_or_redistribution": "Same GIGW boilerplate as CCI: reproduction is free of charge but conditional on (1) prior permission by email, (2) accurate, non-derogatory, non-misleading reproduction, and (3) prominent source acknowledgement when published or issued to others. No commercial/non-commercial distinction and no redistribution prohibition. Third-party-copyright material excluded. Separately, the Linking Policy explicitly permits deep-linking without prior permission ('We do not object to you linking directly to the information that is hosted on this Website and no prior permission is required for the same') but forbids framing SEBI pages inside another site.",
+    "practical_notes": "The whole Website Policy page (Terms of Use, Copyright Policy, Privacy Policy, Linking Policy) was read end to end - there is no mention of scraping, crawling, robots, spiders, bots, automated access, data mining, harvesting, systematic retrieval, rate limits or bulk downloading. Only generic copyright + liability language. Note the correct URL is /website-policy.html (singular 'policy'); /terms-conditions.html and /websitepolicy.html both 404, and the legacy /sebiweb/other/OtherAction.do?doDisclaimer=yes now 302-redirects to the homepage. Technically SEBI is server-rendered and fetched cleanly with a normal client; the SAST/takeover filing lists are served from /sebiweb/ Java endpoints that accept ordinary GET/POST. Same practical read as CCI: internal harvesting is unaddressed, but the permission-and-attribution conditions apply if extracts are republished externally.",
+    "confidence": "high",
+    "sources": [
+      "https://www.sebi.gov.in/website-policy.html",
+      "https://www.sebi.gov.in/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "HKEXnews / HKEX (Hong Kong Exchanges and Clearing Limited)",
+    "region": "Hong Kong",
+    "homepage": "https://www.hkexnews.hk",
+    "terms_urls_checked": [
+      "https://www2.hkexnews.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+      "https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+      "https://www1.hkexnews.hk/search/titlesearch.xhtml",
+      "http://www2.hkexnews.hk/Global/Exchange/Hyperlink-Policy?sc_lang=en"
+    ],
+    "robots_txt": {
+      "url": "https://www.hkexnews.hk/robots.txt",
+      "fetched": false,
+      "summary": "HKEXnews has NO robots.txt - https://www.hkexnews.hk/robots.txt returns HTTP 404. The parent site https://www.hkex.com.hk/robots.txt exists and disallows only four Listing-Rules contingency paths (/Listing/Rules-and-Guidance/Listing-Rules-Contingency/*, the matching /-/media/... paths, and Interpretation-and-Guidance-Contingency/*). Nothing about the announcement search is disallowed. This is irrelevant to the legal position: the Terms of Use ban automated access outright regardless of robots.txt."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "Unless HKEX or relevant third-parties has/have given you express written permission, you are not permitted to, directly or indirectly and whether or not for gain: (i) distribute, display, copy, modify, download, publish, post, transmit or otherwise make available or exploit the Information or any part of it in any format to any third parties; (ii) create or compile derivative works (including, without limitation, through framing or systematic retrieval to create collections, compilations, databases or directories) from the Information or any part of it; (iii) use any programmatic, scripted or other mechanical means to access this Website or any Information... You are not permitted to conduct, facilitate, enable, authorise or permit any text or data mining or web scraping in relation to this Website or any services provided via, or in relation to, this Website for any purpose, including the development, training, fine-tuning or validation of artificial intelligence (\"AI\") systems or models. This includes using, permitting, authorising or attempting the use of: (i) any \"robot\", \"bot\", \"spider\", \"scraper\" or other automated device, program, tool, algorithm, code, process or methodology to access, obtain, copy, monitor or republish any portion of the Website or any Information accessed via the same; and (ii) any automated analytical technique aimed at analysing text and data in digital form to generate information or develop, train, fine-tune or validate AI systems or models which includes but is not limited to patterns, trends and correlations.",
+    "commercial_use_or_redistribution": "YES - and the permitted-use grant is exceptionally narrow. Section 5 (Copyright and Permitted Use) grants only: 'You are permitted to download, print, store temporarily, retrieve and display Information from the Website on a computer screen, print individual pages on paper (but not photocopy them) and store such pages in electronic form on disk (but not on any server or other storage device connected to a network) for your personal use.' Note three points that directly defeat the intended use case: (a) storage is limited to a non-networked disk, so loading announcements into a shared CRM/database is outside the licence; (b) the licence is for 'your personal use' only, so any corporate/internal-analytical use falls outside it; (c) the prohibitions apply 'whether or not for gain', so a non-commercial framing does not help. Building a compilation or database by systematic retrieval is separately and expressly banned. HKEX also bans use of the Information as, or for determining, a benchmark.",
+    "practical_notes": "Strongest prohibition of the five sites, and it is recent, deliberate drafting (the AI/TDM language is a modern anti-scraping clause). HKEXnews is governed by the same Terms - the HKEXnews Terms of Use page (www2.hkexnews.hk/Global/Exchange/Terms-of-Use) is the identical HKEX group document and its preamble states the Terms 'govern your access to and use of the websites (each a \"Website\") of Hong Kong Exchanges and Clearing Limited and its affiliates'; there is no separate, looser HKEXnews-specific licence. Acceptance is by conduct: 'By continuing to access and use this Website... you are deemed to have understood and agreed to these Terms' - a browsewrap, so no click-through is needed to bind. The only lawful route is HKEX's express written permission (the Terms direct enquiries to info@hkex.com.hk), or a commercial licence via HKEX Information Services. Technically the announcement search (www1.hkexnews.hk/search/titlesearch.xhtml) is a JSF app fronted by what appears to be an Akamai bot-manager sensor script, so scraping would require a headless browser - but the technical difficulty is beside the point: the legal answer here is a clear no. RECOMMENDATION: do not scrape HKEXnews; treat it as licence-or-nothing.",
+    "confidence": "high",
+    "sources": [
+      "https://www2.hkexnews.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+      "https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en",
+      "https://www.hkex.com.hk/robots.txt",
+      "https://www.hkexnews.hk/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  }
+]

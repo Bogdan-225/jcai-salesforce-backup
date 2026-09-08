@@ -1,0 +1,2414 @@
+{
+ "totals": {
+  "Account": 1872003,
+  "Contact": 334662,
+  "Opportunity": 5210,
+  "Matching__c": 67100,
+  "Buy_Needs__c": 2524,
+  "Establishments__c": 113769,
+  "ContractFile__c": 213,
+  "Contract": 0
+ },
+ "fields": {
+  "Account.ParentId": {
+   "n": 372,
+   "mode": "exact"
+  },
+  "Account.Description": {
+   "n": 855,
+   "mode": "sampled-all"
+  },
+  "Account.SFID18__c": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.Phone": {
+   "n": 833347,
+   "mode": "exact"
+  },
+  "Account.Name": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.Website": {
+   "n": 535958,
+   "mode": "exact"
+  },
+  "Account.Country__c": {
+   "n": 1672891,
+   "mode": "exact"
+  },
+  "Account.stock_code__c": {
+   "n": 3858,
+   "mode": "exact"
+  },
+  "Account.FolderURL__c": {
+   "n": 33,
+   "mode": "exact"
+  },
+  "Account.Field2__c": {
+   "n": 60,
+   "mode": "true-count"
+  },
+  "Account.IsNeedPhoneCheck__c": {
+   "n": 61711,
+   "mode": "true-count"
+  },
+  "Account.CB_Address__c": {
+   "n": 1138159,
+   "mode": "exact"
+  },
+  "Account.IndustryGICS__c": {
+   "n": 1218366,
+   "mode": "exact"
+  },
+  "Account.TDBPostalCode__c": {
+   "n": 333913,
+   "mode": "exact"
+  },
+  "Account.Field3__c": {
+   "n": 58,
+   "mode": "exact"
+  },
+  "Account.CB_IndustryText__c": {
+   "n": 1210892,
+   "mode": "exact"
+  },
+  "Account.CB_EBITDA_USDmm__c": {
+   "n": 151004,
+   "mode": "exact"
+  },
+  "Account.CB_CurrentPeriod__c": {
+   "n": 393363,
+   "mode": "exact"
+  },
+  "Account.CB_PreviousPeriod__c": {
+   "n": 381716,
+   "mode": "exact"
+  },
+  "Account.SubIndustryGICS__c": {
+   "n": 1218350,
+   "mode": "exact"
+  },
+  "Account.SectorGICS__c": {
+   "n": 1218395,
+   "mode": "exact"
+  },
+  "Account.Industry_GroupGICS__c": {
+   "n": 1218375,
+   "mode": "exact"
+  },
+  "Account.CB_TwoPeriodsPrior_RevenueUSDmm__c": {
+   "n": 110094,
+   "mode": "exact"
+  },
+  "Account.CB_TwoPeriodsPrior__c": {
+   "n": 368106,
+   "mode": "exact"
+  },
+  "Account.FundStatus__c": {
+   "n": 782,
+   "mode": "exact"
+  },
+  "Account.Fund__c": {
+   "n": 2481,
+   "mode": "true-count"
+  },
+  "Account.cb_M_Aneeds__c": {
+   "n": 290,
+   "mode": "true-count"
+  },
+  "Account.cb_M_Aneedsriyuu__c": {
+   "n": 253,
+   "mode": "exact"
+  },
+  "Account.fd_M_Aneedsriyuu__c": {
+   "n": 49,
+   "mode": "exact"
+  },
+  "Account.fd_M_Aneeds__c": {
+   "n": 70,
+   "mode": "true-count"
+  },
+  "Account.FundType__c": {
+   "n": 2481,
+   "mode": "exact"
+  },
+  "Account.CB_CurrentRevenueUSDmm__c": {
+   "n": 155540,
+   "mode": "exact"
+  },
+  "Account.CB_PreviousPeriodRevenue_USDmm__c": {
+   "n": 140758,
+   "mode": "exact"
+  },
+  "Account.CB_MarketCapUSDmm__c": {
+   "n": 36807,
+   "mode": "exact"
+  },
+  "Account.IS_Buy_Notes__c": {
+   "n": 5,
+   "mode": "sampled-all"
+  },
+  "Account.PowerBuyer__c": {
+   "n": 20,
+   "mode": "true-count"
+  },
+  "Account.AcquisitionsPerformed__c": {
+   "n": 24,
+   "mode": "exact"
+  },
+  "Account.NGCause__c": {
+   "n": 15505,
+   "mode": "exact"
+  },
+  "Account.NGDetail__c": {
+   "n": 15950,
+   "mode": "exact"
+  },
+  "Account.NGDate__c": {
+   "n": 43434,
+   "mode": "exact"
+  },
+  "Account.CB_DunsNumber__c": {
+   "n": 2988,
+   "mode": "exact"
+  },
+  "Account.AcquiringCompanyPersona__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Account.TickerSymbol": {
+   "n": 35955,
+   "mode": "exact"
+  },
+  "Account.AcquiringCompanyBuyNeedsPersona__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Account.AcquiringCompanyMAPersona__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Account.CreatedById": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.LastModifiedById": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.CompanyProfileForMatching__c": {
+   "n": 500,
+   "mode": "sampled-all"
+  },
+  "Account.MAForMatching__c": {
+   "n": 7,
+   "mode": "sampled-all"
+  },
+  "Account.BuyNeedsForMatching__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Account.OwnerId": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.CB_CIQId__c": {
+   "n": 1242382,
+   "mode": "exact"
+  },
+  "Account.LeadType__c": {
+   "n": 2683,
+   "mode": "exact"
+  },
+  "Account.representative_phone__c": {
+   "n": 3316,
+   "mode": "exact"
+  },
+  "Account.representative_phone_memo__c": {
+   "n": 7832,
+   "mode": "exact"
+  },
+  "Account.SearchCapital__c": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.SearchPrefecture__c": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.SearchTDBAmountOfSalesAvg__c": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Account.SearchIndustry__c": {
+   "n": 506199,
+   "mode": "exact"
+  },
+  "Account.Field_memo__c": {
+   "n": 25339,
+   "mode": "exact"
+  },
+  "Account.TDBcode__c": {
+   "n": 298074,
+   "mode": "exact"
+  },
+  "Account.TDBOffice__c": {
+   "n": 118386,
+   "mode": "exact"
+  },
+  "Account.TDBCapital__c": {
+   "n": 287654,
+   "mode": "exact"
+  },
+  "Account.TDBKanji__c": {
+   "n": 294013,
+   "mode": "exact"
+  },
+  "Account.TDBKana__c": {
+   "n": 311049,
+   "mode": "exact"
+  },
+  "Account.TDBFoundingYear__c": {
+   "n": 1355410,
+   "mode": "exact"
+  },
+  "Account.kensetsu_number__c": {
+   "n": 622,
+   "mode": "exact"
+  },
+  "Account.TDBParent__c": {
+   "n": 252801,
+   "mode": "exact"
+  },
+  "Account.CorporateNumber__c": {
+   "n": 516483,
+   "mode": "exact"
+  },
+  "Account.TDBEmployees__c": {
+   "n": 283276,
+   "mode": "exact"
+  },
+  "Account.TDBLocation__c": {
+   "n": 339788,
+   "mode": "exact"
+  },
+  "Account.TDBPhone__c": {
+   "n": 293505,
+   "mode": "exact"
+  },
+  "Account.TDBPrefectures__c": {
+   "n": 321726,
+   "mode": "exact"
+  },
+  "Account.TDBShareholdersNumber1__c": {
+   "n": 293512,
+   "mode": "exact"
+  },
+  "Account.Field4__c": {
+   "n": 201,
+   "mode": "exact"
+  },
+  "Account.TDBMajorClassification__c": {
+   "n": 304766,
+   "mode": "exact"
+  },
+  "Account.TDBForeign__c": {
+   "n": 293467,
+   "mode": "exact"
+  },
+  "Account.Purpose__c": {
+   "n": 130658,
+   "mode": "exact"
+  },
+  "Account.TDBMiddleClassification__c": {
+   "n": 304749,
+   "mode": "exact"
+  },
+  "Account.TDBSubclassification__c": {
+   "n": 304470,
+   "mode": "exact"
+  },
+  "Account.AccountSource": {
+   "n": 293462,
+   "mode": "exact"
+  },
+  "Account.TDBSettlementYearMonth__c": {
+   "n": 293481,
+   "mode": "exact"
+  },
+  "Account.TDBSubCategory__c": {
+   "n": 304484,
+   "mode": "exact"
+  },
+  "Account.TDBSettlementYearMonth2__c": {
+   "n": 293456,
+   "mode": "exact"
+  },
+  "Account.TDBSettlementYearMonth3__c": {
+   "n": 293452,
+   "mode": "exact"
+  },
+  "Account.TDBAmountOfSales__c": {
+   "n": 287726,
+   "mode": "exact"
+  },
+  "Account.TDBProfit__c": {
+   "n": 206775,
+   "mode": "exact"
+  },
+  "Account.TDBProfit3__c": {
+   "n": 235837,
+   "mode": "exact"
+  },
+  "Account.TDBProfit2__c": {
+   "n": 228971,
+   "mode": "exact"
+  },
+  "Account.TDBAmountOfSales2__c": {
+   "n": 286958,
+   "mode": "exact"
+  },
+  "Account.TDBAmountOfSales3__c": {
+   "n": 285367,
+   "mode": "exact"
+  },
+  "Account.SourceURL__c": {
+   "n": 1111,
+   "mode": "exact"
+  },
+  "Account.TDBAmountOfSalesAvg__c": {
+   "n": 287727,
+   "mode": "exact"
+  },
+  "Account.TDBProfitAvg__c": {
+   "n": 247383,
+   "mode": "exact"
+  },
+  "Account.TDBRepDirector__c": {
+   "n": 273798,
+   "mode": "exact"
+  },
+  "Account.TDBRepPostal__c": {
+   "n": 6,
+   "mode": "exact"
+  },
+  "Account.TDBRepKana__c": {
+   "n": 293165,
+   "mode": "exact"
+  },
+  "Account.TDBRepKanji__c": {
+   "n": 306540,
+   "mode": "exact"
+  },
+  "Account.TDBRepPhone__c": {
+   "n": 76490,
+   "mode": "exact"
+  },
+  "Account.TDBRepAdress__c": {
+   "n": 270655,
+   "mode": "exact"
+  },
+  "Account.TDBRepMonth__c": {
+   "n": 227750,
+   "mode": "exact"
+  },
+  "Account.TDBRepYear__c": {
+   "n": 233484,
+   "mode": "exact"
+  },
+  "Account.TDBRepDay__c": {
+   "n": 287439,
+   "mode": "exact"
+  },
+  "Account.TDBRepLocal__c": {
+   "n": 235182,
+   "mode": "exact"
+  },
+  "Account.TDBRepGender__c": {
+   "n": 293467,
+   "mode": "exact"
+  },
+  "Account.TDBRepEducation__c": {
+   "n": 114301,
+   "mode": "exact"
+  },
+  "Account.TDBIPO__c": {
+   "n": 293756,
+   "mode": "exact"
+  },
+  "Account.TDBShareholders__c": {
+   "n": 216442,
+   "mode": "exact"
+  },
+  "Account.TDBBoardMember__c": {
+   "n": 348350,
+   "mode": "exact"
+  },
+  "Account.NDA_date__c": {
+   "n": 1146,
+   "mode": "exact"
+  },
+  "Account.TDBShareholdersNumber__c": {
+   "n": 201351,
+   "mode": "exact"
+  },
+  "Account.TDBClient__c": {
+   "n": 292959,
+   "mode": "exact"
+  },
+  "Account.TDBSupplier__c": {
+   "n": 291742,
+   "mode": "exact"
+  },
+  "Account.NDA_Start_Date__c": {
+   "n": 479,
+   "mode": "exact"
+  },
+  "Account.NDA_End_Date__c": {
+   "n": 415,
+   "mode": "exact"
+  },
+  "Account.NDA_documents__c": {
+   "n": 1181,
+   "mode": "exact"
+  },
+  "Account.NDA_Template__c": {
+   "n": 353,
+   "mode": "exact"
+  },
+  "Account.NDA_caution__c": {
+   "n": 20,
+   "mode": "true-count"
+  },
+  "Account.PartnerBank__c": {
+   "n": 291923,
+   "mode": "exact"
+  },
+  "Account.NDA_note__c": {
+   "n": 20,
+   "mode": "exact"
+  },
+  "Account.BuyAD_date__c": {
+   "n": 9,
+   "mode": "exact"
+  },
+  "Account.NDA_Template_Change__c": {
+   "n": 71,
+   "mode": "exact"
+  },
+  "Account.BuyADCrossboader_date__c": {
+   "n": 4,
+   "mode": "exact"
+  },
+  "Account.BuyADSmall_date__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Account.BuyAD_documents__c": {
+   "n": 11,
+   "mode": "exact"
+  },
+  "Account.NDA_Type_of_Contract__c": {
+   "n": 1564173,
+   "mode": "exact"
+  },
+  "Account.BuyADCrossboader_documents__c": {
+   "n": 4,
+   "mode": "exact"
+  },
+  "Account.NDA_Automatic_Update__c": {
+   "n": 1564175,
+   "mode": "exact"
+  },
+  "Account.BuyADSmall_documents__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Account.approach_caution_select__c": {
+   "n": 45,
+   "mode": "exact"
+  },
+  "Account.approach_caution_detail__c": {
+   "n": 45,
+   "mode": "exact"
+  },
+  "Account.NominationDate__c": {
+   "n": 437,
+   "mode": "exact"
+  },
+  "Account.SellCallNGReason__c": {
+   "n": 12,
+   "mode": "exact"
+  },
+  "Account.SellCallNGDate__c": {
+   "n": 22401,
+   "mode": "exact"
+  },
+  "Account.NominationBuyer__c": {
+   "n": 434,
+   "mode": "exact"
+  },
+  "Account.DMPATTERN240329__c": {
+   "n": 44617,
+   "mode": "exact"
+  },
+  "Account.DMtag__c": {
+   "n": 622,
+   "mode": "exact"
+  },
+  "Account.SellCallNGDetail__c": {
+   "n": 22453,
+   "mode": "exact"
+  },
+  "Account.DMDATE240329__c": {
+   "n": 44615,
+   "mode": "exact"
+  },
+  "Account.mail_DM_date__c": {
+   "n": 24361,
+   "mode": "exact"
+  },
+  "Account.Field5__c": {
+   "n": 1348,
+   "mode": "exact"
+  },
+  "Account.Field7__c": {
+   "n": 19855,
+   "mode": "exact"
+  },
+  "Account.Field6__c": {
+   "n": 862,
+   "mode": "exact"
+  },
+  "Account.Field8__c": {
+   "n": 19856,
+   "mode": "exact"
+  },
+  "Account.domestic_is_memo__c": {
+   "n": 75365,
+   "mode": "exact"
+  },
+  "Account.mail_DM_pattern__c": {
+   "n": 24148,
+   "mode": "exact"
+  },
+  "Account.NDADateCheck__c": {
+   "n": 1205,
+   "mode": "true-count"
+  },
+  "Account.BuyADCrossboaderContractCheck__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Account.domestic_is_date__c": {
+   "n": 33649,
+   "mode": "exact"
+  },
+  "Account.NewOpportunityDate__c": {
+   "n": 18,
+   "mode": "exact"
+  },
+  "Account.contactExistFlag__c": {
+   "n": 10705,
+   "mode": "true-count"
+  },
+  "Account.NNOrMoreExistFlag__c": {
+   "n": 22516,
+   "mode": "true-count"
+  },
+  "Account.parent_check__c": {
+   "n": 3026,
+   "mode": "true-count"
+  },
+  "Account.BuyADContractCheck__c": {
+   "n": 9,
+   "mode": "true-count"
+  },
+  "Account.SmallBuyADContractCheck__c": {
+   "n": 1,
+   "mode": "true-count"
+  },
+  "Account.RecordTypeId": {
+   "n": 1680734,
+   "mode": "exact"
+  },
+  "Account.Buy_MatchingNumber__c": {
+   "n": 34361,
+   "mode": "exact"
+  },
+  "Account.newMatching__c": {
+   "n": 31995,
+   "mode": "exact"
+  },
+  "Account.OwnerImporting__c": {
+   "n": 1335,
+   "mode": "exact"
+  },
+  "Account.Service_establisher__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.SCUEL_code__c": {
+   "n": 39473,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_1_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.Name_of_Facility__c": {
+   "n": 13807,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_3_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_5_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.Service_establisher_post__c": {
+   "n": 2612,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_4_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_6_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.Number_of_Type_7_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.TSRDescription__c": {
+   "n": 679,
+   "mode": "sampled-all"
+  },
+  "Account.Number_of_Type_2_facilities__c": {
+   "n": 2630,
+   "mode": "exact"
+  },
+  "Account.has_high_volume_prescription_site__c": {
+   "n": 10956,
+   "mode": "true-count"
+  },
+  "Account.TSR_corporate_type__c": {
+   "n": 506017,
+   "mode": "exact"
+  },
+  "Account.TSRKanji__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRKana__c": {
+   "n": 506184,
+   "mode": "exact"
+  },
+  "Account.TSRcode__c": {
+   "n": 506243,
+   "mode": "exact"
+  },
+  "Account.TSRLFoundingDate__c": {
+   "n": 506181,
+   "mode": "exact"
+  },
+  "Account.TSR_name_without_corporate_type__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRIndustry2__c": {
+   "n": 373721,
+   "mode": "exact"
+  },
+  "Account.TSRCapital__c": {
+   "n": 505992,
+   "mode": "exact"
+  },
+  "Account.TSRPurpose__c": {
+   "n": 506185,
+   "mode": "exact"
+  },
+  "Account.TSRIndustry1__c": {
+   "n": 506199,
+   "mode": "exact"
+  },
+  "Account.TSRIndustry3__c": {
+   "n": 243257,
+   "mode": "exact"
+  },
+  "Account.TSRLaunchDate__c": {
+   "n": 444515,
+   "mode": "exact"
+  },
+  "Account.TSRSettlementDate2__c": {
+   "n": 497102,
+   "mode": "exact"
+  },
+  "Account.TSRSurveyDay__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRSupplier__c": {
+   "n": 427783,
+   "mode": "exact"
+  },
+  "Account.TSRRepName__c": {
+   "n": 506188,
+   "mode": "exact"
+  },
+  "Account.TSRSettlementDate3__c": {
+   "n": 486840,
+   "mode": "exact"
+  },
+  "Account.TSRSettlementDate1__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRRepDay__c": {
+   "n": 358171,
+   "mode": "exact"
+  },
+  "Account.TSRRepKana__c": {
+   "n": 506181,
+   "mode": "exact"
+  },
+  "Account.TSRAnimalZodiac__c": {
+   "n": 361512,
+   "mode": "exact"
+  },
+  "Account.TSRPhone__c": {
+   "n": 499941,
+   "mode": "exact"
+  },
+  "Account.TSRPostalCode__c": {
+   "n": 506187,
+   "mode": "exact"
+  },
+  "Account.TSR_prefecture__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRBranches__c": {
+   "n": 300998,
+   "mode": "exact"
+  },
+  "Account.TSRLocation__c": {
+   "n": 506187,
+   "mode": "exact"
+  },
+  "Account.TSREmployees__c": {
+   "n": 502607,
+   "mode": "exact"
+  },
+  "Account.TSRIPO__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRRepKanji__c": {
+   "n": 506185,
+   "mode": "exact"
+  },
+  "Account.TSRBoardMember__c": {
+   "n": 435438,
+   "mode": "exact"
+  },
+  "Account.TSRShareholders__c": {
+   "n": 454117,
+   "mode": "exact"
+  },
+  "Account.TSR_largest_shareholder__c": {
+   "n": 454119,
+   "mode": "exact"
+  },
+  "Account.TSR_largest_shareholder_type__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRProfit1__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRAmountOfSales1__c": {
+   "n": 506188,
+   "mode": "exact"
+  },
+  "Account.TSRAmountOfSales2__c": {
+   "n": 506188,
+   "mode": "exact"
+  },
+  "Account.TSRProfit2__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRAmountOfSales3__c": {
+   "n": 506188,
+   "mode": "exact"
+  },
+  "Account.TSRProfit3__c": {
+   "n": 506186,
+   "mode": "exact"
+  },
+  "Account.TSRProfitGrowthRate__c": {
+   "n": 260817,
+   "mode": "exact"
+  },
+  "Account.TSRSalesGrowthRate__c": {
+   "n": 486839,
+   "mode": "exact"
+  },
+  "Account.TSRAmountOfSales_average__c": {
+   "n": 1872003,
+   "mode": "exact"
+  },
+  "Contact.Name": {
+   "n": 334662,
+   "mode": "exact"
+  },
+  "Account.TSRClient__c": {
+   "n": 495474,
+   "mode": "exact"
+  },
+  "Account.TSRRepLocal__c": {
+   "n": 301404,
+   "mode": "exact"
+  },
+  "Account.TSRRepAdress__c": {
+   "n": 443088,
+   "mode": "exact"
+  },
+  "Contact.MobilePhone": {
+   "n": 1682,
+   "mode": "exact"
+  },
+  "Contact.Title": {
+   "n": 299808,
+   "mode": "exact"
+  },
+  "Contact.LeadSource": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.Email": {
+   "n": 34914,
+   "mode": "exact"
+  },
+  "Contact.KanaName__c": {
+   "n": 296528,
+   "mode": "exact"
+  },
+  "Contact.ComeFrom__c": {
+   "n": 235409,
+   "mode": "exact"
+  },
+  "Account.TSRRepEducation__c": {
+   "n": 237460,
+   "mode": "exact"
+  },
+  "Contact.Gender__c": {
+   "n": 293623,
+   "mode": "exact"
+  },
+  "Contact.speedma_umu__c": {
+   "n": 275,
+   "mode": "true-count"
+  },
+  "Contact.speedM_A_ID__c": {
+   "n": 272,
+   "mode": "exact"
+  },
+  "Contact.HomePostalCode__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Contact.Bizbank_Id__c": {
+   "n": 8,
+   "mode": "exact"
+  },
+  "Contact.Bizbank_umu__c": {
+   "n": 8,
+   "mode": "true-count"
+  },
+  "Contact.RepresentativeAddress__c": {
+   "n": 269681,
+   "mode": "exact"
+  },
+  "Contact.M_AResponsible__c": {
+   "n": 3741,
+   "mode": "true-count"
+  },
+  "Contact.Email_Bounce_Type__c": {
+   "n": 105,
+   "mode": "exact"
+  },
+  "Contact.LinkedIn__c": {
+   "n": 59,
+   "mode": "exact"
+  },
+  "Contact.No_Contact__c": {
+   "n": 587,
+   "mode": "exact"
+  },
+  "Contact.Graduated__c": {
+   "n": 114393,
+   "mode": "exact"
+  },
+  "Contact.ToCC__c": {
+   "n": 1442,
+   "mode": "exact"
+  },
+  "Contact.Birthdate": {
+   "n": 233803,
+   "mode": "exact"
+  },
+  "Contact.Department": {
+   "n": 26892,
+   "mode": "exact"
+  },
+  "Contact.DoNotCall": {
+   "n": 2,
+   "mode": "true-count"
+  },
+  "Contact.Apollo_DataSource__c": {
+   "n": 21283,
+   "mode": "exact"
+  },
+  "Contact.AssistantName": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.HasOptedOutOfEmail": {
+   "n": 2,
+   "mode": "true-count"
+  },
+  "Contact.ReportsToId": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.Fax": {
+   "n": 65,
+   "mode": "exact"
+  },
+  "Contact.OwnerId": {
+   "n": 334662,
+   "mode": "exact"
+  },
+  "Contact.MailingAddress": {
+   "n": 1687,
+   "mode": "exact"
+  },
+  "Contact.OtherAddress": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Contact.Phone": {
+   "n": 5358,
+   "mode": "exact"
+  },
+  "Contact.Description": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Contact.AssistantPhone": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.AccountId": {
+   "n": 334393,
+   "mode": "exact"
+  },
+  "Contact.LastCURequestDate": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.HasOptedOutOfFax": {
+   "n": 2,
+   "mode": "true-count"
+  },
+  "Contact.LastCUUpdateDate": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contact.CreatedById": {
+   "n": 334662,
+   "mode": "exact"
+  },
+  "Opportunity.StageName": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Contact.DepartmentPhone__c": {
+   "n": 1059,
+   "mode": "exact"
+  },
+  "Opportunity.Name": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Contact.Detail__c": {
+   "n": 1689,
+   "mode": "exact"
+  },
+  "Opportunity.Field17__c": {
+   "n": 441,
+   "mode": "exact"
+  },
+  "Opportunity.LeadType__c": {
+   "n": 1933,
+   "mode": "exact"
+  },
+  "Contact.LastModifiedById": {
+   "n": 334662,
+   "mode": "exact"
+  },
+  "Opportunity.AccountId": {
+   "n": 5173,
+   "mode": "exact"
+  },
+  "Opportunity.LeadTypeMemo__c": {
+   "n": 183,
+   "mode": "exact"
+  },
+  "Opportunity.OwnerId": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.SellsideMainManager__c": {
+   "n": 2703,
+   "mode": "exact"
+  },
+  "Opportunity.Field15__c": {
+   "n": 766,
+   "mode": "exact"
+  },
+  "Opportunity.BuysideMainManager__c": {
+   "n": 2273,
+   "mode": "exact"
+  },
+  "Opportunity.ApproachCount__c": {
+   "n": 3874,
+   "mode": "exact"
+  },
+  "Opportunity.ApproachStatus__c": {
+   "n": 3867,
+   "mode": "exact"
+  },
+  "Opportunity.Field4__c": {
+   "n": 273,
+   "mode": "exact"
+  },
+  "Opportunity.opportunity_acquirer__c": {
+   "n": 1659,
+   "mode": "exact"
+  },
+  "Opportunity.termination_reason__c": {
+   "n": 2831,
+   "mode": "exact"
+  },
+  "Opportunity.SellerSuccessMargin__c": {
+   "n": 114,
+   "mode": "exact"
+  },
+  "Opportunity.SellerSuccessMarginDepositDay__c": {
+   "n": 7,
+   "mode": "exact"
+  },
+  "Opportunity.Field16__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.predictiveAmount__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.BuyerSuccessMargin__c": {
+   "n": 115,
+   "mode": "exact"
+  },
+  "Opportunity.BuyerSuccessMarginDepositDay__c": {
+   "n": 8,
+   "mode": "exact"
+  },
+  "Contact.HomePhone": {
+   "n": 76561,
+   "mode": "exact"
+  },
+  "Opportunity.SellADContractDate__c": {
+   "n": 99,
+   "mode": "exact"
+  },
+  "Opportunity.AD__c": {
+   "n": 24,
+   "mode": "exact"
+  },
+  "Opportunity.SellADContract_URL__c": {
+   "n": 77,
+   "mode": "exact"
+  },
+  "Opportunity.DisclosureStatementURL_Sell__c": {
+   "n": 14,
+   "mode": "exact"
+  },
+  "Opportunity.TDBSubCategory__c": {
+   "n": 1471,
+   "mode": "exact"
+  },
+  "Opportunity.TDBMiddleClassification__c": {
+   "n": 1502,
+   "mode": "exact"
+  },
+  "Opportunity.TDBMajorClassification__c": {
+   "n": 1503,
+   "mode": "exact"
+  },
+  "Opportunity.TDBSubclassification__c": {
+   "n": 1472,
+   "mode": "exact"
+  },
+  "Opportunity.Prefectures__c": {
+   "n": 1667,
+   "mode": "exact"
+  },
+  "Opportunity.Field11__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Opportunity.AskingPrice__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Opportunity.SalesAmount__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.SP_FolderURLProject__c": {
+   "n": 58,
+   "mode": "exact"
+  },
+  "Opportunity.NetWorth__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.TotalAsset__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.CashDeposit__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.EBITDA__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.Dept__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.LongTermFollow__c": {
+   "n": 1,
+   "mode": "true-count"
+  },
+  "Opportunity.LongTermReason__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Opportunity.Pending__c": {
+   "n": 0,
+   "mode": "true-count"
+  },
+  "Opportunity.OnHoldReason__c": {
+   "n": 321,
+   "mode": "exact"
+  },
+  "Opportunity.SearchSalesMinimum__c": {
+   "n": 3,
+   "mode": "exact"
+  },
+  "Opportunity.PendingMethod__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.SearchSalesMax__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Opportunity.Confirm_SellersBank_POC__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.LongTermMethod__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Opportunity.Confirm_BuyersBank_POC__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.VerifyWireTransferPayment__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.UpdateShareholderRegistry__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_ActivitiesByStage__c": {
+   "n": 916,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_IM__c": {
+   "n": 17,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_Teaser__c": {
+   "n": 86,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_Valuation__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_FS__c": {
+   "n": 39,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_Agenda__c": {
+   "n": 9,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_MatchingStage__c": {
+   "n": 65,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_QA__c": {
+   "n": 8,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_LOI__c": {
+   "n": 12,
+   "mode": "true-count"
+  },
+  "Opportunity.Check_DocUploaded_MOU__c": {
+   "n": 14,
+   "mode": "true-count"
+  },
+  "Opportunity.CreatedById": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.Probability": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.Check_DocUploaded_SPA__c": {
+   "n": 4,
+   "mode": "true-count"
+  },
+  "Opportunity.tossup__c": {
+   "n": 132,
+   "mode": "exact"
+  },
+  "Opportunity.LastModifiedById": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.CloseDate": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.RecordTypeId": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.appointment_from_tossup__c": {
+   "n": 22,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Company_Ja__c": {
+   "n": 579,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Name_Ja__c": {
+   "n": 21,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Spelling_Ja__c": {
+   "n": 21,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Email_Ja__c": {
+   "n": 21,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Mobile_Ja__c": {
+   "n": 20,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Work_Ja__c": {
+   "n": 578,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Address_Ja__c": {
+   "n": 580,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Department_Ja__c": {
+   "n": 580,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Postalcode_Ja__c": {
+   "n": 579,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Title_Ja__c": {
+   "n": 8,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Subject_Ja__c": {
+   "n": 21,
+   "mode": "exact"
+  },
+  "Opportunity.NDA__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Opportunity.Team__c": {
+   "n": 2453,
+   "mode": "exact"
+  },
+  "Opportunity.NextStep": {
+   "n": 298,
+   "mode": "exact"
+  },
+  "Opportunity.TeaserURL__c": {
+   "n": 62,
+   "mode": "exact"
+  },
+  "Opportunity.CB_SellsideProgress__c": {
+   "n": 9,
+   "mode": "sampled-all"
+  },
+  "Opportunity.BuysideSubManager__c": {
+   "n": 496,
+   "mode": "exact"
+  },
+  "Opportunity.CB_BuysideProgress__c": {
+   "n": 62,
+   "mode": "sampled-all"
+  },
+  "Opportunity.Inquiry_Body_Ja__c": {
+   "n": 2,
+   "mode": "sampled-all"
+  },
+  "Opportunity.Valuation_Revenue__c": {
+   "n": 60,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_PBT__c": {
+   "n": 36,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_PAT__c": {
+   "n": 38,
+   "mode": "exact"
+  },
+  "Opportunity.CB_MeetingMemo__c": {
+   "n": 61,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Cash__c": {
+   "n": 35,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Debt__c": {
+   "n": 34,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Equity__c": {
+   "n": 36,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_FiscalYearEnd__c": {
+   "n": 18,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Methods__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Date__c": {
+   "n": 82,
+   "mode": "exact"
+  },
+  "Opportunity.Valuation_Depreciation__c": {
+   "n": 34,
+   "mode": "exact"
+  },
+  "Opportunity.CB_P_PotentialBuyers__c": {
+   "n": 800,
+   "mode": "exact"
+  },
+  "Opportunity.EV_USDmm__c": {
+   "n": 5,
+   "mode": "exact"
+  },
+  "Opportunity.SP_Website__c": {
+   "n": 4008,
+   "mode": "exact"
+  },
+  "Opportunity.CB_P_AcquiringCompanyMatchingInfo__c": {
+   "n": 11,
+   "mode": "exact"
+  },
+  "Opportunity.SP_FolderURLCompany__c": {
+   "n": 32,
+   "mode": "exact"
+  },
+  "Opportunity.CB_SP_Country__c": {
+   "n": 4843,
+   "mode": "exact"
+  },
+  "Opportunity.CB_BizBank__c": {
+   "n": 44,
+   "mode": "exact"
+  },
+  "Opportunity.OwnerfullName__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.SFID18__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.CB_P_AcquiringCompany__c": {
+   "n": 18,
+   "mode": "exact"
+  },
+  "Opportunity.MANeeds__c": {
+   "n": 31,
+   "mode": "exact"
+  },
+  "Opportunity.ApproachType__c": {
+   "n": 23,
+   "mode": "exact"
+  },
+  "Opportunity.Description": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Opportunity.CB_EVValue_USDmm__c": {
+   "n": 88,
+   "mode": "exact"
+  },
+  "Opportunity.CB_Fees_USDmm__c": {
+   "n": 79,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Company_En__c": {
+   "n": 568,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Name_En__c": {
+   "n": 7,
+   "mode": "exact"
+  },
+  "Opportunity.CB_SpreadsheetProgressLog__c": {
+   "n": 7,
+   "mode": "sampled-all"
+  },
+  "Opportunity.Inquiry_Email_En__c": {
+   "n": 7,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Mobile_En__c": {
+   "n": 4,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Work_En__c": {
+   "n": 565,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Postalcode_En__c": {
+   "n": 568,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Department_En__c": {
+   "n": 568,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Subject_En__c": {
+   "n": 7,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Title_En__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Opportunity.CB_ExpectedPayout_Yen__c": {
+   "n": 39,
+   "mode": "exact"
+  },
+  "Opportunity.Fee_Probability_USDmm__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.S_CriteriaText__c": {
+   "n": 198,
+   "mode": "exact"
+  },
+  "Opportunity.StartDate__c": {
+   "n": 95,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Body_En__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Opportunity.CB_ExpectedRevenue_Yen__c": {
+   "n": 5210,
+   "mode": "exact"
+  },
+  "Opportunity.Inquiry_Address_En__c": {
+   "n": 568,
+   "mode": "exact"
+  },
+  "Matching__c.DisclosureStatementURL_Buy__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Matching__c.Name": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.CurrencyIsoCode": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.Buy_Company__c": {
+   "n": 65870,
+   "mode": "exact"
+  },
+  "Matching__c.BuyADContractURL__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Matching__c.phase_match__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.status__c": {
+   "n": 66617,
+   "mode": "exact"
+  },
+  "Matching__c.Sell__c": {
+   "n": 65867,
+   "mode": "exact"
+  },
+  "Matching__c.MainPhoneNumber__c": {
+   "n": 63823,
+   "mode": "exact"
+  },
+  "Matching__c.Advisor_Memo__c": {
+   "n": 3270,
+   "mode": "exact"
+  },
+  "Matching__c.M_WebSite__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.other_termination_reason__c": {
+   "n": 16939,
+   "mode": "exact"
+  },
+  "Matching__c.termination_reason__c": {
+   "n": 21556,
+   "mode": "exact"
+  },
+  "Matching__c.IS_Memo__c": {
+   "n": 5265,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_Company__c": {
+   "n": 9410,
+   "mode": "exact"
+  },
+  "Matching__c.gaikyo_matching__c": {
+   "n": 217,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_OwnerfullName__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_ApproachStatus__c": {
+   "n": 40775,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_StageName__c": {
+   "n": 65867,
+   "mode": "exact"
+  },
+  "Matching__c.MatchingReason__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.OwnerId": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.LastCalledRep__c": {
+   "n": 39167,
+   "mode": "exact"
+  },
+  "Matching__c.LastModifiedById": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.Matching_Memo__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.NDADateCheck__c": {
+   "n": 5087,
+   "mode": "true-count"
+  },
+  "Matching__c.Status_Date__c": {
+   "n": 30106,
+   "mode": "exact"
+  },
+  "Matching__c.NextActionDay__c": {
+   "n": 22,
+   "mode": "exact"
+  },
+  "Matching__c.RecordTypeId": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.TDBMajorClassification__c": {
+   "n": 54988,
+   "mode": "exact"
+  },
+  "Matching__c.Purpose__c": {
+   "n": 43562,
+   "mode": "exact"
+  },
+  "Matching__c.TM_Contact__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.TDBAmountOfSales__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.TDBProfit__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.TM_NextStep__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.TDBMiddleClassification__c": {
+   "n": 54974,
+   "mode": "exact"
+  },
+  "Matching__c.CB_TM_Progress__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.CB_StartDate__c": {
+   "n": 23,
+   "mode": "exact"
+  },
+  "Matching__c.NDADate__c": {
+   "n": 13,
+   "mode": "exact"
+  },
+  "Matching__c.CB_M_TopMtgDate__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Matching__c.CB_T_TossUpDate__c": {
+   "n": 142,
+   "mode": "exact"
+  },
+  "Matching__c.ExternalID1st__c": {
+   "n": 9965,
+   "mode": "exact"
+  },
+  "Matching__c.BuyerFAAgreementDate__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Matching__c.TM_FolderURLProject__c": {
+   "n": 3631,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_New__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_StageName_New__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_ApproachStatus_New__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.OppID_New__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.AccountID_New__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.Sell_OwnerfullName_New__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.CB_Yokohama__c": {
+   "n": 81,
+   "mode": "exact"
+  },
+  "Matching__c.CB_M_CountryBuyer__c": {
+   "n": 49337,
+   "mode": "exact"
+  },
+  "Matching__c.CreatedById": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.T_TargetCompany__c": {
+   "n": 950,
+   "mode": "exact"
+  },
+  "Matching__c.CB_Kyoto__c": {
+   "n": 5,
+   "mode": "exact"
+  },
+  "Matching__c.CB_T_CountryTarget__c": {
+   "n": 950,
+   "mode": "exact"
+  },
+  "Matching__c.CB_T_ResponseDate__c": {
+   "n": 934,
+   "mode": "exact"
+  },
+  "Matching__c.T_TargetMemo__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.CB_T_ValuationDate__c": {
+   "n": 7,
+   "mode": "exact"
+  },
+  "Matching__c.CB_T_ValuationDetail__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.CB_T_Method__c": {
+   "n": 813,
+   "mode": "exact"
+  },
+  "Matching__c.T_SourcingInfo__c": {
+   "n": 949,
+   "mode": "exact"
+  },
+  "Matching__c.T_PowerBuyer__c": {
+   "n": 887,
+   "mode": "exact"
+  },
+  "Matching__c.SFID18__c": {
+   "n": 67100,
+   "mode": "exact"
+  },
+  "Matching__c.Detail__c": {
+   "n": 1000,
+   "mode": "sampled-all"
+  },
+  "Matching__c.InportPhoneNumber__c": {
+   "n": 1673,
+   "mode": "exact"
+  },
+  "Matching__c.IPRep__c": {
+   "n": 616,
+   "mode": "exact"
+  },
+  "Matching__c.ClientInportName__c": {
+   "n": 564,
+   "mode": "exact"
+  },
+  "Matching__c.ClientDepartment__c": {
+   "n": 170,
+   "mode": "exact"
+  },
+  "Matching__c.InportAddress__c": {
+   "n": 102,
+   "mode": "exact"
+  },
+  "Matching__c.AteName__c": {
+   "n": 255,
+   "mode": "exact"
+  },
+  "Matching__c.Detail2__c": {
+   "n": 0,
+   "mode": "sampled-all"
+  },
+  "Matching__c.BuyCompany_SFID18__c": {
+   "n": 65870,
+   "mode": "exact"
+  },
+  "Matching__c.BuyingCompanyPrefecture__c": {
+   "n": 56956,
+   "mode": "exact"
+  },
+  "Matching__c.IMPassReason__c": {
+   "n": 35,
+   "mode": "exact"
+  },
+  "Matching__c.NNPassReason__c": {
+   "n": 1688,
+   "mode": "exact"
+  },
+  "Matching__c.M_FolderURLCompany__c": {
+   "n": 133,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Name": {
+   "n": 2524,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.N_AccountName__c": {
+   "n": 2521,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Status__c": {
+   "n": 2523,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.AcountSFID18__c": {
+   "n": 2521,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.NeedsType__c": {
+   "n": 2523,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.OwnerId": {
+   "n": 2524,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.AreaDOM__c": {
+   "n": 913,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.MainCategory__c": {
+   "n": 252,
+   "mode": "exact"
+  },
+  "Matching__c.TDBForeign__c": {
+   "n": 53372,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.N_Website__c": {
+   "n": 2524,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.MiddleCategory__c": {
+   "n": 186,
+   "mode": "exact"
+  },
+  "Matching__c.TDBIPO__c": {
+   "n": 53944,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.SalesVolume_JPYmm_Min__c": {
+   "n": 4,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.SalesVolume_JPYmm_Max__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.DealSize_JPYmm_Min__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.AreaText__c": {
+   "n": 895,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.DealSize_JPYmm_Max__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.SalesVolume_USDmm_Min__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.DealSize_USDmm_Min__c": {
+   "n": 1,
+   "mode": "exact"
+  },
+  "Matching__c.T_FolderURLTarget__c": {
+   "n": 17,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.ClassificationText__c": {
+   "n": 1892,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.DealSize_USDmm_Max__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Purpose__c": {
+   "n": 40,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Fundraising__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.SalesVolume_USDmm_Max__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Deficit__c": {
+   "n": 84,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Impossible__c": {
+   "n": 38,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Audit__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.PaymentFlow__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.SalesVolume__c": {
+   "n": 589,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Merits__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Memo__c": {
+   "n": 878,
+   "mode": "sampled-all"
+  },
+  "Buy_Needs__c.LastModifiedById": {
+   "n": 2524,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.CreatedById": {
+   "n": 2524,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.Valuation__c": {
+   "n": 4,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.AddAccountFlag__c": {
+   "n": 2467,
+   "mode": "true-count"
+  },
+  "Buy_Needs__c.Cautions__c": {
+   "n": 6,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.DealSize__c": {
+   "n": 352,
+   "mode": "exact"
+  },
+  "Buy_Needs__c.AreaCB__c": {
+   "n": 447,
+   "mode": "exact"
+  },
+  "Establishments__c.SFID18_Establishments__c": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.Estb_Category__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Name_Kana__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Estb_DataSource__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Name": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.UpdateDate__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Specialty__c": {
+   "n": 17616,
+   "mode": "exact"
+  },
+  "Establishments__c.FullTime_Medical__c": {
+   "n": 25,
+   "mode": "exact"
+  },
+  "Establishments__c.Estb_Status__c": {
+   "n": 59059,
+   "mode": "exact"
+  },
+  "Establishments__c.RegReason__c": {
+   "n": 56554,
+   "mode": "exact"
+  },
+  "Establishments__c.PeriodStart__c": {
+   "n": 41938,
+   "mode": "exact"
+  },
+  "Establishments__c.Integrated__c": {
+   "n": 0,
+   "mode": "true-count"
+  },
+  "Establishments__c.PartTime_Medical__c": {
+   "n": 61,
+   "mode": "exact"
+  },
+  "Establishments__c.FullTime_Dental__c": {
+   "n": 2,
+   "mode": "exact"
+  },
+  "Establishments__c.FounderName_Text__c": {
+   "n": 59059,
+   "mode": "exact"
+  },
+  "Establishments__c.PartTime_Dental__c": {
+   "n": 5,
+   "mode": "exact"
+  },
+  "Establishments__c.PartTime_Total__c": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.Doctor_Total_c__c": {
+   "n": 88,
+   "mode": "exact"
+  },
+  "Establishments__c.RegistraitonYear_Text__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Establishments__c.FullTime_Total__c": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.FacilityType__c": {
+   "n": 59059,
+   "mode": "exact"
+  },
+  "Establishments__c.Rx_Text__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_PostalCode__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Address__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_Prefecture__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_Station__c": {
+   "n": 41978,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_DistanceFromStation__c": {
+   "n": 41978,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Category__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_TypeName__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_TypeDetails__c": {
+   "n": 35799,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_CorpPhone__c": {
+   "n": 44022,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_CorpFax__c": {
+   "n": 35397,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Fax__c": {
+   "n": 35640,
+   "mode": "exact"
+  },
+  "Establishments__c.ServicePhoneNumber__c": {
+   "n": 113733,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_StartDate__c": {
+   "n": 103068,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_PostalCode__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Prefecture__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Address__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_Transportation__c": {
+   "n": 44025,
+   "mode": "exact"
+  },
+  "Establishments__c.Estb_Account__c": {
+   "n": 109509,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_FounderPosition__c": {
+   "n": 107713,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_FounderName__c": {
+   "n": 109962,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_CompanyName__c": {
+   "n": 43959,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_AdministratorName__c": {
+   "n": 105540,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Website__c": {
+   "n": 28568,
+   "mode": "exact"
+  },
+  "Establishments__c.Rx_EstUnit__c": {
+   "n": 54902,
+   "mode": "exact"
+  },
+  "Establishments__c.Rx_EstAnnual__c": {
+   "n": 54902,
+   "mode": "exact"
+  },
+  "Establishments__c.SFID18_Copy2__c": {
+   "n": 109509,
+   "mode": "exact"
+  },
+  "Establishments__c.Rx_Total__c": {
+   "n": 54902,
+   "mode": "exact"
+  },
+  "Establishments__c.Rx_UpdateDate__c": {
+   "n": 54902,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Nurs__c": {
+   "n": 5630,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Gen__c": {
+   "n": 8020,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Psych__c": {
+   "n": 3309,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Total__c": {
+   "n": 18,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Care__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_UpdateDate__c": {
+   "n": 8030,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_TB__c": {
+   "n": 359,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Inf__c": {
+   "n": 1589,
+   "mode": "exact"
+  },
+  "Establishments__c.Beds_Oth__c": {
+   "n": 188,
+   "mode": "exact"
+  },
+  "Establishments__c.CreatedById": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.OwnerId": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.Scuel_Id__c": {
+   "n": 69770,
+   "mode": "exact"
+  },
+  "Establishments__c.Scuel_CorporationCode__c": {
+   "n": 109509,
+   "mode": "exact"
+  },
+  "Establishments__c.Scuel_ServiceCode__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Scuel_EstablishmentCode__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_City__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_BusinessNumber__c": {
+   "n": 35803,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Business_Name__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_Business_Name_Kana__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_StationGroupCode__c": {
+   "n": 41978,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_CityCode__c": {
+   "n": 113767,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_City__c": {
+   "n": 113767,
+   "mode": "exact"
+  },
+  "Establishments__c.Service_TypeCode__c": {
+   "n": 44031,
+   "mode": "exact"
+  },
+  "Establishments__c.LastModifiedById": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "Establishments__c.Address_PrefectureCode__c": {
+   "n": 113768,
+   "mode": "exact"
+  },
+  "ContractFile__c.Name": {
+   "n": 213,
+   "mode": "exact"
+  },
+  "ContractFile__c.RecordTypeId": {
+   "n": 213,
+   "mode": "exact"
+  },
+  "Establishments__c.SFID18_Copy__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Establishments__c.CurrencyIsoCode": {
+   "n": 113769,
+   "mode": "exact"
+  },
+  "ContractFile__c.ExecutionDate__c": {
+   "n": 213,
+   "mode": "exact"
+  },
+  "ContractFile__c.ContractType__c": {
+   "n": 213,
+   "mode": "exact"
+  },
+  "ContractFile__c.ExpirationDate__c": {
+   "n": 213,
+   "mode": "exact"
+  },
+  "Contract.EndDate": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "ContractFile__c.ContractScope__c": {
+   "n": 194,
+   "mode": "exact"
+  },
+  "Contract.OwnerId": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "ContractFile__c.GoogleDriveURL__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "ContractFile__c.SlackURL__c": {
+   "n": 187,
+   "mode": "exact"
+  },
+  "ContractFile__c.Project__c": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "ContractFile__c.IsFileUploaded__c": {
+   "n": 188,
+   "mode": "true-count"
+  },
+  "Contract.CreatedById": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "Contract.LastModifiedById": {
+   "n": 0,
+   "mode": "exact"
+  },
+  "ContractFile__c.Opportunity__c": {
+   "n": 183,
+   "mode": "exact"
+  },
+  "ContractFile__c.Account__c": {
+   "n": 32,
+   "mode": "exact"
+  }
+ }
+}

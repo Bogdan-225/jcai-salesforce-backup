@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_MyTeam_Opportunity44553532</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>SellADContractDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UserTeam__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>チームのすべての譲渡案件</label>
+</ListView>

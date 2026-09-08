@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DM_250609aagrefaeg</fullName>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>TDBLocation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>TDBShareholdersNumber1__c</field>
+        <operation>equals</operation>
+        <value>個人,不明</value>
+    </filters>
+    <filters>
+        <field>TDBParent__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>株式会社,有限会社</value>
+    </filters>
+    <filters>
+        <field>mail_DM_pattern__c</field>
+        <operation>equals</operation>
+        <value>ソフトウェア受託開発_中園 _2506</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.EMPLOYEES</field>
+        <operation>lessThan</operation>
+        <value>50</value>
+    </filters>
+    <label>西尾リスト_ソフトウェア開発DM中園_250610</label>
+</ListView>

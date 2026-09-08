@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>termination_reason_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName, &quot;案件終了&quot;),
+ISBLANK(termination_reason__c)
+)</errorConditionFormula>
+    <errorDisplayField>termination_reason__c</errorDisplayField>
+    <errorMessage>終了理由は必須です</errorMessage>
+</ValidationRule>

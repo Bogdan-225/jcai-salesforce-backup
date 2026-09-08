@@ -1,0 +1,4920 @@
+{
+ "Accounts": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "Account Name",
+   "b": "",
+   "c": "取引先名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "SFID18",
+   "b": "18-character Salesforce ID of this record.",
+   "c": "SFID18",
+   "d": "このレコードの18桁のSalesforce IDです。",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "Website",
+   "b": "",
+   "c": "Webサイト",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Stock Code",
+   "b": "Securities (stock) code, for listed companies.",
+   "c": "証券コード",
+   "d": "証券コード（上場企業の場合）。",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Parent Account ID",
+   "b": "Parent company account ID, used to build the corporate hierarchy.",
+   "c": "親取引先",
+   "d": "親会社の取引先ID。企業階層の構築に使用します。",
+   "e": "Yes"
+  },
+  {
+   "r": 7,
+   "a": "Account Description",
+   "b": "",
+   "c": "説明",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "Account Phone",
+   "b": "",
+   "c": "電話",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Country",
+   "b": "",
+   "c": "国",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 10,
+   "a": "Address",
+   "b": "",
+   "c": "住所",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 11,
+   "a": "Postalcode",
+   "b": "",
+   "c": "郵便番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 12,
+   "a": "Folder URL",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box. (For Box: remove the link expiration under [Link Settings] > [Link Expiration] by unchecking the box.)",
+   "c": "フォルダーURL",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。（Boxの場合：「リンク設定」の「リンクの有効期限」のチェックを外して期限を解除してください。）",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Phone Number Check Required",
+   "b": "The phone number may be wrong. Search and verify it before calling; once confirmed correct, uncheck this box.",
+   "c": "電話番号チェック必須",
+   "d": "電話番号が誤っている可能性があります。架電前に検索して確認し、正しいことが確認できたらチェックを外してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Watchlist",
+   "b": "Flag this account for ongoing monitoring.",
+   "c": "要注意先",
+   "d": "この取引先を継続的に注視する場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Watchlist Reason",
+   "b": "Reason for flagging",
+   "c": "要注意先理由",
+   "d": "要注意先とした理由を記載してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Sector(GICS)",
+   "b": "GICS (Global Industry Classification Standard) sector - level 1 of the 4-level classification by MSCI and S&P.",
+   "c": "セクター（GICS）",
+   "d": "GICS（世界産業分類基準）のセクター。MSCIとS&Pによる4階層分類の第1階層です。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 17,
+   "a": "Industry Group(GICS)",
+   "b": "GICS industry group (level 2 of the GICS classification).",
+   "c": "産業グループ（GICS）",
+   "d": "GICSの産業グループ（4階層分類の第2階層）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 18,
+   "a": "Industry(GICS)",
+   "b": "GICS industry (level 3 of the GICS classification).",
+   "c": "産業（GICS）",
+   "d": "GICSの産業（4階層分類の第3階層）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 19,
+   "a": "Sub-Industry(GICS)",
+   "b": "GICS sub-industry (level 4, most detailed GICS level).",
+   "c": "サブ産業（GICS）",
+   "d": "GICSのサブ産業（第4階層。GICSで最も詳細な分類）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 20,
+   "a": "Industry(Text)",
+   "b": "Free text for industry categories",
+   "c": "業種（テキスト）",
+   "d": "業種の自由記述欄。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 21,
+   "a": "Market Cap(USD mm)",
+   "b": "Market capitalization in USD millions.",
+   "c": "時価総額（百万米ドル）",
+   "d": "時価総額（百万米ドル）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 22,
+   "a": "Number of Employees",
+   "b": "",
+   "c": "従業員数",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 23,
+   "a": "EBITDA(USD M)",
+   "b": "EBITDA (earnings before interest, taxes, depreciation, and amortization) in USD millions.",
+   "c": "EBITDA（百万米ドル）",
+   "d": "EBITDA（利払前・税引前・償却前利益、百万米ドル）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 24,
+   "a": "Current Period",
+   "b": "Fiscal period of the latest available financial data.",
+   "c": "当期",
+   "d": "入手可能な最新の財務データの会計期間。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 25,
+   "a": "Previous Period",
+   "b": "",
+   "c": "前期",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 26,
+   "a": "Two Periods Prior",
+   "b": "",
+   "c": "前々期",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 27,
+   "a": "Current Revenue(USD M)",
+   "b": "",
+   "c": "当期売上高（百万米ドル）",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 28,
+   "a": "Previous Period Revenue(USD M)",
+   "b": "",
+   "c": "前期売上高（百万米ドル）",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 29,
+   "a": "Two Periods Prior Revenue(USD M)",
+   "b": "",
+   "c": "前々期売上高（百万米ドル）",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 30,
+   "a": "Fund Type",
+   "b": "Type of investment fund",
+   "c": "ファンド種別",
+   "d": "投資ファンドの種別。",
+   "e": "Yes"
+  },
+  {
+   "r": 31,
+   "a": "Fund Status",
+   "b": "Current outreach status with this fund",
+   "c": "ファンドステータス",
+   "d": "このファンドへの現在のアプローチ状況。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 32,
+   "a": "Fund",
+   "b": "Check if this account is an investment fund.",
+   "c": "ファンド",
+   "d": "この取引先が投資ファンドの場合にチェックしてください。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 33,
+   "a": "No International M&A Interest",
+   "b": "Check if this account has no interest in cross-border M&A.",
+   "c": "海外M&Aニーズなし",
+   "d": "クロスボーダーM&Aに関心がない場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 34,
+   "a": "Reason for No Interest(Intl.)",
+   "b": "Why no M&A interest?",
+   "c": "海外M&Aニーズなし理由",
+   "d": "海外M&Aに関心がない理由を記載してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "No Japan M&A Interest",
+   "b": "Check if this account has no interest in domestic (Japan) M&A.",
+   "c": "国内M&Aニーズなし",
+   "d": "国内M&Aに関心がない場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 36,
+   "a": "Reason for No Interest(JP)",
+   "b": "Why no M&A Japan interest?",
+   "c": "国内M&Aニーズなし理由",
+   "d": "国内M&Aに関心がない理由を記載してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 37,
+   "a": "Power Buyer",
+   "b": "Check if this account is a serial / strategic acquirer.",
+   "c": "パワーバイヤー",
+   "d": "継続的・戦略的に買収を行う企業（パワーバイヤー）の場合にチェックしてください。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 38,
+   "a": "Acquisitions Performed",
+   "b": "Mention the acquired company.",
+   "c": "買収経験",
+   "d": "買収した企業名を記載してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 39,
+   "a": "NG Date",
+   "b": "",
+   "c": "NG追加日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 40,
+   "a": "NG Reason",
+   "b": "",
+   "c": "NG理由",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 41,
+   "a": "NG Reason(Text)",
+   "b": "Why the account was marked NG",
+   "c": "NG理由詳細",
+   "d": "NGとなった理由を記載してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 42,
+   "a": "IS (Buy) Memo",
+   "b": "Inside-sales (buy-side) memo. Shared field kept across call lists - record information useful for future lists, such as verified phone numbers or direct department numbers. Old entries remain, so add dates and keep it current.",
+   "c": "IS(Buy)メモ",
+   "d": "インサイドセールス（買い側）用メモ。コールリストをまたいで共有される項目です。確認済みの電話番号や部署直通番号など、今後のリストに役立つ情報を記録してください。過去の記載も残るため、日付を付けて最新の状態に保ってください。",
+   "e": "Yes"
+  },
+  {
+   "r": 43,
+   "a": "DUNS Number",
+   "b": "D-U-N-S number - 9-digit company identifier issued by Dun & Bradstreet.",
+   "c": "DUNS番号",
+   "d": "D-U-N-S番号。Dun & Bradstreet社が発行する9桁の企業識別コードです。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 44,
+   "a": "CIQ ID",
+   "b": "S&P Capital IQ company identifier.",
+   "c": "CIQ ID",
+   "d": "S&P Capital IQの企業識別ID。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 45,
+   "a": "Ticker Symbol",
+   "b": "Stock code identifier",
+   "c": "株式コード",
+   "d": "株式コード（ティッカーシンボル）。",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 46,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "Yes (International only)"
+  },
+  {
+   "r": 47,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 48,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 49,
+   "a": "Estimated Buyer Company Profile Persona",
+   "b": "",
+   "c": "想定される譲受企業の会社概要のペルソナ",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 50,
+   "a": "Estimated Buyer M&A Case Persona",
+   "b": "",
+   "c": "想定される譲受企業のM&A事例のペルソナ",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 51,
+   "a": "Estimated Buyer M&A Needs Persona",
+   "b": "",
+   "c": "想定される譲受企業の買収ニーズのペルソナ",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 52,
+   "a": "Prefecture (For Search)",
+   "b": "",
+   "c": "(検索用)都道府県",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 53,
+   "a": "TSR Industry (For Search)",
+   "b": "",
+   "c": "(検索用)TSR業種",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 54,
+   "a": "Company Profile for Matching",
+   "b": "",
+   "c": "(マッチング用)会社概要",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 55,
+   "a": "M&A Case for Matching",
+   "b": "",
+   "c": "(マッチング用)M&A事例",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 56,
+   "a": "M&A Needs for Matching",
+   "b": "",
+   "c": "(マッチング用)買収ニーズ",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 57,
+   "a": "Avg Revenue 3-Yr (For Search)",
+   "b": "",
+   "c": "(検索用)三期売上高平均",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 58,
+   "a": "Capital (For Search)",
+   "b": "",
+   "c": "(検索用)資本金",
+   "d": "",
+   "e": "No (no read permission)"
+  },
+  {
+   "r": 59,
+   "a": "Method",
+   "b": "How this lead was obtained",
+   "c": "リード種類",
+   "d": "このリードの獲得経路。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 60,
+   "a": "Phone (Where Rep Is Located)",
+   "b": "",
+   "c": "電話（代表者いる場所）",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 61,
+   "a": "Memo (Where Rep Is Located)",
+   "b": "",
+   "c": "メモ（代表者いる場所）",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 62,
+   "a": "Memo",
+   "b": "",
+   "c": "メモ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 63,
+   "a": "TDB Company Code",
+   "b": "Company code assigned by Teikoku Databank (TDB).",
+   "c": "TDB企業コード",
+   "d": "帝国データバンク（TDB）が付与する企業コード。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 64,
+   "a": "Company Name (Kanji)",
+   "b": "Registered company name in kanji (TDB data).",
+   "c": "漢字商号",
+   "d": "登記上の漢字商号（TDBデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 65,
+   "a": "Company Name (Kana)",
+   "b": "Company name reading in kana (TDB data).",
+   "c": "カナ商号",
+   "d": "カナ商号（TDBデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 66,
+   "a": "Founding Year",
+   "b": "",
+   "c": "設立年",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 67,
+   "a": "Capital (JPYmm)",
+   "b": "Capital stock in JPY millions.",
+   "c": "資本金(百万円)",
+   "d": "資本金（百万円）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 68,
+   "a": "# of Offices",
+   "b": "",
+   "c": "事業所数",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 69,
+   "a": "Parent Company Name",
+   "b": "",
+   "c": "親企業名",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 70,
+   "a": "Corporate Number",
+   "b": "The 13-digit corporate number issued by the National Tax Agency.",
+   "c": "法人番号",
+   "d": "国税庁が指定する13桁の法人番号。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 71,
+   "a": "Construction License Number",
+   "b": "Construction business license number (for construction companies).",
+   "c": "建設業許可番号",
+   "d": "建設業許可番号（建設業者の場合）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 72,
+   "a": "Postal Code",
+   "b": "",
+   "c": "郵便番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 73,
+   "a": "Prefecture",
+   "b": "",
+   "c": "都道府県",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 74,
+   "a": "Location",
+   "b": "",
+   "c": "所在地",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 75,
+   "a": "Company Phone Number",
+   "b": "",
+   "c": "企業電話番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 76,
+   "a": "# of Employees",
+   "b": "",
+   "c": "従業員数",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 77,
+   "a": "Top Shareholder Corporate Flag",
+   "b": "Top shareholder status.",
+   "c": "第１位株主法人フラグ",
+   "d": "第1位株主が法人かどうかを示します。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 78,
+   "a": "Foreign/Domestic(TDB)",
+   "b": "TDB classification: domestic company or foreign-affiliated company.",
+   "c": "外資系・国内系",
+   "d": "TDBによる区分：国内系企業か外資系企業か。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 79,
+   "a": "Mid-Term Plan Link",
+   "b": "Link to the company mid-term business plan.",
+   "c": "中計リンク",
+   "d": "中期経営計画へのリンク。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 80,
+   "a": "Purpose",
+   "b": "Main business area/products of the company TDB",
+   "c": "目的",
+   "d": "主な事業内容・製品（TDBデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 81,
+   "a": "Sector(TDB)",
+   "b": "TDB major industry classification.",
+   "c": "大分類",
+   "d": "TDBの業種大分類。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 82,
+   "a": "Industry Group(TDB)",
+   "b": "TDB middle industry classification.",
+   "c": "中分類",
+   "d": "TDBの業種中分類。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 83,
+   "a": "Sub-Category(TDB)",
+   "b": "TDB sub-classification.",
+   "c": "小分類",
+   "d": "TDBの業種小分類。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 84,
+   "a": "Detailed Category(TDB)",
+   "b": "TDB detailed industry classification.",
+   "c": "細分類",
+   "d": "TDBの業種細分類。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 85,
+   "a": "TDB Latest Year",
+   "b": "Fiscal year/month of the latest TDB financial data.",
+   "c": "TDB最新期",
+   "d": "TDB財務データの最新期（年月）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 86,
+   "a": "TDB Prior Year",
+   "b": "",
+   "c": "TDB前期",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 87,
+   "a": "TDB 2nd Prior Year",
+   "b": "",
+   "c": "TDB前々期",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 88,
+   "a": "Account Source",
+   "b": "From which source",
+   "c": "取引先ソース",
+   "d": "この取引先の獲得元（ソース）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 89,
+   "a": "TDB Latest-Year Revenue (JPYmm)",
+   "b": "",
+   "c": "TDB最新期売上(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 90,
+   "a": "TDB Latest-Year After-Tax Profit (JPYmm)",
+   "b": "",
+   "c": "TDB最新期税引後利益(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 91,
+   "a": "TDB Prior-Year Revenue (JPYmm)",
+   "b": "",
+   "c": "TDB前期売上(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 92,
+   "a": "TDB Prior-Year After-Tax Profit (JPYmm)",
+   "b": "",
+   "c": "TDB前期税引後利益(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 93,
+   "a": "TDB 2nd Prior-Year Revenue (JPYmm)",
+   "b": "",
+   "c": "TDB前々期売上高(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 94,
+   "a": "TDB 2nd Prior After-Tax Profit (JPYmm)",
+   "b": "",
+   "c": "TDB前々期税引後利益(百万円)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 95,
+   "a": "TDB Average Revenue (3-Yr)",
+   "b": "3-year average revenue based on TDB data.",
+   "c": "TDB三期売上高平均",
+   "d": "TDBデータに基づく3期平均売上高。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 96,
+   "a": "TDB Average Net Income (3-Yr)",
+   "b": "3-year average after-tax profit based on TDB data.",
+   "c": "TDB三期純利益平均",
+   "d": "TDBデータに基づく3期平均税引後利益。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 97,
+   "a": "Source URL",
+   "b": "TDB page source url",
+   "c": "ソースURL",
+   "d": "TDBページのソースURL。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 98,
+   "a": "Rep's Title",
+   "b": "Title of the representative.",
+   "c": "代表者役職名",
+   "d": "代表者の役職。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 99,
+   "a": "Rep's Name (Kana)",
+   "b": "Name of the representative (Kana).",
+   "c": "代表者カナ氏名",
+   "d": "代表者名（カナ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 100,
+   "a": "Rep's Name (Kanji)",
+   "b": "Name of the representative (Kanji).",
+   "c": "代表者漢字氏名",
+   "d": "代表者名（漢字）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 101,
+   "a": "Rep's Home Postal Code",
+   "b": "",
+   "c": "代表者自宅郵便番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 102,
+   "a": "Rep's Home Address",
+   "b": "",
+   "c": "代表者自宅住所",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 103,
+   "a": "Rep's Home Phone Number",
+   "b": "",
+   "c": "代表者自宅電話番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 104,
+   "a": "Rep's Birth Year",
+   "b": "",
+   "c": "代表者生年",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 105,
+   "a": "Rep's Birth Month",
+   "b": "",
+   "c": "代表者生月",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 106,
+   "a": "Rep's Birth Day",
+   "b": "",
+   "c": "代表者生日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 107,
+   "a": "Rep's Gender",
+   "b": "",
+   "c": "代表者性別",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 108,
+   "a": "Rep's Home Prefecture",
+   "b": "",
+   "c": "代表者出身県",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 109,
+   "a": "Rep's School",
+   "b": "",
+   "c": "代表者出身校",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 110,
+   "a": "Board Member",
+   "b": "Board members (TDB data).",
+   "c": "役員",
+   "d": "役員（TDBデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 111,
+   "a": "Publicly Listed(TDB)",
+   "b": "TDB flag: listed or unlisted company.",
+   "c": "株式公開",
+   "d": "TDBによる上場・非上場の区分。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 112,
+   "a": "Shareholders",
+   "b": "Major shareholders (TDB data).",
+   "c": "株主",
+   "d": "主要株主（TDBデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 113,
+   "a": "# of Shareholders",
+   "b": "Total number of shareholders",
+   "c": "株主数",
+   "d": "株主の総数。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 114,
+   "a": "Major Suppliers",
+   "b": "Main suppliers (TDB data; cf. \"TSR Suppliers\").",
+   "c": "主要仕入先",
+   "d": "主な仕入先（TDBデータ）。TSRの同項目と併せて参照してください。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 115,
+   "a": "Major Customers",
+   "b": "Main customers (TDB data; cf. \"TSR Customers\").",
+   "c": "主要販売先",
+   "d": "主な販売先（TDBデータ）。TSRの同項目と併せて参照してください。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 116,
+   "a": "Partner Bank",
+   "b": "Banks used for transactions",
+   "c": "取引銀行",
+   "d": "取引銀行。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 117,
+   "a": "NDA Execution Date",
+   "b": "Date the NDA was signed.",
+   "c": "NDA締結日",
+   "d": "NDA（秘密保持契約）の締結日。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 118,
+   "a": "NDA Effective Date",
+   "b": "Date of start of the NDA",
+   "c": "NDA開始日",
+   "d": "NDAの効力発生日。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 119,
+   "a": "NDA Expiration Date",
+   "b": "Date of expiration of the NDA",
+   "c": "NDA終了日",
+   "d": "NDAの有効期限日。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 120,
+   "a": "NDA Template",
+   "b": "Which NDA template was used",
+   "c": "NDAひな型",
+   "d": "使用したNDAのひな形。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 121,
+   "a": "NDA Special Provisions",
+   "b": "Check if the NDA contains special provisions.",
+   "c": "NDA注意事項あり",
+   "d": "NDAに特約がある場合にチェックしてください。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 122,
+   "a": "NDA URL",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box. (For Box: remove the link expiration under [Link Settings] > [Link Expiration] by unchecking the box.)",
+   "c": "NDA契約書",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。（Boxの場合：「リンク設定」の「リンクの有効期限」のチェックを外して期限を解除してください。）",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 123,
+   "a": "Auto-Renewal",
+   "b": "Whether the NDA renews automatically",
+   "c": "自動更新の有無",
+   "d": "NDAが自動更新かどうか。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 124,
+   "a": "Agreement Type",
+   "b": "NDA scope: master (comprehensive) agreement or individual agreement.",
+   "c": "包括or個別契約",
+   "d": "NDAの範囲：包括（基本）契約か個別契約か。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 125,
+   "a": "NDA Template Modifications",
+   "b": "",
+   "c": "NDAひな型変更内容",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 126,
+   "a": "NDA Remarks",
+   "b": "",
+   "c": "NDA備考",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 127,
+   "a": "Buy Agreement Execution Date",
+   "b": "",
+   "c": "買AD締結日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 128,
+   "a": "Cross-Border Buy Agreement Date",
+   "b": "",
+   "c": "クロスボーダー買AD締結日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 129,
+   "a": "Small Buy Agreement Execution Date",
+   "b": "",
+   "c": "スモール買AD締結日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 130,
+   "a": "Buy Agreement URL",
+   "b": "",
+   "c": "買AD契約書",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 131,
+   "a": "Cross-Border Buy Agreement URL",
+   "b": "",
+   "c": "クロスボーダー買AD契約書",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 132,
+   "a": "Small Buy Agreement URL",
+   "b": "",
+   "c": "スモール買AD契約書",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 133,
+   "a": "Sell Call NG Date",
+   "b": "Date this account declined sell-side calls (call NG).",
+   "c": "売コールNG日",
+   "d": "この取引先が売り側架電NGとなった日付。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 134,
+   "a": "Sell Call NG Reason",
+   "b": "Why sell-side calling is NG",
+   "c": "売コールNG理由",
+   "d": "売り側架電がNGとなった理由。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 135,
+   "a": "Sell Call NG Reason Detail",
+   "b": "Why the sell calls were refused?",
+   "c": "売コールNG理由詳細",
+   "d": "売り側架電を断られた理由の詳細を記載してください。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 136,
+   "a": "Approach Caution (Select)",
+   "b": "Caution before approaching (notes regarging this account).",
+   "c": "アプローチ注意選択",
+   "d": "アプローチ前の注意事項（この取引先に関する留意点）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 137,
+   "a": "Approach Caution Detail",
+   "b": "",
+   "c": "アプローチ注意詳細",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 138,
+   "a": "Nominated Buyer Registered Date",
+   "b": "Date a buyer was officially nominated for this account.",
+   "c": "正式指名買手登録日",
+   "d": "この取引先に対して指名買い手が正式に登録された日付。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 139,
+   "a": "Officially Nominated Buyer Name",
+   "b": "",
+   "c": "正式指名買手社名",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 140,
+   "a": "DM Business Tag",
+   "b": "Business tag used for direct-mail (DM) targeting.",
+   "c": "DM用事業タグ",
+   "d": "DM（ダイレクトメール）のターゲティングに使用する事業タグ。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 141,
+   "a": "Latest DM Sent Date",
+   "b": "Most recent DM date",
+   "c": "最新DM送付日",
+   "d": "直近のDM送付日。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 142,
+   "a": "Latest Email DM Sent Date",
+   "b": "Most recent Email date",
+   "c": "最新メールDM送付日",
+   "d": "直近のメールDM送付日。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 143,
+   "a": "Latest DM Pattern",
+   "b": "Most recent DM info (e.g: ソフトウェア受託開発_鈴木_2507)",
+   "c": "最新DMパターン",
+   "d": "直近のDM情報（例：ソフトウェア受託開発_鈴木_2507）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 144,
+   "a": "Latest Email DM Pattern",
+   "b": "Most recent Email info (e.g: IT_鈴木_2511)",
+   "c": "最新メールDMパターン",
+   "d": "直近のメールDM情報（例：IT_鈴木_2511）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 145,
+   "a": "Raia Request Date",
+   "b": "",
+   "c": "ライア依頼日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 146,
+   "a": "DoGather Request Date",
+   "b": "",
+   "c": "ドゥギャザー依頼日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 147,
+   "a": "Raia Memo",
+   "b": "",
+   "c": "ライアメモ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 148,
+   "a": "DoGather Memo",
+   "b": "",
+   "c": "ドゥギャザーメモ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 149,
+   "a": "In-House IS Request Date",
+   "b": "Date a calling request was made to the in-house inside-sales (IS) team.",
+   "c": "社内IS依頼日",
+   "d": "社内インサイドセールス（IS）チームに架電依頼をした日付。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 150,
+   "a": "In-House IS Request Memo",
+   "b": "",
+   "c": "社内IS依頼メモ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 151,
+   "a": "NDA",
+   "b": "Indicates an NDA is in place.",
+   "c": "NDA",
+   "d": "NDAが締結済みであることを示します。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 152,
+   "a": "Cross-Border Buy Agreement Check",
+   "b": "",
+   "c": "クロスボーダー買ADチェック",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 153,
+   "a": "Contact Registered Flag",
+   "b": "Checked when at least one contact is registered for this account.",
+   "c": "担当者登録フラグ",
+   "d": "この取引先に取引先責任者が1件以上登録されている場合にチェックされます。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 154,
+   "a": "Has Reached Teaser Stage",
+   "b": "Checked when a deal with this account has reached the non-name (teaser) stage.",
+   "c": "NN以降有無",
+   "d": "この取引先の案件がノンネーム（ティーザー）段階に到達している場合にチェックされます。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 155,
+   "a": "Project Created Date",
+   "b": "",
+   "c": "譲渡案件作成年月日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 156,
+   "a": "Parent Company Duplicate Flag",
+   "b": "Flag when parent account returns multiple similar/identical accounts on search.",
+   "c": "親会社重複フラグ",
+   "d": "検索時に親取引先が類似・同一の取引先を複数返す場合のフラグ。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 157,
+   "a": "Buy Agreement Execution Date Check",
+   "b": "",
+   "c": "買AD締結日チェック",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 158,
+   "a": "Small Buy Agreement Check",
+   "b": "",
+   "c": "スモール買ADチェック",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 159,
+   "a": "Buyer Matching Count",
+   "b": "Number of matches where this account is the buyer.",
+   "c": "譲受マッチング件数",
+   "d": "この取引先が買い手となっているマッチングの件数。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 160,
+   "a": "Latest Matching Created Date",
+   "b": "Date the most recent match record was created.",
+   "c": "最新マッチング作成年月日",
+   "d": "直近のマッチングレコードが作成された日付。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 161,
+   "a": "Record Type ID",
+   "b": "",
+   "c": "レコードタイプ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 162,
+   "a": "[Import] Account Owner",
+   "b": "Holding field for the owner value during spreadsheet imports, used when the account does not yet exist in Salesforce.",
+   "c": "※インポート用_取引先所有者",
+   "d": "スプレッドシートインポート時に所有者の値を保持する項目。取引先がまだSalesforceに存在しない場合に使用します。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 163,
+   "a": "SCUEL Corporation Code",
+   "b": "Corporation code in the SCUEL healthcare-facility database.",
+   "c": "SCUEL法人コード",
+   "d": "医療機関データベースSCUELの法人コード。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 164,
+   "a": "Service Founder Name",
+   "b": "The founder of the healthcare service",
+   "c": "サービス_開設者氏名",
+   "d": "医療・介護サービスの開設者名。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 165,
+   "a": "Facility Name",
+   "b": "Name of the healthcare facility",
+   "c": "施設名前",
+   "d": "医療施設の名称。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 166,
+   "a": "Service-Providing Senior Housing",
+   "b": "Number of facilities of this type operated (service-providing senior housing).",
+   "c": "サービス付き高齢者向け住宅",
+   "d": "運営する当該種別の施設数（サービス付き高齢者向け住宅）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 167,
+   "a": "Specified Facility Care (Paid Home)",
+   "b": "Number of facilities of this type operated (specified facility care - paid nursing home).",
+   "c": "特定施設入居者生活介護_有料老人ホーム",
+   "d": "運営する当該種別の施設数（特定施設入居者生活介護・有料老人ホーム）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 168,
+   "a": "CB Specified Facility Care (Paid Home)",
+   "b": "Number of facilities of this type operated (community-based specified facility care - paid nursing home).",
+   "c": "地域密着型特定施設入居者生活介護_有料老人ホーム",
+   "d": "運営する当該種別の施設数（地域密着型特定施設入居者生活介護・有料老人ホーム）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 169,
+   "a": "CB Specified Facility Care (Sr Housing)",
+   "b": "Number of facilities of this type operated (community-based specified facility care - senior housing).",
+   "c": "地域密着型特定施設入居者生活介護_サービス付き高齢者向け住宅",
+   "d": "運営する当該種別の施設数（地域密着型特定施設入居者生活介護・サービス付き高齢者向け住宅）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 170,
+   "a": "Service Founder Position",
+   "b": "",
+   "c": "サービス_開設者役職",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 171,
+   "a": "Dementia Care Group Home",
+   "b": "Number of facilities of this type operated (dementia care group home).",
+   "c": "認知症対応型共同生活介護",
+   "d": "運営する当該種別の施設数（認知症対応型共同生活介護・グループホーム）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 172,
+   "a": "Specified Facility Care (Senior Housing)",
+   "b": "Number of facilities of this type operated (specified facility care - senior housing).",
+   "c": "特定施設入居者生活介護_サービス付き高齢者向け住宅",
+   "d": "運営する当該種別の施設数（特定施設入居者生活介護・サービス付き高齢者向け住宅）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 173,
+   "a": "Specified Facility Care (Low-Cost Home)",
+   "b": "Number of facilities of this type operated (specified facility care - low-cost home).",
+   "c": "特定施設入居者生活介護_軽費老人ホーム",
+   "d": "運営する当該種別の施設数（特定施設入居者生活介護・軽費老人ホーム）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 174,
+   "a": "Has 10,000+ Annual Prescriptions",
+   "b": "Checked if the company has a site handling 10,000+ prescriptions per year.",
+   "c": "年間処方箋枚数1万枚以上",
+   "d": "年間処方箋枚数が1万枚以上の拠点がある場合にチェックされます。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 175,
+   "a": "TSR Company Name (Kanji)",
+   "b": "Company name in kanji from Tokyo Shoko Research (TSR) data.",
+   "c": "TSR商号(漢字)",
+   "d": "東京商工リサーチ（TSR）データの漢字商号。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 176,
+   "a": "TSR Overview",
+   "b": "",
+   "c": "TSR概況",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 177,
+   "a": "TSR Company Code",
+   "b": "Company code assigned by Tokyo Shoko Research.",
+   "c": "TSR企業コード",
+   "d": "東京商工リサーチが付与する企業コード。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 178,
+   "a": "TSR Corporate Type",
+   "b": "",
+   "c": "TSR法人種別",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 179,
+   "a": "TSR Company Name (No Entity Type)",
+   "b": "Company name without the legal entity suffix.",
+   "c": "TSR_商号（法人種別抜き）",
+   "d": "法人格（株式会社等）を除いた商号。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 180,
+   "a": "TSR Company Name (Kana)",
+   "b": "",
+   "c": "TSR商号(カナ)",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 181,
+   "a": "TSR Founding Year/Month",
+   "b": "",
+   "c": "TSR設立年月",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 182,
+   "a": "TSR Launch Year/Month",
+   "b": "Year/month business operations started (TSR data).",
+   "c": "TSR創業年月",
+   "d": "事業を開始した年月（TSRデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 183,
+   "a": "TSR Capital (JPYmm)",
+   "b": "Capital in millions of Yen (TSR)",
+   "c": "TSR資本金(百万円)",
+   "d": "資本金（百万円、TSRデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 184,
+   "a": "TSR Business Type",
+   "b": "Business activities conducted",
+   "c": "TSR営業種目",
+   "d": "事業内容。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 185,
+   "a": "TSR Industry 1",
+   "b": "Up to three industry classifications from TSR data.",
+   "c": "TSR業種1",
+   "d": "TSRデータの業種分類（最大3つ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 186,
+   "a": "TSR Industry 2",
+   "b": "",
+   "c": "TSR業種2",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 187,
+   "a": "TSR Industry 3",
+   "b": "",
+   "c": "TSR業種3",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 188,
+   "a": "TSR Fiscal Year/Month 1",
+   "b": "Fiscal period (year/month) for TSR financials; corresponds to TSR Revenue / Net Income 1-3.",
+   "c": "TSR決算年月1",
+   "d": "TSR財務データの決算期（年月）。TSR売上高・当期純利益1〜3に対応します。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 189,
+   "a": "TSR Fiscal Year/Month 2",
+   "b": "",
+   "c": "TSR決算年月2",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 190,
+   "a": "TSR Fiscal Year/Month 3",
+   "b": "",
+   "c": "TSR決算年月3",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 191,
+   "a": "TSR Survey Date",
+   "b": "Date TSR surveyed the company.",
+   "c": "TSR調査年月日",
+   "d": "TSRが企業を調査した日付。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 192,
+   "a": "TSR Suppliers",
+   "b": "",
+   "c": "TSR仕入先",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 193,
+   "a": "TSR Representative",
+   "b": "",
+   "c": "TSR代表者",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 194,
+   "a": "TSR Rep's Name (Kana)",
+   "b": "",
+   "c": "TSR代表者カナ",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 195,
+   "a": "TSR Date of Birth",
+   "b": "",
+   "c": "TSR生年月日",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 196,
+   "a": "TSR Zodiac Sign",
+   "b": "Representative Chinese zodiac sign (TSR data).",
+   "c": "TSR干支",
+   "d": "代表者の干支（TSRデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 197,
+   "a": "TSR Phone Number",
+   "b": "",
+   "c": "TSR電話番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 198,
+   "a": "TSR Postal Code",
+   "b": "",
+   "c": "TSR郵便番号",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 199,
+   "a": "TSR Prefecture",
+   "b": "",
+   "c": "TSR_都道府県",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 200,
+   "a": "TSR Location",
+   "b": "",
+   "c": "TSR所在地",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 201,
+   "a": "TSR Branches/Offices",
+   "b": "",
+   "c": "TSR営業所・支店",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 202,
+   "a": "TSR # of Employees",
+   "b": "",
+   "c": "TSR従業員数",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 203,
+   "a": "TSR Listing Status",
+   "b": "",
+   "c": "TSR上場",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 204,
+   "a": "TSR Rep's Name",
+   "b": "",
+   "c": "TSR代表者氏名",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 205,
+   "a": "TSR Board Member",
+   "b": "",
+   "c": "TSR役員",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 206,
+   "a": "TSR Major Shareholders",
+   "b": "Major stakeholders and their shares",
+   "c": "TSR大株主",
+   "d": "主要株主と持株比率。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 207,
+   "a": "TSR Largest Shareholder Type",
+   "b": "Whether the largest shareholder is an individual, a corporation, or unknown.",
+   "c": "TSR_筆頭株主種別",
+   "d": "筆頭株主が個人・法人・不明のいずれかを示します。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 208,
+   "a": "TSR Largest Shareholder",
+   "b": "Name of largest shareholder",
+   "c": "TSR_筆頭株主",
+   "d": "筆頭株主の名称。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 209,
+   "a": "TSR Revenue 1 (JPYmm)",
+   "b": "Revenue Year/Month 1 figures.",
+   "c": "TSR売上(百万円)1",
+   "d": "決算期1の売上高。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 210,
+   "a": "TSR Net Income 1 (JPYmm)",
+   "b": "Net income Year/Month 1 figures.",
+   "c": "TSR当期純利益(百万円)1",
+   "d": "決算期1の当期純利益。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 211,
+   "a": "TSR Revenue 2 (JPYmm)",
+   "b": "Revenue Year/Month 2 figures.",
+   "c": "TSR売上(百万円)2",
+   "d": "決算期2の売上高。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 212,
+   "a": "TSR Net Income 2 (JPYmm)",
+   "b": "Net income Year/Month 2 figures.",
+   "c": "TSR当期純利益(百万円)2",
+   "d": "決算期2の当期純利益。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 213,
+   "a": "TSR Revenue 3 (JPYmm)",
+   "b": "Revenue Year/Month 3 figures.",
+   "c": "TSR売上(百万円)3",
+   "d": "決算期3の売上高。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 214,
+   "a": "TSR Net Income 3 (JPYmm)",
+   "b": "Net income Year/Month 3 figures.",
+   "c": "TSR当期純利益(百万円)3",
+   "d": "決算期3の当期純利益。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 215,
+   "a": "TSR Average Revenue (3-Yr)",
+   "b": "3-year average revenue based on TSR data.",
+   "c": "TSR三期売上高平均",
+   "d": "TSRデータに基づく3期平均売上高。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 216,
+   "a": "TSR Revenue Growth Rate",
+   "b": "Revenue growth rate based on TSR financial data.",
+   "c": "TSR売上伸長率",
+   "d": "TSR財務データに基づく売上高成長率。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 217,
+   "a": "TSR Net Income Growth Rate",
+   "b": "Net income growth rate based on TSR financial data.",
+   "c": "TSR当期純利益伸長率",
+   "d": "TSR財務データに基づく当期純利益成長率。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 218,
+   "a": "TSR Customers",
+   "b": "",
+   "c": "TSR販売先",
+   "d": "",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 219,
+   "a": "TSR Rep Current Address",
+   "b": "Representative current home address (TSR data).",
+   "c": "TSR現住所",
+   "d": "代表者の現住所（TSRデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 220,
+   "a": "TSR Rep Hometown",
+   "b": "Representative hometown (TSR data).",
+   "c": "TSR出身地",
+   "d": "代表者の出身地（TSRデータ）。",
+   "e": "Yes (Japan only)"
+  },
+  {
+   "r": 221,
+   "a": "TSR Rep School",
+   "b": "Representative school / education (TSR data).",
+   "c": "TSR出身校",
+   "d": "代表者の出身校・学歴（TSRデータ）。",
+   "e": "Yes (Japan only)"
+  }
+ ],
+ "Contacts": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "Full Name",
+   "b": "",
+   "c": "氏名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Title",
+   "b": "",
+   "c": "役職",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "Mobile Phone",
+   "b": "",
+   "c": "携帯電話",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Email",
+   "b": "",
+   "c": "メール",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Lead Source",
+   "b": "",
+   "c": "リードソース",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 7,
+   "a": "Name (Kana)",
+   "b": "",
+   "c": "カナ氏名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "Gender",
+   "b": "",
+   "c": "性別",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Home Prefecture",
+   "b": "",
+   "c": "出身県",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 10,
+   "a": "School Attended",
+   "b": "",
+   "c": "出身校",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Rep's Home Address",
+   "b": "",
+   "c": "代表者自宅住所",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 12,
+   "a": "Rep's Home Postal Code",
+   "b": "",
+   "c": "代表者自宅郵便番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "M&A Contact",
+   "b": "If the person is a special contact for M&A",
+   "c": "M&A案件担当者",
+   "d": "この人物がM&Aの担当窓口である場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Speed M&A Registration",
+   "b": "Check if this person is registered on Speed M&A.",
+   "c": "スピードM&A登録",
+   "d": "スピードM&Aに登録されている場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Speed M&A ID",
+   "b": "The person’s Speed M&A member ID.",
+   "c": "スピードM&A会員ID",
+   "d": "この人物のスピードM&A会員ID。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Bizbank Member ID",
+   "b": "The person’s Bizbank member ID.",
+   "c": "Bizbank会員ID",
+   "d": "この人物のBizbank会員ID。",
+   "e": "Yes"
+  },
+  {
+   "r": 17,
+   "a": "Bizbank Registered",
+   "b": "Check if this person is registered on Bizbank",
+   "c": "Bizbank登録",
+   "d": "Bizbankに登録されている場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 18,
+   "a": "To/CC",
+   "b": "Whether to put this person in To or CC on emails",
+   "c": "To/CC",
+   "d": "メール送信時にこの人物をToとCCのどちらに入れるか。",
+   "e": "Yes"
+  },
+  {
+   "r": 19,
+   "a": "Unavailable",
+   "b": "Reason this contact can no longer be reached",
+   "c": "連絡不可",
+   "d": "この取引先責任者に連絡が取れなくなった理由。",
+   "e": "Yes"
+  },
+  {
+   "r": 20,
+   "a": "LinkedIn",
+   "b": "",
+   "c": "LinkedIn",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 21,
+   "a": "Email Bounce Type",
+   "b": "Type of email bounce recorded",
+   "c": "メールバウンス種別",
+   "d": "記録されたメールバウンス（不達）の種別。",
+   "e": "Yes"
+  },
+  {
+   "r": 22,
+   "a": "Apollo_Data Source",
+   "b": "",
+   "c": "Apolloデータソース",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 23,
+   "a": "Birthdate",
+   "b": "",
+   "c": "誕生日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 24,
+   "a": "Department",
+   "b": "",
+   "c": "部署",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 25,
+   "a": "Do Not Call",
+   "b": "",
+   "c": "電話禁止",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 26,
+   "a": "Email Opt Out",
+   "b": "",
+   "c": "メール送信除外",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 27,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 28,
+   "a": "Account ID",
+   "b": "",
+   "c": "取引先",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 29,
+   "a": "Assistant's Name",
+   "b": "",
+   "c": "秘書名",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 30,
+   "a": "Business Fax",
+   "b": "",
+   "c": "FAX",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 31,
+   "a": "Reports To ID",
+   "b": "",
+   "c": "上司",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 32,
+   "a": "Business Phone",
+   "b": "",
+   "c": "電話（勤務先）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 33,
+   "a": "Asst. Phone",
+   "b": "",
+   "c": "秘書電話",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 34,
+   "a": "Fax Opt Out",
+   "b": "",
+   "c": "FAX送信除外",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "Mailing Address",
+   "b": "",
+   "c": "郵送先住所",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 36,
+   "a": "Other Address",
+   "b": "",
+   "c": "その他の住所",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 37,
+   "a": "Contact Description",
+   "b": "",
+   "c": "説明",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 38,
+   "a": "Last Stay-in-Touch Save Date",
+   "b": "",
+   "c": "最終Stay-in-Touch保存日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 39,
+   "a": "Last Stay-in-Touch Request Date",
+   "b": "",
+   "c": "最終Stay-in-Touch要求日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 40,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 41,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 42,
+   "a": "Department Tel",
+   "b": "",
+   "c": "部署電話番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 43,
+   "a": "Memo",
+   "b": "",
+   "c": "備考",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 44,
+   "a": "Home Phone",
+   "b": "",
+   "c": "自宅電話",
+   "d": "",
+   "e": "Yes"
+  }
+ ],
+ "Opportunities": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "Stage",
+   "b": "Current pipeline stage of the project",
+   "c": "フェーズ",
+   "d": "案件の現在のパイプラインステージ。",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Next Stage",
+   "b": "The next stage, after completing current stage.",
+   "c": "次フェーズ",
+   "d": "現在のステージ完了後の次のステージ。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 4,
+   "a": "Name",
+   "b": "Name the project like a Slack channel: \"PJ CompanyName\".",
+   "c": "商談名",
+   "d": "Slackチャンネルと同様に「PJ 会社名」の形式で案件名を付けてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Account Name",
+   "b": "",
+   "c": "取引先名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Method",
+   "b": "How the appointment/lead was obtained",
+   "c": "リード種類",
+   "d": "アポイント・リードの獲得経路。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 7,
+   "a": "Method Notes",
+   "b": "Details of the channel that got the appointment. E.g. obtained by in-house inside sales Sato: \"Sato cold call\".",
+   "c": "リード種類補足",
+   "d": "アポイント獲得経路の詳細。例：社内インサイドセールスの佐藤が獲得した場合「佐藤コールドコール」。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 8,
+   "a": "Sell-Side Manager",
+   "b": "",
+   "c": "セルサイド主担当",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Buy-Side Out-Out Manager",
+   "b": "",
+   "c": "バイサイド主担当",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 10,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Opportunity Originator",
+   "b": "User who started this opportunity.",
+   "c": "商談獲得担当者",
+   "d": "この案件を開始したユーザ。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 12,
+   "a": "Project Info",
+   "b": "Free-text area for the general status / overview of the project.",
+   "c": "概況",
+   "d": "案件の全体状況・概要を自由に記載する欄です。",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Drop Reason",
+   "b": "Why the project was stopped?",
+   "c": "終了理由(100字以上)",
+   "d": "案件が中止（ドロップ）となった理由。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Approach Status(for domestic team)",
+   "b": "Approach status used by the domestic team",
+   "c": "アプローチ状況",
+   "d": "国内チームが使用するアプローチ状況。",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Approach Count(for domestic team)",
+   "b": "Number of approach rounds made (0-10).",
+   "c": "アプローチ周回数",
+   "d": "アプローチの実施回数（0〜10）。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Success Probability",
+   "b": "Estimated probability of success",
+   "c": "成約確度",
+   "d": "成約確度の見込み。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 17,
+   "a": "Total Estimated Fee(M)",
+   "b": "Total estimated fee in JPY millions.",
+   "c": "合計想定フィー(M)",
+   "d": "想定手数料の合計（百万円）。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 18,
+   "a": "Seller Estimated Fee(M)",
+   "b": "Estimated fee from the seller, in JPY millions.",
+   "c": "売手想定フィー(M)",
+   "d": "売り手からの想定手数料（百万円）。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 19,
+   "a": "Seller Fee Deposit Date(Est.)",
+   "b": "",
+   "c": "売手フィー入金想定日",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 20,
+   "a": "Probability-Adjusted Revenue(M)",
+   "b": "Estimated fee multiplied by the success probability (JPY millions).",
+   "c": "確度勘案後売上高(M)",
+   "d": "想定手数料に成約確度を乗じた金額（百万円）。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 21,
+   "a": "Buyer Estimated Fee(M)",
+   "b": "Estimated fee from the buyer, in JPY millions.",
+   "c": "買手想定フィー(M)",
+   "d": "買い手からの想定手数料（百万円）。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 22,
+   "a": "Buyer Fee Deposit Date(Est.)",
+   "b": "",
+   "c": "買手フィー入金想定日",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 23,
+   "a": "Sell Agreement Timing",
+   "b": "",
+   "c": "売AD契約時期",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 24,
+   "a": "Sell Agreement Signed Date",
+   "b": "Date the sell-side advisory agreement was signed.",
+   "c": "売AD契約締結日",
+   "d": "売り側アドバイザリー契約の締結日。",
+   "e": "Yes"
+  },
+  {
+   "r": 25,
+   "a": "Sell Agreement URL",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box. (For Box: remove the link expiration under [Link Settings] > [Link Expiration] by unchecking the box.)",
+   "c": "売AD契約書URL",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。（Boxの場合：「リンク設定」の「リンクの有効期限」のチェックを外して期限を解除してください。）",
+   "e": "Yes"
+  },
+  {
+   "r": 26,
+   "a": "Disclosure Statement URL(Sell)",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box. (For Box: remove the link expiration under [Link Settings] > [Link Expiration] by unchecking the box.)",
+   "c": "重要事項説明書URL",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。（Boxの場合：「リンク設定」の「リンクの有効期限」のチェックを外して期限を解除してください。）",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 27,
+   "a": "Sector(TDB)",
+   "b": "TDB major industry classification.",
+   "c": "大分類",
+   "d": "TDBの業種大分類。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 28,
+   "a": "Industry Group(TDB)",
+   "b": "TDB middle industry classification.",
+   "c": "中分類",
+   "d": "TDBの業種中分類。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 29,
+   "a": "Sub-Category(TDB)",
+   "b": "TDB sub-classification.",
+   "c": "小分類",
+   "d": "TDBの業種小分類。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 30,
+   "a": "Detailed Category(TDB)",
+   "b": "TDB detailed industry classification.",
+   "c": "細分類",
+   "d": "TDBの業種細分類。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 31,
+   "a": "Business Details",
+   "b": "",
+   "c": "事業詳細",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 32,
+   "a": "Prefecture",
+   "b": "",
+   "c": "都道府県",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 33,
+   "a": "Asking Price(JPY M)",
+   "b": "",
+   "c": "譲渡希望価格(百万円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 34,
+   "a": "Folder URL(Project)",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box. (For Box: remove the link expiration under [Link Settings] > [Link Expiration] by unchecking the box.)",
+   "c": "資料格納先",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。（Boxの場合：「リンク設定」の「リンクの有効期限」のチェックを外して期限を解除してください。）",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "Revenue(JPY K)",
+   "b": "",
+   "c": "売上高(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 36,
+   "a": "Net Assets(JPY K)",
+   "b": "",
+   "c": "純資産(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 37,
+   "a": "Cash and Deposits(JPY K)",
+   "b": "",
+   "c": "現預金(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 38,
+   "a": "EBITDA(JPY K)",
+   "b": "",
+   "c": "EBITDA(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 39,
+   "a": "Total Assets, Latest FY(JPY K)",
+   "b": "",
+   "c": "総資産_直近期末(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 40,
+   "a": "Borrowings(JPY K)",
+   "b": "",
+   "c": "借入金(千円)",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 41,
+   "a": "Long-Term Follow-up",
+   "b": "",
+   "c": "長期フォロー",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 42,
+   "a": "Long-Term Follow-up Reason",
+   "b": "",
+   "c": "長期フォロー理由",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 43,
+   "a": "Long-Term Follow-up Method",
+   "b": "",
+   "c": "長期フォロー方法",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 44,
+   "a": "Pending",
+   "b": "Check if waiting on an action before next step",
+   "c": "ペンディング",
+   "d": "次のステップの前に対応待ちの事項がある場合にチェックしてください。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 45,
+   "a": "On-Hold Reason",
+   "b": "Reason for waiting.",
+   "c": "保留理由",
+   "d": "保留となっている理由。",
+   "e": "Yes"
+  },
+  {
+   "r": 46,
+   "a": "Pending Method",
+   "b": "",
+   "c": "ペンディング方法",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 47,
+   "a": "Search Revenue(JPY M): Min",
+   "b": "Buyer minimum revenue desired",
+   "c": "(検索用)売上高_最小（百万円）",
+   "d": "買い手が希望する売上高の下限。",
+   "e": "Yes"
+  },
+  {
+   "r": 48,
+   "a": "Search Revenue(JPY M): Max",
+   "b": "Buyer maximum revenue desired",
+   "c": "(検索用)売上高_最大（百万円）",
+   "d": "買い手が希望する売上高の上限。",
+   "e": "Yes"
+  },
+  {
+   "r": 49,
+   "a": "Confirm Seller's Bank & POC",
+   "b": "Check if Seller Bank has been confirmed",
+   "c": "銀行/担当者の確認(売主)",
+   "d": "売り手側の銀行と担当者を確認済みの場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 50,
+   "a": "Confirm Buyer's Bank & POC",
+   "b": "Check if Buyer Bank has been confirmed",
+   "c": "銀行/担当者の確認(買主)",
+   "d": "買い手側の銀行と担当者を確認済みの場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 51,
+   "a": "Verify Wire Transfer/Payment",
+   "b": "Check if payment was done",
+   "c": "送金/入金の履歴確認",
+   "d": "送金・決済が完了した場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 52,
+   "a": "Update Shareholder Registry",
+   "b": "Check if shareholder registry was updated",
+   "c": "株主名簿の登記の書き換え",
+   "d": "株主名簿を更新済みの場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 53,
+   "a": "Check_ActivitiesByStage",
+   "b": "",
+   "c": "活動記録チェック（フェーズ別）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 54,
+   "a": "Check_DocUploaded_FS",
+   "b": "Checked when the FS document has been uploaded (system checkbox).",
+   "c": "財務諸表アップロード済チェック",
+   "d": "FS（決算書）がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 55,
+   "a": "Check_DocUploaded_Teaser",
+   "b": "Checked when the Teaser has been uploaded (system checkbox).",
+   "c": "ティーザーアップロード済チェック",
+   "d": "ティーザーがアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 56,
+   "a": "Check_DocUploaded_IM",
+   "b": "Checked when the IM (information memorandum) has been uploaded (system checkbox).",
+   "c": "IMアップロード済チェック",
+   "d": "IM（企業概要書）がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 57,
+   "a": "Check_DocUploaded_Agenda",
+   "b": "Checked when the Agenda has been uploaded (system checkbox).",
+   "c": "アジェンダアップロード済チェック",
+   "d": "アジェンダがアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 58,
+   "a": "Check_DocUploaded_Valuation",
+   "b": "Checked when the Valuation has been uploaded (system checkbox).",
+   "c": "バリュエーションアップロード済チェック",
+   "d": "バリュエーション資料がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 59,
+   "a": "Check_MatchingStage",
+   "b": "",
+   "c": "マッチングフェーズチェック",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 60,
+   "a": "Check_DocUploaded_QA",
+   "b": "Checked when the Q&A document has been uploaded (system checkbox).",
+   "c": "Q&Aアップロード済チェック",
+   "d": "Q&A資料がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 61,
+   "a": "Check_DocUploaded_LOI",
+   "b": "Checked when the LOI (letter of intent) has been uploaded (system checkbox).",
+   "c": "LOI（意向表明書）アップロード済チェック",
+   "d": "LOI（意向表明書）がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 62,
+   "a": "Check_DocUploaded_MOU",
+   "b": "Checked when the MOU has been uploaded (system checkbox).",
+   "c": "MOU（基本合意書）アップロード済チェック",
+   "d": "MOU（基本合意書）がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 63,
+   "a": "Check_DocUploaded_SPA",
+   "b": "Checked when the SPA (share purchase agreement) has been uploaded (system checkbox).",
+   "c": "SPA（株式譲渡契約書）アップロード済チェック",
+   "d": "SPA（株式譲渡契約書）がアップロードされるとチェックされます（システム用チェックボックス）。",
+   "e": "Yes"
+  },
+  {
+   "r": 64,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 65,
+   "a": "Team",
+   "b": "",
+   "c": "チーム",
+   "d": "",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 66,
+   "a": "Probability (%)",
+   "b": "Probability is automatically set based on the current Stage.",
+   "c": "確度（%）",
+   "d": "確度は現在のステージに基づいて自動設定されます。",
+   "e": "Yes"
+  },
+  {
+   "r": 67,
+   "a": "Toss Up(TU)",
+   "b": "Date of the toss-up (when the lead was handed from inside sales to the deal team).",
+   "c": "トスアップ(TU)",
+   "d": "トスアップ（インサイドセールスからディールチームへのリード引き継ぎ）の日付。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 68,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 69,
+   "a": "Close Date",
+   "b": "Not used - required by Salesforce and cannot be removed. Enter any date (today is fine); it is automatically overwritten to 2037-05-01.",
+   "c": "完了予定日",
+   "d": "未使用の項目です。Salesforce標準の必須項目のため削除できません。任意の日付（本日で可）を入力してください。自動的に2037-05-01に上書きされます。",
+   "e": "Yes"
+  },
+  {
+   "r": 70,
+   "a": "Record Type ID",
+   "b": "Salesforce record type of this project.",
+   "c": "レコードタイプ",
+   "d": "この案件のSalesforceレコードタイプ。",
+   "e": "Yes"
+  },
+  {
+   "r": 71,
+   "a": "Appointment from Toss Up",
+   "b": "Date of the appointment resulting from the toss-up.",
+   "c": "TUからのアポ獲得",
+   "d": "トスアップから獲得したアポイントの日付。",
+   "e": "Yes (domestic only)"
+  },
+  {
+   "r": 72,
+   "a": "Inquiry Company(JP)",
+   "b": "",
+   "c": "Inquiry_会社名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 73,
+   "a": "Inquiry Name(JP)",
+   "b": "",
+   "c": "Inquiry_名前",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 74,
+   "a": "Inquiry Name Reading(JP)",
+   "b": "",
+   "c": "Inquiry_フリガナ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 75,
+   "a": "Inquiry Email(JP)",
+   "b": "",
+   "c": "Inquiry_メール",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 76,
+   "a": "Inquiry Mobile Tel(JP)",
+   "b": "",
+   "c": "Inquiry_TEL(携帯)",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 77,
+   "a": "Inquiry Work Tel(JP)",
+   "b": "",
+   "c": "Inquiry_TEL(会社)",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 78,
+   "a": "Inquiry Postal Code(JP)",
+   "b": "",
+   "c": "Inquiry_郵便番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 79,
+   "a": "Inquiry Address(JP)",
+   "b": "",
+   "c": "Inquiry_住所",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 80,
+   "a": "Inquiry Department(JP)",
+   "b": "",
+   "c": "Inquiry_所属",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 81,
+   "a": "Inquiry Job Title(JP)",
+   "b": "",
+   "c": "Inquiry_役職",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 82,
+   "a": "Inquiry Subject(JP)",
+   "b": "",
+   "c": "Inquiry_タイトル",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 83,
+   "a": "Inquiry Body(JP)",
+   "b": "",
+   "c": "Inquiry_本文",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 84,
+   "a": "Next Step",
+   "b": "",
+   "c": "次のステップ",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 85,
+   "a": "Sell-Side Progress",
+   "b": "Free text memo",
+   "c": "セルサイド進捗",
+   "d": "売り側の進捗に関する自由記述メモ。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 86,
+   "a": "NDA",
+   "b": "Link to the related NDA contract page.",
+   "c": "NDA",
+   "d": "関連するNDA契約ページへのリンク。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 87,
+   "a": "Buy-Side Progress",
+   "b": "Free text memo",
+   "c": "バイサイド進捗",
+   "d": "買い側の進捗に関する自由記述メモ。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 88,
+   "a": "Teaser URL",
+   "b": "",
+   "c": "ティーザーURL",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 89,
+   "a": "Meeting Memo",
+   "b": "Enter the Google Document URL of the meeting memo.",
+   "c": "面談メモ",
+   "d": "議事メモのGoogleドキュメントURLを入力してください。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 90,
+   "a": "Buy-Side In-Out Manager",
+   "b": "",
+   "c": "バイサイド副担当",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 91,
+   "a": "Revenue",
+   "b": "Revenue figure used in the valuation.",
+   "c": "売上高（バリュエーション）",
+   "d": "バリュエーションに使用する売上高。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 92,
+   "a": "Depreciation",
+   "b": "Depreciation figure used in the valuation.",
+   "c": "減価償却費（バリュエーション）",
+   "d": "バリュエーションに使用する減価償却費。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 93,
+   "a": "Profit Before Tax",
+   "b": "Profit before tax used in the valuation.",
+   "c": "税引前利益（バリュエーション）",
+   "d": "バリュエーションに使用する税引前利益。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 94,
+   "a": "Profit After Tax",
+   "b": "Profit after tax used in the valuation.",
+   "c": "税引後利益（バリュエーション）",
+   "d": "バリュエーションに使用する税引後利益。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 95,
+   "a": "Cash",
+   "b": "Cash figure used in the valuation.",
+   "c": "現預金（バリュエーション）",
+   "d": "バリュエーションに使用する現預金。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 96,
+   "a": "Debt",
+   "b": "Debt figure used in the valuation.",
+   "c": "有利子負債（バリュエーション）",
+   "d": "バリュエーションに使用する負債。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 97,
+   "a": "Equity",
+   "b": "Equity figure used in the valuation.",
+   "c": "株式価値（バリュエーション）",
+   "d": "バリュエーションに使用する純資産（エクイティ）。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 98,
+   "a": "Fiscal Year End",
+   "b": "Fiscal year end used in the valuation.",
+   "c": "決算期（バリュエーション）",
+   "d": "バリュエーションに使用する決算期。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 99,
+   "a": "EV(USD M)",
+   "b": "Enterprise value in USD millions.",
+   "c": "EV（百万米ドル）",
+   "d": "エンタープライズバリュー（EV、百万米ドル）。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 100,
+   "a": "Valuation Methods",
+   "b": "Method for valuation (e.g: ebitda)",
+   "c": "バリュエーション手法",
+   "d": "バリュエーションの手法（例：EBITDAマルチプル）。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 101,
+   "a": "Valuation Date",
+   "b": "",
+   "c": "バリュエーション実施日",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 102,
+   "a": "Country",
+   "b": "",
+   "c": "国",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 103,
+   "a": "Website",
+   "b": "",
+   "c": "Webサイト",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 104,
+   "a": "FolderURL(Company)",
+   "b": "",
+   "c": "フォルダURL（会社）",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 105,
+   "a": "Potential Buyers",
+   "b": "",
+   "c": "買手候補",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 106,
+   "a": "Acquiring Company",
+   "b": "Select the buyer(s) in the final stages or closing.",
+   "c": "買収企業",
+   "d": "最終段階・クロージングの買い手を選択してください。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 107,
+   "a": "Acquiring Company(Matching Info)",
+   "b": "The Match record for the acquiring company.",
+   "c": "買収企業（マッチング情報）",
+   "d": "買収企業のマッチングレコード。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 108,
+   "a": "SFID18(Opportunity)",
+   "b": "18-character Salesforce ID of this record.",
+   "c": "譲渡案件SFID18",
+   "d": "このレコードの18桁のSalesforce IDです。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 109,
+   "a": "Description",
+   "b": "",
+   "c": "説明",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 110,
+   "a": "BizBank(Published Date)",
+   "b": "Date this listing was published on BizBank.",
+   "c": "BizBank（掲載日）",
+   "d": "BizBankに掲載された日付。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 111,
+   "a": "Project Manager",
+   "b": "",
+   "c": "案件所有者名",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 112,
+   "a": "M&A Needs",
+   "b": "The related M&A Needs record.",
+   "c": "買収ニーズ",
+   "d": "関連する買収ニーズレコード。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 113,
+   "a": "Approach Type",
+   "b": "",
+   "c": "アプローチ種別",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 114,
+   "a": "Fees(USD M)",
+   "b": "",
+   "c": "手数料（百万米ドル）",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 115,
+   "a": "Fee x Probability(USD M)",
+   "b": "",
+   "c": "手数料×確度（百万米ドル）",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 116,
+   "a": "EQV Value(USD M)",
+   "b": "Equity value in USD millions.",
+   "c": "EV金額（百万米ドル）",
+   "d": "株式価値（エクイティバリュー、百万米ドル）。",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 117,
+   "a": "Spreadsheet Progress Log",
+   "b": "",
+   "c": "進捗ログ（スプレッドシート）",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 118,
+   "a": "Inquiry_Company",
+   "b": "",
+   "c": "問い合わせ_会社名",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 119,
+   "a": "Inquiry_Name",
+   "b": "",
+   "c": "問い合わせ_氏名",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 120,
+   "a": "Inquiry_Email",
+   "b": "",
+   "c": "問い合わせ_メール",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 121,
+   "a": "Inquiry_Mobile",
+   "b": "",
+   "c": "問い合わせ_携帯電話",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 122,
+   "a": "Inquiry_Work",
+   "b": "",
+   "c": "問い合わせ_勤務先電話",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 123,
+   "a": "Inquiry_Postalcode",
+   "b": "",
+   "c": "問い合わせ_郵便番号",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 124,
+   "a": "Inquiry_Address",
+   "b": "",
+   "c": "問い合わせ_住所",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 125,
+   "a": "Inquiry_Department",
+   "b": "",
+   "c": "問い合わせ_部署",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 126,
+   "a": "Inquiry_Title",
+   "b": "",
+   "c": "問い合わせ_役職",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 127,
+   "a": "Inquiry_Subject",
+   "b": "",
+   "c": "問い合わせ_件名",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 128,
+   "a": "Inquiry_Body",
+   "b": "",
+   "c": "問い合わせ_本文",
+   "d": "",
+   "e": "Yes (cross-border only)"
+  },
+  {
+   "r": 129,
+   "a": "Expected Payout(JPY 10K)",
+   "b": "In units of JPY 10,000.",
+   "c": "Expected Payout(万円)",
+   "d": "万円単位で入力してください。",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 130,
+   "a": "Expected Revenue(JPY 10K)",
+   "b": "In units of JPY 10,000.",
+   "c": "Expected Revenue(万円)",
+   "d": "万円単位で入力してください。",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 131,
+   "a": "Criteria(Text)",
+   "b": "",
+   "c": "条件（テキスト）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 132,
+   "a": "Start Date",
+   "b": "",
+   "c": "開始日",
+   "d": "",
+   "e": "No (not on advisor page)"
+  }
+ ],
+ "Matches": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "Matching No.",
+   "b": "",
+   "c": "マッチング番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Project",
+   "b": "The sell-side project (opportunity) this match belongs to.",
+   "c": "譲渡案件",
+   "d": "このマッチングが属する売り案件（商談）。",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "Buyer",
+   "b": "The candidate buyer account.",
+   "c": "譲受希望会社",
+   "d": "買い手候補の取引先。",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Currency ISO Code",
+   "b": "",
+   "c": "通貨",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Disclosure Statement URL(Buy)",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box.",
+   "c": "重要事項説明書URL",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 7,
+   "a": "Buy Agreement URL",
+   "b": "Insert the shared URL from the [Share] button in Google Drive or Box.",
+   "c": "買AD契約書URL",
+   "d": "GoogleドライブまたはBoxの「共有」ボタンから取得した共有URLを貼り付けてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "NDA",
+   "b": "Checked if NDA was done.",
+   "c": "NDA",
+   "d": "NDA締結済みの場合にチェックされます。",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Tel",
+   "b": "",
+   "c": "代表電話",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 10,
+   "a": "Website",
+   "b": "",
+   "c": "Webサイト",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Stage",
+   "b": "Current step in the matching process",
+   "c": "フェーズ",
+   "d": "マッチングプロセスの現在のステップ。",
+   "e": "Yes"
+  },
+  {
+   "r": 12,
+   "a": "Status",
+   "b": "Detailed status if needed (e.g.  re-approach, rejected).",
+   "c": "ステータス",
+   "d": "必要に応じた詳細ステータス（例：再アプローチ、お断り）。",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Drop Reason",
+   "b": "Why the match was dropped",
+   "c": "終了理由",
+   "d": "マッチングがドロップとなった理由。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Drop Reason Comments",
+   "b": "",
+   "c": "終了理由コメント",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Memo(Manager)",
+   "b": "Memo shown and edited in reports. For notes unrelated to proposal results or progress. Up to 255 characters.",
+   "c": "案件MGメモ",
+   "d": "レポート上で表示・編集するメモ。提案結果や進捗以外の記録用です。最大255文字。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "IS Memo",
+   "b": "Notes from the inside-sales approach. Up to 255 characters.",
+   "c": "ISメモ",
+   "d": "インサイドセールスのアプローチ記録。最大255文字。",
+   "e": "Yes"
+  },
+  {
+   "r": 17,
+   "a": "Project Manager",
+   "b": "",
+   "c": "案件所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 18,
+   "a": "Seller",
+   "b": "The seller account of the related project.",
+   "c": "譲渡希望会社",
+   "d": "関連案件の売り手取引先。",
+   "e": "Yes"
+  },
+  {
+   "r": 19,
+   "a": "Project Phase",
+   "b": "Stage of the sell-side project",
+   "c": "譲渡案件フェーズ",
+   "d": "売り案件のステージ。",
+   "e": "Yes"
+  },
+  {
+   "r": 20,
+   "a": "Project Approaching Status",
+   "b": "Approach status of the project",
+   "c": "案件アプローチ状況",
+   "d": "案件のアプローチ状況。",
+   "e": "Yes"
+  },
+  {
+   "r": 21,
+   "a": "Project Details",
+   "b": "Text area for the approach status and results.",
+   "c": "概況",
+   "d": "アプローチ状況・結果を記載するテキストエリア。",
+   "e": "Yes"
+  },
+  {
+   "r": 22,
+   "a": "Matching Reason",
+   "b": "",
+   "c": "マッチング理由",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 23,
+   "a": "Matching Notes",
+   "b": "",
+   "c": "マッチング備考欄",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 24,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 25,
+   "a": "Last Activity User",
+   "b": "Rep who last called / acted on this match.",
+   "c": "最終活動者",
+   "d": "このマッチングに最後に架電・対応した担当者。",
+   "e": "Yes"
+  },
+  {
+   "r": 26,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 27,
+   "a": "Latest Revenue(JPYmm)",
+   "b": "Latest revenue from TDB data (JPY millions).",
+   "c": "最新期売上(百万円)",
+   "d": "TDBデータの最新売上高（百万円）。",
+   "e": "Yes"
+  },
+  {
+   "r": 28,
+   "a": "Latest Net Income(JPYmm)",
+   "b": "Latest after-tax profit from TDB data (JPY millions).",
+   "c": "最新期税引後利益(百万円)",
+   "d": "TDBデータの最新税引後利益（百万円）。",
+   "e": "Yes"
+  },
+  {
+   "r": 29,
+   "a": "Sector(TDB)",
+   "b": "TDB major industry classification.",
+   "c": "大分類",
+   "d": "TDBの業種大分類。",
+   "e": "Yes"
+  },
+  {
+   "r": 30,
+   "a": "Industry Group(TDB)",
+   "b": "TDB middle industry classification.",
+   "c": "中分類",
+   "d": "TDBの業種中分類。",
+   "e": "Yes"
+  },
+  {
+   "r": 31,
+   "a": "Purpose",
+   "b": "Business activities, products",
+   "c": "目的",
+   "d": "事業内容・製品。",
+   "e": "Yes"
+  },
+  {
+   "r": 32,
+   "a": "Status Change Date",
+   "b": "When was the status changed",
+   "c": "ステータス更新日",
+   "d": "ステータスが変更された日付。",
+   "e": "Yes"
+  },
+  {
+   "r": 33,
+   "a": "Next Action Date",
+   "b": "",
+   "c": "次回行動予定日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 34,
+   "a": "Record Type ID",
+   "b": "Salesforce record type of this match.",
+   "c": "レコードタイプ",
+   "d": "このマッチングのSalesforceレコードタイプ。",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "Contact",
+   "b": "Contact person for this match.",
+   "c": "取引先責任者",
+   "d": "このマッチングの担当窓口（取引先責任者）。",
+   "e": "Yes"
+  },
+  {
+   "r": 36,
+   "a": "Country(Buyer)",
+   "b": "",
+   "c": "国（買手）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 37,
+   "a": "FolderURL(Company)",
+   "b": "",
+   "c": "フォルダURL（会社）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 38,
+   "a": "Progress(Date, Description)",
+   "b": "",
+   "c": "進捗（日付・内容）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 39,
+   "a": "NextStep",
+   "b": "",
+   "c": "次のステップ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 40,
+   "a": "Start Date",
+   "b": "",
+   "c": "開始日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 41,
+   "a": "NDA Date",
+   "b": "",
+   "c": "NDA締結日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 42,
+   "a": "Toss Up Date",
+   "b": "Date of the toss-up for this match.",
+   "c": "トスアップ日",
+   "d": "このマッチングのトスアップ日。",
+   "e": "Yes"
+  },
+  {
+   "r": 43,
+   "a": "Top Mtg Date",
+   "b": "",
+   "c": "トップ面談日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 44,
+   "a": "Buyer FA Agreement Date",
+   "b": "",
+   "c": "買手FA契約締結日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 45,
+   "a": "Folder URL(Project)",
+   "b": "",
+   "c": "フォルダURL（案件）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 46,
+   "a": "External ID",
+   "b": "ID used for external data imports.",
+   "c": "外部ID",
+   "d": "外部データインポートに使用するID。",
+   "e": "Yes"
+  },
+  {
+   "r": 47,
+   "a": "Project (New)",
+   "b": "",
+   "c": "(新)譲渡案件",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 48,
+   "a": "Project Manager(New)",
+   "b": "",
+   "c": "案件所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 49,
+   "a": "Project Approaching Status(New)",
+   "b": "",
+   "c": "案件アプローチ状況",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 50,
+   "a": "Project Phase(New)",
+   "b": "",
+   "c": "譲渡案件フェーズ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 51,
+   "a": "Project ID(New)",
+   "b": "",
+   "c": "譲渡案件ID",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 52,
+   "a": "Folder URL(Project)",
+   "b": "",
+   "c": "フォルダURL（案件）",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 53,
+   "a": "Account ID(New)",
+   "b": "",
+   "c": "取引先ID",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 54,
+   "a": "Seller",
+   "b": "",
+   "c": "譲渡希望会社",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 55,
+   "a": "Folder URL(Target)",
+   "b": "",
+   "c": "フォルダURL（ターゲット）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 56,
+   "a": "Bank of Yokohama(Approached Date)",
+   "b": "",
+   "c": "横浜銀行（アプローチ日）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 57,
+   "a": "Bank of Kyoto(Approached Date)",
+   "b": "",
+   "c": "京都銀行（アプローチ日）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 58,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 59,
+   "a": "Target Company",
+   "b": "",
+   "c": "ターゲット企業",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 60,
+   "a": "Website",
+   "b": "",
+   "c": "Webサイト",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 61,
+   "a": "Country(Target)",
+   "b": "",
+   "c": "国（ターゲット）",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 62,
+   "a": "Target Memo",
+   "b": "",
+   "c": "ターゲットメモ",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 63,
+   "a": "Response Date",
+   "b": "",
+   "c": "回答日",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 64,
+   "a": "Valuation Date",
+   "b": "",
+   "c": "バリュエーション実施日",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 65,
+   "a": "Valuation Detail",
+   "b": "",
+   "c": "バリュエーション詳細",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 66,
+   "a": "Method",
+   "b": "",
+   "c": "手法",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 67,
+   "a": "Sourcing Info",
+   "b": "",
+   "c": "ソーシング情報",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 68,
+   "a": "Power Buyer",
+   "b": "",
+   "c": "パワーバイヤー",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 69,
+   "a": "SFID18",
+   "b": "",
+   "c": "SFID18",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 70,
+   "a": "Buyer Company Prefecture",
+   "b": "",
+   "c": "譲受企業都道府県",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 71,
+   "a": "Details",
+   "b": "",
+   "c": "詳細",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 72,
+   "a": "[Import] Phone Number",
+   "b": "",
+   "c": "※インポートデータ：電話番号",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 73,
+   "a": "[Import] IP Rep",
+   "b": "",
+   "c": "※インポートデータ：IP担当者",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 74,
+   "a": "[Import] Client Contact",
+   "b": "",
+   "c": "※インポートデータ：クライアント担当者",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 75,
+   "a": "Contact Department",
+   "b": "",
+   "c": "担当者部署",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 76,
+   "a": "[Import] Contact Address",
+   "b": "",
+   "c": "※インポート用：担当者アドレス",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 77,
+   "a": "Addressee Name",
+   "b": "",
+   "c": "宛名",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 78,
+   "a": "[Import] Other Info 2",
+   "b": "",
+   "c": "※インポートデータ:その他情報2",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 79,
+   "a": "SFID18(Buyer)",
+   "b": "",
+   "c": "譲受希望会社SFID18",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 80,
+   "a": "Foreign/Domestic(TDB)",
+   "b": "",
+   "c": "外資系・国内系",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 81,
+   "a": "Publicly Listed(TDB)",
+   "b": "",
+   "c": "株式公開",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 82,
+   "a": "Teaser Pass Reason",
+   "b": "",
+   "c": "NN見送り理由",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 83,
+   "a": "IM Pass Reason",
+   "b": "",
+   "c": "IM見送り理由",
+   "d": "",
+   "e": "No (not on advisor page)"
+  }
+ ],
+ "M&A Needs": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "M&A Need Name",
+   "b": "",
+   "c": "買収ニーズ名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Company Name",
+   "b": "The buyer account this Need belongs to.",
+   "c": "取引先名",
+   "d": "この買収ニーズが属する買い手の取引先。",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "SFID(Account)",
+   "b": "18-character Salesforce ID of the buyer account.",
+   "c": "取引先SFID18",
+   "d": "買い手取引先の18桁のSalesforce ID。",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Website",
+   "b": "",
+   "c": "Webサイト",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Status",
+   "b": "Set to Inactive for needs that are no longer used.",
+   "c": "ステータス",
+   "d": "使用しなくなったニーズは無効（Inactive）に設定してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 7,
+   "a": "Needs Type",
+   "b": "Domestic (Japan) or international.",
+   "c": "ニーズタイプ",
+   "d": "国内向けか海外向けかの区分。",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Target Area(JP)",
+   "b": "Region(s) in Japan the buyer is targeting.",
+   "c": "希望エリア(国内)",
+   "d": "買い手が対象とする日本国内の地域。",
+   "e": "Yes"
+  },
+  {
+   "r": 10,
+   "a": "Target Area(Aux)",
+   "b": "Free-text notes on target area.",
+   "c": "希望エリア(補足)",
+   "d": "対象地域に関する自由記述の補足。",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Sector(TDB)",
+   "b": "Target industry sector (TDB major classification).",
+   "c": "大分類",
+   "d": "対象業種（TDB大分類）。",
+   "e": "Yes"
+  },
+  {
+   "r": 12,
+   "a": "Industry Group(TDB)",
+   "b": "Target industry group (TDB middle classification).",
+   "c": "中分類",
+   "d": "対象業種（TDB中分類）。",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Target Industry(Text)",
+   "b": "Target industry - free text",
+   "c": "希望業種",
+   "d": "対象業種（自由記述）。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Target Revenue(JPY M): Min",
+   "b": "",
+   "c": "希望売上規模(百万円):下限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Target Revenue(JPY M): Max",
+   "b": "",
+   "c": "希望売上規模(百万円):上限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Target Deal Size(JPY M): Min",
+   "b": "",
+   "c": "希望ディールサイズ(百万円):下限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 17,
+   "a": "Target Deal Size(JPY M): Max",
+   "b": "",
+   "c": "希望ディールサイズ(百万円):上限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 18,
+   "a": "Target Revenue(USD M): Min",
+   "b": "",
+   "c": "希望売上規模(USD M):下限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 19,
+   "a": "Target Revenue(USD M): Max",
+   "b": "",
+   "c": "希望売上規模(USD M):上限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 20,
+   "a": "Target Deal Size(USD M): Min",
+   "b": "",
+   "c": "希望ディールサイズ(USD M):下限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 21,
+   "a": "Target Deal Size(USD M): Max",
+   "b": "",
+   "c": "希望ディールサイズ(USD M):上限",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 22,
+   "a": "M&A Purpose",
+   "b": "What is their reasoning to conduct M&A",
+   "c": "買収目的",
+   "d": "M&Aを行う目的・背景。",
+   "e": "Yes"
+  },
+  {
+   "r": 23,
+   "a": "Deal Breakers",
+   "b": "Conditions that make a deal impossible to consider for the buyer",
+   "c": "検討不可要件",
+   "d": "買い手にとって検討不可能となる条件（ディールブレーカー）。",
+   "e": "Yes"
+  },
+  {
+   "r": 24,
+   "a": "Decision on Deficit",
+   "b": "Whether the buyer can consider companies with losses or negative net worth",
+   "c": "赤字・債務超過あり",
+   "d": "赤字・債務超過の企業を検討できるかどうか。",
+   "e": "Yes"
+  },
+  {
+   "r": 25,
+   "a": "Memo",
+   "b": "",
+   "c": "買収ニーズ備考欄",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 26,
+   "a": "Fundraising",
+   "b": "How the buyer plans to fund the acquisition.",
+   "c": "資金調達",
+   "d": "買収資金の調達方法。",
+   "e": "Yes"
+  },
+  {
+   "r": 27,
+   "a": "Valuation Method",
+   "b": "Buyer’s valuation approach, e.g. \"up to 3x by the years-of-profit (nenbai) method, up to 5x for paid nursing homes\".",
+   "c": "評価方法",
+   "d": "買い手の価格評価方法。例：「年倍法で3倍まで、有料老人ホームは5倍まで」。",
+   "e": "Yes"
+  },
+  {
+   "r": 28,
+   "a": "Notes on Contacting",
+   "b": "Cautions before reaching out to this buyer.",
+   "c": "連絡時注意事項",
+   "d": "この買い手に連絡する前の注意事項。",
+   "e": "Yes"
+  },
+  {
+   "r": 29,
+   "a": "Audit Approach",
+   "b": "The buyer’s due-diligence / audit approach.",
+   "c": "監査対応",
+   "d": "買い手のデューデリジェンス・監査の進め方。",
+   "e": "Yes"
+  },
+  {
+   "r": 30,
+   "a": "Payment Flow",
+   "b": "How the buyer intends to structure payment.",
+   "c": "決済フロー",
+   "d": "買い手が想定する支払いの流れ。",
+   "e": "Yes"
+  },
+  {
+   "r": 31,
+   "a": "Merits for M&A",
+   "b": "Advantages the buyer expects from an acquisition.",
+   "c": "グループ参画のメリット",
+   "d": "買い手が買収に期待するメリット。",
+   "e": "Yes"
+  },
+  {
+   "r": 32,
+   "a": "Target Revenue(Select)",
+   "b": "",
+   "c": "希望売上規模",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 33,
+   "a": "Target Deal Size(Select)",
+   "b": "",
+   "c": "希望ディールサイズ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 34,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 36,
+   "a": "Account Matching Fields Added",
+   "b": "Check if account was added to the info",
+   "c": "取引先マッチング項目追記済み",
+   "d": "取引先のマッチング項目に情報を追加済みの場合にチェックしてください。",
+   "e": "Yes"
+  },
+  {
+   "r": 37,
+   "a": "Target Area(Intl)",
+   "b": "",
+   "c": "希望エリア(海外)",
+   "d": "",
+   "e": "No (not on advisor page)"
+  }
+ ],
+ "Contracts": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "Record Type ID",
+   "b": "",
+   "c": "レコードタイプ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Contract Name",
+   "b": "",
+   "c": "契約書名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "Execution Date",
+   "b": "Date the contract was signed (executed).",
+   "c": "締結日",
+   "d": "契約書の締結日。",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Contract Term (Months)",
+   "b": "Enter in months (1 year = 12).",
+   "c": "契約期限(月単位)",
+   "d": "月数で入力してください（1年＝12）。",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Contract End Date",
+   "b": "",
+   "c": "契約終了日",
+   "d": "",
+   "e": "No (no object access)"
+  },
+  {
+   "r": 7,
+   "a": "Contract Type",
+   "b": "Automatic renewal or one-time.",
+   "c": "契約種別",
+   "d": "自動更新か単発かの区分。",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "Contract Scope",
+   "b": "",
+   "c": "契約範囲",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "No (no object access)"
+  },
+  {
+   "r": 10,
+   "a": "Google Drive URL",
+   "b": "Link to the scanned contract file on Google Drive.",
+   "c": "GoogleDriveリンク",
+   "d": "Googleドライブ上のスキャン済み契約書ファイルへのリンク。",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Slack Seal Request Link",
+   "b": "Link to the Slack thread requesting the company seal.",
+   "c": "Slack押印申請リンク",
+   "d": "押印依頼のSlackスレッドへのリンク。",
+   "e": "Yes"
+  },
+  {
+   "r": 12,
+   "a": "Project (New)",
+   "b": "The related project on the new Project object.",
+   "c": "(新)譲渡案件",
+   "d": "新しいプロジェクトオブジェクト上の関連案件。",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Project",
+   "b": "The related project (opportunity).",
+   "c": "譲渡案件",
+   "d": "関連する案件（商談）。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Account",
+   "b": "The account this contract belongs to.",
+   "c": "取引先",
+   "d": "この契約が属する取引先。",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "File Uploaded",
+   "b": "Indicates the contract document has been uploaded.",
+   "c": "ファイルアップロード済",
+   "d": "契約書ドキュメントがアップロード済みであることを示します。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "No (no object access)"
+  },
+  {
+   "r": 17,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "No (no object access)"
+  }
+ ],
+ "Establishments": [
+  {
+   "r": 1,
+   "a": "VALUE ENGLISH",
+   "b": "INFO TEXT, TOOLTIP ENGLISH",
+   "c": "VALUE JAPANESE",
+   "d": "INFO TEXT, TOOLTIP JAPANESE",
+   "e": "IS THE FIELD IMPLEMENTED/USED IN THE CURRENT PAGE?"
+  },
+  {
+   "r": 2,
+   "a": "SFID18 (Establishment)",
+   "b": "18-character Salesforce ID of this establishment record.",
+   "c": "SFID18(事業所)",
+   "d": "この事業所レコードの18桁のSalesforce IDです。",
+   "e": "Yes"
+  },
+  {
+   "r": 3,
+   "a": "Establishment Name",
+   "b": "",
+   "c": "事業所名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 4,
+   "a": "Establishment Name (Kana)",
+   "b": "",
+   "c": "事業所_名称カナ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 5,
+   "a": "Establishment Category",
+   "b": "",
+   "c": "事業所_区分",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 6,
+   "a": "Establishment Data Source",
+   "b": "Where the data came from: SCUEL database or manual search.",
+   "c": "事業所_データソース",
+   "d": "データの取得元：SCUELデータベースか手動検索か。",
+   "e": "Yes"
+  },
+  {
+   "r": 7,
+   "a": "Data Update Date",
+   "b": "",
+   "c": "データ更新年月日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 8,
+   "a": "Co-Located Facility",
+   "b": "Checked if this facility shares a location with another facility.",
+   "c": "併設",
+   "d": "この施設が他の施設と同一所在地にある場合にチェックされます。",
+   "e": "Yes"
+  },
+  {
+   "r": 9,
+   "a": "Founder Name (Text)",
+   "b": "",
+   "c": "開設者_テキスト",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 10,
+   "a": "Registration Reason",
+   "b": "",
+   "c": "登録理由",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 11,
+   "a": "Designated Period Start Date",
+   "b": "Start of the facility’s designation period (healthcare / long-term-care insurance designation).",
+   "c": "指定期間始",
+   "d": "施設の指定期間の開始日（医療・介護保険の指定）。",
+   "e": "Yes"
+  },
+  {
+   "r": 12,
+   "a": "Medical Department Name",
+   "b": "Medical department(s) of the facility.",
+   "c": "診療科名",
+   "d": "施設の診療科目。",
+   "e": "Yes"
+  },
+  {
+   "r": 13,
+   "a": "Establishment Status",
+   "b": "Whether the establishment is operating, suspended, or other.",
+   "c": "事業所_ステータス",
+   "d": "事業所が稼働中・休止中・その他のいずれかを示します。",
+   "e": "Yes"
+  },
+  {
+   "r": 14,
+   "a": "Full-Time Physicians",
+   "b": "Number of Full-Time Physicians",
+   "c": "常勤_医科",
+   "d": "常勤医師数。",
+   "e": "Yes"
+  },
+  {
+   "r": 15,
+   "a": "Full-Time Dentists",
+   "b": "Number of Full-Time Dentists",
+   "c": "常勤_歯科",
+   "d": "常勤歯科医師数。",
+   "e": "Yes"
+  },
+  {
+   "r": 16,
+   "a": "Part-Time Physicians",
+   "b": "Number of Part-Time Physicians",
+   "c": "非常勤_医科",
+   "d": "非常勤医師数。",
+   "e": "Yes"
+  },
+  {
+   "r": 17,
+   "a": "Part-Time Dentists",
+   "b": "Number of Part-Time Dentists",
+   "c": "非常勤_歯科",
+   "d": "非常勤歯科医師数。",
+   "e": "Yes"
+  },
+  {
+   "r": 18,
+   "a": "Full-Time Total",
+   "b": "Total full-time practitioners (physicians + dentists).",
+   "c": "常勤_合計",
+   "d": "常勤合計（医師＋歯科医師）。",
+   "e": "Yes"
+  },
+  {
+   "r": 19,
+   "a": "Part-Time Total",
+   "b": "Total part-time practitioners (physicians + dentists).",
+   "c": "非常勤_合計",
+   "d": "非常勤合計（医師＋歯科医師）。",
+   "e": "Yes"
+  },
+  {
+   "r": 20,
+   "a": "Staff Doctor Count",
+   "b": "Number of Staff Doctor",
+   "c": "勤務医数",
+   "d": "勤務医の人数。",
+   "e": "Yes"
+  },
+  {
+   "r": 21,
+   "a": "Facility Type",
+   "b": "Hospital, clinic, pharmacy, or other.",
+   "c": "施設種別",
+   "d": "病院・診療所・薬局・その他の区分。",
+   "e": "Yes"
+  },
+  {
+   "r": 22,
+   "a": "Registration Year",
+   "b": "",
+   "c": "登録年",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 23,
+   "a": "# of Prescriptions (Text)",
+   "b": "",
+   "c": "処方箋数(Text)",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 24,
+   "a": "Establishment Postal Code",
+   "b": "",
+   "c": "事業所_郵便番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 25,
+   "a": "Establishment Prefecture",
+   "b": "",
+   "c": "事業所_都道府県",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 26,
+   "a": "Establishment Address",
+   "b": "",
+   "c": "事業所_住所",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 27,
+   "a": "Establishment Transportation",
+   "b": "Transportation method, walking distance from station to establishment",
+   "c": "事業所_交通手段",
+   "d": "駅から事業所までの交通手段・徒歩距離。",
+   "e": "Yes"
+  },
+  {
+   "r": 28,
+   "a": "Establishment Nearest Station",
+   "b": "",
+   "c": "事業所_最寄駅名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 29,
+   "a": "Establishment Distance from Station",
+   "b": "Meters to the office",
+   "c": "事業所_最寄駅との距離",
+   "d": "駅から事業所までの距離（メートル）。",
+   "e": "Yes"
+  },
+  {
+   "r": 30,
+   "a": "Service Category",
+   "b": "\"Service\" fields describe the registered care-service entry for this establishment (SCUEL data).",
+   "c": "サービス_区分",
+   "d": "「サービス」項目は、この事業所の介護サービス登録情報を示します（SCUELデータ）。",
+   "e": "Yes"
+  },
+  {
+   "r": 31,
+   "a": "Service Type Name",
+   "b": "",
+   "c": "サービス_種類名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 32,
+   "a": "Service Type Name Details",
+   "b": "",
+   "c": "サービス_種類名詳細",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 33,
+   "a": "Service Corp Phone Number",
+   "b": "",
+   "c": "サービス_法人電話番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 34,
+   "a": "Service Corp Fax Number",
+   "b": "",
+   "c": "サービス_法人FAX番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 35,
+   "a": "Service Start Date",
+   "b": "",
+   "c": "サービス_開始年月日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 36,
+   "a": "Service Phone Number",
+   "b": "",
+   "c": "サービス_電話番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 37,
+   "a": "Service Fax Number",
+   "b": "",
+   "c": "サービス_FAX番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 38,
+   "a": "Service Website",
+   "b": "",
+   "c": "サービス_ホームページ",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 39,
+   "a": "Service Postal Code",
+   "b": "",
+   "c": "サービス_郵便番号",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 40,
+   "a": "Service Prefecture",
+   "b": "",
+   "c": "サービス_都道府県",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 41,
+   "a": "Service Address",
+   "b": "",
+   "c": "サービス_住所",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 42,
+   "a": "Establishment Account",
+   "b": "The account (company) that operates this establishment.",
+   "c": "事業所_取引先",
+   "d": "この事業所を運営する取引先（企業）。",
+   "e": "Yes"
+  },
+  {
+   "r": 43,
+   "a": "SFID18 Copy",
+   "b": "",
+   "c": "SFID18コピー",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 44,
+   "a": "Service Founder Position",
+   "b": "",
+   "c": "サービス_開設者役職",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 45,
+   "a": "Service Founder Name",
+   "b": "",
+   "c": "サービス_開設者氏名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 46,
+   "a": "Service Founding Corp Name",
+   "b": "",
+   "c": "サービス_開設法人名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 47,
+   "a": "Service Administrator Name",
+   "b": "",
+   "c": "サービス_管理者氏名",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 48,
+   "a": "Total Rx Count",
+   "b": "Total number of prescriptions (Rx) handled.",
+   "c": "総取扱処方箋数",
+   "d": "取り扱った処方箋の総枚数。",
+   "e": "Yes"
+  },
+  {
+   "r": 49,
+   "a": "Est. Annual Total Rx Count",
+   "b": "Estimated annual number of prescriptions handled.",
+   "c": "総取扱処方箋数_推測年間換算",
+   "d": "年間処方箋枚数の推計値。",
+   "e": "Yes"
+  },
+  {
+   "r": 50,
+   "a": "Est. Total Rx Count Unit",
+   "b": "Unit for the estimated total prescription count.",
+   "c": "総取扱処方箋数_推測単位",
+   "d": "推計処方箋総数の単位。",
+   "e": "Yes"
+  },
+  {
+   "r": 51,
+   "a": "Rx Data Update Date",
+   "b": "",
+   "c": "処方箋データ更新年月日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 52,
+   "a": "Total Licensed Beds",
+   "b": "Insert number",
+   "c": "総病床数_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 53,
+   "a": "Licensed General Beds",
+   "b": "Insert number",
+   "c": "一般病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 54,
+   "a": "Licensed Long-Term Care Beds",
+   "b": "Insert number",
+   "c": "療養型病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 55,
+   "a": "Licensed Psychiatric Beds",
+   "b": "Insert number",
+   "c": "精神病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 56,
+   "a": "Licensed Care Beds",
+   "b": "Insert number",
+   "c": "介護病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 57,
+   "a": "Bed Data Update Date",
+   "b": "",
+   "c": "病床数データ更新年月日",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 58,
+   "a": "Licensed Infectious Disease Beds",
+   "b": "Insert number",
+   "c": "感染病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 59,
+   "a": "Licensed Tuberculosis Beds",
+   "b": "Insert number",
+   "c": "結核病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 60,
+   "a": "Licensed Other Beds",
+   "b": "Insert number",
+   "c": "その他病床_許可病床数",
+   "d": "数値を入力してください。",
+   "e": "Yes"
+  },
+  {
+   "r": 61,
+   "a": "Created By ID",
+   "b": "",
+   "c": "作成者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 62,
+   "a": "Owner ID",
+   "b": "",
+   "c": "所有者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 63,
+   "a": "SCUEL_ID",
+   "b": "Record ID in SCUEL, the healthcare-facility database used as a data source.",
+   "c": "SCUEL ID",
+   "d": "医療機関データベースSCUELにおけるレコードID。",
+   "e": "Yes"
+  },
+  {
+   "r": 64,
+   "a": "SCUEL Corporation Code",
+   "b": "Corporation code in SCUEL.",
+   "c": "SCUEL法人コード",
+   "d": "SCUELの法人コード。",
+   "e": "Yes"
+  },
+  {
+   "r": 65,
+   "a": "Last Modified By ID",
+   "b": "",
+   "c": "最終更新者",
+   "d": "",
+   "e": "Yes"
+  },
+  {
+   "r": 66,
+   "a": "Last Modified Date",
+   "b": "",
+   "c": "最終更新日",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 67,
+   "a": "SCUEL Service Code",
+   "b": "Service code in SCUEL.",
+   "c": "SCUELサービスコード",
+   "d": "SCUELのサービスコード。",
+   "e": "Yes"
+  },
+  {
+   "r": 68,
+   "a": "SCUEL Establishment Code",
+   "b": "Establishment code in SCUEL.",
+   "c": "SCUEL事業所コード",
+   "d": "SCUELの事業所コード。",
+   "e": "Yes"
+  },
+  {
+   "r": 69,
+   "a": "Service City",
+   "b": "",
+   "c": "サービス_市区町村",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 70,
+   "a": "Service Establishment Name",
+   "b": "",
+   "c": "サービス_事業所_名称",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 71,
+   "a": "Service Establishment Name (Kana)",
+   "b": "",
+   "c": "サービス_事業所_名称カナ",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 72,
+   "a": "Service Establishment Number",
+   "b": "",
+   "c": "サービス_事業所番号",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 73,
+   "a": "Service Type Code",
+   "b": "",
+   "c": "サービス_種類コード",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 74,
+   "a": "Establishment Station Group Code",
+   "b": "",
+   "c": "事業所_駅グループコード",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 75,
+   "a": "Establishment City",
+   "b": "",
+   "c": "事業所_市区町村",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 76,
+   "a": "Establishment City Code",
+   "b": "",
+   "c": "事業所_市区町村コード",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 77,
+   "a": "Establishment Prefecture Code",
+   "b": "",
+   "c": "事業所_都道府県コード",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 78,
+   "a": "SFID18 Copy (For Deletion)",
+   "b": "",
+   "c": "削除SFID18コピー",
+   "d": "",
+   "e": "No (not on advisor page)"
+  },
+  {
+   "r": 79,
+   "a": "Currency ISO Code",
+   "b": "",
+   "c": "通貨",
+   "d": "",
+   "e": "No (not on advisor page)"
+  }
+ ]
+}

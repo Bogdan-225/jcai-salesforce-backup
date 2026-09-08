@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name</fullName>
+    <inlineHelpText>slackのチャンネルのように「PJ 〇〇〇_都道府県＋事業内容」や「社名_都道府県_事業内容」で記入することを想定しています。</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+</CustomField>

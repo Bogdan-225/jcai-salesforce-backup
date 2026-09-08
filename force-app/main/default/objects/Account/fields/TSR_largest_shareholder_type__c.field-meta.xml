@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSR_largest_shareholder_type__c</fullName>
+    <label>TSR_筆頭株主種別</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>不明</fullName>
+                <default>false</default>
+                <label>不明</label>
+            </value>
+            <value>
+                <fullName>個人</fullName>
+                <default>false</default>
+                <label>個人</label>
+            </value>
+            <value>
+                <fullName>法人</fullName>
+                <default>false</default>
+                <label>法人</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

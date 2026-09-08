@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactSourcingDate__c</fullName>
+    <description>キーパーソン連絡先探索(Apollo/Cognism)を最後に実行した日。定期再スキャン(3/1・9/1)の対象判定に使用。買い手コンタクト自動処理が更新する(手動編集不可)。</description>
+    <inlineHelpText>Date of the most recent key-contact search (Apollo/Cognism). Used to determine inclusion in the scheduled re-scans (Mar 1 / Sep 1). Do not edit manually.</inlineHelpText>
+    <label>連絡先探索日</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

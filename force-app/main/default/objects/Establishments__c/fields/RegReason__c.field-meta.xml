@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegReason__c</fullName>
+    <description>その施設が保険医療機関（または保険薬局）として、なぜそのリストに新しく掲載、あるいは更新されたのかという行政上の理由</description>
+    <label>登録理由</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

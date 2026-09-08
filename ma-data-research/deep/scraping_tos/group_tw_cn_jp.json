@@ -1,0 +1,159 @@
+[
+  {
+    "site": "Taiwan MOPS 公開資訊觀測站 (TWSE / Taiwan Stock Exchange)",
+    "region": "Taiwan",
+    "homepage": "https://mops.twse.com.tw",
+    "terms_urls_checked": [
+      "https://mops.twse.com.tw/mops/ (SPA shell)",
+      "https://mops.twse.com.tw/mops/assets/index.js (full JS bundle grepped for 使用條款/免責聲明/著作權 - NO legal footer or terms page exists inside MOPS)",
+      "https://www.twse.com.tw/zh/terms/use.html (使用條款 - the governing terms)",
+      "https://www.twse.com.tw/zh/terms/privacy.html",
+      "https://www.twse.com.tw/zh/terms/security.html",
+      "https://openapi.twse.com.tw/v1/swagger.json (OpenAPI info.description links to the same 使用條款)",
+      "https://data.gov.tw/license (政府資料開放授權條款－第1版)"
+    ],
+    "robots_txt": {
+      "url": "https://mops.twse.com.tw/robots.txt (404) ; https://www.twse.com.tw/robots.txt (200)",
+      "fetched": true,
+      "summary": "mops.twse.com.tw has NO robots.txt (HTTP 404 from the Tomcat app). The parent host www.twse.com.tw serves: explicit Allow:/ for Googlebot, Googlebot-News, OAI-SearchBot and GPTBot; then 'User-agent: * / Disallow: /epaper/ / Disallow: /FTSE/ / Allow: /'. So robots.txt is technically PERMISSIVE for the main site. This is a technical signal only and does NOT override the contractual 使用條款 below."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "下載軟體或資料\n非依臺灣證券交易所同意之方式或經臺灣證券交易所同意者，禁止透過包括但不限於自動化裝置、指令碼、自動程式、蜘蛛程式、爬蟲程式或擷取程式等方式下載本網站之軟體或資料。\n\n智慧財產權及其他相關權利、利益的保護（節錄）\n任何人除非事前取得台灣證券交易所或其他權利人之書面同意，不得逕自使用、修改、重製、公開播送、改作、散布、發行、公開發表、進行還原工程、解編或反向組譯，但臺灣證券交易所已授權「政府資料開放平臺」提供公眾使用之本網站資料，不在此限。",
+    "clause_english_gloss": "'Downloading software or data: Except in a manner agreed by, or with the consent of, the TWSE, it is prohibited to download software or data from this website by means including but not limited to automated devices, scripts, automated programs, spider programs, crawler programs or scraper programs.' The IP clause adds that no one may use, modify, reproduce, publicly broadcast, adapt, distribute, issue or publish the content without TWSE's prior WRITTEN consent - EXCEPT data that TWSE has already licensed to the Open Government Data Platform (data.gov.tw), which is carved out.",
+    "commercial_use_or_redistribution": "Redistribution/reproduction requires prior WRITTEN consent of TWSE. Quoting or reprinting is allowed only if the source is clearly attributed and the data is kept complete and unaltered ('您如要引用或轉載本網站內容，請以適當方式清楚註明資料來源，並確保資料完整性，不得任意增刪'). CARVE-OUT: data TWSE has licensed to the 政府資料開放平臺 (data.gov.tw) is exempt from the IP restriction and is published under 政府資料開放授權條款－第1版 (Open Government Data License v1), which permits free reproduction, adaptation and editing, including for commercial purposes, with attribution.",
+    "practical_notes": "MOPS itself has no separate terms page - the SPA bundle contains no 使用條款/免責聲明/著作權 footer at all, so MOPS is governed by the parent TWSE 使用條款 at www.twse.com.tw/zh/terms/use.html. That page contains an EXPLICIT, unambiguous anti-crawler clause, so the team's test ('scrape if the terms do not prohibit it') FAILS here. \n\nOGD scope check: TWSE data on data.gov.tw / openapi.twse.com.tw is under 政府資料開放授權條款－第1版; openapi.twse.com.tw's own swagger info.description says '本平臺提供臺灣證券交易所服務API，歡迎各位介接使用' and links to the SAME 使用條款. The OpenAPI has 143 endpoints, but only TWO touch 重大訊息: /opendata/t187ap04_L (上市公司每日重大訊息 - DAILY/current only) and /opendata/t187ap23_L (violations of reporting rules). The HISTORICAL 重大訊息 archive the project needs is NOT in the open-data set - it is only behind the MOPS web forms, i.e. exactly the part covered by the anti-crawler prohibition and NOT by the OGD licence. \n\nRecommended route: harvest /opendata/t187ap04_L daily going forward (OGD-licensed, explicitly welcomed for programmatic use), and for the historical back-file request written consent from TWSE or buy from a licensed vendor. Do not screen-scrape mops.twse.com.tw.",
+    "confidence": "high",
+    "sources": [
+      "https://www.twse.com.tw/zh/terms/use.html",
+      "https://www.twse.com.tw/robots.txt",
+      "https://mops.twse.com.tw/mops/assets/index.js",
+      "https://openapi.twse.com.tw/v1/swagger.json",
+      "https://data.gov.tw/license",
+      "https://data.gov.tw/dataset/11549",
+      "https://data.gov.tw/dataset/18419"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "CNINFO 巨潮资讯网 (深圳证券信息有限公司 / Shenzhen Securities Information Co., Ltd.)",
+    "region": "China (Mainland)",
+    "homepage": "http://www.cninfo.com.cn",
+    "terms_urls_checked": [
+      "http://www.cninfo.com.cn/new/index (footer 免责声明 modal - the ONLY public legal text; read in full)",
+      "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search (same footer, same modal)",
+      "http://www.cninfo.com.cn/common/copyright.html (404)",
+      "http://www.cninfo.com.cn/new/static/statement.html (404)",
+      "http://www.cninfo.com.cn/about/aboutus.html (404)",
+      "http://www.cninfo.com.cn/new/commonUrl?url=about/statement (SPA fallback, no content)",
+      "http://webapi.cninfo.com.cn/ (深证信数据服务平台 - paid API; no public 服务协议 reachable without login)",
+      "https://uc.cninfo.com.cn/ (user centre - no reachable registration agreement)"
+    ],
+    "robots_txt": {
+      "url": "http://www.cninfo.com.cn/robots.txt and https://www.cninfo.com.cn/robots.txt",
+      "fetched": true,
+      "summary": "NO robots.txt on either scheme - both return HTTP 404 with cninfo's custom GB2312 error page. There is therefore no robots-level restriction at all. Technical signal only."
+    },
+    "stance": "SILENT",
+    "clause_verbatim": "免责声明\n本网站竭力保证所提供的证券市场信息准确可靠，但并不担保（无论提示、默示、法定或其他形式）其准确性和完整性。任何使用方不得就全部或部分使用其中的证券市场信息作为依据对于由此而引起的任何损失向本公司提出索赔。\n本网站亦不保证所设置的外部链接的准确性和完整性。任何机构或者个人通过本网站与其他网站的链接而获得其他网站内容，其风险责任自负。本公司不对此承担任何法律责任。\n本声明在本网站首页及相关页面发布。本网站郑重提示：任何机构或者个人进入本网站，即被视为已完全知悉、理解并接受本声明的全部内容。\n\n[页脚] 深圳证券信息有限公司 版权所有  粤B2-20050313号",
+    "clause_english_gloss": "The disclaimer covers ONLY accuracy and liability: the site strives to ensure the securities-market information is accurate and reliable but gives no warranty of accuracy or completeness; no user may claim against the company for losses arising from relying on that information; external links are likewise not warranted; and anyone entering the site is deemed to have fully understood and accepted the statement. The footer asserts copyright: 'Shenzhen Securities Information Co., Ltd. - all rights reserved'.",
+    "commercial_use_or_redistribution": "Not addressed anywhere in the public legal text. The only IP statement is the bare footer copyright assertion '深圳证券信息有限公司 版权所有'. There is NO published clause on 转载 (reprinting), 商业用途 (commercial use), or redistribution on the public site. Note that PRC copyright law still applies independently of the site terms, and the underlying disclosure documents are issuer filings rather than cninfo's own works, but the compiled database/selection may attract sui-generis-style protection under PRC unfair-competition doctrine.",
+    "practical_notes": "Searched the homepage and the disclosure-search page HTML for 爬虫, 抓取, 自动, 复制, 转载, 商业, 协议, 条款 - the ONLY matches are the 免责声明 modal quoted above plus the copyright footer. There is no 使用条款 / 服务协议 / 版权声明 page anywhere on the public site (the SPA returns the index shell for every unknown path, so 404-probing is inconclusive by itself, but no such link exists in any rendered footer). \n\nSo under the team's own test this is the one site in this group that PASSES: the terms do not prohibit automated access. Caveats to flag to the deal team: (1) the undocumented hisAnnouncement endpoint is an internal JSON API, not a published one - the paid 深证信数据服务平台 (webapi.cninfo.com.cn) is the commercial channel and it rejects unauthenticated calls with 'code_005_ipban_notoken', showing cninfo does IP-ban abusive callers; (2) 'silent terms' is not the same as permission - PRC unfair-competition case law has been applied to bulk copying of financial databases; (3) rate-limit conservatively and cache, since there is no robots.txt to define acceptable crawl behaviour. Recommend a written legal sign-off before any production harvest.",
+    "confidence": "medium",
+    "sources": [
+      "http://www.cninfo.com.cn/new/index",
+      "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+      "http://webapi.cninfo.com.cn/",
+      "http://webapi.cninfo.com.cn/api/sysapi/p_sysapi1000"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Recof Data - MARR Pro / MARR Online / Recof M&A Database (株式会社レコフデータ)",
+    "region": "Japan",
+    "homepage": "https://www.marrpro.jp/ , https://www.marr.jp/ , https://madb.recofdata.co.jp/",
+    "terms_urls_checked": [
+      "https://www.marrpro.jp/pdf/kiyaku.pdf (MARR Pro 利用規約 - full 10-page contract, linked from the login page)",
+      "https://www.marr.jp/shared_files/contents/library/MARROnlineKiyaku.pdf (マールオンライン利用規約, doc ref MA_TS_202506_002)",
+      "https://www.marr.jp/agreement.html (サイトのご利用について / 著作権について)",
+      "https://www.marr.jp/secondary.html (記事の2次利用について)",
+      "https://www.marr.jp/memberPlan.html (コース・料金)",
+      "https://madb.recofdata.co.jp/ (301/302 redirects to https://www.marrpro.jp/ - the Recof M&A Database is now MARR Pro; no separate terms)"
+    ],
+    "robots_txt": {
+      "url": "https://www.marr.jp/robots.txt , https://www.marrpro.jp/robots.txt , https://madb.recofdata.co.jp/robots.txt",
+      "fetched": true,
+      "summary": "marr.jp: 'User-agent: Googlebot / Disallow:' and 'User-agent: Bingbot / Disallow:' then 'User-agent: * / Disallow: /' - i.e. ONLY Google and Bing may crawl; every other agent is disallowed site-wide. marrpro.jp: a malformed file with two consecutive 'User-agent: *' blocks ('Disallow: /' then 'Allow: /'); under RFC 9309 group-merging the conflicting rules for the same agent resolve to the most specific match, and in practice this is ambiguous - treat as intended to disallow. madb.recofdata.co.jp: no robots.txt (redirects to the marrpro.jp landing page). Technical signal only; the contract below is decisive."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "【マールオンライン利用規約 第9条(禁止事項)】\n⑧ 自動化された方法(情報収集ボット、ロボット、スパイダー、クローラー、スクレーパー等)を使用して、本サービスにアカウント登録、アクセス等の行為を行うこと。\n\n【MARR Pro 利用規約 第15条(データ等情報の取扱い)】\n会員は、利用部署での内部利用目的でのみ、本データ等情報を利用することができるものとし、本データ等情報の全部または一部について、複製、公開、出版、頒布、譲渡、貸与、翻訳、翻案、転載、放送、公衆送信…、ネットワークシステムを通じた送信、他のデータとの結合等、その他有償無償を問わず、また方法の如何を問わず、内部利用目的の範囲を超えて利用することはできません。\n２ 会員は、前項の規定にかかわらず、利用部署での内部利用目的といえども、他のコンピュータ、システム、プログラム、ソフトウェア、AI その他これに類するもの（以下「AI 等」といいます。）の素材として利用することや、AI 等により独自のデータ等を作成することを目的として、本データ等情報の全部または一部をホストコンピュータもしくはサーバー等に移動し、保存し、送信し、またはその他の方法により利用することが可能な状態に置いてはならないものとし、かつ、AI 等の利用に供するため本データ等情報を加工・分析・編集・統合してはならないものとします。",
+    "clause_english_gloss": "MARR Online Art.9(8) flatly prohibits using automated methods (information-collecting bots, robots, spiders, crawlers, scrapers, etc.) to register for or access the service. MARR Pro Art.15(1) limits use of all data obtained to internal use within the contracting department only, and forbids - by any means, paid or free, beyond that internal purpose - reproduction, publication, distribution, transfer, translation, adaptation, reprinting, transmission over a network, or COMBINING IT WITH OTHER DATA. Art.15(2) goes further: even for internal use, the member must NOT move, store or transmit the data to a host computer or server so as to make it usable as material for another computer, system, program, software or AI, and must not process, analyse, edit or integrate the data for AI use. Art.15(3) bans AI use of the data outright.",
+    "commercial_use_or_redistribution": "Strictly barred. MARR Online 著作権について (marr.jp/agreement.html): 「これらの無断使用（本サイトのコンテンツの一部あるいは全部の複製、公開、送信、出版、放送、頒布、譲渡、貸与、翻訳、翻案、使用許諾、再利用等を含む）・転載・変更・改変・商業的利用は固くお断りいたします。」 - unauthorised use, reprinting, alteration and COMMERCIAL USE are firmly refused. Quotation requires prior notification to Recof Data (MARR Online Art.10(4)-(5) via the inquiry form; MARR Pro Art.15(6)-(7)) and, if approved, must be labelled as Recof Data's data with Recof Data named as copyright holder. Sharing beyond the contracting department is separately prohibited (MARR Pro Art.13(12): giving data or data derivatives to another department so that another department substantively uses the service).",
+    "practical_notes": "EXCEL EXPORT - what the licence actually allows: MARR Pro Art.4(6) permits download and printing ONLY within the 上限ダウンロード件数（EXCEL）and 上限PDF印刷回数 caps set in the individual 申込書; exceeding a cap requires a signed 解除申請書 and an extra 上限解除料金 billed into the following year's contract. Art.13(4) additionally prohibits 'abnormal' download volume or frequency even when inside the cap. So bulk Excel export of scheme-detail data is metered and contractually capped, not free.\n\nCAN A SUBSCRIBER LOAD EXPORTED DATA INTO AN INTERNAL DATABASE / MODEL? Not on the standard licence. Loading exported rows into an internal DB is precisely the 'moving/storing the data on a host computer or server so it can be used as material for another computer/system/program/software' that Art.15(2) forbids, and joining it to JCAI's own deal data is the 他のデータとの結合 forbidden by Art.15(1). Any modelling that feeds AI/ML is banned outright by Art.15(2)-(3). Art.15(4) extends all of this to third parties acting for the member.\n\nTHE ESCAPE HATCH IS EXPLICIT: Art.15(5) - 「第１３条、本条第１項、第２項及び第３項により禁止される利用方法による本データ等情報の利用を希望する場合または所属人員が 50 名以上の利用部署における本サービスの利用を希望する場合には、別途、弊社との間で協議し、協議の結果、利用条件、利用料等について両当事者が合意した場合には、別途データ利用許諾契約を締結するものとします。」 If JCAI wants an internal database or model built on MARR data, the correct route is to negotiate a separate データ利用許諾契約 (data licence agreement) with Recof Data. Note the same clause is triggered by any using department with 50+ people. Art.22 (差止請求) records that breach is agreed to constitute irreparable harm entitling Recof Data to injunctive relief, and Art.14(2) requires immediate deletion of all data (including data the member has processed) on suspension.\n\nMARR ONLINE PUBLISHED PRICE (税込, per year, from marr.jp/memberPlan.html): 無料会員 free; 個人 1 user 16,500円/年 (credit card); 法人 5 users 49,500円/年, 10 users 82,500円/年, 11+ users 41,250円/年 per additional 5 users; legacy 法人 tiers 1 user 16,500円/年 (option contract mandatory, grandfathered for contracts before 2025-05-31), 3 users 33,000円/年, 7 users 66,000円/年. Mid-term user additions: 9,900円/年 (825円/月) per user on the 1/3/7 tiers, or 49,500円/年 (4,125円/月) per 5 users on the 5/10/11+ tiers. Options: M&A専門誌マール 統計とデータ編 33,000円/年 per contract; 記事編＋統計とデータ編 49,500円/年 per contract. Auto-renewing. MARR Pro price is NOT published - the LP offers only a free trial (rd.tayori.com/f/marrpro-trial) and a sales enquiry, and Art.5 refers pricing to the individual 申込書.\n\nNote also that madb.recofdata.co.jp no longer exists as a distinct product - it redirects to marrpro.jp, so the Recof M&A Database is MARR Pro and is governed by the MARR Pro 利用規約.",
+    "confidence": "high",
+    "sources": [
+      "https://www.marrpro.jp/pdf/kiyaku.pdf",
+      "https://www.marr.jp/shared_files/contents/library/MARROnlineKiyaku.pdf",
+      "https://www.marr.jp/agreement.html",
+      "https://www.marr.jp/memberPlan.html",
+      "https://www.marr.jp/robots.txt",
+      "https://www.marrpro.jp/robots.txt",
+      "https://madb.recofdata.co.jp/"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Tracxn",
+    "region": "India / Global",
+    "homepage": "https://tracxn.com",
+    "terms_urls_checked": [
+      "https://tracxn.com/termsofuse",
+      "https://tracxn.com/pricing"
+    ],
+    "robots_txt": {
+      "url": "https://tracxn.com/robots.txt",
+      "fetched": true,
+      "summary": "One group naming ~31 named agents (including Googlebot, Bingbot, GPTBot, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, OAI-SearchBot, cohere-ai, Google-Extended) with a short Allow list of marketing/legal pages plus /sectors, /d*, /d/legal-entities/*, /d/insights/* and sitemaps, then 'Disallow: /d/*/*' and a terminating 'Disallow: /'. A final catch-all group 'User-agent: * / Disallow: /' blocks every other agent site-wide. So the profile/entity pages the project would want are robots-disallowed for any agent that is not on the named list, and largely disallowed even for those. Technical signal only."
+    },
+    "stance": "PROHIBITS",
+    "clause_verbatim": "The use of web crawlers, robots, spiders, or any automated methods to continuously or automatically search, scrape, extract, index, download large amounts of data, or otherwise disrupt the Platform is not allowed unless explicitly permitted by Us through APIs. [...] You are also prohibited from selling, publishing, refurbishing, transmitting, exhibiting, communicating, or disclosing any data from the Platform to any person or third party in any form or by any means. [Summary box:] Copying, modifying, or commercially exploiting any part of the Platform is not permitted. Use of automated tools for scraping or data extraction is also prohibited, unless explicitly authorized.",
+    "clause_english_gloss": "Already in English. Crawlers, robots, spiders and any automated search/scrape/extract/index/bulk-download are prohibited unless Tracxn explicitly permits it through its APIs; and selling, publishing or disclosing any Platform data to any third party by any means is prohibited.",
+    "commercial_use_or_redistribution": "Restricted to internal business use with attribution. Verbatim: 'You may use limited portions of Tracxn's data in internal reports and presentations, as long as the data has no standalone commercial value, is properly attributed, and not shared widely or via automated means. All usage must be for internal business purposes only. Any broader distribution, third-party use, or external publishing requires prior written approval.' Also: 'Your usage of data obtained from the Platform must be fair and reasonable, ensuring it is not used in a way that allows any third party to substitute it for purchasing Our services.' Tracxn sells separate 'Commercial Redistribution License Packs - For building commercial tools/services using Tracxn data'.",
+    "practical_notes": "LITE (FREE) PLAN NON-COMMERCIAL RESTRICTION: the restriction is stated on the pricing page rather than in the Terms of Use. The Lite card is labelled 'For personal use' with the note 'Lite is subjected to usage limits!' and 'Lite gives you a chance to explore our curated data at no cost and comes with strict usage limits', while the paid tier is labelled 'For commercial use'. I did NOT find the word 'Lite' anywhere in tracxn.com/termsofuse, so the non-commercial character of Lite rests on the pricing-page positioning plus the ToS internal-business-use-only clause - flag that distinction to legal rather than relying on a ToS citation. Bottom line for the sourcing decision: Tracxn fails the team's test on both limbs - scraping is expressly prohibited AND a commercial API/redistribution licence exists, so the 'no API available' justification does not apply.",
+    "confidence": "high",
+    "sources": [
+      "https://tracxn.com/termsofuse",
+      "https://tracxn.com/pricing",
+      "https://tracxn.com/robots.txt"
+    ],
+    "checked": "2026-09-04"
+  },
+  {
+    "site": "Japan FSA EDINET (金融庁 電子開示システム)",
+    "region": "Japan",
+    "homepage": "https://disclosure2.edinet-fsa.go.jp",
+    "terms_urls_checked": [
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0030.html (EDINET 利用規約, revised 令和7年4月25日 - read in full)",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0110.html (EDINET API 関連資料)",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/download/ESE140102.pdf (EDINET概要書 2026年6月, section 1-3 利用規約について)",
+      "https://api-catalog.e-gov.go.jp/info/ja/apicatalog/view/33 (e-Gov 行政API catalog entry)"
+    ],
+    "robots_txt": {
+      "url": "https://disclosure2.edinet-fsa.go.jp/robots.txt",
+      "fetched": false,
+      "summary": "No robots.txt. The path returns HTTP 200 but serves the EDINET GeneXus application error screen ('規定外操作が行われました') rather than a robots file, so there are effectively no robots directives. Technical signal only."
+    },
+    "stance": "CONDITIONAL",
+    "clause_verbatim": "I．著作権について\nEDINETウェブサイト（以下「本ウェブサイト」といいます。）で公開している情報（以下「本コンテンツ」といいます。）は、どなたでも「公共データ利用規約（第1.0版）」（PDL1.0）に準拠した利用条件の下で、利用することができます。\n[...] ア　本コンテンツを利用する際は出典を記載してください。[...] イ　本コンテンツを編集・加工等して利用する場合は、上記出典とは別に、編集・加工等を行ったこと及びその主体を記載してください。\n\n2.2）禁止行為\nウェブサイトから情報を抽出するコンピュータソフトウェア技術（スクレイピング等）を利用して本ウェブサイトからコンテンツを機械的に取得することは禁止します。ただし、API機能を利用する場合又はAPI機能で取得できないコンテンツを取得する場合はこの限りではありません。本ウェブサイトのコンテンツを機械的に取得するには、API機能を利用してください。",
+    "clause_english_gloss": "Reuse: anyone may use EDINET content under the terms of the Japanese Government's 公共データ利用規約 第1.0版 (Public Data License 1.0), i.e. free reuse including editing and adaptation, subject only to citing the source and, where the content has been edited or processed, separately stating that fact and who did it (and not presenting processed data as if it were the government's unmodified original). Automated access: mechanically retrieving content from the WEBSITE using scraping software is prohibited - EXCEPT when using the API function, or when retrieving content that the API function cannot supply; to obtain content mechanically, use the API.",
+    "commercial_use_or_redistribution": "ALLOWED. PDL 1.0 permits free reproduction, adaptation, editing and redistribution, including for COMMERCIAL purposes, with attribution and an edit notice - the terms say 'どなたでも' (anyone) may use it and impose no commercial-use restriction. Attribution format given: 出典：EDINET閲覧（提出）サイト（当該ページのURL）、PDL1.0（規約原文ページのURL）; for processed data: 'EDINET閲覧（提出）サイト（当該ページのURL）をもとに○○株式会社作成'. Four carve-outs are NOT covered by the licence (Art.1.4): organisation/business symbol marks, logos and character designs; the EDINET taxonomy; the XBRL report-creation tool; and the 大量保有報告書様式 (Excel version).",
+    "practical_notes": "As expected, EDINET is the permissive case for REUSE - the retrieved data may be loaded into an internal database, modelled, and used commercially, with attribution. But it is NOT unconditionally permissive for ACCESS METHOD, which is why the stance is CONDITIONAL rather than ALLOWS: Art.2.2 bans screen-scraping the web UI and channels all mechanical retrieval through the free EDINET API (api.edinet-fsa.go.jp), with the narrow exception of content the API cannot return. Art.3.2 additionally prohibits any act harming the API's sound operation and 'short-time high-volume access' - so rate-limit the client; the FSA may suspend API use without notice. The API is free and requires only an API key. Terms current as of the 令和7年4月25日 revision.",
+    "confidence": "high",
+    "sources": [
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0030.html",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0110.html",
+      "https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/download/ESE140102.pdf",
+      "https://api-catalog.e-gov.go.jp/info/ja/apicatalog/view/33"
+    ],
+    "checked": "2026-09-04"
+  }
+]

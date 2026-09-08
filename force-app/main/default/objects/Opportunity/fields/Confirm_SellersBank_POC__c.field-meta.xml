@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_SellersBank_POC__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>成約フェーズ時の最終チェック項目</description>
+    <label>銀行/担当者の確認(売主)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

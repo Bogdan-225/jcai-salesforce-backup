@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToCC_required</fullName>
+    <active>true</active>
+    <description>[M&amp;A案件担当者]=TRUE の場合に、[To/CC]を必須項目にする</description>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  M_AResponsible__c = TRUE,
+  ISPICKVAL(ToCC__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>ToCC__c</errorDisplayField>
+    <errorMessage>M&amp;A担当者の場合はメール送信時にTo/CCのどちらで送るか選択してください</errorMessage>
+</ValidationRule>

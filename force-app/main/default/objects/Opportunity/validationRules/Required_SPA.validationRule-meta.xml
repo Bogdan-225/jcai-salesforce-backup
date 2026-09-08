@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_SPA</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    
+    OR(
+
+        AND(
+            RecordType.DeveloperName = &quot;SellingOpp&quot;, 
+            ISPICKVAL(StageName, &quot;成約&quot;),
+            Check_DocUploaded_SPA__c = FALSE
+        ),
+        
+        AND(
+            RecordType.DeveloperName = &quot;XBorderType&quot;, 
+            ISPICKVAL(PRIORVALUE(StageName), &quot;CP&quot;),
+            OR(
+                Check_DocUploaded_SPA__c = FALSE
+            )
+        ),
+
+        AND(
+            RecordType.DeveloperName = &quot;DOM_Project&quot;, 
+            ISPICKVAL(StageName, &quot;成約&quot;),
+            Check_DocUploaded_SPA__c = FALSE
+        ),
+        
+        AND(
+            RecordType.DeveloperName = &quot;CB_Project&quot;, 
+            ISPICKVAL(PRIORVALUE(StageName), &quot;CP&quot;),
+            OR(
+                Check_DocUploaded_SPA__c = FALSE
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>SPAを[Upload Files]ボタンからアップロードしてください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>TDBPrefectures__c</columns>
+    <columns>TDBCapital__c</columns>
+    <columns>TDBAmountOfSales__c</columns>
+    <columns>NDADateCheck__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>TDBMajorClassification__c</columns>
+    <columns>TDBMiddleClassification__c</columns>
+    <columns>TDBSubCategory__c</columns>
+    <columns>TDBSubclassification__c</columns>
+    <columns>Purpose__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>ACCOUNT.URL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+    </filters>
+    <label>すべての取引先</label>
+</ListView>

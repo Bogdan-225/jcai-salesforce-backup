@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_NameBeginPJ</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;SellingOpp&quot;, 
+    RecordType.DeveloperName = &quot;DOM_Project&quot;, 
+    ISCHANGED(StageName),
+    ISPICKVAL(PRIORVALUE(StageName), &quot;案件化&quot;),
+    NOT(BEGINS(Name, &quot;PJ&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>案件にPJ名をつけてください(例: PJ XXXX)</errorMessage>
+</ValidationRule>

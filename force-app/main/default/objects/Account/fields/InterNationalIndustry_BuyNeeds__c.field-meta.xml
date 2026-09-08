@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InterNationalIndustry_BuyNeeds__c</fullName>
+    <label>希望業種(海外)</label>
+    <length>1500</length>
+    <trackFeedHistory>true</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>15</visibleLines>
+</CustomField>

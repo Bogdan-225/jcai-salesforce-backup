@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Activities</label>
+        <name>ACT_Activities</name>
+    </customLabels>
+    <customLabels>
+        <label>Activity Date/Time</label>
+        <name>ACT_ActivityDateTime</name>
+    </customLabels>
+    <customLabels>
+        <label>Failed to log the activity.</label>
+        <name>ACT_ActivityLogFailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Activity logged.</label>
+        <name>ACT_ActivityLogged</name>
+    </customLabels>
+    <customLabels>
+        <label>Add</label>
+        <name>ACT_Add</name>
+    </customLabels>
+    <customLabels>
+        <label>Add Tasks</label>
+        <name>ACT_AddTasks</name>
+    </customLabels>
+    <customLabels>
+        <label>Assignee</label>
+        <name>ACT_Assignee</name>
+    </customLabels>
+    <customLabels>
+        <label>Buy-side Call</label>
+        <name>ACT_BuySideCall</name>
+    </customLabels>
+    <customLabels>
+        <label>Call Status</label>
+        <name>ACT_CallStatus</name>
+    </customLabels>
+    <customLabels>
+        <label>Select a call status.</label>
+        <name>ACT_CallStatusRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Cancel</label>
+        <name>ACT_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label>Closing Reason</label>
+        <name>ACT_ClosingReason</name>
+    </customLabels>
+    <customLabels>
+        <label>Closing Reason Comment</label>
+        <name>ACT_ClosingReasonComment</name>
+    </customLabels>
+    <customLabels>
+        <label>Select a closing reason.</label>
+        <name>ACT_ClosingReasonRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Complete</label>
+        <name>ACT_Complete</name>
+    </customLabels>
+    <customLabels>
+        <label>Complete Task</label>
+        <name>ACT_CompleteTask</name>
+    </customLabels>
+    <customLabels>
+        <label>Complete Without Logging an Activity</label>
+        <name>ACT_CompleteWithoutActivity</name>
+    </customLabels>
+    <customLabels>
+        <label>Complete this task without logging an activity?</label>
+        <name>ACT_ConfirmCompleteWithoutActivity</name>
+    </customLabels>
+    <customLabels>
+        <label>Description</label>
+        <name>ACT_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Email</label>
+        <name>ACT_Email</name>
+    </customLabels>
+    <customLabels>
+        <label>End Date/Time</label>
+        <name>ACT_EndDateTime</name>
+    </customLabels>
+    <customLabels>
+        <label>Enter a subject</label>
+        <name>ACT_EnterSubject</name>
+    </customLabels>
+    <customLabels>
+        <label>Letter</label>
+        <name>ACT_Letter</name>
+    </customLabels>
+    <customLabels>
+        <label>Log Activity</label>
+        <name>ACT_LogActivity</name>
+    </customLabels>
+    <customLabels>
+        <label>Log an Activity and Complete</label>
+        <name>ACT_LogActivityAndComplete</name>
+    </customLabels>
+    <customLabels>
+        <label>No activities found.</label>
+        <name>ACT_NoActivities</name>
+    </customLabels>
+    <customLabels>
+        <label>Note</label>
+        <name>ACT_Note</name>
+    </customLabels>
+    <customLabels>
+        <label>Enter a comment when the closing reason is Other.</label>
+        <name>ACT_OtherReasonCommentRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Call</label>
+        <name>ACT_Phone</name>
+    </customLabels>
+    <customLabels>
+        <label>Log {0}</label>
+        <name>ACT_RecordActivity</name>
+    </customLabels>
+    <customLabels>
+        <label>Related Contact</label>
+        <name>ACT_RelatedContact</name>
+    </customLabels>
+    <customLabels>
+        <label>Reminder</label>
+        <name>ACT_Reminder</name>
+    </customLabels>
+    <customLabels>
+        <label>Rows per page</label>
+        <name>ACT_RowsPerPage</name>
+    </customLabels>
+    <customLabels>
+        <label>Sell-side Call</label>
+        <name>ACT_SellSideCall</name>
+    </customLabels>
+    <customLabels>
+        <label>Start Date/Time</label>
+        <name>ACT_StartDateTime</name>
+    </customLabels>
+    <customLabels>
+        <label>M&amp;A Completed/Subsidiary</label>
+        <name>ACT_StatusAcquisitionCompleted</name>
+    </customLabels>
+    <customLabels>
+        <label>Appointment Secured</label>
+        <name>ACT_StatusAppointment</name>
+    </customLabels>
+    <customLabels>
+        <label>Approach</label>
+        <name>ACT_StatusApproach</name>
+    </customLabels>
+    <customLabels>
+        <label>Calls Blocked</label>
+        <name>ACT_StatusCallsBlocked</name>
+    </customLabels>
+    <customLabels>
+        <label>Complaint</label>
+        <name>ACT_StatusComplaint</name>
+    </customLabels>
+    <customLabels>
+        <label>Dropped</label>
+        <name>ACT_StatusDropped</name>
+    </customLabels>
+    <customLabels>
+        <label>Email Sent</label>
+        <name>ACT_StatusEmailSent</name>
+    </customLabels>
+    <customLabels>
+        <label>Unable to Communicate in English</label>
+        <name>ACT_StatusEnglishUnavailable</name>
+    </customLabels>
+    <customLabels>
+        <label>Handoff</label>
+        <name>ACT_StatusHandoff</name>
+    </customLabels>
+    <customLabels>
+        <label>Inquiry</label>
+        <name>ACT_StatusInquiry</name>
+    </customLabels>
+    <customLabels>
+        <label>Mailed</label>
+        <name>ACT_StatusMailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Manager Follow-up</label>
+        <name>ACT_StatusManagerFollowUp</name>
+    </customLabels>
+    <customLabels>
+        <label>New Business Declined (1 Month)</label>
+        <name>ACT_StatusNewBusinessRejected</name>
+    </customLabels>
+    <customLabels>
+        <label>Number Not in Service</label>
+        <name>ACT_StatusNumberNotInService</name>
+    </customLabels>
+    <customLabels>
+        <label>Parent Company Review</label>
+        <name>ACT_StatusParentCompanyReview</name>
+    </customLabels>
+    <customLabels>
+        <label>President Out/In a Meeting</label>
+        <name>ACT_StatusPresidentBusy</name>
+    </customLabels>
+    <customLabels>
+        <label>Declined by President</label>
+        <name>ACT_StatusPresidentRejected</name>
+    </customLabels>
+    <customLabels>
+        <label>Declined by President (Permanent)</label>
+        <name>ACT_StatusPresidentRejectedPermanent</name>
+    </customLabels>
+    <customLabels>
+        <label>Declined by President (6 Months)</label>
+        <name>ACT_StatusPresidentRejectedSixMonths</name>
+    </customLabels>
+    <customLabels>
+        <label>President Unavailable</label>
+        <name>ACT_StatusPresidentUnavailable</name>
+    </customLabels>
+    <customLabels>
+        <label>Priority Approach</label>
+        <name>ACT_StatusPriorityApproach</name>
+    </customLabels>
+    <customLabels>
+        <label>Rejected by Reception</label>
+        <name>ACT_StatusReceptionRejected</name>
+    </customLabels>
+    <customLabels>
+        <label>Rejected by Reception (Permanent)</label>
+        <name>ACT_StatusReceptionRejectedPermanent</name>
+    </customLabels>
+    <customLabels>
+        <label>Rejected by Reception (6 Months)</label>
+        <name>ACT_StatusReceptionRejectedSixMonths</name>
+    </customLabels>
+    <customLabels>
+        <label>Blocked by Reception</label>
+        <name>ACT_StatusReceptionistBlocked</name>
+    </customLabels>
+    <customLabels>
+        <label>Research</label>
+        <name>ACT_StatusResearch</name>
+    </customLabels>
+    <customLabels>
+        <label>Ringing/Voicemail</label>
+        <name>ACT_StatusVoicemail</name>
+    </customLabels>
+    <customLabels>
+        <label>Subject</label>
+        <name>ACT_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label>Task</label>
+        <name>ACT_Task</name>
+    </customLabels>
+    <customLabels>
+        <label>Select an assignee for task {0}.</label>
+        <name>ACT_TaskAssigneeRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Task completed.</label>
+        <name>ACT_TaskCompleted</name>
+    </customLabels>
+    <customLabels>
+        <label>Enter a subject for task {0}.</label>
+        <name>ACT_TaskSubjectRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Activities</label>
+        <name>Activity_Component_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Account</label>
+        <name>SEST_Account</name>
+    </customLabels>
+    <customLabels>
+        <label>Add</label>
+        <name>SEST_Add</name>
+    </customLabels>
+    <customLabels>
+        <label>Add Advisor Profile Users to CC</label>
+        <name>SEST_AddAdvisorCcUsers</name>
+    </customLabels>
+    <customLabels>
+        <label>To send files, add them from the [Files] button in the upper right.</label>
+        <name>SEST_AddFileInstruction</name>
+    </customLabels>
+    <customLabels>
+        <label>Addressee</label>
+        <name>SEST_Addressee</name>
+    </customLabels>
+    <customLabels>
+        <label>Attachments of 15MB or more cannot be sent. Target:</label>
+        <name>SEST_ApexAttachmentTooLargePrefix</name>
+    </customLabels>
+    <customLabels>
+        <label>Please enter a message body.</label>
+        <name>SEST_ApexEnterBody</name>
+    </customLabels>
+    <customLabels>
+        <label>Please enter a subject.</label>
+        <name>SEST_ApexEnterSubject</name>
+    </customLabels>
+    <customLabels>
+        <label>Failed to send to Lambda.</label>
+        <name>SEST_ApexLambdaSendFailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Lambda send failed:</label>
+        <name>SEST_ApexLambdaSendFailedPrefix</name>
+    </customLabels>
+    <customLabels>
+        <label>Sent a request to Lambda.</label>
+        <name>SEST_ApexLambdaSendSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Opportunity ID is required.</label>
+        <name>SEST_ApexOpportunityIdRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Please select contacts to send.</label>
+        <name>SEST_ApexSelectContactsForSend</name>
+    </customLabels>
+    <customLabels>
+        <label>Please select recipients.</label>
+        <name>SEST_ApexSelectRecipients</name>
+    </customLabels>
+    <customLabels>
+        <label>Attachments</label>
+        <name>SEST_Attachments</name>
+    </customLabels>
+    <customLabels>
+        <label>Auto CC (Fixed)</label>
+        <name>SEST_AutoCcFixed</name>
+    </customLabels>
+    <customLabels>
+        <label>Back to top</label>
+        <name>SEST_BackToTop</name>
+    </customLabels>
+    <customLabels>
+        <label>Body</label>
+        <name>SEST_Body</name>
+    </customLabels>
+    <customLabels>
+        <label>Cancel</label>
+        <name>SEST_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label>Clear Saved Data</label>
+        <name>SEST_ClearSavedData</name>
+    </customLabels>
+    <customLabels>
+        <label>Close</label>
+        <name>SEST_Close</name>
+    </customLabels>
+    <customLabels>
+        <label>accounts</label>
+        <name>SEST_CompanyUnit</name>
+    </customLabels>
+    <customLabels>
+        <label>Default</label>
+        <name>SEST_Default</name>
+    </customLabels>
+    <customLabels>
+        <label>[[accountName]]
+Dear [[name]],
+
+I hope this message finds you well.
+This is Japan Corporate Advisory Institute, Ltd.
+
+[Please enter your message here.]</label>
+        <name>SEST_DefaultBody</name>
+    </customLabels>
+    <customLabels>
+        <label>M&amp;A Contact</label>
+        <name>SEST_DefaultNameWithHonorific</name>
+    </customLabels>
+    <customLabels>
+        <label>M&amp;A Contact</label>
+        <name>SEST_DefaultNameWithoutHonorific</name>
+    </customLabels>
+    <customLabels>
+        <label>Message from JCAI</label>
+        <name>SEST_DefaultSubject</name>
+    </customLabels>
+    <customLabels>
+        <label>Delete Complete</label>
+        <name>SEST_DeleteComplete</name>
+    </customLabels>
+    <customLabels>
+        <label>Delete Failed</label>
+        <name>SEST_DeleteFailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Failed to delete saved data.</label>
+        <name>SEST_DeleteSavedDataFailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Saved data has been deleted.</label>
+        <name>SEST_DeleteSavedDataSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Department</label>
+        <name>SEST_Department</name>
+    </customLabels>
+    <customLabels>
+        <label>Japan</label>
+        <name>SEST_DomesticMail</name>
+    </customLabels>
+    <customLabels>
+        <label>Email Composer</label>
+        <name>SEST_EmailEdit</name>
+    </customLabels>
+    <customLabels>
+        <label>First</label>
+        <name>SEST_FirstName</name>
+    </customLabels>
+    <customLabels>
+        <label>Internal CC</label>
+        <name>SEST_InternalCc</name>
+    </customLabels>
+    <customLabels>
+        <label>Is an M&amp;A contact</label>
+        <name>SEST_IsMAResponsible</name>
+    </customLabels>
+    <customLabels>
+        <label>Failed to send to Lambda. Please try again later.</label>
+        <name>SEST_LambdaRetryLater</name>
+    </customLabels>
+    <customLabels>
+        <label>Last</label>
+        <name>SEST_LastName</name>
+    </customLabels>
+    <customLabels>
+        <label>Failed to load candidates.</label>
+        <name>SEST_LoadCandidatesFailedPrefix</name>
+    </customLabels>
+    <customLabels>
+        <label>Loading</label>
+        <name>SEST_Loading</name>
+    </customLabels>
+    <customLabels>
+        <label>Email Destination</label>
+        <name>SEST_MailDestination</name>
+    </customLabels>
+    <customLabels>
+        <label>Mailing List</label>
+        <name>SEST_MailingListTab</name>
+    </customLabels>
+    <customLabels>
+        <label>Addressee (text inserted into [[name]])</label>
+        <name>SEST_NameEditorLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>No candidates yet.</label>
+        <name>SEST_NoCandidates</name>
+    </customLabels>
+    <customLabels>
+        <label>No CC users available.</label>
+        <name>SEST_NoCcUsers</name>
+    </customLabels>
+    <customLabels>
+        <label>No matching options found.</label>
+        <name>SEST_NoMatchingOptions</name>
+    </customLabels>
+    <customLabels>
+        <label>No recipients are selected for TO send.</label>
+        <name>SEST_NoToRecipients</name>
+    </customLabels>
+    <customLabels>
+        <label>No Selection</label>
+        <name>SEST_NoneSelected</name>
+    </customLabels>
+    <customLabels>
+        <label>Exclude Honorifics</label>
+        <name>SEST_OmitHonorific</name>
+    </customLabels>
+    <customLabels>
+        <label>Overseas</label>
+        <name>SEST_OverseasMail</name>
+    </customLabels>
+    <customLabels>
+        <label>Scheduled:</label>
+        <name>SEST_PlannedSendPrefix</name>
+    </customLabels>
+    <customLabels>
+        <label>Preview</label>
+        <name>SEST_Preview</name>
+    </customLabels>
+    <customLabels>
+        <label>Send Preview</label>
+        <name>SEST_PreviewTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>You cannot cancel after sending. Please review the content.</label>
+        <name>SEST_PreviewWarning</name>
+    </customLabels>
+    <customLabels>
+        <label>Select Recipients</label>
+        <name>SEST_RecipientSelection</name>
+    </customLabels>
+    <customLabels>
+        <label>Record ID is missing.</label>
+        <name>SEST_RecordIdMissing</name>
+    </customLabels>
+    <customLabels>
+        <label>Refresh Candidates</label>
+        <name>SEST_RefreshCandidates</name>
+    </customLabels>
+    <customLabels>
+        <label>Reverse First/Last Name in Addressee</label>
+        <name>SEST_ReverseNameOrder</name>
+    </customLabels>
+    <customLabels>
+        <label>Search Attachments</label>
+        <name>SEST_SearchAttachments</name>
+    </customLabels>
+    <customLabels>
+        <label>Search Internal Users</label>
+        <name>SEST_SearchCcCandidates</name>
+    </customLabels>
+    <customLabels>
+        <label>Select a region to display recipients.</label>
+        <name>SEST_SelectMailDestination</name>
+    </customLabels>
+    <customLabels>
+        <label>Select from Opportunity Files</label>
+        <name>SEST_SelectOpportunityFiles</name>
+    </customLabels>
+    <customLabels>
+        <label>Selected</label>
+        <name>SEST_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label>Send Complete</label>
+        <name>SEST_SendComplete</name>
+    </customLabels>
+    <customLabels>
+        <label>Send Failed</label>
+        <name>SEST_SendFailed</name>
+    </customLabels>
+    <customLabels>
+        <label>Send as CC</label>
+        <name>SEST_SendModeCc</name>
+    </customLabels>
+    <customLabels>
+        <label>Do Not Send</label>
+        <name>SEST_SendModeNone</name>
+    </customLabels>
+    <customLabels>
+        <label>Send as TO</label>
+        <name>SEST_SendModeTo</name>
+    </customLabels>
+    <customLabels>
+        <label>Sending is performed only for selected recipients.</label>
+        <name>SEST_SendOnlySelected</name>
+    </customLabels>
+    <customLabels>
+        <label>Sent a request to Lambda.</label>
+        <name>SEST_SendRequestSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Send Requested</label>
+        <name>SEST_SendRequested</name>
+    </customLabels>
+    <customLabels>
+        <label>Send</label>
+        <name>SEST_SendSection</name>
+    </customLabels>
+    <customLabels>
+        <label>Send Status</label>
+        <name>SEST_SendStatus</name>
+    </customLabels>
+    <customLabels>
+        <label>This user&apos;s email address is not registered with SES, so this feature is unavailable.</label>
+        <name>SEST_SenderUnavailable</name>
+    </customLabels>
+    <customLabels>
+        <label>The sender email address is not registered with SES. Target:</label>
+        <name>SEST_SenderUnavailablePrefix</name>
+    </customLabels>
+    <customLabels>
+        <label>Set All as CC</label>
+        <name>SEST_SetAllCc</name>
+    </customLabels>
+    <customLabels>
+        <label>Set All as Do Not Send</label>
+        <name>SEST_SetAllNone</name>
+    </customLabels>
+    <customLabels>
+        <label>Set All as To</label>
+        <name>SEST_SetAllTo</name>
+    </customLabels>
+    <customLabels>
+        <label>Subject</label>
+        <name>SEST_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label>Ten test emails have been sent.</label>
+        <name>SEST_TenTestEmailsSent</name>
+    </customLabels>
+    <customLabels>
+        <label>The test email has been sent.</label>
+        <name>SEST_TestEmailSent</name>
+    </customLabels>
+    <customLabels>
+        <label>Queued</label>
+        <name>SEST_TestQueueEnqueued</name>
+    </customLabels>
+    <customLabels>
+        <label>The selected contacts were queued for a test send. No actual email will be sent.</label>
+        <name>SEST_TestQueueEnqueuedMessage</name>
+    </customLabels>
+    <customLabels>
+        <label>Title</label>
+        <name>SEST_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>(Unknown Account)</label>
+        <name>SEST_UnknownAccount</name>
+    </customLabels>
+    <customLabels>
+        <label>An unknown error occurred.</label>
+        <name>SEST_UnknownError</name>
+    </customLabels>
+    <customLabels>
+        <label>Untitled</label>
+        <name>SEST_Untitled</name>
+    </customLabels>
+    <customLabels>
+        <label>Inquiry Message</label>
+        <name>Tab_Inquiry_Message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- a few --></label>
+        <name>sansancard__A_Few</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Access Error Report Message --></label>
+        <name>sansancard__Access_error_report_message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account lookup modal header --></label>
+        <name>sansancard__Account_lookup</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account name --></label>
+        <name>sansancard__Account_name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There is no account with the specified name --></label>
+        <name>sansancard__Account_not_found</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account search box --></label>
+        <name>sansancard__Account_search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account search results header --></label>
+        <name>sansancard__Account_search_results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add to campaign members --></label>
+        <name>sansancard__Add_campaign_members</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address --></label>
+        <name>sansancard__Address</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address - City --></label>
+        <name>sansancard__Address_city</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address - Country --></label>
+        <name>sansancard__Address_country</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address - State/Province --></label>
+        <name>sansancard__Address_state</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address - Street --></label>
+        <name>sansancard__Address_street</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address - Zip/Postal code --></label>
+        <name>sansancard__Address_zip</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin settings button --></label>
+        <name>sansancard__Admin_settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- For Guiding Error guide --></label>
+        <name>sansancard__Administrator_guide_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All cards --></label>
+        <name>sansancard__All_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All cards transferred to Leads/Contacts --></label>
+        <name>sansancard__All_cards_transferred_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All cards were deleted --></label>
+        <name>sansancard__All_cards_were_deleted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Allow overwrite custom fields --></label>
+        <name>sansancard__Allow_users_to_overwrite_values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- App Store download qrcode img name --></label>
+        <name>sansancard__AppStore_download_qrcode</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- App Store download url --></label>
+        <name>sansancard__AppStore_download_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer only the card image to a duplicated record --></label>
+        <name>sansancard__Assign_image</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The card image is transferred to a duplicated record --></label>
+        <name>sansancard__Assigned_image</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Both Leads and Contacts --></label>
+        <name>sansancard__Both</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bulk Max Error Messge --></label>
+        <name>sansancard__Bulk_Max_Error_Messge</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Campaign error messge --></label>
+        <name>sansancard__Campaign_Error_Messge</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>sansancard__Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CardImage Error Messge --></label>
+        <name>sansancard__CardImage_Error_Messge</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Card Label --></label>
+        <name>sansancard__Card_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Card Management Word --></label>
+        <name>sansancard__Card_Management</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- card deleted --></label>
+        <name>sansancard__Card_deleted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A card transferred to Leads/Contacts --></label>
+        <name>sansancard__Card_transferred_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cards Label --></label>
+        <name>sansancard__Cards_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cards failed to load --></label>
+        <name>sansancard__Cards_failed_to_load</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose Report Button Label --></label>
+        <name>sansancard__Choose_Report</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Separator --></label>
+        <name>sansancard__Choose_existing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear button for Lead/Contact/Account settings --></label>
+        <name>sansancard__Clear_current_values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close label --></label>
+        <name>sansancard__Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Company --></label>
+        <name>sansancard__Company</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Continue to transfer duplicated record --></label>
+        <name>sansancard__Continue_to_transfer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Couldn&apos;t obtain Account ID --></label>
+        <name>sansancard__Could_not_obtain_Account_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Couldn&apos;t overwrite default values --></label>
+        <name>sansancard__Could_not_overwrite_default_values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Couldn&apos;t save default values --></label>
+        <name>sansancard__Could_not_save_default_values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create new --></label>
+        <name>sansancard__Create_new</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Display Report Name --></label>
+        <name>sansancard__Currrent_Report_name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data value is too large to save in custom settings. --></label>
+        <name>sansancard__Data_value_is_too_large</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Day --></label>
+        <name>sansancard__Day</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Days --></label>
+        <name>sansancard__Days</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Default values have been updated --></label>
+        <name>sansancard__Default_values_have_been_updated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Default values --></label>
+        <name>sansancard__Default_values_label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete --></label>
+        <name>sansancard__Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete all cards --></label>
+        <name>sansancard__Delete_all_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Department --></label>
+        <name>sansancard__Department</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Description --></label>
+        <name>sansancard__Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checkbox for disabling all cards view mode --></label>
+        <name>sansancard__Disable_all_cards_view</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checkbox for disabling report view mode --></label>
+        <name>sansancard__Disable_report_view</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checkbox for displaying delete cards view mode --></label>
+        <name>sansancard__Display_Delete_cards_view</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checkbox for displaying all cards view mode --></label>
+        <name>sansancard__Display_all_cards_view</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Display Report Button Label --></label>
+        <name>sansancard__Display_report_button_label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checkbox for displaying report view mode --></label>
+        <name>sansancard__Display_report_view</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Display settings --></label>
+        <name>sansancard__Display_settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Don&apos;t show this again --></label>
+        <name>sansancard__Do_not_show_this_again</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Button for overwriting --></label>
+        <name>sansancard__Do_overwriting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Does not affect Admins --></label>
+        <name>sansancard__Does_not_affect_admins</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duplicate detected on edit --></label>
+        <name>sansancard__Duplicate_detected_on_edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duplicate account detected --></label>
+        <name>sansancard__Duplicated_account_detected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duplicates detected --></label>
+        <name>sansancard__Duplicates_detected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit --></label>
+        <name>sansancard__Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Title text for editing cusom filed value modal --></label>
+        <name>sansancard__Edit_custom_filed_modal_title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit value before transfer header --></label>
+        <name>sansancard__Edit_value_before_transfer_header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email --></label>
+        <name>sansancard__Email</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Enable notifications --></label>
+        <name>sansancard__Enable_Notifications</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FAQ url --></label>
+        <name>sansancard__FAQ_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Failed to create Account --></label>
+        <name>sansancard__Failed_to_create_account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fax --></label>
+        <name>sansancard__Fax</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field setting is unsuccessful --></label>
+        <name>sansancard__Field_setting_is_unsuccessful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fields header --></label>
+        <name>sansancard__Field_table_header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- First name --></label>
+        <name>sansancard__First_name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- For Guiding Error guide --></label>
+        <name>sansancard__For_guiding_error_guide</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- For Guiding Error Message --></label>
+        <name>sansancard__For_guiding_error_message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Submit button for Lead/Contact/Account settings --></label>
+        <name>sansancard__Get_default_values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Google Play download url --></label>
+        <name>sansancard__GooglePlay_download_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hours --></label>
+        <name>sansancard__Hour</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hours --></label>
+        <name>sansancard__Hours</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please give us a rating. --></label>
+        <name>sansancard__How_is_the_app</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid Owner ID --></label>
+        <name>sansancard__INVALID_USER_TYPE_EXCEPTION_with_OwnerID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account keyword form placeholder --></label>
+        <name>sansancard__Input_Account_keyword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Chatter modal heading --></label>
+        <name>sansancard__Invite_colleagues_heading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Message of inviting colleagues to install mobile app --></label>
+        <name>sansancard__Invite_colleagues_message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invite colleagues to install mobile app --></label>
+        <name>sansancard__Invite_colleagues_on_Chatter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invite colleagues on Chatter for mobile Label --></label>
+        <name>sansancard__Invite_colleagues_on_Chatter_for_mobile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last name --></label>
+        <name>sansancard__Last_name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Latest card uploaded word --></label>
+        <name>sansancard__Latest_card_upload_word</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Message --></label>
+        <name>sansancard__Message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Minutes --></label>
+        <name>sansancard__Minute</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Minutes --></label>
+        <name>sansancard__Minutes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mobile --></label>
+        <name>sansancard__Mobile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mobile App Download Word --></label>
+        <name>sansancard__Mobile_App_Download</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mutple duplicates in Lead/Contact --></label>
+        <name>sansancard__Multiple_duplicates_error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My cards only --></label>
+        <name>sansancard__My_cards_only</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results found --></label>
+        <name>sansancard__No_results_found</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Not Select value campagin/user --></label>
+        <name>sansancard__Not_Select_value_campagin_user</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Do not post to the destinations --></label>
+        <name>sansancard__Not_transcribing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Notification Settings --></label>
+        <name>sansancard__Notification_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number of scanned card --></label>
+        <name>sansancard__Number_of_card</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number of scanned cards --></label>
+        <name>sansancard__Number_of_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Separator --></label>
+        <name>sansancard__Or_separator</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Card order - Show oldest first --></label>
+        <name>sansancard__Order_ascending</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Card order - Show newest first --></label>
+        <name>sansancard__Order_descending</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Original field data --></label>
+        <name>sansancard__Original</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Complete overwite a record and assign images --></label>
+        <name>sansancard__Overwrite_completed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Overwrite Leads/Contacts --></label>
+        <name>sansancard__Overwrite_fields_with_the_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Permission failed title --></label>
+        <name>sansancard__Permission_failed_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Permission failed detail --></label>
+        <name>sansancard__Permission_failed_detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Permission failed detail link name --></label>
+        <name>sansancard__Permission_failed_link</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Permission failed detail url --></label>
+        <name>sansancard__Permission_failed_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Phone --></label>
+        <name>sansancard__Phone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Rate Scan to Salesforce --></label>
+        <name>sansancard__Rate_Scan_to_Salesforce</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Rate the app now --></label>
+        <name>sansancard__Rate_the_app_now</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record type --></label>
+        <name>sansancard__Record_type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Refresh Button --></label>
+        <name>sansancard__Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remind me later --></label>
+        <name>sansancard__Remind_me_later</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Display Report Name --></label>
+        <name>sansancard__Report_name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Required field --></label>
+        <name>sansancard__Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save button --></label>
+        <name>sansancard__Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saved --></label>
+        <name>sansancard__Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scanned by --></label>
+        <name>sansancard__Scanned_by</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scanned cards --></label>
+        <name>sansancard__Scanned_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Seconds --></label>
+        <name>sansancard__Second</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Seconds --></label>
+        <name>sansancard__Seconds</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search and select campaign --></label>
+        <name>sansancard__Select_campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search and select user --></label>
+        <name>sansancard__Select_owner_user</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search and select report --></label>
+        <name>sansancard__Select_report</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select users --></label>
+        <name>sansancard__Select_users</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Selected users --></label>
+        <name>sansancard__Selected_users</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Set ownerId to new Lead/Contact --></label>
+        <name>sansancard__Set_owner_user</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Set a value to the destination --></label>
+        <name>sansancard__Set_static_value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Set the value of custom fields --></label>
+        <name>sansancard__Set_user_custom_value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Share on Chatter --></label>
+        <name>sansancard__Share_on_Chatter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show admin settings button --></label>
+        <name>sansancard__Show_admin_settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show all cards button --></label>
+        <name>sansancard__Show_all_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show more cards button --></label>
+        <name>sansancard__Show_more_cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please transfer one by one --></label>
+        <name>sansancard__Some_cards_cannot_be_transferred</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Static values header --></label>
+        <name>sansancard__Static_value_table_header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The record already exist --></label>
+        <name>sansancard__The_record_already_exist</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There is no card to delete --></label>
+        <name>sansancard__There_is_no_card_to_delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There is no card to transfer --></label>
+        <name>sansancard__There_is_no_card_to_transfer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Title --></label>
+        <name>sansancard__Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There are too many recores for the entered keyword --></label>
+        <name>sansancard__Too_many_records_for_keyword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer to Leads or Contacts --></label>
+        <name>sansancard__Transfer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer all cards to Leads/Contacts button --></label>
+        <name>sansancard__Transfer_all_to_Leads</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer cards to Contacts --></label>
+        <name>sansancard__Transfer_cards_to_Contacts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer cards to Leads --></label>
+        <name>sansancard__Transfer_cards_to_Leads</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Card transfer to --></label>
+        <name>sansancard__Transfer_destination</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tarn to overwriting filed --></label>
+        <name>sansancard__Transfer_image_and_overwrite_fields</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer is unsuccessful --></label>
+        <name>sansancard__Transfer_is_unsuccessful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer is unsuccessful guide --></label>
+        <name>sansancard__Transfer_is_unsuccessful_guide</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer is unsuccessful message --></label>
+        <name>sansancard__Transfer_is_unsuccessful_message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer is unsuccessful title --></label>
+        <name>sansancard__Transfer_is_unsuccessful_title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer is unsuccessful url --></label>
+        <name>sansancard__Transfer_is_unsuccessful_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer settings --></label>
+        <name>sansancard__Transfer_settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer to Leads/Contacts --></label>
+        <name>sansancard__Transfer_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer to Contact with new Account --></label>
+        <name>sansancard__Transfer_with_new_Account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transfer to Contact with selected Account --></label>
+        <name>sansancard__Transfer_with_selected_Account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Take a tutorial tour for Admin --></label>
+        <name>sansancard__Tutorial_admin_link</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Take a tutorial tour --></label>
+        <name>sansancard__Tutorial_heading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Take a tutorial tour for user / Admin --></label>
+        <name>sansancard__Tutorial_user_admin_link</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Users --></label>
+        <name>sansancard__Users</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Website --></label>
+        <name>sansancard__Website</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- YouTube user admin guide short url --></label>
+        <name>sansancard__YouTube_user_admin_guide_short_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- YouTube user admin guide url --></label>
+        <name>sansancard__YouTube_user_admin_guide_url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete a card confirm --></label>
+        <name>sansancard__You_want_to_delete_card</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete all cards confirm --></label>
+        <name>sansancard__you_want_to_delete_all_cards</name>
+    </customLabels>
+</Translations>

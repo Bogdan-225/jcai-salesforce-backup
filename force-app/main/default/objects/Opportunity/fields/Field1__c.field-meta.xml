@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field1__c</fullName>
+    <label>見込み</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>見込みなし</fullName>
+                <default>false</default>
+                <label>見込みなし</label>
+            </value>
+            <value>
+                <fullName>見込みあり低</fullName>
+                <default>false</default>
+                <label>見込みあり低</label>
+            </value>
+            <value>
+                <fullName>見込みあり高</fullName>
+                <default>false</default>
+                <label>見込みあり高</label>
+            </value>
+            <value>
+                <fullName>買収ニーズのみ</fullName>
+                <default>false</default>
+                <label>買収ニーズのみ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MailFetchTarget__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>チェックするとworkerがApolloでメール取得(S4b)を実行する。処理開始時に自動的にチェックが外れる（二重実行防止）。</description>
+    <inlineHelpText>System administrators only. When checked, the worker fetches emails via Apollo. The checkbox clears automatically when processing starts (prevents duplicate runs).</inlineHelpText>
+    <label>メール取得対象</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

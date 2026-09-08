@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellADContract_URL__c</fullName>
+    <inlineHelpText>GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す])</inlineHelpText>
+    <label>売AD契約書URL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

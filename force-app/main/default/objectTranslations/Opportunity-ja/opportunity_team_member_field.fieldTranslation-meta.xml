@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>案件チームメンバー項目</value>
+    </caseValues>
+    <name>opportunity_team_member_field</name>
+</CustomFieldTranslation>

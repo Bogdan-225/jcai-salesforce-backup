@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SharingURL</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    /* 項目が空白でない場合のみチェックを行う */
+    NOT(ISBLANK( DisclosureStatementURL_Sell__c )),
+
+    /* 以下の「許可する条件」のいずれにも当てはまらない(NOT)場合にエラーとする */
+    NOT(
+        OR(
+            /* パターン1: google.com と usp=sharing の両方を含む */
+            AND(
+                CONTAINS( DisclosureStatementURL_Sell__c , &quot;google.com&quot;),
+                CONTAINS( DisclosureStatementURL_Sell__c , &quot;usp=sharing&quot;)
+            ),
+            /* パターン2: box.com/s/ を含む */
+            CONTAINS( DisclosureStatementURL_Sell__c , &quot;box.com/s/&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>DisclosureStatementURL_Sell__c</errorDisplayField>
+    <errorMessage>GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す])</errorMessage>
+</ValidationRule>

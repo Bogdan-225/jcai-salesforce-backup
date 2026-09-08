@@ -1,0 +1,1896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- 「9月上旬」というようにおおまかなAD契約時期を記入 --></help>
+        <label>Sell Agreement Timing</label>
+        <name>AD__c</name>
+    </fields>
+    <fields>
+        <label>Approach Count(for domestic team)</label>
+        <name>ApproachCount__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Approach Status(for domestic team)</label>
+        <name>ApproachStatus__c</name>
+        <picklistValues>
+            <masterLabel>MGアプローチ中</masterLabel>
+            <translation>MG Approaching</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>アプローチ中</masterLabel>
+            <translation>Approaching</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>アプローチ準備中</masterLabel>
+            <translation>In preparation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>フォローアップ中(周回×&amp;郵送〇)</masterLabel>
+            <translation>Follow Up(3LapsX&amp;Mail〇)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>フォローアップ中(周回〇&amp;郵送〇)</masterLabel>
+            <translation>Follow Up(3Laps〇&amp;Mail〇)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>中断(周回×&amp;郵送×)</masterLabel>
+            <translation>Stop(3LapsX&amp;MailX)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>中断(周回×&amp;郵送〇)</masterLabel>
+            <translation>Stop(3LapsX&amp;Mail〇)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>中断(周回〇&amp;郵送×)</masterLabel>
+            <translation>Stop(3Laps〇&amp;MailX)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>中断(周回〇&amp;郵送〇)</masterLabel>
+            <translation>Stop(3Laps〇&amp;Mail〇)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>未依頼</masterLabel>
+            <translation>Unrequested</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>郵送対応中(周回〇&amp;郵送×)</masterLabel>
+            <translation>Mailing(3Laps〇&amp;MailX)</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Approach Type</label>
+        <name>ApproachType__c</name>
+        <picklistValues>
+            <masterLabel>In-In</masterLabel>
+            <translation><!-- In-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Out</masterLabel>
+            <translation><!-- In-Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out-In</masterLabel>
+            <translation><!-- Out-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out-Out</masterLabel>
+            <translation><!-- Out-Out --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Asking Price(JPY M)</label>
+        <name>AskingPrice__c</name>
+    </fields>
+    <fields>
+        <label>Budget Confirmed</label>
+        <name>Budget_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label>Buyer Interim Fee Deposit Date</label>
+        <name>BuyerMiddleMarginDepositDay__c</name>
+    </fields>
+    <fields>
+        <label>Buyer Interim Fee(JPY M)</label>
+        <name>BuyerMiddleMargin__c</name>
+    </fields>
+    <fields>
+        <label>Buyer Fee Deposit Date(Est.)</label>
+        <name>BuyerSuccessMarginDepositDay__c</name>
+    </fields>
+    <fields>
+        <label>Buyer Estimated Fee(M)</label>
+        <name>BuyerSuccessMargin__c</name>
+    </fields>
+    <fields>
+        <label>Buy-Side Out-Out Manager</label>
+        <name>BuysideMainManager__c</name>
+        <relationshipLabel><!-- Opportunities (Buy-Side Out-Out Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Buy-Side In-Out Manager</label>
+        <name>BuysideSubManager__c</name>
+        <relationshipLabel><!-- Opportunities (Buy-Side In-Out Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BizBank(Published Date) --></label>
+        <name>CB_BizBank__c</name>
+    </fields>
+    <fields>
+        <label><!-- Buy-Side Progress --></label>
+        <name>CB_BuysideProgress__c</name>
+    </fields>
+    <fields>
+        <label><!-- EQV Value(USD M) --></label>
+        <name>CB_EVValue_USDmm__c</name>
+    </fields>
+    <fields>
+        <label>Expected Payout(JPY 10K)</label>
+        <name>CB_ExpectedPayout_Yen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Revenue(万円) --></label>
+        <name>CB_ExpectedRevenue_Yen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fees(USD M) --></label>
+        <name>CB_Fees_USDmm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill inGoogle Document URL --></help>
+        <label><!-- Meeting Memo --></label>
+        <name>CB_MeetingMemo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquiring Company(Matching Info) --></label>
+        <name>CB_P_AcquiringCompanyMatchingInfo__c</name>
+        <relationshipLabel><!-- Acquiring Company(Matching Info) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the buyers who are in the final stages or closing. --></help>
+        <label><!-- Acquiring Company --></label>
+        <name>CB_P_AcquiringCompany__c</name>
+        <relationshipLabel><!-- Acquiring Company --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Appointment --></label>
+        <name>CB_P_Appointment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Buyers --></label>
+        <name>CB_P_PotentialBuyers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Date --></label>
+        <name>CB_P_ResponseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Meeting Date --></label>
+        <name>CB_P_TopMeetingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Meeting --></label>
+        <name>CB_P_TopMeeting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Toss Up --></label>
+        <name>CB_P_TossUp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Toss up Date --></label>
+        <name>CB_P_TossupDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>CB_SP_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Side Progress --></label>
+        <name>CB_SellsideProgress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spreadsheet Progress Log --></label>
+        <name>CB_SpreadsheetProgressLog__c</name>
+    </fields>
+    <fields>
+        <label>Cash and Deposits(JPY K)</label>
+        <name>CashDeposit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_ActivitiesByStage --></label>
+        <name>Check_ActivitiesByStage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_Agenda --></label>
+        <name>Check_DocUploaded_Agenda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_FS --></label>
+        <name>Check_DocUploaded_FS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_IM --></label>
+        <name>Check_DocUploaded_IM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_LOI --></label>
+        <name>Check_DocUploaded_LOI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_MOU --></label>
+        <name>Check_DocUploaded_MOU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_QA --></label>
+        <name>Check_DocUploaded_QA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_SPA --></label>
+        <name>Check_DocUploaded_SPA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_Teaser --></label>
+        <name>Check_DocUploaded_Teaser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_DocUploaded_Valuation --></label>
+        <name>Check_DocUploaded_Valuation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_MatchingStage --></label>
+        <name>Check_MatchingStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- この項目に入力すると譲渡案件に紐づいた活動が同時作成されます --></help>
+        <label>Comment</label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label>Confirm Buyer&apos;s Bank &amp; POC</label>
+        <name>Confirm_BuyersBank_POC__c</name>
+    </fields>
+    <fields>
+        <label>Confirm Seller&apos;s Bank &amp; POC</label>
+        <name>Confirm_SellersBank_POC__c</name>
+    </fields>
+    <fields>
+        <label>Borrowings(JPY K)</label>
+        <name>Dept__c</name>
+    </fields>
+    <fields>
+        <help><!-- GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す]) --></help>
+        <label>Disclosure Statement URL(Sell)</label>
+        <name>DisclosureStatementURL_Sell__c</name>
+    </fields>
+    <fields>
+        <label>Needs Confirmed</label>
+        <name>Discovery_Completed__c</name>
+    </fields>
+    <fields>
+        <label>EBITDA(JPY K)</label>
+        <name>EBITDA__c</name>
+    </fields>
+    <fields>
+        <label><!-- EV(USD M) --></label>
+        <name>EV_USDmm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Read-Only --></help>
+        <label><!-- Fee x Probability(USD M) --></label>
+        <name>Fee_Probability_USDmm__c</name>
+    </fields>
+    <fields>
+        <label>Business Details</label>
+        <name>Field11__c</name>
+    </fields>
+    <fields>
+        <help><!-- 案件の概況を記入するフリーテキストエリア --></help>
+        <label>Project Info</label>
+        <name>Field15__c</name>
+    </fields>
+    <fields>
+        <label>Total Estimated Fee(M)</label>
+        <name>Field16__c</name>
+    </fields>
+    <fields>
+        <label>Next Stage</label>
+        <name>Field17__c</name>
+    </fields>
+    <fields>
+        <label>Likelihood</label>
+        <name>Field1__c</name>
+        <picklistValues>
+            <masterLabel>見込みあり低</masterLabel>
+            <translation>Low Prospect</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>見込みあり高</masterLabel>
+            <translation>High Prospect</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>見込みなし</masterLabel>
+            <translation>No Prospect</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>買収ニーズのみ</masterLabel>
+            <translation>Buy-Side Needs Only</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Conclusion</label>
+        <name>Field2__c</name>
+        <picklistValues>
+            <masterLabel>再DM</masterLabel>
+            <translation>Resend DM</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>再アプローチ必要なし</masterLabel>
+            <translation>No Re-Approach Needed</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>長期フォロー</masterLabel>
+            <translation>Follow-up</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Conclusion Details</label>
+        <name>Field3__c</name>
+    </fields>
+    <fields>
+        <label>Success Probability</label>
+        <name>Field4__c</name>
+        <picklistValues>
+            <masterLabel>A(80%)</masterLabel>
+            <translation><!-- A(80%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B(50%)</masterLabel>
+            <translation><!-- B(50%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C(20%)</masterLabel>
+            <translation><!-- C(20%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D(0%)</masterLabel>
+            <translation><!-- D(0%) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Interim Fee</label>
+        <name>Field5__c</name>
+    </fields>
+    <fields>
+        <label>Success Fee</label>
+        <name>Field6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Address --></label>
+        <name>Inquiry_Address_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Address(JP)</label>
+        <name>Inquiry_Address_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Body --></label>
+        <name>Inquiry_Body_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Body(JP)</label>
+        <name>Inquiry_Body_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Company --></label>
+        <name>Inquiry_Company_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Company(JP)</label>
+        <name>Inquiry_Company_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Department --></label>
+        <name>Inquiry_Department_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Department(JP)</label>
+        <name>Inquiry_Department_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Email --></label>
+        <name>Inquiry_Email_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Email(JP)</label>
+        <name>Inquiry_Email_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Mobile --></label>
+        <name>Inquiry_Mobile_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Mobile Tel(JP)</label>
+        <name>Inquiry_Mobile_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Name --></label>
+        <name>Inquiry_Name_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Name(JP)</label>
+        <name>Inquiry_Name_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Postalcode --></label>
+        <name>Inquiry_Postalcode_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Postal Code(JP)</label>
+        <name>Inquiry_Postalcode_Ja__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Name Reading(JP)</label>
+        <name>Inquiry_Spelling_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Subject --></label>
+        <name>Inquiry_Subject_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Subject(JP)</label>
+        <name>Inquiry_Subject_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Title --></label>
+        <name>Inquiry_Title_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Job Title(JP)</label>
+        <name>Inquiry_Title_Ja__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry_Work --></label>
+        <name>Inquiry_Work_En__c</name>
+    </fields>
+    <fields>
+        <label>Inquiry Work Tel(JP)</label>
+        <name>Inquiry_Work_Ja__c</name>
+    </fields>
+    <fields>
+        <label>Last Activity Update</label>
+        <name>LastActivityUpdate__c</name>
+    </fields>
+    <fields>
+        <help><!-- アポ獲得チャネルの詳細を記入
+例, 社内インサイドセールス佐藤さんからの獲得の場合→「佐藤テレアポ」 --></help>
+        <label>Method Notes</label>
+        <name>LeadTypeMemo__c</name>
+    </fields>
+    <fields>
+        <label>Method</label>
+        <name>LeadType__c</name>
+    </fields>
+    <fields>
+        <label>Long-Term Follow-up</label>
+        <name>LongTermFollow__c</name>
+    </fields>
+    <fields>
+        <label>Long-Term Follow-up Method</label>
+        <name>LongTermMethod__c</name>
+    </fields>
+    <fields>
+        <label>Long-Term Follow-up Reason</label>
+        <name>LongTermReason__c</name>
+    </fields>
+    <fields>
+        <label>Loss Reason</label>
+        <name>Loss_Reason__c</name>
+        <picklistValues>
+            <masterLabel>その他</masterLabel>
+            <translation>Other</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>価格</masterLabel>
+            <translation>Price</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>先送り / 無回答</masterLabel>
+            <translation>Postponed / No Response</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>機能不足</masterLabel>
+            <translation>Insufficient Features</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>競合に敗退</masterLabel>
+            <translation>Lost to Competitor</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- M&amp;A Needs --></label>
+        <name>MANeeds__c</name>
+        <relationshipLabel>Opportunities</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NDA --></label>
+        <name>NDA__c</name>
+        <relationshipLabel>Opportunities</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Net Assets(JPY K)</label>
+        <name>NetWorth__c</name>
+    </fields>
+    <fields>
+        <label><!-- On-Hold Reason --></label>
+        <name>OnHoldReason__c</name>
+    </fields>
+    <fields>
+        <label>Project Manager</label>
+        <name>OwnerfullName__c</name>
+    </fields>
+    <fields>
+        <label>Pending Method</label>
+        <name>PendingMethod__c</name>
+    </fields>
+    <fields>
+        <label>Pending</label>
+        <name>Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Buyer --></label>
+        <name>PowerBuyer__c</name>
+        <relationshipLabel>Opportunities (Power Buyer)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Prefecture</label>
+        <name>Prefectures__c</name>
+        <picklistValues>
+            <masterLabel>三重県</masterLabel>
+            <translation>Mie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>京都府</masterLabel>
+            <translation>Kyoto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>佐賀県</masterLabel>
+            <translation>Saga</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>兵庫県</masterLabel>
+            <translation>Hyogo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>北海道</masterLabel>
+            <translation>Hokkaido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>千葉県</masterLabel>
+            <translation>Chiba</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>和歌山県</masterLabel>
+            <translation>Wakayama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>埼玉県</masterLabel>
+            <translation>Saitama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>大分県</masterLabel>
+            <translation>Oita</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>大阪府</masterLabel>
+            <translation>Osaka</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>奈良県</masterLabel>
+            <translation>Nara</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>宮城県</masterLabel>
+            <translation>Miyagi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>宮崎県</masterLabel>
+            <translation>Miyazaki</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>富山県</masterLabel>
+            <translation>Toyama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>山口県</masterLabel>
+            <translation>Yamaguchi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>山形県</masterLabel>
+            <translation>Yamagata</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>山梨県</masterLabel>
+            <translation>Yamanashi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>岐阜県</masterLabel>
+            <translation>Gifu</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>岡山県</masterLabel>
+            <translation>Okayama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>岩手県</masterLabel>
+            <translation>Iwate</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>島根県</masterLabel>
+            <translation>Shimane</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>広島県</masterLabel>
+            <translation>Hiroshima</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>徳島県</masterLabel>
+            <translation>Tokushima</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>愛媛県</masterLabel>
+            <translation>Ehime</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>愛知県</masterLabel>
+            <translation>Aichi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>新潟県</masterLabel>
+            <translation>Niigata</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>東京都</masterLabel>
+            <translation>Tokyo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>栃木県</masterLabel>
+            <translation>Tochigi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>沖縄県</masterLabel>
+            <translation>Okinawa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>滋賀県</masterLabel>
+            <translation>Shiga</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>熊本県</masterLabel>
+            <translation>Kumamoto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>石川県</masterLabel>
+            <translation>Ishikawa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>神奈川県</masterLabel>
+            <translation>Kanagawa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>福井県</masterLabel>
+            <translation>Fukui</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>福岡県</masterLabel>
+            <translation>Fukuoka</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>福島県</masterLabel>
+            <translation>Fukushima</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>秋田県</masterLabel>
+            <translation>Akita</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>群馬県</masterLabel>
+            <translation>Gunma</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>茨城県</masterLabel>
+            <translation>Ibaraki</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>長崎県</masterLabel>
+            <translation>Nagasaki</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>長野県</masterLabel>
+            <translation>Nagano</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>青森県</masterLabel>
+            <translation>Aomori</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>静岡県</masterLabel>
+            <translation>Shizuoka</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>香川県</masterLabel>
+            <translation>Kagawa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>高知県</masterLabel>
+            <translation>Kochi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>鳥取県</masterLabel>
+            <translation>Tottori</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>鹿児島県</masterLabel>
+            <translation>Kagoshima</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ROI Analysis Completed</label>
+        <name>ROI_Analysis_Completed__c</name>
+    </fields>
+    <fields>
+        <label>SFID18(Opportunity)</label>
+        <name>SFID18__c</name>
+    </fields>
+    <fields>
+        <label><!-- FolderURL(Company) --></label>
+        <name>SP_FolderURLCompany__c</name>
+    </fields>
+    <fields>
+        <help><!-- GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す]) --></help>
+        <label>Folder URL(Project)</label>
+        <name>SP_FolderURLProject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>SP_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criteria(Text) --></label>
+        <name>S_CriteriaText__c</name>
+    </fields>
+    <fields>
+        <label>Revenue(JPY K)</label>
+        <name>SalesAmount__c</name>
+    </fields>
+    <fields>
+        <label>Search Revenue(JPY M): Max</label>
+        <name>SearchSalesMax__c</name>
+    </fields>
+    <fields>
+        <label>Search Revenue(JPY M): Min</label>
+        <name>SearchSalesMinimum__c</name>
+    </fields>
+    <fields>
+        <label>Sell Agreement Signed Date</label>
+        <name>SellADContractDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す]) --></help>
+        <label>Sell Agreement URL</label>
+        <name>SellADContract_URL__c</name>
+    </fields>
+    <fields>
+        <label>Seller Interim Fee Deposit Date</label>
+        <name>SellerMiddleMarginDepositDay__c</name>
+    </fields>
+    <fields>
+        <label>Seller Interim Fee(JPY M)</label>
+        <name>SellerMiddleMargin__c</name>
+    </fields>
+    <fields>
+        <label>Seller Fee Deposit Date(Est.)</label>
+        <name>SellerSuccessMarginDepositDay__c</name>
+    </fields>
+    <fields>
+        <label>Seller Estimated Fee(M)</label>
+        <name>SellerSuccessMargin__c</name>
+    </fields>
+    <fields>
+        <label>Sell-Side Manager</label>
+        <name>SellsideMainManager__c</name>
+        <relationshipLabel><!-- Opportunities (Sell-Side Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Automatically turned on when a deal in Top Meeting through DD stage has had no stage change or activity update for 30 days (recalculated daily; do not edit manually).</help>
+        <label>Stalled Deal</label>
+        <name>Stalled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- この項目に入力すると譲渡案件に紐づいた活動が同時作成されます --></help>
+        <label>Title</label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label>Sector(TDB)</label>
+        <name>TDBMajorClassification__c</name>
+        <picklistValues>
+            <masterLabel>サービス業(その他のサービス業)</masterLabel>
+            <translation>Services (Other Services)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(個人向けサービス業)</masterLabel>
+            <translation>Services (Personal Services)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(医療・介護・社会福祉)</masterLabel>
+            <translation>Services (Medical, Health Care and Welfare)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(各種賃貸業)</masterLabel>
+            <translation>Services (Rental and Leasing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(専門サービス業)</masterLabel>
+            <translation>Services (Professional Services)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(広告・ITソフトウェア・情報業)</masterLabel>
+            <translation>Services (Advertising, IT/Software and Information)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(教育・学校・塾)</masterLabel>
+            <translation>Services (Education, Schools and Cram Schools)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(旅館・宿泊業)</masterLabel>
+            <translation>Services (Inns and Lodging)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(映画・放送・娯楽業)</masterLabel>
+            <translation>Services (Film, Broadcasting, and Entertainment)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>サービス業(自動車整備・各種修理・駐車場)</masterLabel>
+            <translation>Services (Vehicle Maintenance, Repair and Parking)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業</masterLabel>
+            <translation>Real Estate</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>公務（他に分類されないもの）</masterLabel>
+            <translation>Government (Not Elsewhere Classified)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>分類不能の産業</masterLabel>
+            <translation>Unclassifiable Industries</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売・小売業・飲食店</masterLabel>
+            <translation>Wholesale, Retail Trade and Restaurants</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>建設業</masterLabel>
+            <translation>Construction</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>林業,狩猟業</masterLabel>
+            <translation>Forestry and Hunting</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>漁業</masterLabel>
+            <translation>Fisheries</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>製造業</masterLabel>
+            <translation>Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>農業</masterLabel>
+            <translation>Agriculture</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>運輸・通信業</masterLabel>
+            <translation>Transport and Communications</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>金融・保険業</masterLabel>
+            <translation>Finance and Insurance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>鉱業</masterLabel>
+            <translation>Mining</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>電気・ガス・水道・熱供給業</masterLabel>
+            <translation>Electricity, Gas, Water and Heat Supply</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Industry Group(TDB)</label>
+        <name>TDBMiddleClassification__c</name>
+        <picklistValues>
+            <masterLabel>がん具・娯楽用品小売業</masterLabel>
+            <translation>Toys and Amusement Goods Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他のサービス業</masterLabel>
+            <translation>Other Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の事業サービス業</masterLabel>
+            <translation>Other Business Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の修理業</masterLabel>
+            <translation>Other Repair Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の個人サービス業</masterLabel>
+            <translation>Other Personal Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の医療業</masterLabel>
+            <translation>Other Medical Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の広告業</masterLabel>
+            <translation>Other Advertising Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の情報サービス業</masterLabel>
+            <translation>Other Information Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の教育</masterLabel>
+            <translation>Other Education</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の物品賃貸業</masterLabel>
+            <translation>Other Goods Rental and Leasing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の社会保険・社会福祉</masterLabel>
+            <translation>Other Social Insurance and Welfare</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他の製造業</masterLabel>
+            <translation>Other Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他小売業</masterLabel>
+            <translation>Other Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>その他洗濯・理容・浴場業</masterLabel>
+            <translation>Other Laundry, Beauty and Bath Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>たばこ製造業</masterLabel>
+            <translation>Tobacco Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ガス業</masterLabel>
+            <translation>Gas Supply</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ゴム製品製造業</masterLabel>
+            <translation>Rubber Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>スポーツ・娯楽用品賃貸業</masterLabel>
+            <translation>Sporting and Amusement Goods Rental</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>スポーツ用品小売業</masterLabel>
+            <translation>Sporting Goods Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ソフトウェア(受託・パッケージ)業</masterLabel>
+            <translation>Software (Custom and Packaged)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ニュース供給業</masterLabel>
+            <translation>News Syndicates</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>バルブ・紙・紙加工品製造業</masterLabel>
+            <translation>Pulp, Paper and Paper Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>一般機械器具製造業</masterLabel>
+            <translation>General Machinery Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>一般診療所</masterLabel>
+            <translation>General Clinics</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業(不動産代理業・仲介業)</masterLabel>
+            <translation>Real Estate (Agency and Brokerage)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業(不動産管理業)</masterLabel>
+            <translation>Real Estate (Property Management)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業(不動産貸貸業)</masterLabel>
+            <translation>Real Estate (Leasing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業(建物売買業・土地売買業)</masterLabel>
+            <translation>Real Estate (Building and Land Sales)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>不動産業(貸家業・貸間業)</masterLabel>
+            <translation>Real Estate (House and Room Rental)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>中小商工・庶民・住宅等金融業</masterLabel>
+            <translation>Small Business, Consumer and Housing Finance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>事務用機械器具賃貸業</masterLabel>
+            <translation>Office Machinery Rental</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>二輪自動車・自転車小売業</masterLabel>
+            <translation>Motorcycle and Bicycle Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>代理商・仲立業</masterLabel>
+            <translation>Commercial Agents and Brokers</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>保険媒介代理業・保険サービス業</masterLabel>
+            <translation>Insurance Agency and Insurance Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>保険業</masterLabel>
+            <translation>Insurance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>保険衛生,廃棄物処理業</masterLabel>
+            <translation>Public Health and Waste Disposal Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>倉庫業</masterLabel>
+            <translation>Warehousing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>児童福祉事業</masterLabel>
+            <translation>Child Welfare Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>公認会計士事務所・税理士事務所</masterLabel>
+            <translation>CPA and Tax Accountant Offices</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>出版・印刷・同関連産業</masterLabel>
+            <translation>Publishing, Printing and Allied Industries</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>分類不能の産業</masterLabel>
+            <translation>Unclassifiable Industries</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>助産所</masterLabel>
+            <translation>Midwifery Clinics</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>化学工業</masterLabel>
+            <translation>Chemical Industry</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>医療に付帯するサービス業</masterLabel>
+            <translation>Services Incidental to Medical Care</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>医薬品・化粧品小売業</masterLabel>
+            <translation>Pharmaceutical and Cosmetics Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>協同組合(他に分類されないもの)</masterLabel>
+            <translation>Cooperative Associations (Not Elsewhere Classified)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(その他の卸売業)</masterLabel>
+            <translation>Wholesale Trade (Other)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(その他の各種商品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Other General Merchandise)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(ゴム・皮革・プラスチック製品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Rubber, Leather and Plastic Products)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(スポーツ・楽器・娯楽用品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Sporting Goods, Musical Instruments and Amusement Goods)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(一般機械器具卸売業)</masterLabel>
+            <translation>Wholesale Trade (General Machinery)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(中古自動車卸売業)</masterLabel>
+            <translation>Wholesale Trade (Used Motor Vehicles)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(化学製品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Chemical Products)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(各種商品卸売業(従業者が常時100人以上のもの))</masterLabel>
+            <translation>Wholesale Trade (General Merchandise, 100+ Employees)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(家具・じゅう器卸売業)</masterLabel>
+            <translation>Wholesale Trade (Furniture and Housewares)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(書籍・文房具卸売業)</masterLabel>
+            <translation>Wholesale Trade (Books and Stationery)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(木材・建築材料卸売業)</masterLabel>
+            <translation>Wholesale Trade (Lumber and Building Materials)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(燃料・鉱物卸売業)</masterLabel>
+            <translation>Wholesale Trade (Fuel and Minerals)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(糸・織物卸売業)</masterLabel>
+            <translation>Wholesale Trade (Yarn and Fabric)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(自動車卸売業(二輪自動車を含む))</masterLabel>
+            <translation>Wholesale Trade (Motor Vehicles, incl. Motorcycles)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(自動車部分品・付属品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Motor Vehicle Parts and Accessories)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(衣服・身の回り品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Apparel and Accessories)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(輸送用機械器具卸売業(自動車を除く))</masterLabel>
+            <translation>Wholesale Trade (Transportation Equipment, excl. Motor Vehicles)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(農業用機械器具・建設機械・鉱山機械卸売業)</masterLabel>
+            <translation>Wholesale Trade (Agricultural, Construction and Mining Machinery)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(金属スクラップ・一般くず卸売業)</masterLabel>
+            <translation>Wholesale Trade (Metal Scrap and Waste Materials)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(金物・荒物卸売業)</masterLabel>
+            <translation>Wholesale Trade (Hardware and Sundries)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(鉄鋼・非金属卸売業)</masterLabel>
+            <translation>Wholesale Trade (Steel and Non-Metallic Minerals)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(電気機械器具卸売業)</masterLabel>
+            <translation>Wholesale Trade (Electrical Machinery)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>卸売業(飲食料品卸売業)</masterLabel>
+            <translation>Wholesale Trade (Food and Beverages)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>各種商品小売業(その他)</masterLabel>
+            <translation>General Merchandise Retail (Other)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>各種商品小売業(スーパーストア業)</masterLabel>
+            <translation>General Merchandise Retail (Superstores)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>各種商品小売業(百貨店)</masterLabel>
+            <translation>General Merchandise Retail (Department Stores)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>各種物品賃貸業</masterLabel>
+            <translation>General Goods Rental and Leasing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>国家公務</masterLabel>
+            <translation>National Government Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>土木建築サービス業</masterLabel>
+            <translation>Civil Engineering and Architectural Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>地方公務</masterLabel>
+            <translation>Local Government Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>外国公務</masterLabel>
+            <translation>Foreign Government Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>娯楽業</masterLabel>
+            <translation>Amusement and Recreation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>学術研究機関</masterLabel>
+            <translation>Academic Research Institutions</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>宗教</masterLabel>
+            <translation>Religious Organizations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>宣伝物制作サービス業</masterLabel>
+            <translation>Advertising Production Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>家具・じゅう器・家庭用機械器具小売業</masterLabel>
+            <translation>Furniture, Household Utensils and Appliances Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>家具・装備品製造業</masterLabel>
+            <translation>Furniture and Fixtures Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>専修学校・各種学校(学習塾等)</masterLabel>
+            <translation>Specialized Training Colleges and Miscellaneous Schools (Cram Schools, etc.)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>専門サービス業(他に分類されないもの)</masterLabel>
+            <translation>Professional Services (Not Elsewhere Classified)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>幼稚園</masterLabel>
+            <translation>Kindergartens</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>広告代理業</masterLabel>
+            <translation>Advertising Agencies</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>建物サービス(ビルメンテナンス等)業</masterLabel>
+            <translation>Building Services (Building Maintenance, etc.)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>情報処理サービス業</masterLabel>
+            <translation>Information Processing Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>情報提供サービス業</masterLabel>
+            <translation>Information Provision Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>投資業</masterLabel>
+            <translation>Investment Business</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>放送業</masterLabel>
+            <translation>Broadcasting</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>政治・経済・文化団体</masterLabel>
+            <translation>Political, Economic and Cultural Organizations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>旅館</masterLabel>
+            <translation>Inns (Ryokan)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>映画・ビデオ制作業</masterLabel>
+            <translation>Motion Picture and Video Production</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>更生保護事業</masterLabel>
+            <translation>Offender Rehabilitation Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>書籍・文房具小売業(新聞販売店を含む)</masterLabel>
+            <translation>Books and Stationery Retail (incl. Newspaper Dealers)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>木材・木製品製造業</masterLabel>
+            <translation>Wood and Wood Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>林業</masterLabel>
+            <translation>Forestry</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>楽器小売業</masterLabel>
+            <translation>Musical Instruments Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>機械修理業</masterLabel>
+            <translation>Machinery Repair</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>機械設計業・技術提供業</masterLabel>
+            <translation>Machine Design and Engineering Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>武器製造業</masterLabel>
+            <translation>Weapons Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>歯科技工所</masterLabel>
+            <translation>Dental Laboratories</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>歯科診療所</masterLabel>
+            <translation>Dental Clinics</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>民営職業紹介業</masterLabel>
+            <translation>Private Employment Placement Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>民間の調査・情報機関</masterLabel>
+            <translation>Private Research and Information Institutions</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>水産養殖業</masterLabel>
+            <translation>Aquaculture</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>水運業</masterLabel>
+            <translation>Water Transport</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>水道業</masterLabel>
+            <translation>Water Supply</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>漁業</masterLabel>
+            <translation>Fisheries</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>火葬・墓地管理業・葬儀業</masterLabel>
+            <translation>Crematory, Cemetery Management and Funeral Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>熱供給業</masterLabel>
+            <translation>Heat Supply</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>燃料小売業</masterLabel>
+            <translation>Fuel Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>狩猟業</masterLabel>
+            <translation>Hunting</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>理容業・美容業</masterLabel>
+            <translation>Barber and Beauty Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>産業用機械器具賃貸業</masterLabel>
+            <translation>Industrial Machinery Rental</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>病院</masterLabel>
+            <translation>Hospitals</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>療術業</masterLabel>
+            <translation>Therapeutic Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>皮革・同製品・毛皮製造業</masterLabel>
+            <translation>Leather, Leather Products and Fur Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>石油製品・石炭製品製造業</masterLabel>
+            <translation>Petroleum and Coal Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>石炭・亜炭鉱業</masterLabel>
+            <translation>Coal and Lignite Mining</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>社会保険,社会福祉</masterLabel>
+            <translation>Social Insurance and Social Welfare</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>社会保険事業団体</masterLabel>
+            <translation>Social Insurance Organizations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>福祉事務所</masterLabel>
+            <translation>Welfare Offices</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>窯業・土石製品製造業</masterLabel>
+            <translation>Ceramic, Stone and Clay Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>簡易宿所・その他の宿泊所</masterLabel>
+            <translation>Simple Lodging and Other Accommodations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>精密機械・医療機械器具製造業</masterLabel>
+            <translation>Precision and Medical Instruments Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(しゅんせつ工事業)</masterLabel>
+            <translation>General Construction (Dredging)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(一般土木建築工事業)</masterLabel>
+            <translation>General Construction (Civil Engineering and Building)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(土木工事業)</masterLabel>
+            <translation>General Construction (Civil Engineering)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(建築工事業(木造建築工事業を除く))</masterLabel>
+            <translation>General Construction (Building, excl. Wooden Buildings)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(木造建築工事業)</masterLabel>
+            <translation>General Construction (Wooden Building Construction)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>総合工事業(舗装工事業)</masterLabel>
+            <translation>General Construction (Paving)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>繊維工業(衣服,その他の繊維製品を除く)</masterLabel>
+            <translation>Textile Mills (Except Apparel and Other Textile Products)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>織物・衣服・身の回り品小売業</masterLabel>
+            <translation>Textile, Apparel and Accessories Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>老人福祉事業</masterLabel>
+            <translation>Elderly Welfare Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(その他の職別工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Other)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(とび・土工・コンクリート工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Scaffolding, Earthwork and Concrete)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(塗装工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Painting)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(大工工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Carpentry)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(屋根工事業(金属製屋根工事業を除く))</masterLabel>
+            <translation>Specialty Trade Construction (Roofing, excl. Metal Roofing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(左官工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Plastering)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(床および内装工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Flooring and Interior Finishing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(板金・金物工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Sheet Metal and Hardware)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(石工・れんが・タイル・ブロック工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Masonry, Brick, Tile and Block)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>職別工事業(鉄骨・鉄筋工事業)</masterLabel>
+            <translation>Specialty Trade Construction (Steel Frame and Reinforcing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>自動車小売業</masterLabel>
+            <translation>Automobile Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>自動車整備業</masterLabel>
+            <translation>Automobile Maintenance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>自動車賃貸業</masterLabel>
+            <translation>Automobile Rental</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>航空運輸業</masterLabel>
+            <translation>Air Transport</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>花・植木小売業</masterLabel>
+            <translation>Flowers and Plants Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>衣服・その他の繊維製品製造業</masterLabel>
+            <translation>Apparel and Other Textile Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>補助的金融業・金融付帯業</masterLabel>
+            <translation>Auxiliary Financial Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>設備工事業(さく井工事業)</masterLabel>
+            <translation>Equipment Installation (Well Drilling)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>設備工事業(その他の設備工事業)</masterLabel>
+            <translation>Equipment Installation (Other)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>設備工事業(管工事業)</masterLabel>
+            <translation>Equipment Installation (Plumbing)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>設備工事業(電気工事業)</masterLabel>
+            <translation>Facilities Construction (Electrical)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>設備工事業(電気通信・信号装置工事業)</masterLabel>
+            <translation>Equipment Installation (Telecommunications and Signal Equipment)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>証券業・商品先物取引業</masterLabel>
+            <translation>Securities and Commodity Futures Trading</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>輸送用機械器具製造業</masterLabel>
+            <translation>Transportation Equipment Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>農林水産金融業</masterLabel>
+            <translation>Agriculture, Forestry and Fisheries Finance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>農業(農業サービス業を除く)</masterLabel>
+            <translation>Agriculture (excl. Agricultural Services)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>農業サービス業</masterLabel>
+            <translation>Agricultural Services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>運輸に付帯するサービス業</masterLabel>
+            <translation>Services Incidental to Transportation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>道路旅客運送業</masterLabel>
+            <translation>Road Passenger Transport</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>道路貨物運送業</masterLabel>
+            <translation>Road Freight Transport</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>郵便業・電気通信業</masterLabel>
+            <translation>Postal and Telecommunications</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>金属製品製造業</masterLabel>
+            <translation>Fabricated Metal Products Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>金属鉱業</masterLabel>
+            <translation>Metal Mining</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>鉄道業</masterLabel>
+            <translation>Railways</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>鉄鋼業・非鉄金属製造業</masterLabel>
+            <translation>Iron/Steel and Non-Ferrous Metal Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>銀行・信託業</masterLabel>
+            <translation>Banking and Trust</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>障害者福祉事業</masterLabel>
+            <translation>Welfare Services for the Disabled</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>電気業</masterLabel>
+            <translation>Electric Power</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>電気機械器具製造業</masterLabel>
+            <translation>Electrical Machinery Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>非金属工業</masterLabel>
+            <translation>Non-Metallic Mineral Mining</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>食料品・飼料・飲料製造業</masterLabel>
+            <translation>Food, Feed and Beverage Manufacturing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>飲食店</masterLabel>
+            <translation>Restaurants</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>飲食料品小売業</masterLabel>
+            <translation>Food and Beverage Retail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>駐車場業</masterLabel>
+            <translation>Parking Lots</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Sub-Category(TDB)</label>
+        <name>TDBSubCategory__c</name>
+    </fields>
+    <fields>
+        <label>Detailed Category(TDB)</label>
+        <name>TDBSubclassification__c</name>
+    </fields>
+    <fields>
+        <label>Team</label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <help><!-- GoogleDriveまたはBOXの[共有]ボタンから共有用URLを挿入してください。
+(※BOXの場合: 共有の有効期限を解除([リンク設定]&gt; [リンクの有効期限]&gt; [チェックを外す]) --></help>
+        <label><!-- Teaser URL --></label>
+        <name>TeaserURL__c</name>
+    </fields>
+    <fields>
+        <label>Total Assets, Latest FY(JPY K)</label>
+        <name>TotalAsset__c</name>
+    </fields>
+    <fields>
+        <label>Update Shareholder Registry</label>
+        <name>UpdateShareholderRegistry__c</name>
+    </fields>
+    <fields>
+        <label>User&apos;s Team</label>
+        <name>UserTeam__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash --></label>
+        <name>Valuation_Cash__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valuation Date --></label>
+        <name>Valuation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Debt --></label>
+        <name>Valuation_Debt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depreciation --></label>
+        <name>Valuation_Depreciation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equity --></label>
+        <name>Valuation_Equity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year End --></label>
+        <name>Valuation_FiscalYearEnd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valuation Methods --></label>
+        <name>Valuation_Methods__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profit After Tax --></label>
+        <name>Valuation_PAT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profit Before Tax --></label>
+        <name>Valuation_PBT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue --></label>
+        <name>Valuation_Revenue__c</name>
+    </fields>
+    <fields>
+        <label>Verify Wire Transfer/Payment</label>
+        <name>VerifyWireTransferPayment__c</name>
+    </fields>
+    <fields>
+        <label>Appointment from Toss Up</label>
+        <name>appointment_from_tossup__c</name>
+    </fields>
+    <fields>
+        <label>Opportunity Originator</label>
+        <name>opportunity_acquirer__c</name>
+        <relationshipLabel><!-- Opportunities (Opportunity Originator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Probability-Adjusted Revenue(M)</label>
+        <name>predictiveAmount__c</name>
+    </fields>
+    <fields>
+        <label>Drop Reason</label>
+        <name>termination_reason__c</name>
+    </fields>
+    <fields>
+        <label>Toss Up(TU)</label>
+        <name>tossup__c</name>
+    </fields>
+    <recordTypes>
+        <label>Buy-Side Project</label>
+        <name>BuyingOpp</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sourcing --></label>
+        <name>CB_Sourcing_Path</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Domestic Project</label>
+        <name>SellingOpp</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Project --></label>
+        <name>XBorderType</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>If Long-Term Follow-up applies, please enter the reason and method.</errorMessage>
+        <name>LongTermFollow</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>If pending, please enter the reason.</errorMessage>
+        <name>PendingValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>When changing the Stage, please leave an activity record.</errorMessage>
+        <name>Required_ActivitiesByStage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please check all items in the [Final Confirmation] checklist.</errorMessage>
+        <name>Required_CheckFieldsWhenSuccess</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the FS using the [Upload Files] button, or fill in all fields under [Financial Info].</errorMessage>
+        <name>Required_FS</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the IM using the [Upload Files] button.</errorMessage>
+        <name>Required_IM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please create the needs record in the [M&amp;A Needs] object, then select it from the [M&amp;A Needs] field on the [Project] object.</errorMessage>
+        <name>Required_MANeeds</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the LOI and MOU using the [Upload Files] button.</errorMessage>
+        <name>Required_MOU_LOI</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please give the project a PJ name (e.g., PJ XXXX).</errorMessage>
+        <name>Required_NameBeginPJ</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>The [On-Hold Reason] field is required.</errorMessage>
+        <name>Required_OnHoldReason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the Top Meeting Agenda and Q&amp;A Sheets using the [Upload Files] button.</errorMessage>
+        <name>Required_PreTopMTG</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the SPA using the [Upload Files] button.</errorMessage>
+        <name>Required_SPA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>For domestic projects, please upload the Teaser using the [Upload Files] button. For CB (cross-border) projects, in addition to the Teaser, please change the Stage of the Buyer being matched to [Teaser Shared].</errorMessage>
+        <name>Required_Teaser_MatchingStage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Top Meeting Date is required to change the stage. --></errorMessage>
+        <name>Required_TopMeetingDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Toss Up Date is required to change the stage. --></errorMessage>
+        <name>Required_TossUpDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please upload the Valuation Excel Sheets using the [Upload Files] button, and fill in all fields under [Valuation Info].</errorMessage>
+        <name>Required_Valuation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Valuation Date is required to change the stage. --></errorMessage>
+        <name>Required_ValuationDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please insert the sharing URL using the [Share] button in Google Drive or Box.
+(For Box: remove the share expiration date via [Link Settings] &gt; [Link Expiration] &gt; uncheck the box.)</errorMessage>
+        <name>SellADContract_URL</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please insert the sharing URL using the [Share] button in Google Drive or Box.
+(For Box: remove the share expiration date via [Link Settings] &gt; [Link Expiration] &gt; uncheck the box.)</errorMessage>
+        <name>SharingURL</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>The Website field on the source Account is empty. If there is none, enter None.</errorMessage>
+        <name>required_website</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please enter at least 100 characters for the Drop Reason.</errorMessage>
+        <name>termination_reason_length</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>The Drop Reason is required.</errorMessage>
+        <name>termination_reason_required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Send_to_Slack --></label>
+        <name>slackv2__Send_to_Slack</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Slack_Alerts --></label>
+        <name>slackv2__Slack_Alerts</name>
+    </webLinks>
+</CustomObjectTranslation>

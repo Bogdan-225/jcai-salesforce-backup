@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_required</fullName>
+    <active>true</active>
+    <description>[フェーズ]が選択されているとき[ステータス]を必須にする</description>
+    <errorConditionFormula>AND(
+    RecordType.Name = &apos;国内案件&apos;,
+    AND(
+        NOT(ISPICKVAL( phase_match__c , &apos;&apos;)), 
+        ISPICKVAL( status__c , &apos;&apos;)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>status__c</errorDisplayField>
+    <errorMessage>フェーズに応じたステータスを選択してください</errorMessage>
+</ValidationRule>

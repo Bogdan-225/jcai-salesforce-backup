@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2602_10_608hbe6</fullName>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>TDBLocation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>domestic_is_memo__c</field>
+        <operation>equals</operation>
+        <value>飲食料品卸売業_畜産・穀物_2602</value>
+    </filters>
+    <filters>
+        <field>SellCallNGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>渡辺リスト2602_飲食料品卸売業_畜産・穀物_10-60億</label>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field2__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>過去の取引実績から当社から出禁または要注意先の取引先として認定された場合にチェックを入れる。通常事業責任者の承認を得て要注意先とすること。</description>
+    <label>要注意先</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

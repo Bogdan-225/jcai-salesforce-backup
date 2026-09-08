@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AD__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>「9月上旬」というようにおおまかなAD契約時期を記入</inlineHelpText>
+    <label>売AD契約時期</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

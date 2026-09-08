@@ -1,0 +1,904 @@
+[
+  {
+    "name": "OpenDART (Open Data Analysis, Retrieval and Transfer System)",
+    "operator": "Financial Supervisory Service (금융감독원, FSS) — Korea",
+    "country": "South Korea",
+    "website": "https://opendart.fss.or.kr/",
+    "docs_url": "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS001",
+    "region_main": "South Korea (all DART filers: KOSPI, KOSDAQ, KONEX + non-listed public filers)",
+    "region_surroundings": "None — Korea-domiciled filers only. Korean subsidiaries of foreign groups appear if they are DART filers.",
+    "plans": [
+      {
+        "plan": "Free (only plan)",
+        "price": "Free (CONFIRMED — no paid tier exists; registration required)",
+        "what_you_get": "CONFIRMED: full access to all 6 API groups — DS001 공시정보 (disclosure info), DS002 정기보고서 주요정보, DS003 정기보고서 재무정보, DS004 지분공시 종합정보, DS005 주요사항보고서 주요정보, DS006 증권신고서 주요정보. NOTE: the research brief mapped DS005 to 지분공시 — that is wrong. CONFIRMED from the site: DS004 = 지분공시 종합정보 (shareholding), DS005 = 주요사항보고서 주요정보 (material event reports, where the M&A decisions live)."
+      }
+    ],
+    "api_access": "CONFIRMED official REST API, no OAuth — a 40-character crtfc_key query parameter. Endpoints return .json or .xml (e.g. https://opendart.fss.or.kr/api/list.json). CONFIRMED key issuance via login + '인증키 신청/관리'; corporate applicants must supply company name, business registration number, contact, homepage and the REQUESTING SYSTEM IP + business registration certificate (Terms Art.7(1)). CONFIRMED Terms Art.19(5): '회원은 ID 및 인증키를 2개 이상 발급 받을 수 없습니다' — one member may hold only ONE key, so you cannot shard load across keys. CONFIRMED Terms Art.10(4): call volume is capped and the cap is posted on the site. CONFIRMED from the 공시검색 spec, error code 020 = '일반적으로는 20,000건 이상의 요청에 대하여 이 에러 메시지가 발생' — i.e. the widely-cited 20,000 calls/day cap is CONFIRMED as an error-message threshold, though the number is not stated as a headline 'daily limit' anywhere we could fetch. CONFIRMED page_count max = 100 records/page (default 10). CONFIRMED: without corp_code the search window is limited to 3 months per query ('고유번호가 없는 경우 검색기간은 3개월로 제한'). Language of data: Korean only (field names romanised, values Korean).",
+    "archive_window": "INFERRED: DART itself holds filings from 1999 onward and the list API accepts arbitrary bgn_de/end_de, so ~1999-present is retrievable via API by paging in <=3-month windows (or per corp_code). The structured DS005 M&A-decision APIs are INFERRED to start around 2015-2016 (they parse a report format introduced later); earliest date is NOT stated in the docs we could fetch. Retention: permanent (statutory disclosure archive).",
+    "data_types": "M&A-relevant, all CONFIRMED as named DS005 endpoints: 회사합병 결정 (merger decision, apiId 2020050), 회사분할 결정 (spin-off, 2020051), 회사분할합병 결정 (split-merger, 2020052), 주식교환·이전 결정 (share exchange/transfer, 2020053), 영업양수 결정 / 영업양도 결정 (business acquisition/transfer, 2020042/2020043), 타법인 주식 및 출자증권 양수결정 / 양도결정 (acquisition/disposal of shares in another company — the single most useful endpoint for subsidiary acquisitions, 2020046/2020047), 자산양수도(기타)·풋백옵션 (2020018). DS005 has 36 endpoints in total. DS004 (CONFIRMED): 대량보유 상황보고 (5% major-shareholding reports, 2019021) and 임원·주요주주 소유보고 (officer/major-shareholder ownership, 2019022) — the Korean equivalent of a 13D/大量保有報告書 feed, ideal for detecting stake building. DS001 (CONFIRMED): 공시검색 (disclosure search by type/company/date), 기업개황 (company profile master data), 공시서류원본파일 (original filing ZIP/XML), 고유번호 (bulk corp_code <-> company name <-> stock code mapping file — the master-data seed). Company master data: CONFIRMED via 기업개황 + 고유번호. Tender offers (공개매수신고서) sit in DS006 증권신고서 group / are findable via 공시검색 by report type (INFERRED for the exact endpoint).",
+    "formats": "JSON and XML for structured APIs (CONFIRMED); original filings as ZIP containing XML/XBRL via 공시서류원본파일 (CONFIRMED); 고유번호 delivered as a ZIP'd XML file (CONFIRMED).",
+    "update_frequency": "Real-time to near-real-time — filings appear as accepted by DART during the disclosure day (INFERRED; DART accepts filings continuously on business days).",
+    "limitations": "Korean-language values only — you must maintain a Korean->Japanese/English mapping layer. Single API key per member (no sharding) and the corporate application ties the key to a registered source IP, so egress IPs must be static — this is the biggest architectural constraint. 3-month window cap on undirected date searches forces a paging strategy. The structured DS005/DS004 endpoints only cover reports filed in the machine-readable era; older deals need the raw-document API plus parsing. Terms do not explicitly grant or forbid redistribution (Art.16 only asserts FSS copyright) — get legal sign-off before republishing content to clients.",
+    "ma_relevance": "Highest of any free source in Asia. It is the only jurisdiction in the region where merger decisions, share-acquisition decisions, business transfers and 5% stake reports are all available as clean structured JSON from an official regulator, for free.",
+    "implementation_notes": "Effort: LOW-MEDIUM. Recommended build: (1) nightly refresh of 고유번호 into a company master table keyed on corp_code; (2) daily incremental poll of DS001 공시검색 for the previous day across all filers to get the filing index (rcept_no); (3) for each rcept_no whose report type matches an M&A pattern, call the matching DS005/DS004 structured endpoint to get typed fields; (4) fall back to 공시서류원본파일 + XML parsing only for report types with no structured endpoint. Budget well under 20,000 calls/day with this design. Register the key as a corporate account early — the IP registration step is the long lead time.",
+    "confidence": "high",
+    "sources": [
+      "https://opendart.fss.or.kr/intro/main.do",
+      "https://opendart.fss.or.kr/intro/terms.do",
+      "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS001",
+      "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS004",
+      "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS005",
+      "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS001&apiId=2019001",
+      "https://dart.fss.or.kr/"
+    ]
+  },
+  {
+    "name": "KIND (Korea Investor's Network for Disclosure System) + KRX Information Data System",
+    "operator": "Korea Exchange (KRX)",
+    "country": "South Korea",
+    "website": "https://kind.krx.co.kr/",
+    "docs_url": "https://engkind.krx.co.kr/ (English mirror); http://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "region_main": "South Korea — KOSPI / KOSDAQ / KONEX listed companies",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "KIND web + RSS + Excel export",
+        "price": "Free (CONFIRMED — open website, no login for disclosure search)",
+        "what_you_get": "CONFIRMED: today's disclosures, search by company, integrated search, detailed search; corporate governance reports, ESG grades, listed-company lists, share issuance history, IR calendars, dividend info. CONFIRMED presence of an 'Excel' export button and an RSS feed with a 'copy RSS URL' function."
+      },
+      {
+        "plan": "KRX Information Data System — 데이터 상품 (data products)",
+        "price": "Paid; prices NOT published on the site (INFERRED — quote-based commercial licensing). No KRW figure could be CONFIRMED.",
+        "what_you_get": "CONFIRMED the site markets 정형 데이터 (structured) and 비정형 데이터 (unstructured) data products, plus analysis reports. CONFIRMED an 'OPEN API 사이트로 이동' link to openapi.krx.co.kr exists; that site rendered only its title via server-side fetch, so its endpoint list, key process and rate limits are UNCONFIRMED."
+      }
+    ],
+    "api_access": "No official disclosure API on KIND (CONFIRMED — no API or bulk-download affordance found). CONFIRMED an RSS feed exists, which is the cheapest legitimate incremental feed. Search is driven by .do endpoints (CONFIRMED paths: /disclosure/todaydisclosure.do, /disclosure/searchdisclosurebycorp.do, /disclosure/details.do) — these are server-rendered form posts, scrapeable but undocumented. A separate KRX Open API exists at openapi.krx.co.kr (CONFIRMED it is linked; contents UNCONFIRMED) and is INFERRED to cover market/price/index data rather than disclosures. Language: Korean, with an English mirror at engkind.krx.co.kr (CONFIRMED).",
+    "archive_window": "INFERRED: KIND holds KRX-listing disclosures from roughly 2000s onward; the daily view is filterable to today and the last 5 business days (CONFIRMED). Earliest date not stated.",
+    "data_types": "Exchange-rule disclosures (자율공시/수시공시) which OVERLAP heavily with DART but arrive via a different route and include KRX-specific items: 타법인주식 취득/처분, 합병 등 종료보고, 최대주주 변경 (change of largest shareholder), 경영권 변동 (change of control), 주권 관련 사채 issuance. Company master data: listed-company list with ticker, market, sector, listing date, capital (CONFIRMED). ESG grades and corporate-governance reports are a useful bonus for target screening.",
+    "formats": "HTML, Excel (.xls) export, RSS/XML (CONFIRMED). Attached documents are PDF/HWP (INFERRED).",
+    "update_frequency": "Real-time during the trading day; 'today's disclosure' page refreshes continuously (INFERRED).",
+    "limitations": "No API — scraping or RSS only, so brittle to page changes. Korean-first; the English mirror is a subset (INFERRED). Heavy overlap with OpenDART means KIND is best treated as a secondary/confirmatory feed, not a primary one. Check KRX terms of use before systematic scraping.",
+    "ma_relevance": "Medium. Useful as (a) a low-latency RSS trigger and (b) the source for 최대주주 변경 / change-of-control items that are easier to spot in KRX's own taxonomy than in DART's. Also the cleanest free source of the KRX listed-company master list.",
+    "implementation_notes": "Effort: LOW for the RSS trigger, MEDIUM if you scrape the .do search pages. Recommended: subscribe to the KIND RSS as a real-time tripwire, then resolve each item to its DART rcept_no and pull structured data from OpenDART. Do not build KIND scraping as the primary pipeline.",
+    "confidence": "medium",
+    "sources": [
+      "https://kind.krx.co.kr/disclosure/todaydisclosure.do?method=searchTodayDisclosureMain",
+      "http://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+      "https://openapi.krx.co.kr/"
+    ]
+  },
+  {
+    "name": "data.go.kr (Korea Public Data Portal) — FSC / KSD securities datasets",
+    "operator": "Ministry of the Interior and Safety (portal); data owned by 금융위원회 (FSC) and 한국예탁결제원 (Korea Securities Depository)",
+    "country": "South Korea",
+    "website": "https://www.data.go.kr/",
+    "docs_url": "https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15043423",
+    "region_main": "South Korea",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free — 개발계정 (development account)",
+        "price": "무료 / Free (CONFIRMED)",
+        "what_you_get": "CONFIRMED for the 금융위원회_주식발행정보 API: 10,000 requests/day. Four query functions — basic info, issuance history, mandatory lock-up share return details, and current issuance status. Fields include par value, shares issued, listing date, issuance date and reason, protected-share registration."
+      },
+      {
+        "plan": "Free — 운영계정 (production account)",
+        "price": "Free (CONFIRMED); quota raised on submission of a usage case",
+        "what_you_get": "CONFIRMED: daily traffic expandable beyond 10,000 upon review of the stated use case."
+      }
+    ],
+    "api_access": "CONFIRMED official REST API, JSON + XML, API key issued after portal membership registration and per-dataset '활용신청' (usage application); portal distinguishes project keys from personal keys. Language: Korean.",
+    "archive_window": "UNCONFIRMED. Data is a current-state + history view of share issuance; earliest date not stated on the dataset page.",
+    "data_types": "Share issuance and capital-structure master data (par value, shares outstanding, listing/issuance dates and reasons, lock-up shares). This is capital-structure master data rather than deal announcements — valuable for computing stakes and deal sizes, and for reconciling shares outstanding. Other FSC/KSD/DART-derived datasets exist on the portal (INFERRED — the portal is searchable by keyword; we could not enumerate them without WebSearch).",
+    "formats": "JSON, XML (REST) (CONFIRMED)",
+    "update_frequency": "CONFIRMED: once daily, posted on business day +1 in the afternoon, with holiday adjustments.",
+    "limitations": "CRITICAL COMMERCIAL RESTRICTION (CONFIRMED): licensed under KOGL Type 2 (공공저작물 제2유형) — attribution required and COMMERCIAL USE IS PROHIBITED. Any commercial use requires a separate information-use agreement with 한국예탁결제원 (KSD), the underlying data owner. For an M&A advisory firm this is a genuine blocker; treat as internal-reference only until KSD is contracted. Korean-language only. Data is T+1, not real-time. Legal/licensing sign-off by qualified counsel is advised before any client-facing use.",
+    "ma_relevance": "Low-Medium directly (no deal announcements), but Medium-High as a supporting dataset for stake-percentage and deal-value computation — subject to the KOGL Type 2 commercial-use bar.",
+    "implementation_notes": "Effort: LOW technically. Register a portal account, apply per dataset, poll daily. BEFORE building: resolve the KOGL Type 2 commercial-use restriction. If a KSD agreement is not feasible, prefer OpenDART (whose terms are less restrictive) for the same share-count information.",
+    "confidence": "high (for the one dataset confirmed); medium for the portal's broader DART/FSS dataset inventory, which we could not enumerate without search",
+    "sources": [
+      "https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15043423",
+      "https://www.data.go.kr/"
+    ]
+  },
+  {
+    "name": "KFTC Business Combination Review — press releases + data.go.kr statistics APIs",
+    "operator": "Korea Fair Trade Commission (공정거래위원회, KFTC); statistics mirrored on data.go.kr",
+    "country": "South Korea",
+    "website": "https://www.ftc.go.kr/",
+    "docs_url": "https://www.data.go.kr/data/15159628/openapi.do",
+    "region_main": "South Korea",
+    "region_surroundings": "Northeast Asia — captures any combination meeting KFTC notification thresholds, including foreign-to-foreign deals with sufficient Korea-nexus revenue/assets",
+    "plans": [
+      {
+        "plan": "KFTC 보도자료 press-release archive",
+        "price": "Free (CONFIRMED public archive)",
+        "what_you_get": "CONFIRMED: large paginated archive (hundreds of pages) with number, category (보도/참고), title, responsible department, registration date, and per-release downloadable attachments ('파일다운로드'/'문서뷰어'). A dedicated 기업결합-only filter URL was NOT isolated in this research."
+      },
+      {
+        "plan": "data.go.kr Open API — 4 KFTC business-combination datasets",
+        "price": "Free (CONFIRMED, listed 무료); API key required",
+        "what_you_get": "CONFIRMED 4 REST datasets, JSON+XML: 기업결합 연도별현황 (by year, id 15159628), 기업결합 형태별현황 (by type, 15159629), 기업결합 국적별현황 (by nationality, 15159631), 기업결합 수단별현황 (by method, 15159632). CONFIRMED '이용허락범위 제한 없음' (no usage restriction) and a 10,000 calls/day developer default."
+      }
+    ],
+    "api_access": "CONFIRMED an official free Open API exists (REST, JSON/XML, data.go.kr key auth, 10,000/day default) — but CONFIRMED it returns AGGREGATE STATISTICS ONLY (case counts and growth rates by year/half-year/nationality/method/type), with no party names or deal-level records. INFERRED no API exposes case-level detail; that lives only in the unstructured press-release archive with attachments, which has no API. Language: Korean.",
+    "archive_window": "UNCONFIRMED for both. KFTC has reviewed business combinations since 1980 under the MRFTA; press releases and statistics likely span many years but the earliest available year was not verified.",
+    "data_types": "API: counts and trend statistics only (CONFIRMED). Press releases: case titles and attachments that INFERRED name the parties and outcome (standard KFTC practice; not directly confirmed for a merger release in this pass). Transaction value is generally NOT disclosed by KFTC (INFERRED). Sector INFERRED sometimes present in titles.",
+    "formats": "API: JSON, XML (CONFIRMED). Press releases: HTML list + downloadable attachments; exact attachment format (HWP/PDF) UNCONFIRMED — expect HWP, which needs a converter.",
+    "update_frequency": "API: INFERRED semi-annual/annual, matching dataset granularity. Press releases: INFERRED rolling, per concluded review or as periodic batch summaries.",
+    "limitations": "The free API is trend data only — it cannot be used as a deal feed. Case-level access requires scraping a ~976-page general press-release archive and keyword-filtering for 기업결합; a merger-specific category URL was not found (a direct attempt returned 404). Korean only; HWP attachments are awkward to parse. Coverage limited to threshold-crossing deals.",
+    "ma_relevance": "Medium. The API is useful only for market-context statistics. The real deal-list value sits in the press-release archive but requires meaningful scraping and document-parsing effort.",
+    "implementation_notes": "Effort: LOW for the statistics API; MEDIUM-HIGH for case-level data. Recommended: integrate the 4 statistics APIs for market-trend dashboards (trivial), and DEFER case-level scraping — for Korean deal detection, OpenDART DS005 is far superior. If case-level KFTC data is wanted, first locate the business-combination division's press-release filter URL, then scrape titles/dates/attachments and parse attachments for party names and conditions.",
+    "confidence": "medium",
+    "sources": [
+      "https://www.ftc.go.kr/",
+      "https://www.ftc.go.kr/www/selectReportUserList.do?key=255",
+      "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EA%B8%B0%EC%97%85%EA%B2%B0%ED%95%A9",
+      "https://www.data.go.kr/data/15159628/openapi.do"
+    ]
+  },
+  {
+    "name": "TWSE OpenAPI (臺灣證券交易所 OpenAPI)",
+    "operator": "Taiwan Stock Exchange Corporation (TWSE)",
+    "country": "Taiwan",
+    "website": "https://openapi.twse.com.tw/",
+    "docs_url": "https://openapi.twse.com.tw/v1/swagger.json",
+    "region_main": "Taiwan — TWSE (上市) main-board listed companies",
+    "region_surroundings": "None (TPEx-listed companies require the separate TPEx OpenAPI)",
+    "plans": [
+      {
+        "plan": "Free, no registration",
+        "price": "Free (CONFIRMED — no security/apiKey scheme is defined anywhere in the OpenAPI spec; endpoints returned data on an anonymous request)",
+        "what_you_get": "CONFIRMED 54 endpoints total under base URL https://openapi.twse.com.tw/v1."
+      }
+    ],
+    "api_access": "CONFIRMED official REST API. Base URL https://openapi.twse.com.tw/v1 (CONFIRMED from the spec). CONFIRMED no auth: a plain GET to /opendata/t187ap04_L returned 61 records of 上市公司每日重大訊息 (daily material information) with fields 出表日期, 發言日期, 發言時間, 公司代號, 公司名稱, 主旨, 符合條款, 事實發生日. CONFIRMED no rate limit is declared in the spec (INFERRED there is an undocumented soft limit — be polite). Language: Traditional Chinese; dates use the Republic-of-China calendar (CONFIRMED: '1150903' = 2026-09-03, i.e. ROC year 115) — you MUST convert ROC->Gregorian in ETL.",
+    "archive_window": "CONFIRMED the material-information endpoint is a SAME-DAY SNAPSHOT ONLY — it returned only records with 出表日期 = the current date. There is no date parameter and no history via the API. History requires MOPS (see separate record). Retention via API: 1 day.",
+    "data_types": "M&A-relevant (CONFIRMED): /opendata/t187ap04_L = 上市公司每日重大訊息 — the daily material-information feed, whose 主旨 field carries merger, acquisition, asset-transfer, share-transfer and change-of-control announcements, tagged by 符合條款 (the triggering clause number of the material-information rules) plus 事實發生日 (event date). Company master / corporate data (CONFIRMED): /company/newlisting (recent listings), /company/applylistingLocal and /company/applylistingForeign (IPO applicants — a useful pre-IPO target pipeline), /opendata/t187ap45_L (dividends), /opendata/t187ap05_P (monthly revenue for all public companies — a good size/growth screen), /opendata/t187ap46_L_6 (ESG board composition), /opendata/t187ap46_L_18 (top-10 shareholder holdings and control). CONFIRMED there is NO dedicated 股權分散 (shareholding dispersion) endpoint in the spec.",
+    "formats": "JSON (CONFIRMED — the spec's endpoints return JSON arrays of flat objects). CSV is also offered by TWSE elsewhere on its site (INFERRED).",
+    "update_frequency": "Daily, business days — the material-information dataset is regenerated each day with 出表日期 set to that day (CONFIRMED).",
+    "limitations": "BIGGEST LIMITATION: no history — you must poll daily and accumulate, or you permanently lose the back-catalogue (backfill only via MOPS scraping). ROC calendar dates require conversion. Traditional Chinese only; 主旨 is free text, so deal-type classification needs NLP or a 符合條款 clause-code lookup table. 符合條款 codes are not documented in the spec (UNCONFIRMED meaning — build the code table from the material-information rules). Covers TWSE only; TPEx needs a second pipeline.",
+    "ma_relevance": "High for Taiwan. This is the single best free, auth-free, structured M&A announcement feed in Taiwan, and one of the easiest ETL integrations in the whole region.",
+    "implementation_notes": "Effort: LOW. Recommended: a cron job every business day (twice daily to be safe) that GETs /opendata/t187ap04_L, converts ROC dates, upserts on (公司代號 + 發言日期 + 發言時間 + 主旨 hash), and classifies 主旨 against an M&A keyword/clause-code list (併購, 合併, 收購, 取得或處分資產, 股權轉讓, 公開收購). START THIS FEED IMMEDIATELY even before the rest of the project — every day not collected is unrecoverable without scraping MOPS. Pair with the TPEx equivalent for full Taiwan coverage.",
+    "confidence": "high",
+    "sources": [
+      "https://openapi.twse.com.tw/",
+      "https://openapi.twse.com.tw/v1/swagger.json",
+      "https://openapi.twse.com.tw/v1/opendata/t187ap04_L"
+    ]
+  },
+  {
+    "name": "TPEx OpenAPI (證券櫃檯買賣中心 OpenAPI)",
+    "operator": "Taipei Exchange (TPEx / 櫃買中心)",
+    "country": "Taiwan",
+    "website": "https://www.tpex.org.tw/openapi/",
+    "docs_url": "https://www.tpex.org.tw/openapi/swagger.json",
+    "region_main": "Taiwan — TPEx (上櫃) companies, 興櫃 (emerging stock) companies, and 創櫃板 (GISA) start-ups",
+    "region_surroundings": "None (TWSE main board requires the separate TWSE OpenAPI)",
+    "plans": [
+      {
+        "plan": "Free, no registration",
+        "price": "Free (CONFIRMED — no auth scheme documented in the spec)",
+        "what_you_get": "CONFIRMED ~250+ endpoint paths under base URL https://www.tpex.org.tw/openapi/v1 — a materially larger surface than TWSE's 54."
+      }
+    ],
+    "api_access": "CONFIRMED official REST API, base URL https://www.tpex.org.tw/openapi/v1, no documented auth. Language: Traditional Chinese, ROC-calendar dates (INFERRED by analogy with TWSE — verify on first call). Rate limits: not documented (UNCONFIRMED).",
+    "archive_window": "INFERRED same-day snapshot semantics as TWSE for the daily datasets (i.e. no history). Not directly verified for TPEx. Treat as: poll daily and accumulate.",
+    "data_types": "M&A / announcements (CONFIRMED endpoint paths): /mopsfin_t187ap04_O = 上櫃公司每日重大訊息 (daily material information — the direct TPEx analogue of TWSE's t187ap04_L and the primary M&A feed); /tpex_trading_warning_information (注意股票, useful as a distress signal); /tpex_disposal_information (處置有價證券). Shareholding / control (CONFIRMED): /mopsfin_t187ap02_O = 持股逾 10% 大股東名單 (holders above 10% — directly useful for stake-change and control analysis); /mopsfin_t187ap11_O = 董monitor事持股餘額明細 (director/supervisor holdings balance); /mopsfin_t187ap09_O = 董事監察人股權設質 (pledged shares — a distress/financing signal). Company master data (CONFIRMED): /mopsfin_t187ap03_O = 上櫃股票基本資料; /mopsfin_t187ap03_R = 興櫃公司基本資料; /tpex_gisa_company = 創櫃板公司資料 (start-up board). Financing history (CONFIRMED): /tpex_gisa_financing_before, /tpex_gisa_financing_history, /tpex_gisa_financing_in_process — pre-listing financing records for GISA companies, an unusual and useful private-company signal.",
+    "formats": "JSON (INFERRED by analogy with TWSE and standard OpenAPI conventions; not directly fetched).",
+    "update_frequency": "Daily on business days (INFERRED).",
+    "limitations": "Same no-history constraint as TWSE (INFERRED). Traditional Chinese only. ROC dates (INFERRED). The spec is large (~250 paths) and endpoint names are opaque MOPS form codes (t187apNN), so mapping endpoints to business meaning takes an initial investment. Field-level schemas were not verified in this research. Note: TPEx covers the smaller-cap and emerging-board universe, which for a mid-market M&A advisory firm is arguably MORE relevant than TWSE's large caps.",
+    "ma_relevance": "High — and strategically the more interesting of the two Taiwanese feeds for mid-market advisory, because it covers 上櫃/興櫃/創櫃 small- and mid-caps plus pre-listing financing data.",
+    "implementation_notes": "Effort: LOW-MEDIUM. Recommended: build one shared Taiwan ingest module parameterised by exchange, hitting TWSE /opendata/t187ap04_L and TPEx /mopsfin_t187ap04_O daily. Then add /mopsfin_t187ap02_O (>10% holders) on a weekly cadence and diff it to detect stake changes — this gives you a free substantial-shareholder change detector. Verify JSON shape and date format on the first call rather than assuming TWSE parity.",
+    "confidence": "medium-high (endpoint paths and base URL confirmed from the spec; field schemas and date/format details inferred)",
+    "sources": [
+      "https://www.tpex.org.tw/openapi/",
+      "https://www.tpex.org.tw/openapi/swagger.json"
+    ]
+  },
+  {
+    "name": "MOPS 公開資訊觀測站 (Market Observation Post System)",
+    "operator": "Taiwan Stock Exchange (TWSE) on behalf of the FSC, covering both TWSE and TPEx issuers",
+    "country": "Taiwan",
+    "website": "https://mops.twse.com.tw/mops/web/index",
+    "docs_url": "None — no developer documentation exists (CONFIRMED: no API/docs affordance found)",
+    "region_main": "Taiwan — ALL public companies (上市 TWSE + 上櫃 TPEx + 興櫃 emerging + 公開發行 non-listed public companies)",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free web access",
+        "price": "Free (CONFIRMED — public site, no login)",
+        "what_you_get": "CONFIRMED: 當日重大訊息 (today's material information) and 歷史重大訊息 (historical material information) search, filterable by 全年度 (all years) down to specific month and day (1-31). Also the full statutory filing library (annual reports, financial statements, prospectuses, board resolutions)."
+      }
+    ],
+    "api_access": "NO official API (CONFIRMED). This is the authoritative Taiwanese filing archive but is accessible only through server-rendered forms. The material-information search page is at /mops/web/t05st01 (CONFIRMED — note the working host during this research was mopsov.twse.com.tw; mops.twse.com.tw is the canonical entry). CONFIRMED the page offers 列印網頁 (print), 開新視窗 (new window) and 問題回報 (report issue) buttons; NO CSV/Excel export was visible on the material-information page (other MOPS pages do offer CSV — INFERRED). Whether the search form is GET or POST could not be determined from the rendered content (UNCONFIRMED, but MOPS is historically POST-based with a 'step' parameter). Language: Traditional Chinese; a partial English MOPS exists (INFERRED).",
+    "archive_window": "CONFIRMED historical material-information search exists with an 'all years' option, so multi-year history is available via the website. Exact earliest year UNCONFIRMED (INFERRED: material information is available from roughly 2002-2005 onward; full filings from the late 1990s).",
+    "data_types": "Everything the OpenAPIs give, plus history and plus non-listed public companies. M&A-relevant filings: 重大訊息 on 合併 (merger), 收購 (acquisition), 取得或處分資產 (acquisition/disposal of assets — the Taiwanese equivalent of a material-transaction disclosure and the workhorse category for subsidiary acquisitions), 公開收購 (tender offer), 股份轉換 (share conversion), 分割 (spin-off), 關係人交易 (related-party transactions). Company master data: 基本資料 for every public company including capital, chairman, industry, address, auditor.",
+    "formats": "HTML tables; attached documents as PDF; some MOPS sub-pages offer CSV (INFERRED). XBRL financial statements are published on MOPS (INFERRED).",
+    "update_frequency": "Real-time on business days as filings are accepted (INFERRED).",
+    "limitations": "No API and no documentation — a scraper against POST forms with session/step state, which is the most fragile pattern in this whole research set. Traditional Chinese only. Historically MOPS has been rate-sensitive and has used ad-hoc anti-abuse measures (INFERRED). Check TWSE terms of use before systematic scraping. The site has recently been migrating hosts/URLs (evidenced by the mops/mopsov host split), so hard-coded URLs will break.",
+    "ma_relevance": "High for BACKFILL and for non-listed public companies, which the OpenAPIs do not cover. Not the right choice for the daily incremental feed.",
+    "implementation_notes": "Effort: HIGH. Recommended approach: do NOT make MOPS the primary pipeline. Use the TWSE/TPEx OpenAPIs for the daily incremental feed, and use MOPS only for (a) a one-time historical backfill of 歷史重大訊息 and (b) ad-hoc analyst lookups on specific targets. If backfilling, use a headless browser (Playwright) rather than raw HTTP because of the form/session state, throttle hard, and cache aggressively.",
+    "confidence": "medium",
+    "sources": [
+      "https://mops.twse.com.tw/mops/web/index",
+      "https://mopsov.twse.com.tw/mops/web/t05st01"
+    ]
+  },
+  {
+    "name": "GCIS 商工登記公示資料 / 商工行政資料開放平臺 (Taiwan company registry open data)",
+    "operator": "Ministry of Economic Affairs, Department of Commerce (經濟部商業發展署) — Taiwan",
+    "country": "Taiwan",
+    "website": "https://data.gcis.nat.gov.tw/",
+    "docs_url": "https://data.gcis.nat.gov.tw/od/rule (開放API指引); terms at https://data.gcis.nat.gov.tw/main/terms",
+    "region_main": "Taiwan — ALL registered companies and businesses, listed and private",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free open data",
+        "price": "Free (CONFIRMED — government open-data platform; a usage-authorisation clause exists per the site FAQ, details on the terms page which we could not read)",
+        "what_you_get": "CONFIRMED: 510 datasets and 60 APIs, covering 公司登記 (company registration) and 商業登記 (business registration) master data."
+      }
+    ],
+    "api_access": "CONFIRMED that open APIs exist (60 of them) with an '開放API指引' guide at /od/rule. API key requirement, base path, rate limits and formats were NOT stated on the pages we could read (UNCONFIRMED — the brief's /od/ path returned 404; the working root is https://data.gcis.nat.gov.tw/). INFERRED from the platform type: no key required, JSON/CSV over plain GET. Language: Traditional Chinese.",
+    "archive_window": "INFERRED: current-state registry snapshot plus registration dates going back to each company's incorporation; not an event archive. Earliest date UNCONFIRMED.",
+    "data_types": "Company master data: company name, 統一編號 (unified business number — the Taiwanese company identifier and the key you should adopt as your Taiwan primary key), registered address, paid-in capital, responsible person, business items, registration status (active/dissolved), and registration-change history (INFERRED for the change history). This is the source for PRIVATE Taiwanese company master data, which no exchange feed covers. Not a source of M&A announcements, though changes in 責任人/capital can be a weak change-of-control signal.",
+    "formats": "INFERRED JSON, CSV, XML (typical of Taiwan's open-data platform). UNCONFIRMED.",
+    "update_frequency": "UNCONFIRMED (INFERRED daily or monthly refresh).",
+    "limitations": "Documentation details unverified in this research — a follow-up pass on /od/rule and /main/terms is required before building. Traditional Chinese only. Registry data is a state snapshot, not a deal feed. Taiwan does not publish shareholder registers publicly, so beneficial ownership is NOT available here (INFERRED, but firmly so).",
+    "ma_relevance": "Medium-High as MASTER DATA — it is the only free, complete, official register of private Taiwanese companies, which is exactly the universe a mid-market M&A firm sources targets from. Low as a deal feed.",
+    "implementation_notes": "Effort: LOW-MEDIUM, pending doc verification. Recommended: fetch /od/rule to enumerate the 60 APIs, pick the 公司登記基本資料 dataset for a bulk load keyed on 統一編號, then use the change/status APIs for incremental refresh. Use 統一編號 as the join key to the TWSE/TPEx feeds (which key on 公司代號) via a name/UBN crosswalk. Verify the usage-authorisation terms with counsel before client-facing redistribution.",
+    "confidence": "medium (existence and scale confirmed; API mechanics unconfirmed)",
+    "sources": [
+      "https://data.gcis.nat.gov.tw/",
+      "https://data.gov.tw/"
+    ]
+  },
+  {
+    "name": "Taiwan FTC Administrative Decisions Database — combination-case decisions (結合案件決定)",
+    "operator": "Taiwan Fair Trade Commission (公平交易委員會, TFTC)",
+    "country": "Taiwan",
+    "website": "https://www.ftc.gov.tw",
+    "docs_url": "https://www.ftc.gov.tw/internet/main/decision/decisionList.aspx?mid=11",
+    "region_main": "Taiwan",
+    "region_surroundings": "Greater China / East Asia — captures combinations meeting TFTC notification thresholds, including foreign-to-foreign deals with a Taiwan nexus",
+    "plans": [
+      {
+        "plan": "Free public decision database",
+        "price": "Free (CONFIRMED — no paywall)",
+        "what_you_get": "CONFIRMED searchable database of all TFTC administrative decisions with a decision-type filter that includes 結合案件決定 (combination-case decisions) alongside 處分書 and 聯合行為許可決定; plus keyword search, decision-date range filter, and applicable-statute filter. CONFIRMED 5,840 records across 584 pages (10/page) at time of check. CONFIRMED each entry shows decision date, decision type, applicable statute, 案由 (case description) and a PDF link to the full decision."
+      }
+    ],
+    "api_access": "INFERRED no API and no bulk export — the decision-list page exposed only a browsable/filterable table with PDF links. NOTED but unexamined: a separate 資料開放(Open Data)專區 exists on the TFTC site at /internet/main/doc/docList.aspx?uid=1804 which may hold a ready-made structured dataset — worth a follow-up check before building a scraper. CONFIRMED a separate e-filing portal at mergers.ftc.gov.tw ('結合申報暨聯合行為申請線上填報系統') exists for parties SUBMITTING notifications; it is not confirmed to expose public case outcomes. Language: Traditional Chinese.",
+    "archive_window": "CONFIRMED: data exists from before 2004-12-31 (the page explicitly notes inclusion of pre-2004/12/31 gazette records) through at least August 2026 — i.e. 20+ years of history, essentially current.",
+    "data_types": "CONFIRMED structured fields: decision date, decision type (which separates combination cases from cartel and RPM cases), applicable statute, 案由 case summary. Party names are INFERRED to appear within the 案由/decision text (standard TFTC practice) rather than as a separate column. CONFIRMED a full-decision PDF is linked per entry. Transaction value and an explicit conditions/remedies field are NOT structured columns — INFERRED to be inside the PDF text.",
+    "formats": "HTML search results + PDF full decisions (CONFIRMED)",
+    "update_frequency": "INFERRED rolling/continuous as each decision issues (the most recent entries observed were August 2026).",
+    "limitations": "The database covers ALL TFTC decisions, not merger cases exclusively, so you must pin the correct decision-type filter value for 結合案件 or you will ingest unrelated antitrust matters. Traditional Chinese only. Deal value and remedies require PDF text extraction. Coverage limited to notification-threshold deals, so most mid-market Taiwanese M&A will NOT appear here.",
+    "ma_relevance": "High for large/regulated Taiwanese deals and for competitive-landscape research — 5,840+ decisions with 20+ years of history and full-text PDFs including remedies. Low for mid-market deal sourcing (threshold effect).",
+    "implementation_notes": "Effort: MEDIUM. Recommended: (0) first check the Open Data zone (uid=1804) for a structured export; (1) if none, scrape decisionList.aspx filtered to the combination-decision type on a weekly cadence; (2) download PDFs and run text extraction (regex + LLM) to pull party names, deal description and conditions; (3) join to the GCIS registry on company name to resolve entities. Treat as a research/benchmark dataset rather than a live deal feed.",
+    "confidence": "medium-high",
+    "sources": [
+      "https://www.ftc.gov.tw/",
+      "https://www.ftc.gov.tw/internet/main/decision/decisionList.aspx?mid=11",
+      "https://mergers.ftc.gov.tw"
+    ]
+  },
+  {
+    "name": "CNINFO 巨潮资讯网 (announcement search) + 深证信数据服务平台 WebAPI",
+    "operator": "Shenzhen Securities Information Co., Ltd. (深圳证券信息有限公司), a CSRC-designated disclosure website / SZSE subsidiary",
+    "country": "China (mainland)",
+    "website": "http://www.cninfo.com.cn/",
+    "docs_url": "http://webapi.cninfo.com.cn/ (paid data-service platform; API catalogue is behind a JS app and could not be enumerated server-side)",
+    "region_main": "Mainland China — SSE (沪), SZSE (深), BSE (北交所) listed companies; also carries HK-listed (港股) content",
+    "region_surroundings": "Hong Kong (partial, via 港股 section)",
+    "plans": [
+      {
+        "plan": "Free website + undocumented JSON endpoint",
+        "price": "Free (CONFIRMED — no login required to search announcements)",
+        "what_you_get": "CONFIRMED filters on the announcement search page for 上市地 (market: 深市/沪市/北交所/港股), 板块 (主板/创业板/科创板), 行业 (industry) and 发文机构 (issuing institution). Full-text announcement search with PDF downloads. The specific M&A category values (收购/重大资产重组/权益变动) were NOT visible in the server-rendered HTML (UNCONFIRMED) but are INFERRED to exist as 公告类别 options, as they are standard on CNINFO."
+      },
+      {
+        "plan": "webapi.cninfo.com.cn 数据服务 (paid)",
+        "price": "PAID — pricing NOT obtainable (CONFIRMED that the page is a JS shell returning only the title '深证信数据服务平台'; no tier or CNY price could be read). Treat all pricing as UNCONFIRMED.",
+        "what_you_get": "UNCONFIRMED. INFERRED: a credential-authenticated REST API over CNINFO's structured databases (announcements, financials, shareholders, corporate actions) sold on subscription/quota tiers to institutions."
+      }
+    ],
+    "api_access": "No official FREE API. The widely used route in open-source tooling is the UNOFFICIAL endpoint http://www.cninfo.com.cn/new/hisAnnouncement/query — CONFIRMED in this research that a GET request to it returns HTTP 500, which establishes that the endpoint EXISTS but requires POST with form-encoded parameters (pageNum, pageSize, column, tabName=fulltext, plate, seDate, searchkey, category, stock). This is the endpoint used by akshare and numerous GitHub scrapers. A second path, /smartNotice, was CONFIRMED visible on the page. No API key; requests typically need a browser-like User-Agent and Referer (INFERRED). Language: Simplified Chinese; an English 'For Overseas Clients' link exists (CONFIRMED) but its coverage is UNCONFIRMED.",
+    "archive_window": "UNCONFIRMED via the pages we could read. INFERRED: CNINFO holds announcements from the early 2000s (and some from the 1990s) to present; the hisAnnouncement endpoint accepts an arbitrary seDate range, so deep history is retrievable by paging. Retention: permanent.",
+    "data_types": "The most complete free Chinese disclosure corpus. M&A-relevant announcement types (INFERRED as category values, standard on CNINFO): 收购报告书 / 要约收购报告书 (tender offer), 重大资产重组 (major asset restructuring — the core Chinese M&A filing), 权益变动报告书 (簡式/详式 — the 5%/change-in-interest report, i.e. the Chinese 13D analogue), 关联交易 (related-party transactions), 对外投资/股权收购 (outbound investment / equity acquisition), 分立 (division), 吸收合并 (absorption merger). Company master data: 公司概况 with stock code, name, industry, registered address, legal representative, listing date.",
+    "formats": "HTML search UI; JSON from the undocumented endpoint; announcement documents as PDF (CONFIRMED that PDF conversion is part of the pipeline). Some financial data as XBRL (INFERRED).",
+    "update_frequency": "Real-time on trading days as announcements are released (INFERRED). CNINFO is a CSRC-designated disclosure venue, so filings appear at publication.",
+    "limitations": "The free route is an UNDOCUMENTED POST endpoint with no stability guarantee — parameter names and response shapes have changed historically and will change again; treat as fragile and monitor. Simplified Chinese only. CRITICAL for a Japanese firm: cross-border data transfer out of mainland China is regulated (PIPL / Data Security Law / CAC measures); bulk systematic extraction of Chinese data to Japanese infrastructure should be reviewed by qualified legal counsel before you build, and the site's own terms should be checked for anti-scraping provisions. Access latency and intermittent blocking from outside mainland China should be expected (INFERRED). No official free API means no SLA and no support channel. Paid webapi pricing is opaque — you must contact the vendor for a quote.",
+    "ma_relevance": "Very High in content terms — this is the single richest free source of Chinese M&A announcements. But it is the highest-risk source in this set on legal and engineering-stability grounds.",
+    "implementation_notes": "Effort: MEDIUM-HIGH. Recommended: (1) get legal clearance on cross-border transfer and scraping FIRST — do not build ahead of that; (2) prefer wrapping the maintained open-source library akshare (which already tracks the hisAnnouncement parameter drift) over hand-rolling the POST calls, so someone else absorbs the breakage; (3) POST to hisAnnouncement/query with seDate windows and category filters, persist the JSON index, and download PDFs lazily only for announcements that pass an M&A keyword filter; (4) if the firm needs a supported, contractual feed for China, request a quote from webapi.cninfo.com.cn rather than depending on the scrape. Add monitoring that alerts on schema change.",
+    "confidence": "medium",
+    "sources": [
+      "http://www.cninfo.com.cn/new/commonUrl?url=disclosure/list/notice",
+      "http://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=5&column=szse&tabName=fulltext&seDate=2026-09-01~2026-09-03",
+      "http://webapi.cninfo.com.cn/",
+      "http://www.cninfo.com.cn/"
+    ]
+  },
+  {
+    "name": "SSE and SZSE exchange disclosure sites (上海证券交易所 / 深圳证券交易所)",
+    "operator": "Shanghai Stock Exchange; Shenzhen Stock Exchange",
+    "country": "China (mainland)",
+    "website": "http://www.sse.com.cn/disclosure/listedinfo/announcement/ ; https://www.szse.cn/disclosure/listed/notice/index.html",
+    "docs_url": "None — no developer documentation (CONFIRMED: none found)",
+    "region_main": "Mainland China — SSE-listed and SZSE-listed companies respectively",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free web access",
+        "price": "Free (CONFIRMED — public sites, no login)",
+        "what_you_get": "CONFIRMED on SSE: a 披露 (disclosure) section containing 上市公司信息 and 融资融券信息, with date search and an automated PDF conversion pipeline for documents. Announcement categories, earliest date and the presence of an English site could NOT be confirmed from the server-rendered content (the pages are JS applications)."
+      }
+    ],
+    "api_access": "No official public API (CONFIRMED — none documented). Both exchanges drive their front-ends from internal JSON endpoints that open-source scrapers use: for SZSE, CONFIRMED that https://www.szse.cn/api/disc/announcement/annList EXISTS — a bare GET returned HTTP 500 rather than 404, establishing the route is live but requires POST/JSON body parameters (channelCode, pageSize, pageNum, seDateBegin/seDateEnd, bigCategoryId). For SSE, INFERRED the equivalent is under query.sse.com.cn (e.g. /security/stock/queryCompanyBulletin.do), which requires a Referer header of http://www.sse.com.cn — this is well known in the akshare codebase but was NOT verified here. SZSE's site also returned ECONNRESET on one attempt (CONFIRMED), indicating connection-level anti-bot or geo-sensitivity. Language: Simplified Chinese; both exchanges maintain partial English sites (INFERRED).",
+    "archive_window": "UNCONFIRMED. INFERRED: both exchanges hold announcements from roughly 2000 onward via their websites; the internal APIs typically accept arbitrary date ranges.",
+    "data_types": "Same statutory announcement universe as CNINFO but sourced from the exchange itself, plus exchange-specific items CNINFO indexes less cleanly: 问询函 / 关注函 (inquiry and concern letters, which frequently precede or follow restructurings and are an excellent early M&A signal), 重大资产重组 progress reports, 股票停复牌 (trading halts — in China a halt very often signals a pending major restructuring), 股权变动. Company master data: listed-company directories with code, name, industry, listing date, total/float shares.",
+    "formats": "HTML; JSON from internal endpoints; documents as PDF (CONFIRMED for SSE's PDF conversion).",
+    "update_frequency": "Real-time on trading days (INFERRED).",
+    "limitations": "Two separate undocumented scraping targets with different parameter conventions, both JS-driven and both showing anti-bot behaviour in this research (SZSE ECONNRESET, JS shells throughout). Redundant with CNINFO for the core announcement corpus, so the incremental value is narrow (inquiry letters, halts). Same mainland-China cross-border data transfer and scraping-legality concerns as CNINFO — legal review required. Simplified Chinese only.",
+    "ma_relevance": "Medium. Redundant with CNINFO for base announcements; genuinely additive for trading halts and inquiry letters as leading indicators of restructurings.",
+    "implementation_notes": "Effort: HIGH relative to payoff. Recommended: do NOT build these as primary pipelines. Use CNINFO (via akshare) as the single China announcement source, and add SSE/SZSE only later and only for the halt/inquiry-letter signals, again preferably through akshare's existing wrappers rather than direct calls. If you do call directly, set a browser User-Agent and the exchange's own Referer, and expect breakage.",
+    "confidence": "low-medium (endpoint existence confirmed for SZSE by HTTP behaviour; almost all content detail unconfirmed because the sites are JS-rendered)",
+    "sources": [
+      "http://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "https://www.szse.cn/disclosure/listed/notice/index.html",
+      "https://www.szse.cn/api/disc/announcement/annList?random=0.1",
+      "http://www.sse.com.cn/"
+    ]
+  },
+  {
+    "name": "Tushare Pro (+ AKShare) — open-source Chinese market data aggregators",
+    "operator": "Tushare (commercial community project); AKShare (open-source, MIT-licensed Python library)",
+    "country": "China (mainland) — third-party aggregators, NOT official sources",
+    "website": "https://tushare.pro/",
+    "docs_url": "https://tushare.pro/document/1?doc_id=290 (points system); https://akshare.akfamily.xyz/ (AKShare docs)",
+    "region_main": "Mainland China (A-shares); Tushare also sells HK and US coverage",
+    "region_surroundings": "Hong Kong, US (paid add-on modules)",
+    "plans": [
+      {
+        "plan": "Tushare — free tier (120 points)",
+        "price": "Free (CONFIRMED)",
+        "what_you_get": "CONFIRMED: 8,000 API calls/day, but restricted to non-adjusted daily K-line data only. Effectively useless for M&A work."
+      },
+      {
+        "plan": "Tushare — 2,000 points",
+        "price": "CONFIRMED ¥200 CNY (approx. USD 28) for 2,000 points at a 1:10 ratio; also CONFIRMED ¥200 to join the QQ group (1059991854) as an alternative route to points",
+        "what_you_get": "CONFIRMED: 100,000 calls per API, limited interface access."
+      },
+      {
+        "plan": "Tushare — 5,000 points",
+        "price": "CONFIRMED ¥500 CNY/year (approx. USD 70)",
+        "what_you_get": "CONFIRMED: unlimited daily calls, access to regular datasets with no caps."
+      },
+      {
+        "plan": "Tushare — 10,000 / 15,000 points",
+        "price": "CONFIRMED ¥500 CNY/year tier pricing shown for these levels (approx. USD 70)",
+        "what_you_get": "CONFIRMED: adds premium data — earnings forecasts, chip/holdings analysis, broker picks. CONFIRMED separate paid modules for minute-level data and HK/US equities at ¥200–¥2,000/year each, and CONFIRMED institutional users are charged 10x the personal rate."
+      },
+      {
+        "plan": "Tushare — free points via WeChat professional group",
+        "price": "Free (CONFIRMED)",
+        "what_you_get": "CONFIRMED: 5,000 free points for joining the WeChat professional group — the cheapest legitimate route to the unlimited tier."
+      },
+      {
+        "plan": "AKShare",
+        "price": "Free, open source (INFERRED — MIT-licensed library; no fee structure exists)",
+        "what_you_get": "INFERRED: Python wrappers over hundreds of public Chinese endpoints including CNINFO hisAnnouncement, SSE/SZSE announcement APIs, and shareholder/restructuring data. No key required because it calls the public sites directly."
+      }
+    ],
+    "api_access": "Tushare: official (to Tushare) REST/SDK API with token auth, gated by a points system rather than by money directly (CONFIRMED). AKShare: a Python library, not a hosted API — it wraps the same unofficial endpoints described in the CNINFO and SSE/SZSE records (INFERRED). Language: Simplified Chinese field values; both have Chinese-language documentation, though AKShare has partial English docs (INFERRED).",
+    "archive_window": "UNCONFIRMED for both. INFERRED: Tushare covers A-shares from the 1990s for prices and from the 2000s for fundamentals and corporate actions.",
+    "data_types": "For M&A the relevant Tushare interfaces are INFERRED to include 股权质押, 股东增减持 (shareholder increase/decrease), 大宗交易 (block trades — often the mechanism for Chinese stake transfers), 股本变动, and restructuring/major-event tables. AKShare additionally INFERRED to expose 并购重组 and 权益变动 announcement lists sourced from CNINFO/exchange endpoints. Company master data: A-share basic info (code, name, industry, listing date, area, exchange) — INFERRED, this is Tushare's stock_basic interface.",
+    "formats": "JSON / pandas DataFrame (INFERRED)",
+    "update_frequency": "Daily for most datasets; some intraday (INFERRED).",
+    "limitations": "NEITHER IS AN OFFICIAL SOURCE — both are third-party intermediaries, so provenance and completeness are not guaranteed and neither is appropriate as the citation of record in client deliverables. Tushare's points system is opaque and the specific interfaces an M&A use case needs were NOT verified against their point requirements ('可参考每个接口文档的积分要求' — requirements vary per interface, CONFIRMED). Institutional 10x pricing applies to a firm like JCAI (CONFIRMED). Payment is via Chinese channels (QQ/WeChat/Alipay), which is an operational friction for a Japanese company. AKShare inherits every fragility and legal question of the underlying unofficial endpoints, including mainland cross-border data transfer concerns. Terms of redistribution UNCONFIRMED for Tushare — verify before putting its data in client-facing materials.",
+    "ma_relevance": "Medium as an engineering shortcut — AKShare in particular saves weeks of scraper maintenance for China. Low as an authoritative source; always resolve back to the official CNINFO/exchange document for anything that goes into a deliverable.",
+    "implementation_notes": "Effort: LOW. Recommended: adopt AKShare (free, MIT, no payment friction, no account) as the China ingestion layer and store the original CNINFO announcement URL/PDF for every record so the official source is always citable. Consider a Tushare 5,000-point account (¥500/yr personal, or free via the WeChat group) only if you need the shareholder-increase/decrease and block-trade tables, and check the institutional-pricing obligation with the vendor first. Do not present Tushare/AKShare as the source in client work.",
+    "confidence": "medium-high on pricing (read directly from the pricing document); medium on which interfaces carry M&A content",
+    "sources": [
+      "https://tushare.pro/document/1?doc_id=290",
+      "https://tushare.pro/"
+    ]
+  },
+  {
+    "name": "GSXT 国家企业信用信息公示系统 (National Enterprise Credit Information Publicity System)",
+    "operator": "State Administration for Market Regulation (SAMR) — China",
+    "country": "China (mainland)",
+    "website": "https://www.gsxt.gov.cn/",
+    "docs_url": "None — no API and no developer documentation (CONFIRMED: none exists)",
+    "region_main": "Mainland China — ALL registered enterprises, listed and private",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free web search",
+        "price": "Free (CONFIRMED as a free government publicity system)",
+        "what_you_get": "UNCONFIRMED in detail. INFERRED: per-company registration record — name, 统一社会信用代码 (unified social credit identifier), legal representative, registered capital, establishment date, registered address, business scope, status, shareholders/investors, key personnel, branches, equity pledges, administrative penalties, and annual reports."
+      }
+    ],
+    "api_access": "NO API, no bulk download (CONFIRMED — none exists). CONFIRMED in this research that https://www.gsxt.gov.cn/index.html returned HTTP 521 to a server-side fetch, i.e. the origin actively refused the connection — consistent with the site's well-known aggressive anti-bot posture. CONFIRMED-by-reputation and INFERRED here: searches are gated by a sliding-puzzle/behavioural CAPTCHA that defeats simple automation. Language: Simplified Chinese only.",
+    "archive_window": "INFERRED: current registration state plus filed annual reports for recent years (typically the last ~5). Not a historical event archive.",
+    "data_types": "The authoritative Chinese company registry: company master data and, importantly, SHAREHOLDER/INVESTOR records for private Chinese companies including 股权变更 (equity change) records — which is genuine M&A signal for unlisted deals that never appear in exchange disclosure. Also 股权出质 (equity pledge) registrations.",
+    "formats": "HTML only (CONFIRMED — no export offering exists).",
+    "update_frequency": "Continuous as registrations change (INFERRED).",
+    "limitations": "Effectively CLOSED to automated access: CAPTCHA-gated, and confirmed to refuse server-side requests outright (HTTP 521). No API, no export, no bulk data. Simplified Chinese only. Systematic scraping would breach the site's terms and, in China, carries real legal exposure — several commercial data companies have been prosecuted for scraping/reselling this data. Combined with PIPL/DSL cross-border transfer rules, automated harvesting of GSXT from Japan is NOT a defensible engineering plan. Commercial resellers (Qichacha 企查查, Tianyancha 天眼查, Qixinbao 启信宝) license this data legitimately and sell APIs — that is the realistic route, but they are paid and out of scope for a 'free sources' study.",
+    "ma_relevance": "High in content (private-company shareholders and equity changes are exactly what a mid-market M&A firm wants) but effectively UNUSABLE as a free automated source.",
+    "implementation_notes": "Effort: NOT RECOMMENDED as an ETL target. Recommended approach: (a) use GSXT manually, via a browser, for one-off due-diligence lookups on named targets; (b) if programmatic Chinese private-company master data is a genuine requirement, budget for a licensed commercial API (Qichacha/Tianyancha) and have counsel review the cross-border transfer arrangement. Do not allocate engineering time to scraping this.",
+    "confidence": "medium (the access barrier is confirmed by the 521 response; the data-content description is inferred)",
+    "sources": [
+      "https://www.gsxt.gov.cn/index.html"
+    ]
+  },
+  {
+    "name": "SAMR Anti-Monopoly Bureau — concentration of undertakings case notices (经营者集中案件公示)",
+    "operator": "State Administration for Market Regulation (SAMR), Anti-Monopoly Bureau (反垄断执法司)",
+    "country": "China (mainland)",
+    "website": "https://www.samr.gov.cn",
+    "docs_url": "https://www.samr.gov.cn/fldes/ajgs/index.html",
+    "region_main": "Mainland China",
+    "region_surroundings": "Global — any concentration meeting SAMR turnover thresholds is caught, including foreign-to-foreign deals with sufficient China-market revenue. This makes it a genuine source of GLOBAL large-deal intelligence, not just Chinese deals.",
+    "plans": [
+      {
+        "plan": "Free public notice pages",
+        "price": "Free (CONFIRMED — standard government notice site, no paywall)",
+        "what_you_get": "CONFIRMED category structure under 案件公示 (/fldes/ajgs/): 经营者集中简易案件公示 (simplified-case notices, /fldes/ajgs/jyaj/), 无条件批准经营者集中案件公示 (unconditional-approval case lists, /fldes/ajgs/wtjjz/), and under 通知公告 (/fldes/tzgg/) a 附条件批准/禁止 (conditional approval / prohibition) category (/fldes/tzgg/ftj/). CONFIRMED on a sampled adjacent SAMR announcements page that individual notices name real transacting parties (e.g. '腾讯控股有限公司', '立讯精密工业股份有限公司' appeared as party names with posting dates)."
+      }
+    ],
+    "api_access": "INFERRED no public API and no open-data portal link on the SAMR pages checked. CONFIRMED the list pages (jyaj/, wtjjz/) render as JS shells to a server-side fetch — only page title and breadcrumb came through, no data rows — so content is loaded by an internal XHR that was NOT identified in this research. Case detail pages are CONFIRMED to be static HTML articles once the URL is known (observed pattern /fldes/tzgg/xzcf/art/2026/art_*.html for one category). Language: Simplified Chinese only.",
+    "archive_window": "UNCONFIRMED. China's Anti-Monopoly Law and merger review have been in force since 2008, so historical notices very likely exist back to then, but the earliest year actually available on the current site was not verified.",
+    "data_types": "CONFIRMED categorisation by review track (simplified vs normal) and by outcome (unconditional vs conditional vs prohibited) as distinct URL sections. Party names CONFIRMED present in SAMR notices generally. Simplified-case notices additionally publish the parties, the transaction structure, the relevant markets and market shares (INFERRED — this is the standard content of a 简易案件公示 and makes them unusually informative). Transaction VALUE is generally NOT disclosed (INFERRED, consistent with SAMR practice). Filing and decision dates INFERRED present per notice. Remedy conditions INFERRED embedded in conditional-approval notice text.",
+    "formats": "HTML notice list pages and HTML case articles (CONFIRMED). No PDF/CSV/JSON export observed.",
+    "update_frequency": "INFERRED periodic batch publication — simplified-case and unconditional-approval notices have traditionally been released in batches (weekly to monthly) rather than instantly. Not confirmed.",
+    "limitations": "Simplified Chinese only. List pages could not be read by simple HTTP fetch (CONFIRMED by this research's own attempts), so ETL requires a headless browser or discovery of the internal XHR. Only threshold-crossing concentrations appear, so mid-market Chinese deals are absent. Deal value not disclosed. .gov.cn accessibility and latency from outside mainland China is variable and anti-bot protection is plausible (INFERRED, not directly tested for blocking). Same PIPL/DSL cross-border transfer considerations as other Chinese sources — legal review advised.",
+    "ma_relevance": "High in principle, and distinctively valuable because SAMR's simplified-case notices publish market definitions and shares that almost no other free source gives you. Practical value is reduced by the absence of deal value and by the extraction difficulty.",
+    "implementation_notes": "Effort: HIGH. Recommended: run a follow-up pass with a real browser and network inspection (Playwright, not WebFetch) to capture the paginated XHR/JSON behind /fldes/ajgs/jyaj/ and /wtjjz/; once found it is likely a simple paginated JSON API and the effort drops to MEDIUM. Case detail pages are static HTML and easy to scrape once URLs are known. Poll weekly given batch publication. Factor in egress/IP considerations for .gov.cn. Note this is a lower priority than CNINFO for Chinese deal detection, but higher priority if the firm cares about large cross-border deals with a China nexus.",
+    "confidence": "low-medium (category structure confirmed; list content and any API not directly observed due to JS rendering)",
+    "sources": [
+      "https://www.samr.gov.cn/",
+      "https://www.samr.gov.cn/fldes/",
+      "https://www.samr.gov.cn/fldes/ajgs/wtjjz/index.html",
+      "https://www.samr.gov.cn/fldes/ajgs/jyaj/index.html",
+      "https://www.samr.gov.cn/fldes/tzgg/"
+    ]
+  },
+  {
+    "name": "HKEXnews",
+    "operator": "Hong Kong Exchanges and Clearing Limited (HKEX) / The Stock Exchange of Hong Kong",
+    "country": "Hong Kong SAR",
+    "website": "https://www.hkexnews.hk/",
+    "docs_url": "None — no developer documentation or API (CONFIRMED: no API, RSS or bulk-download affordance found on the pages examined)",
+    "region_main": "Hong Kong — Main Board and GEM listed issuers",
+    "region_surroundings": "Mainland China indirectly — a very large share of HK-listed issuers are mainland Chinese operating businesses (H-shares, red chips), so HKEXnews is an important WINDOW ON CHINESE M&A that sits outside mainland data-transfer constraints.",
+    "plans": [
+      {
+        "plan": "Free web access to HKEXnews",
+        "price": "Free (CONFIRMED — public site, no login; a warning-statement click-through applies to listing documents)",
+        "what_you_get": "CONFIRMED sections: Listed Company Information, CCASS Shareholding, and Disclosure of Interests. CONFIRMED two search modes — Title Search and Content Search (full text) — plus an Explanatory Note and Search Guide. CONFIRMED sorting by Latest/Oldest, Stock Code, Stock Name and filtering by release time."
+      },
+      {
+        "plan": "HKEX Market Data Services / issuer news feed (paid)",
+        "price": "PAID — no HKD figures could be CONFIRMED. The market-data pages reference 'Market Data Promotions' and 'Notices' but publish no price table; fee schedules are distributed to licensed vendors. Treat pricing as UNCONFIRMED.",
+        "what_you_get": "CONFIRMED that HKEX sells real-time securities and derivatives market data, and that its issuer-information products cover corporate reorganisations, connected/related-party transactions, key personnel changes, dividend announcements and profit warnings. CONFIRMED an 'IIS News' issuer news feed exists as a commercial product — this is the licensed, contractual alternative to scraping HKEXnews."
+      }
+    ],
+    "api_access": "NO official API, free or otherwise, for HKEXnews (CONFIRMED). Access is via server-rendered .xhtml search pages — CONFIRMED paths /search/titlesearch.xhtml and a content-search equivalent, plus /listedco/listconews/advancedsearch/search_active_main.aspx. These pages are JS-driven and returned only navigation chrome to server-side fetches (CONFIRMED), meaning any scraper needs a headless browser. There is an undocumented JSON endpoint behind the title search used by open-source tools (INFERRED — commonly reported as https://www1.hkexnews.hk/search/titleSearchServlet.do with parameters lang, category, market, searchType, documentType, t1code/t2code, from/to dates; NOT verified in this research). Both English and Traditional Chinese are available (CONFIRMED — pages accept lang=en; the site is bilingual).",
+    "archive_window": "UNCONFIRMED — we could not reach the Search Guide (searchguide_en.htm returned 404) or any page stating coverage dates. INFERRED, and widely reported: the current/'active' search covers documents published from 25 June 2007 onward with full headline-category tagging, while a separate archive search covers 1 April 1999 to 24 June 2007 with coarser metadata. TREAT THESE TWO DATES AS UNVERIFIED and confirm with a browser before designing a backfill. Retention: permanent.",
+    "data_types": "M&A-relevant HKEX announcement headline categories (INFERRED as to exact naming, but these are the statutory Listing Rules categories): Very Substantial Acquisition, Very Substantial Disposal, Major Transaction, Discloseable Transaction, Connected Transaction, Reverse Takeover, Spin-off, Takeovers Code / General Offer / Composite Document, Share Buy-back, Change in Shareholding. CONFIRMED that a 'Disclosure of Interests' section exists — this is the SFO Part XV filing set (substantial shareholder notices at the 5% threshold, forms 1/2/3), an excellent structured-ish stake-change feed. CONFIRMED a CCASS Shareholding section exists — daily custodian-level shareholding by participant, which is a well-known technique for detecting stake accumulation before an announcement. Company master data: listed-issuer directory with stock code, name, board, sector (INFERRED).",
+    "formats": "HTML search results; announcement documents as PDF, with some as HTM (INFERRED); no CSV/Excel export observed (CONFIRMED absence on the pages examined). Disclosure-of-Interests data is presented as HTML tables (INFERRED).",
+    "update_frequency": "Real-time — HKEX requires announcements to be published on HKEXnews before market disclosure, and the site posts continuously including outside trading hours (INFERRED).",
+    "limitations": "No API is the central problem: this is one of Asia's most important disclosure archives and it offers no programmatic access. Scraping requires a headless browser because pages are JS-rendered (CONFIRMED). HKEX's terms of use restrict systematic extraction and redistribution (INFERRED — the site carries an explicit disclaimer that HKEX does not verify content and provides it 'for the purpose of providing information to the public in Hong Kong'); the licensed IIS News product exists precisely because bulk reuse is meant to be contracted. Get legal sign-off before building a scraper. Archive date boundaries unverified. Announcement documents are PDFs requiring text extraction and classification.",
+    "ma_relevance": "Very High in content — HK is a primary venue for Asian cross-border M&A, takeovers under the Codes, and mainland-Chinese deal flow, and the Disclosure of Interests plus CCASS data give genuine pre-announcement stake-building signal. But the access path is poor and the licensing position needs care.",
+    "implementation_notes": "Effort: HIGH. Recommended: (1) first verify the undocumented titleSearchServlet.do endpoint and the archive date boundaries with a real browser and network inspection; (2) if it works, a date-windowed poll of the title search filtered to the M&A headline categories is a reasonable daily job and effort drops to MEDIUM; (3) otherwise use Playwright against /search/titlesearch.xhtml, throttled; (4) separately ingest Disclosure of Interests as its own feed — it is more structured and higher signal per record than the announcement stream; (5) in parallel, price the licensed IIS News feed with HKEX, because for a regulated advisory firm a contractual feed may be cheaper than the legal risk and maintenance of a scraper. Also cross-check SFC takeovers decisions (sfc.hk) for Codes rulings, which we did not examine.",
+    "confidence": "medium (site structure and absence of an API confirmed; date coverage, category names and the unofficial endpoint all inferred)",
+    "sources": [
+      "https://www.hkexnews.hk/index.htm",
+      "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "https://www.hkexnews.hk/listedco/listconews/advancedsearch/search_active_main.aspx",
+      "https://www1.hkexnews.hk/app/appindex.html",
+      "https://www.hkex.com.hk/Services/Market-Data-Services/Real-Time-Data-Services?sc_lang=en",
+      "https://www.sfc.hk/"
+    ]
+  },
+  {
+    "name": "Hong Kong Companies Registry e-Services (formerly ICRIS Cyber Search Centre)",
+    "operator": "Companies Registry, Government of the Hong Kong SAR",
+    "country": "Hong Kong SAR",
+    "website": "https://www.e-services.cr.gov.hk/ (the old https://www.icris.cr.gov.hk/csci/ now 301-redirects here — CONFIRMED)",
+    "docs_url": "None found (CONFIRMED — the site is a JS application that returned only a loading screen to server-side fetches)",
+    "region_main": "Hong Kong SAR — all locally incorporated companies and registered non-Hong-Kong companies",
+    "region_surroundings": "None directly, but HK holding companies are extremely common in Asian deal structures, so the register is often the key to unwinding cross-border ownership chains.",
+    "plans": [
+      {
+        "plan": "Free basic company name search",
+        "price": "Free (INFERRED — the Companies Registry has historically offered a free 'Quick Search' returning company name, CR number and status)",
+        "what_you_get": "INFERRED: company name, company number, and registration status only. NOT CONFIRMED — the page would not render server-side."
+      },
+      {
+        "plan": "Paid document / image search",
+        "price": "PAID per search and per document image — HKD fee schedule NOT obtainable in this research (CONFIRMED that the page did not render). Historically in the order of HKD 10–30 per company particulars search and per document image, but this is INFERRED and MUST be verified.",
+        "what_you_get": "INFERRED: company particulars (directors, secretary, registered office, share capital, mortgages/charges), annual returns, incorporation documents, and filed document images."
+      }
+    ],
+    "api_access": "No public API for bulk or programmatic search (INFERRED — none documented; the Registry sells data through separate arrangements). CONFIRMED the site is a JS single-page application that returns only 'Loading......' to non-browser fetches, so scraping requires a headless browser and, because access is fee-based per search, would also require an account with billing — making automated harvesting both technically and commercially impractical. Language: English and Traditional Chinese (INFERRED).",
+    "archive_window": "INFERRED: current particulars plus filed document images going back many years (electronic images typically from the 1990s-2000s onward). UNCONFIRMED.",
+    "data_types": "Company master data for HK entities: name, CR number, incorporation date, status, registered office, share capital, directors and company secretary, charges/mortgages register. Directors and charges are the genuinely valuable parts for M&A — HK does not publish a shareholder register free of charge, but the annual return (paid) contains shareholders (INFERRED). Not a source of deal announcements.",
+    "formats": "HTML search results; document images as PDF/TIFF (INFERRED).",
+    "update_frequency": "Continuous as filings are registered (INFERRED).",
+    "limitations": "Per-search and per-document fees make this fundamentally unsuitable as an ETL source — costs scale linearly with lookups and there is no bulk tier at published prices. Fee schedule UNCONFIRMED; verify with the Registry. JS-only interface. No API. This belongs in the analyst-workflow category, not the pipeline category.",
+    "ma_relevance": "Medium-High for DEAL EXECUTION (verifying counterparties, mapping HK holding structures, checking charges) and Low for deal SOURCING or detection.",
+    "implementation_notes": "Effort: NOT RECOMMENDED as an automated pipeline. Recommended: give analysts a Companies Registry e-Services account for manual, per-deal lookups and treat the fees as a deal cost. If structured HK company data is needed at scale, evaluate the Registry's commercial data-supply arrangements or a licensed third-party aggregator. FOLLOW-UP REQUIRED: fetch the current HKD fee schedule from the Companies Registry with a browser — none of the pricing here is confirmed.",
+    "confidence": "low (the redirect and the JS-shell behaviour are confirmed; every substantive detail including all pricing is inferred)",
+    "sources": [
+      "https://www.icris.cr.gov.hk/csci/",
+      "https://www.e-services.cr.gov.hk/"
+    ]
+  },
+  {
+    "name": "SGX Company Announcements (+ undocumented api.sgx.com endpoint)",
+    "operator": "Singapore Exchange (SGX)",
+    "country": "Singapore",
+    "website": "https://www.sgx.com/securities/company-announcements",
+    "docs_url": "None for the free route — no public developer documentation (CONFIRMED: none found)",
+    "region_main": "Singapore — SGX Mainboard and Catalist listed issuers",
+    "region_surroundings": "Southeast Asia broadly — SGX hosts a meaningful number of issuers whose operations are in Malaysia, Indonesia, Thailand, Vietnam and China, so it is a partial regional window.",
+    "plans": [
+      {
+        "plan": "Free web access",
+        "price": "Free (CONFIRMED — public page; no login required to view announcements)",
+        "what_you_get": "UNCONFIRMED in detail. The page rendered server-side as only a browser-compatibility warning and a newsletter form, so categories, date filters and export options could NOT be read. INFERRED: filterable by company, announcement category and date, with PDF attachments."
+      }
+    ],
+    "api_access": "No official documented API. The route used by open-source tools is the UNDOCUMENTED endpoint https://api.sgx.com/announcements/v1.0/ (with parameters commonly reported as pagestart, pagesize, periodstarttime, periodendtime, value_type). CONFIRMED in this research that a server-side GET to https://api.sgx.com/announcements/v1.0/?pagestart=0&pagesize=5 returned HTTP 403 Forbidden — the endpoint exists and is reachable but rejects requests lacking browser-like headers (User-Agent, Origin/Referer of www.sgx.com) or is behind bot protection. This is a real but header-sensitive integration path, NOT a supported API. Language: English only (CONFIRMED by market convention — Singapore disclosure is in English), which makes SGX by far the easiest Asian source for a non-CJK-reading pipeline.",
+    "archive_window": "UNCONFIRMED. INFERRED: the announcements service covers roughly 2000s-present; the undocumented endpoint accepts epoch-millisecond period parameters and so should permit historical windows.",
+    "data_types": "M&A-relevant SGX announcement categories (INFERRED as to exact labels): Acquisitions and Realisations / Disposals (an explicit category, which makes SGX unusually easy to filter), Takeover Offer / Offer Announcements, Changes in Interests of Substantial Shareholders (the Singapore 5% analogue), Changes in Director's Interests, Interested Person Transactions, Scheme of Arrangement, Delisting and Voluntary Liquidation. Company master data: listed-issuer directory with SGX code, ISIN, name, sector (INFERRED).",
+    "formats": "JSON from the undocumented endpoint (INFERRED — 403 prevented confirmation); announcement documents as PDF; HTML on the website.",
+    "update_frequency": "Real-time on business days as announcements are released (INFERRED).",
+    "limitations": "Undocumented, unsupported endpoint that CONFIRMED-refuses plain server-side requests (403) — you must send realistic browser headers, and SGX can tighten this at any time without notice. No SLA, no schema guarantee. SGX terms of use should be reviewed before systematic extraction (INFERRED that they restrict it). The website itself is a JS application, so the fallback scraping route also needs a headless browser. SGX also sells commercial data products; a free scrape sits in tension with those.",
+    "ma_relevance": "High. Singapore is a major Asian holding-company and deal jurisdiction, the disclosure is in ENGLISH, and the announcement taxonomy has an explicit acquisitions/disposals category — so per unit of engineering effort SGX is one of the best-value sources in the region, once the header problem is solved.",
+    "implementation_notes": "Effort: LOW-MEDIUM. Recommended: (1) reproduce the api.sgx.com call from a browser first, capture the exact working headers and parameter names, then replicate them server-side with a realistic User-Agent and Referer: https://www.sgx.com/; (2) poll daily with a periodstarttime/periodendtime window, persist the JSON index, and lazily download PDFs for records matching the acquisition/takeover/substantial-shareholder categories; (3) build in schema-change monitoring and a Playwright fallback; (4) because the data is English, this is the best jurisdiction to prototype your announcement-classification logic on before tackling the CJK sources. Confirm the terms of use with counsel.",
+    "confidence": "medium (endpoint existence and its 403 behaviour confirmed; content taxonomy and parameters inferred)",
+    "sources": [
+      "https://www.sgx.com/securities/company-announcements",
+      "https://api.sgx.com/announcements/v1.0/?pagestart=0&pagesize=5"
+    ]
+  },
+  {
+    "name": "data.gov.sg — ACRA 'Entities with Unique Entity Number' dataset",
+    "operator": "Government Technology Agency of Singapore (portal); data owned by ACRA (Accounting and Corporate Regulatory Authority)",
+    "country": "Singapore",
+    "website": "https://data.gov.sg/",
+    "docs_url": "https://data.gov.sg/datasets?query=ACRA (dataset id d_3f960c10fed6145404ca7b821f263b87); API base https://data.gov.sg/api/action/datastore_search",
+    "region_main": "Singapore — ALL registered entities (local companies, sole proprietorships/partnerships, LLPs, foreign company branches)",
+    "region_surroundings": "None directly, but Singapore entities are ubiquitous as holding companies in Southeast Asian and Japan-Asia deal structures.",
+    "plans": [
+      {
+        "plan": "Free — Open Data Licence",
+        "price": "CONFIRMED: 'Free forever for personal or commercial use, under the Open Data Licence' — COMMERCIAL USE IS EXPLICITLY PERMITTED. This is the cleanest licensing position of any source in this research.",
+        "what_you_get": "CONFIRMED: the full dataset — approximately 2.1 million rows, spanning UEN issue dates from February 1881 to August 2026, roughly 70% deregistered / 30% currently registered. Available as a 221.9 MB CSV download or via the API."
+      },
+      {
+        "plan": "Free — with optional API key",
+        "price": "Free (CONFIRMED)",
+        "what_you_get": "CONFIRMED: registering an API key is optional and raises rate limits and enables priority support; unauthenticated rate limits are lower. The exact numeric limits were NOT stated (UNCONFIRMED)."
+      }
+    ],
+    "api_access": "CONFIRMED official API (CKAN-style): base https://data.gov.sg/api/action/datastore_search with the resource/dataset id d_3f960c10fed6145404ca7b821f263b87. Auth optional (API key raises limits). Also CONFIRMED an OpenAPI/programmatic access route and a direct CSV download. Language: English (CONFIRMED).",
+    "archive_window": "CONFIRMED: UEN issue dates from February 1881 through August 2026. This is a current-state register with historical registration dates, plus deregistered entities retained — so you get dead companies too, which is useful for history. Last refresh CONFIRMED as 14 August 2026.",
+    "data_types": "CONFIRMED exactly 8 columns: UEN (Unique Entity Number — adopt this as your Singapore primary key), Entity Name, Entity Type (Local Company / Sole Proprietorship or Partnership / LLP / Foreign Company Branch), UEN Status (Registered or Deregistered), UEN Issue Date (YYYY-MM-DD), Reg Street Name, Reg Postal Code, Issuance Agency Desc. CONFIRMED that primary SSIC (industry code) is NOT included — this is a real gap for target screening by sector. No shareholders, no directors, no financials (those require paid BizFile+). Not a source of deal announcements.",
+    "formats": "CSV (221.9 MB) and JSON via the API (CONFIRMED)",
+    "update_frequency": "CONFIRMED: monthly.",
+    "limitations": "Thin schema — 8 fields, and notably NO industry code, NO directors, NO shareholders, NO capital, NO incorporation-status history. For anything beyond name/UEN/status/address you must use ACRA BizFile+, which is PAID per document (pricing not examined in this research — UNCONFIRMED). Monthly refresh means up to a month of staleness for newly incorporated entities. Includes non-corporate entities (sole proprietorships), so filter by Entity Type. The 2.1M-row CSV is best loaded in bulk rather than paged through the API.",
+    "ma_relevance": "Medium as MASTER DATA and High as an ENTITY-RESOLUTION SPINE — a free, commercially licensed, complete list of every Singapore entity with a stable identifier (UEN) is exactly what you need to normalise counterparty names across deal records. Low as a deal feed.",
+    "implementation_notes": "Effort: LOW — the easiest and lowest-risk build in this entire research set. Recommended: download the CSV once for a bulk load into a companies master table keyed on UEN, then refresh monthly (either re-download or diff via the API). Register a free API key for the higher rate limits. Use UEN and normalised Entity Name as the join key from SGX announcements. START HERE if the team wants a quick win to validate the pipeline architecture, because the licence is permissive, the data is English, and there is no scraping or legal ambiguity.",
+    "confidence": "high",
+    "sources": [
+      "https://data.gov.sg/datasets?query=ACRA&page=1&resultId=d_3f960c10fed6145404ca7b821f263b87",
+      "https://data.gov.sg/"
+    ]
+  },
+  {
+    "name": "BSE India and NSE India corporate announcements (undocumented JSON APIs)",
+    "operator": "BSE Limited; National Stock Exchange of India Limited",
+    "country": "India",
+    "website": "https://www.bseindia.com/corporates/ann.html ; https://www.nseindia.com/companies-listing/corporate-filings-announcements",
+    "docs_url": "None — neither exchange publishes free developer documentation (CONFIRMED: none found)",
+    "region_main": "India — BSE has roughly 5,000+ listed companies (the largest listed universe in Asia by count), NSE roughly 2,000+",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free web access + undocumented JSON endpoints",
+        "price": "Free (CONFIRMED — both announcement pages are public, no login)",
+        "what_you_get": "UNCONFIRMED in detail — both sites blocked server-side access. INFERRED: full corporate announcement feeds with category filters and PDF attachments."
+      },
+      {
+        "plan": "Exchange commercial data products",
+        "price": "PAID — not examined in this research (UNCONFIRMED). Both exchanges license market data and corporate-announcement feeds commercially.",
+        "what_you_get": "UNCONFIRMED — the supported, contractual alternative to scraping."
+      }
+    ],
+    "api_access": "No official free API. The routes used by open-source tools are UNDOCUMENTED: for BSE, https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w with parameters strCat, strPrevDate, strToDate, strScrip, strSearch, strType, pageno — CONFIRMED in this research that a well-formed server-side GET returned HTTP 403 Forbidden, establishing the endpoint exists but requires browser-like headers (a Referer of https://www.bseindia.com/ and a realistic User-Agent are the usual requirement — INFERRED). For NSE, the route is INFERRED to be https://www.nseindia.com/api/corporate-announcements with query parameters (index=equities, from_date, to_date) — CONFIRMED that the NSE announcements page TIMED OUT after 60 seconds on server-side fetch, which is consistent with NSE's well-documented cookie-handshake requirement: you must first GET the homepage to obtain session cookies, then reuse them on /api/ calls with a browser User-Agent. Language: English only (CONFIRMED by convention — Indian disclosure is in English), a major practical advantage.",
+    "archive_window": "UNCONFIRMED. INFERRED: BSE's announcement API accepts arbitrary strPrevDate/strToDate values and history is available back to roughly 2010 or earlier; NSE's /api/corporate-announcements is INFERRED to be limited to shorter recent windows (often only the last year is reliably served), with older filings needing per-company queries.",
+    "data_types": "M&A-relevant Indian filing categories (INFERRED as to exact labels): Acquisition, Amalgamation/Merger, Scheme of Arrangement, Slump Sale, Board Meeting Outcome (which in India is where most deal approvals surface), Disclosure under SEBI SAST Regulation 29(1)/29(2) (substantial acquisition of shares — the Indian 5% analogue) and Regulation 31 (encumbered shares), Open Offer / Letter of Offer, and Reg 30 material-event disclosures. BSE's strCat parameter is the category filter (CONFIRMED as a parameter name; its valid values UNCONFIRMED). Company master data: listed-company directories with scrip code/symbol, ISIN, name, industry, face value (INFERRED).",
+    "formats": "JSON from the undocumented endpoints (INFERRED); announcement documents as PDF; some filings as XBRL, since SEBI mandates XBRL for certain disclosures (INFERRED).",
+    "update_frequency": "Real-time on trading days; Indian issuers file frequently and volume is high (INFERRED).",
+    "limitations": "BOTH endpoints CONFIRMED to reject plain server-side requests (BSE 403, NSE 60s timeout) — these are the most anti-bot-hardened exchange sites in this research. NSE in particular requires a cookie handshake and is known to block datacentre IP ranges (INFERRED), which may force a residential/proxy arrangement or a headless browser and raises both cost and terms-of-use questions. Undocumented, unsupported, and historically subject to breaking changes. Announcement VOLUME is very high (thousands per day across 5,000+ BSE issuers), so classification and de-duplication between BSE and NSE for dual-listed companies is a real engineering task — join on ISIN, not on name or code. Terms of use should be reviewed by counsel before systematic extraction.",
+    "ma_relevance": "High — India is the most active M&A market in Asia ex-Japan by deal count, disclosure is in English, and the SAST Reg 29 disclosures give a clean stake-change feed. Access difficulty is the binding constraint, not content.",
+    "implementation_notes": "Effort: MEDIUM-HIGH, driven entirely by anti-bot handling. Recommended: (1) start with BSE, not NSE — BSE's 403 is a simple header problem while NSE's is a session/IP problem; capture working headers from a browser and replay them; (2) enumerate BSE's strCat category values from the web UI and filter server-side to the M&A categories to keep volume manageable; (3) de-duplicate against NSE on ISIN and treat NSE as a supplement rather than a second full pipeline; (4) for India, seriously consider CCI's combinations register (separate record) as a lower-effort, higher-precision complement — it gives you clean named-party deal records without any anti-bot fight; (5) build schema-change and 403-rate monitoring from day one. Confirm terms of use with counsel.",
+    "confidence": "medium (endpoint existence and blocking behaviour confirmed; parameters, categories and archive depth inferred)",
+    "sources": [
+      "https://www.bseindia.com/corporates/ann.html",
+      "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?strCat=-1&strPrevDate=20260801&strScrip=&strSearch=P&strToDate=20260903&strType=C&pageno=1",
+      "https://www.nseindia.com/companies-listing/corporate-filings-announcements"
+    ]
+  },
+  {
+    "name": "SEBI — takeover (SAST) filings and open-offer documents",
+    "operator": "Securities and Exchange Board of India (SEBI)",
+    "country": "India",
+    "website": "https://www.sebi.gov.in/",
+    "docs_url": "None — no API (CONFIRMED: none found; the site actively blocked server-side access)",
+    "region_main": "India",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free web access",
+        "price": "Free (INFERRED — SEBI is a public regulator with an open website)",
+        "what_you_get": "UNCONFIRMED. INFERRED: draft letters of offer and letters of offer for open offers under the SAST Regulations, exemption applications and orders, informal guidance, and adjudication/settlement orders."
+      }
+    ],
+    "api_access": "No API (CONFIRMED — none documented). CONFIRMED that https://www.sebi.gov.in/filings/takeovers returned HTTP 403 Forbidden to a server-side fetch, and a second SEBI page (OtherAction.do) rendered as a JS-driven intermediary search returning '1 to 0 of 0 records' — so SEBI's site is both bot-blocking and JS-dependent. The takeover filings section could NOT be located or verified in this research; the /filings/takeovers path is INFERRED, not confirmed. Language: English (CONFIRMED).",
+    "archive_window": "UNCONFIRMED. INFERRED: SEBI's document archive runs back to the early 2000s for orders and offer documents.",
+    "data_types": "INFERRED: open-offer documents under the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations 2011 — these are the RICHEST single documents in Indian M&A, containing acquirer identity, target, offer price and its justification, offer size, the triggering transaction (share purchase agreement terms), and the resulting shareholding. Also exemption orders (useful for intra-group restructurings) and enforcement orders. Not a real-time announcement feed; documents appear at offer milestones.",
+    "formats": "PDF documents behind an HTML/JS index (INFERRED).",
+    "update_frequency": "Event-driven, per open offer (INFERRED). India sees on the order of tens of open offers a year, so volume is low and quality is high.",
+    "limitations": "Access is the problem: CONFIRMED 403 on server-side fetch, JS-driven search pages, no API, no export. Because the volume is low (tens of documents a year), the cost-benefit strongly favours MANUAL or semi-manual collection over building a scraper. The correct URL for the takeovers filing index was not confirmed — this needs a browser pass. Content is PDF and requires extraction.",
+    "ma_relevance": "High per document, Low in volume. An open-offer letter is the single best free document for understanding an Indian control transaction, but there are few of them and they are hard to fetch programmatically.",
+    "implementation_notes": "Effort: LOW if handled manually, HIGH if automated. Recommended: do NOT build a SEBI scraper in the first phase. Instead (1) detect Indian control transactions via BSE/NSE Reg 29 SAST disclosures and CCI combination orders, then (2) have an analyst pull the corresponding SEBI open-offer document manually for the handful of deals that matter. FOLLOW-UP REQUIRED: a browser pass to locate the actual takeover-filings index URL and confirm whether any listing/export exists. Note that final views on Indian securities-law implications of any transaction must come from qualified Indian counsel.",
+    "confidence": "low (only the access blocking is confirmed; the content description and the URL are inferred)",
+    "sources": [
+      "https://www.sebi.gov.in/filings/takeovers",
+      "https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=60",
+      "https://www.sebi.gov.in/"
+    ]
+  },
+  {
+    "name": "MCA Company Master Data via data.gov.in (India OGD platform)",
+    "operator": "Ministry of Corporate Affairs (data owner); National Informatics Centre / Open Government Data Platform India (portal)",
+    "country": "India",
+    "website": "https://www.mca.gov.in/ ; https://www.data.gov.in/catalog/company-master-data",
+    "docs_url": "https://data.gov.in/ (API guide); api.data.gov.in is the API host (CONFIRMED that https://api.data.gov.in/ itself returns 404 at the root — it serves only resource paths)",
+    "region_main": "India — ALL registered companies and LLPs, listed and private, across all state Registrars of Companies (ROCs)",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Free — data.gov.in open data with API key",
+        "price": "Free (INFERRED — the OGD platform issues free API keys on registration; the Government Open Data Licence India permits reuse including commercial use, but this was NOT verified in this research)",
+        "what_you_get": "UNCONFIRMED — both https://www.data.gov.in/catalog/company-master-data and https://www.data.gov.in/apis returned HTTP 403 Forbidden to server-side fetches, so nothing on this platform could be directly verified. INFERRED: state-wise company master-data resources totalling millions of rows, downloadable as CSV and queryable via the API."
+      },
+      {
+        "plan": "MCA21 portal — paid document services",
+        "price": "PAID per document (INFERRED — MCA charges for 'View Public Documents' and certified copies; INR amounts UNCONFIRMED)",
+        "what_you_get": "INFERRED: filed annual returns, financial statements (AOC-4), charge documents and director particulars for individual companies."
+      }
+    ],
+    "api_access": "INFERRED official REST API at api.data.gov.in using the pattern /resource/{resource-id}?api-key={key}&format=json|xml|csv&offset=&limit=, with a free key from data.gov.in registration and a per-request record cap (commonly reported as a default limit of 10 and a maximum around 100-1000 per call, and a rate limit per key) — NONE of this was verifiable here because the portal returned 403. CONFIRMED only that api.data.gov.in's root returns 404 and that data.gov.in blocks non-browser requests. Language: English (CONFIRMED by convention).",
+    "archive_window": "INFERRED: a current-state snapshot of the register with each company's date of registration, so effectively back to each company's incorporation. Not an event history. Refresh cadence UNCONFIRMED and historically irregular on this platform.",
+    "data_types": "INFERRED fields for MCA company master data: CIN (Corporate Identity Number — adopt as the India primary key), company name, ROC code, company category and sub-category, class of company, date of registration, authorised capital, paid-up capital, principal business activity code, registered office address, listed/unlisted flag, and company status (active/struck off/under liquidation). No shareholders and no directors in the free master dataset (INFERRED — those require MCA21 paid documents or the separate DIN datasets). Not a source of deal announcements, though authorised/paid-up capital changes and status changes are weak signals.",
+    "formats": "INFERRED CSV, JSON, XML.",
+    "update_frequency": "UNCONFIRMED. INFERRED: periodic bulk refresh (monthly to annual), and historically this dataset has gone stale for long stretches — verify currency before relying on it.",
+    "limitations": "NOTHING on this source could be confirmed — the portal returned 403 to every attempt, so treat this entire record as a research lead requiring a browser pass, not as a validated finding. Known concerns (INFERRED): the data.gov.in company master data has historically been split into dozens of state-wise resources with inconsistent schemas and irregular updates, making it awkward to assemble; paid-up capital is a poor proxy for company size in India; and struck-off companies are numerous. MCA's own portal is not designed for bulk access.",
+    "ma_relevance": "Medium-High as MASTER DATA — a free CIN-keyed register of every Indian company is the entity-resolution spine for the largest target universe in Asia ex-Japan. Low as a deal feed. Data-quality and freshness risk is the main caveat.",
+    "implementation_notes": "Effort: MEDIUM, but UNKNOWN until verified. Recommended next steps: (1) a browser pass on data.gov.in to enumerate the actual company-master-data resource ids, confirm the licence terms, the API key process, per-call record caps and the last-updated dates; (2) if the resources are current, bulk-download the state-wise CSVs, normalise the schemas, and load keyed on CIN; (3) if they are stale, fall back to using the BSE/NSE listed-company directories for the listed universe and accept that free private-company master data for India is weak. Do not commit to this source in a plan until step (1) is done.",
+    "confidence": "low",
+    "sources": [
+      "https://www.data.gov.in/catalog/company-master-data",
+      "https://www.data.gov.in/apis",
+      "https://api.data.gov.in/",
+      "https://www.mca.gov.in/"
+    ]
+  },
+  {
+    "name": "CCI Combination Orders Register (Section 31 orders)",
+    "operator": "Competition Commission of India (CCI)",
+    "country": "India",
+    "website": "https://www.cci.gov.in",
+    "docs_url": "https://www.cci.gov.in/combination/orders-section31",
+    "region_main": "India",
+    "region_surroundings": "South Asia — cross-border deals with an Indian target or acquirer are captured when CCI's mandatory notification thresholds are met",
+    "plans": [
+      {
+        "plan": "Free public register",
+        "price": "Free (CONFIRMED — no paywall encountered on any CCI page fetched)",
+        "what_you_get": "CONFIRMED: a filterable HTML table of combination cases with columns Combination Registration No., Notifying Parties, Form (I/II), Date of Notification, Status, Decision Date, case summary as submitted, and a link to the order document (PDF). CONFIRMED filter controls for Form, Order Status and Case Number, plus a reset button."
+      }
+    ],
+    "api_access": "INFERRED no official API and no CSV/JSON bulk export — the fetched HTML exposed only a browsable/filterable table and PDF links, with no export or API affordance. CONFIRMED the search/filter UI itself exists (Form, status and case-number filters). Language: English (CONFIRMED).",
+    "archive_window": "UNCONFIRMED — pagination and total record count did not render in the fetched excerpt. INFERRED: cases run from 2011 onward, since mandatory combination review under India's Competition Act became operative that year.",
+    "data_types": "CONFIRMED structured columns: notifying party names, review track via Form I/II (a proxy for deal complexity), date of notification, status, and decision date as a separate column. CONFIRMED a case summary 'as submitted' is published — this is unusually generous and often describes the transaction structure. Transaction value and sector are NOT separate structured columns (not confirmed present). CONFIRMED an order PDF is linked per case; conditions/remedies text is INFERRED to be inside it.",
+    "formats": "HTML table (CONFIRMED) + PDF order documents (CONFIRMED); no CSV/XLSX/JSON export observed.",
+    "update_frequency": "INFERRED rolling, case by case as CCI issues each order (statutory Phase I review is about 30 working days); not stated on the page.",
+    "limitations": "CONFIRMED scope is limited to deals meeting CCI's mandatory notification thresholds (asset/turnover, plus India's newer deal-value threshold), so sub-threshold mid-market M&A is absent. No bulk export, so ETL means scraping the HTML table. Green Channel (deemed-approval) cases carry abbreviated detail and publication lag is plausible (both INFERRED).",
+    "ma_relevance": "High, and the single best free official India deal list — named parties, notification and decision dates, a submitted case summary, and a linked full order, all in English with no anti-bot obstruction (CCI pages fetched cleanly where BSE, NSE, SEBI and data.gov.in all blocked us). For an Indian deal-tracking pipeline this is the highest-value-per-unit-effort source.",
+    "implementation_notes": "Effort: MEDIUM. Recommended: a weekly scheduled scraper of the orders-section31 table (respect robots.txt and terms), storing party names, form type, notification/decision dates and the case summary; download linked order PDFs and add a text-extraction step (regex plus LLM) to pull transaction value, sector and conditions, since those are not structured columns. Join to your India master data on normalised party name -> CIN. Build this BEFORE fighting BSE/NSE anti-bot measures.",
+    "confidence": "medium",
+    "sources": [
+      "https://www.cci.gov.in/",
+      "https://www.cci.gov.in/combination",
+      "https://www.cci.gov.in/combination/orders-section31"
+    ]
+  },
+  {
+    "name": "IDX Company Announcements (Keterbukaan Informasi) + OJK SPE/IDXNet filing chain",
+    "operator": "PT Bursa Efek Indonesia (Indonesia Stock Exchange, IDX); filing backend operated jointly with Otoritas Jasa Keuangan (OJK)",
+    "country": "Indonesia",
+    "website": "https://www.idx.co.id/en/",
+    "docs_url": "NOT FOUND — no API or developer documentation page could be located (CONFIRMED absence in this research); filing portal at https://spe.ojk.go.id/idxnet/login",
+    "region_main": "Indonesia — IDX-listed issuers only",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Public website (free)",
+        "price": "IDR 0 / USD 0 (INFERRED — public browsing of announcements is normally free; could NOT be confirmed because every idx.co.id URL tested returned HTTP 403)",
+        "what_you_get": "INFERRED: browsable company announcements, material-information disclosures, and financial reports on the public site."
+      },
+      {
+        "plan": "OJK SPE / IDXNet issuer filing portal",
+        "price": "N/A — not a purchasable data plan",
+        "what_you_get": "CONFIRMED: a credential-gated portal for issuers to FILE mandatory 'Keterbukaan Informasi' disclosures — a login page was confirmed at spe.ojk.go.id/idxnet/login. This is the filing backend, not a public read API. Useful only as confirmation that OJK rules route material-transaction and M&A disclosures through this system and out to the public IDX site."
+      },
+      {
+        "plan": "OJK open-data portal (data.ojk.go.id/SJKPublic)",
+        "price": "Free (INFERRED)",
+        "what_you_get": "CONFIRMED the portal exists and lists sector categories including 'Pasar Modal' (Capital Market). Whether it contains company-level M&A disclosures could NOT be determined (UNCONFIRMED) — worth a browser follow-up."
+      },
+      {
+        "plan": "IDX commercial data licensing (e.g. via ICaMEL)",
+        "price": "UNKNOWN — no pricing page reachable (UNCONFIRMED)",
+        "what_you_get": "INFERRED: bulk/historical market and reference data licences for commercial redistribution. Not verified."
+      }
+    ],
+    "api_access": "CONFIRMED: no official public API or developer portal could be found or reached. Every idx.co.id URL attempted returned HTTP 403 Forbidden to automated fetches — root https://www.idx.co.id, /en/, /en/listed-companies/company-announcement, /en/news/announcement, over both http and https — consistent with Cloudflare-class anti-bot protection blocking non-browser clients. Whether XHR/JSON endpoints exist behind the page could not be assessed. Language: Bahasa Indonesia dominant; English coverage UNCONFIRMED.",
+    "archive_window": "UNKNOWN (site blocked). INFERRED that the public site normally shows recent plus several years of history; no confirmed date range.",
+    "data_types": "INFERRED (not confirmable due to blocking): material-information disclosures, which under OJK rules cover acquisitions, mergers, business combinations, and tender offers; plus corporate actions, financial statements, and company profile/master data for IDX-listed issuers.",
+    "formats": "INFERRED: HTML pages and PDF filings. No JSON/XML/XBRL confirmed.",
+    "update_frequency": "UNKNOWN (unverified)",
+    "limitations": "CONFIRMED hard anti-bot barrier — repeated 403s across five paths and both protocols. Any access requires a real headless browser, and robots.txt/terms were not checked. Bahasa-language content likely dominates, adding a translation layer. The filing backend is closed, so there is no upstream alternative to the blocked public site.",
+    "ma_relevance": "Potentially the best free primary source for Indonesian listed-company M&A events (material transactions, tender offers), but as tested it is effectively unusable for automated ETL.",
+    "implementation_notes": "Effort: HIGH. Recommended: (1) do not include Indonesia in the first delivery phase; (2) if required, use headless Chrome with polite throttling after a terms-of-use review; (3) in parallel, contact IDX directly about official data licensing — for a regulated advisory firm a licence is likely cheaper than the scraping risk; (4) follow up on data.ojk.go.id/SJKPublic's capital-markets category with a browser, as that is the one non-blocked lead.",
+    "confidence": "low (only the access-blocking behaviour is CONFIRMED; all content is INFERRED)",
+    "sources": [
+      "https://www.idx.co.id/en/listed-companies/company-announcement",
+      "https://www.idx.co.id/en/",
+      "https://www.idx.co.id",
+      "https://www.idx.co.id/en/news/announcement",
+      "https://spe.ojk.go.id/idxnet/login",
+      "https://www.ojk.go.id/en/",
+      "https://data.ojk.go.id/SJKPublic"
+    ]
+  },
+  {
+    "name": "SET News & Disclosure Center + SET Information Services (SETSMART)",
+    "operator": "The Stock Exchange of Thailand (SET)",
+    "country": "Thailand",
+    "website": "https://www.set.or.th/en/market/news-and-alert/news",
+    "docs_url": "https://www.set.or.th/en/services/connectivity-and-data/data/main",
+    "region_main": "Thailand — SET, mai and TFEX-listed entities",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Public website news / disclosure browsing",
+        "price": "THB 0 / USD 0 (CONFIRMED free — no login or paywall encountered on the news page)",
+        "what_you_get": "CONFIRMED: company news and disclosures filterable by source (SET, TSD, mai, TFEX, SEC), by security type, and by date range with options for today / 5 days / 1 month / 3 months / 5 years. CONFIRMED categories include Company Announcement, Corporate Action, Financial Results and Listing."
+      },
+      {
+        "plan": "SET Information Services — real-time/delayed data, EOD/historical data, Historical Data Request Service, SMART Marketplace, SETSMART",
+        "price": "UNKNOWN — CONFIRMED that NO pricing figures appear on the data-services page; it directs enquiries to infoproducts@set.or.th or +66 2009 9999, i.e. a contact-sales model. setsmart.com itself returned blank content to a server-side fetch (CONFIRMED), so its tiers could not be read.",
+        "what_you_get": "CONFIRMED from the page description: tick data, reference data, corporate actions, listed-company information and analytics via SETSMART / SMART Marketplace."
+      },
+      {
+        "plan": "Thailand SEC Open API (UNVERIFIED lead, not a confirmed plan)",
+        "price": "UNKNOWN",
+        "what_you_get": "COULD NOT CONFIRM that a Thai SEC open API exists. Two candidate URLs both failed: https://www.sec.or.th/EN/Pages/MarketData/OpenAPI.aspx returned HTTP 403 and https://api.sec.or.th/ returned HTTP 404. This does not prove absence — the API may live at an undiscovered path, and WebSearch was unavailable to locate it. Treat as a follow-up item, not a finding."
+      }
+    ],
+    "api_access": "No official free API confirmed. The Connectivity Services page exists but was not examined in detail; SET Information Services is a contact-for-quote commercial model rather than self-serve API signup (CONFIRMED by the absence of any signup or pricing on the data page). Language: Thai and English — CONFIRMED the English site works, which makes Thailand more tractable than Indonesia or Vietnam.",
+    "archive_window": "CONFIRMED: the free public news/disclosure page offers date filters up to 5 YEARS back — the best confirmed free archive window of any ASEAN ex-Singapore source in this research.",
+    "data_types": "CONFIRMED category labels on the page: Company Announcement, Corporate Action, Financial Results, Listing notices, market alerts, trading halts, and auditor's opinions. M&A items (acquisitions, mergers, tender offers under the Thai takeover rules, related-party/connected transactions) appear within these categories, though a dedicated 'M&A' sub-tag was NOT observed (UNCONFIRMED). Company master data: CONFIRMED a downloadable Excel list of listed companies at https://www.set.or.th/dat/eod/listedcompany/static/listedCompanies_en_US.xls — a free, direct-download master list with no scraping required.",
+    "formats": "CONFIRMED: HTML web pages, plus a static .xls listed-company file. No JSON/XML API confirmed.",
+    "update_frequency": "INFERRED near-real-time / daily, per normal exchange disclosure practice. Not explicitly confirmed.",
+    "limitations": "CONFIRMED inconsistent bot-blocking by path: /en/market/news-and-alert/news, /en/home and /en/services/connectivity-and-data/data/main were fetchable, while /en/market/news-and-alert/newsdetails and the bare /en/ path returned nothing usable — so the LIST page is reachable but the DETAIL page is not, which is precisely the shape that breaks a naive two-stage scraper. Expect to need a headless browser for detail pages. SETSMART pricing entirely unconfirmed. Thai-language content in some filings (INFERRED).",
+    "ma_relevance": "High. A free, English-accessible, category-filterable disclosure list with a confirmed 5-year lookback and a free listed-company master file makes Thailand the strongest ASEAN ex-Singapore prospect.",
+    "implementation_notes": "Effort: MEDIUM. Recommended: (1) start by ingesting the free listedCompanies_en_US.xls as the Thailand master table — a zero-effort win; (2) scrape the news LIST page (confirmed reachable) filtered to Company Announcement and Corporate Action, and store headline + link; (3) fetch detail pages with a headless browser, since plain fetches are blocked there; (4) use the 5-year filter for a one-time backfill; (5) if volume or reliability disappoints, request a quote from infoproducts@set.or.th before investing further in scraping.",
+    "confidence": "medium-high for the free news page and master file (directly observed); low for SETSMART pricing and for the Thai SEC API lead",
+    "sources": [
+      "https://www.set.or.th/en/market/news-and-alert/news",
+      "https://www.set.or.th/en/home",
+      "https://www.set.or.th/en/services/connectivity-and-data/data/main",
+      "https://www.set.or.th/dat/eod/listedcompany/static/listedCompanies_en_US.xls",
+      "https://www.set.or.th/en/market/news-and-alert/newsdetails",
+      "https://www.setsmart.com/",
+      "https://www.sec.or.th/EN/Pages/MarketData/OpenAPI.aspx",
+      "https://api.sec.or.th/"
+    ]
+  },
+  {
+    "name": "Bursa Malaysia Company Announcements",
+    "operator": "Bursa Malaysia Berhad",
+    "country": "Malaysia",
+    "website": "https://www.bursamalaysia.com/",
+    "docs_url": "NOT FOUND — no API or developer documentation page could be located (CONFIRMED absence in this research)",
+    "region_main": "Malaysia — Bursa Malaysia Main Market and ACE Market listed issuers",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "Public announcement search (presumed free)",
+        "price": "MYR 0 / USD 0 (INFERRED — not confirmable, as every bursamalaysia.com URL tested returned HTTP 403)",
+        "what_you_get": "INFERRED: browsable company announcements which, under Bursa Listing Requirements and the Malaysian Code on Take-Overs and Mergers 2016 (administered by Securities Commission Malaysia), cover acquisitions and disposals, take-over and merger offers, substantial-shareholder notices, and related-party transactions. NOT confirmed on the page."
+      },
+      {
+        "plan": "Bursa Malaysia market data licensing (institutional)",
+        "price": "UNKNOWN — no pricing page reachable (UNCONFIRMED)",
+        "what_you_get": "INFERRED: paid market-data feeds and licences, as is standard for exchanges of this type. Not verified."
+      }
+    ],
+    "api_access": "CONFIRMED: no public API found, and the site actively blocks automated access. Every URL attempted returned HTTP 403 Forbidden — root https://www.bursamalaysia.com, /market_information/announcements/company_announcement, and /en/trade/trading_resources/listing_directory/company_announcements — consistent with Cloudflare-class anti-bot protection. Language: English is the primary language of Malaysian listed disclosure (INFERRED, but firmly so), which would make this an easy source if it were reachable.",
+    "archive_window": "UNKNOWN (unverified)",
+    "data_types": "INFERRED only: company announcements covering M&A-type events per Bursa Listing Requirements and the Take-Overs and Mergers Code.",
+    "formats": "UNKNOWN",
+    "update_frequency": "UNKNOWN",
+    "limitations": "CONFIRMED consistent 403 blocking across all tested paths. Requires a real browser session; robots.txt and terms not checked. NOTE for completeness: Malaysia's company registry (SSM / Suruhanjaya Syarikat Malaysia, https://www.ssm.com.my/) was checked and is a PAID service — CONFIRMED it offers a 'Buy Corporate Information' section with products named e-Search, e-Query, e-CBID (Corporate and Business Information Data), Beneficial Ownership Information and Safedata SSM, with no API mentioned and no MYR prices visible. SSM is therefore master data only, paid, and not a deal-discovery source; use it ad hoc for due-diligence verification, not as an ETL target.",
+    "ma_relevance": "Would be a strong free primary source for Malaysian listed M&A disclosures given English-language filings, but unverified and currently inaccessible to automated collection.",
+    "implementation_notes": "Effort: HIGH — the same anti-bot barrier as IDX. Recommended: defer Malaysia past the first phase; if needed, use a headless browser after a terms review, or approach Bursa's data services team for licensing terms. For Malaysian company master data, treat SSM as a paid manual lookup (e-Search / e-CBID) rather than a pipeline.",
+    "confidence": "low for Bursa (content INFERRED; only blocking is CONFIRMED); medium for the SSM paid-model finding, which was directly observed",
+    "sources": [
+      "https://www.bursamalaysia.com",
+      "https://www.bursamalaysia.com/market_information/announcements/company_announcement",
+      "https://www.bursamalaysia.com/en/trade/trading_resources/listing_directory/company_announcements",
+      "https://www.ssm.com.my/",
+      "https://www.ssm.com.my/Pages/Supply-Info-Portal.aspx"
+    ]
+  },
+  {
+    "name": "Vietnam disclosure sources — HOSE / HNX / SSC / National Business Registration Portal",
+    "operator": "Ho Chi Minh Stock Exchange (HOSE); Hanoi Stock Exchange (HNX); State Securities Commission of Vietnam (SSC/UBCK); National Business Registration Portal (Ministry of Planning and Investment)",
+    "country": "Vietnam",
+    "website": "https://www.hsx.vn/ ; https://hnx.vn/ ; https://ssc.gov.vn/ ; https://dangkykinhdoanh.gov.vn/",
+    "docs_url": "NOT FOUND for HOSE, HNX or SSC (CONFIRMED — none reachable); information sub-portal at https://dichvuthongtin.dkkd.gov.vn/",
+    "region_main": "Vietnam",
+    "region_surroundings": "None",
+    "plans": [
+      {
+        "plan": "National Business Registration Portal — company search",
+        "price": "UNKNOWN — CONFIRMED a registration-fee section exists ('Phí, lệ phí đăng ký doanh nghiệp'), but whether the search/lookup service itself is free or paid was NOT clear (UNCONFIRMED)",
+        "what_you_get": "CONFIRMED: a company search function ('Tìm doanh nghiệp'), an Information Services sub-portal (dichvuthongtin.dkkd.gov.vn), business-registration statistics, and a working English toggle at /en. Whether shareholder/ownership-level data is exposed was NOT clear."
+      },
+      {
+        "plan": "HOSE / HNX / SSC public disclosure pages",
+        "price": "Free (INFERRED — public exchange and regulator sites)",
+        "what_you_get": "UNCONFIRMED — none of the three could be read. INFERRED from Vietnamese securities law (Circular 96/2020/TT-BTC on information disclosure): listed-company disclosures including M&A, tender-offer and major-shareholder notices."
+      }
+    ],
+    "api_access": "COULD NOT CONFIRM for any Vietnamese source, and each failed for a DIFFERENT technical reason: (1) HOSE (hsx.vn) returned a near-empty JavaScript shell — a client-rendered SPA that a plain fetch cannot execute; (2) HNX (hnx.vn) failed with a TLS CERTIFICATE VERIFICATION ERROR on both http and https, i.e. unreachable at the transport layer — this looks like an expired or misconfigured certificate on the exchange's side and is worth flagging as a site-reliability observation, not a tooling artefact; (3) SSC (ssc.gov.vn) entered an unresolved https-to-http-to-https REDIRECT LOOP; (4) the National Business Registration Portal WAS reachable and mentions no API. Language: Vietnamese, with partial English on the registration portal (CONFIRMED).",
+    "archive_window": "UNKNOWN for all Vietnamese sources.",
+    "data_types": "INFERRED only, from general knowledge and not confirmed: HOSE and HNX publish listed-company disclosures including M&A, tender-offer and major-shareholder notices under Circular 96/2020/TT-BTC; SSC holds market-wide regulatory filings; the Business Registration Portal holds company master/registry data (incorporation and registration changes, ownership detail uncertain).",
+    "formats": "UNKNOWN",
+    "update_frequency": "UNKNOWN",
+    "limitations": "CONFIRMED that all three securities-related Vietnamese sources were inaccessible in this research, each for a distinct reason (SPA rendering, TLS certificate failure, redirect loop). None could be substantively evaluated. Vietnamese-language content throughout adds a translation layer. Third-party aggregators (vietstock.vn, cafef.vn) exist as a fallback but were NOT evaluated and would need their own terms and legal review.",
+    "ma_relevance": "Cannot be assessed with confidence. Vietnam is a growing market for Japanese acquirers, so this is a real gap — but on the evidence here it is the highest-effort, lowest-certainty jurisdiction in the whole study.",
+    "implementation_notes": "Effort: HIGH / UNKNOWN until re-tested. Recommended verification steps before any build: (a) test hnx.vn's certificate manually with openssl s_client to establish whether the TLS failure is real and persistent; (b) use a headless browser for hsx.vn given its SPA structure, and capture the XHR endpoints it calls — those are likely the real data source; (c) retry ssc.gov.vn's redirect chain with curl -L; (d) treat the National Business Registration Portal as the one confirmed-reachable Vietnamese source and evaluate its information sub-portal for master data. Place Vietnam last in the roadmap.",
+    "confidence": "low (almost entirely blocked by technical failures; content descriptions are INFERRED from general knowledge)",
+    "sources": [
+      "https://www.hsx.vn/",
+      "https://hnx.vn",
+      "http://hnx.vn",
+      "https://ssc.gov.vn/webcenter/portal/ubck",
+      "https://dangkykinhdoanh.gov.vn/",
+      "https://dichvuthongtin.dkkd.gov.vn/"
+    ]
+  }
+]

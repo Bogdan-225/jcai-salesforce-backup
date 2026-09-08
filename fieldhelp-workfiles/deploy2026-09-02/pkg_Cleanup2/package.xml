@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Account.Website</members>
+        <members>Opportunity.CloseDate</members>
+        <members>Opportunity.Name</members>
+        <members>Opportunity.Probability</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Account-en_US</members>
+        <members>Opportunity-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <version>62.0</version>
+</Package>

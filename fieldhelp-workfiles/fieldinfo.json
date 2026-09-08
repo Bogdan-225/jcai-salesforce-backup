@@ -1,0 +1,8890 @@
+{
+ "Account": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Account ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MasterRecordId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Master Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Account Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Type": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Account Type",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "RecordTypeId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Record Type ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ParentId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Parent Account ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "BillingStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Billing Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Billing Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Billing Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Billing Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Billing Address",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Shipping Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Shipping Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Shipping Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Shipping Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Shipping Address",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Phone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Account Phone",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Fax": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Account Fax",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AccountNumber": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Account Number",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Website": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Website",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "PhotoUrl": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Photo URL",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Sic": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SIC Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Industry": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Industry",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AnnualRevenue": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Annual Revenue",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "NumberOfEmployees": {
+   "type": "int",
+   "filterable": true,
+   "enLabel": "Employees",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Ownership": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Ownership",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "TickerSymbol": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Ticker Symbol",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Description": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Account Description",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Rating": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Account Rating",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Site": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Account Site",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Account Currency",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Jigsaw": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Data.com Key",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "JigsawCompanyId": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Jigsaw Company ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AccountSource": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Account Source",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SicDesc": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SIC Description",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsPriorityRecord": {
+   "type": "boolean",
+   "filterable": false,
+   "enLabel": "Important",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "TDBMiddleClassification__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Industry Group(TDB)",
+   "master": "中分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBParent__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Parent Company Name",
+   "master": "親企業名",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBMajorClassification__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sector(TDB)",
+   "master": "大分類",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "NDA Execution Date",
+   "master": "NDA締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBShareholdersNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "# of Shareholders",
+   "master": "株主数",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSettlementYearMonth__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Latest Year",
+   "master": "TDB最新期",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBKanji__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Company Name (Kanji)",
+   "master": "漢字商号",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBShareholdersNumber1__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Top Shareholder Corporate Flag",
+   "master": "第１位株主法人フラグ",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSettlementYearMonth2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Prior Year",
+   "master": "TDB前期",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSettlementYearMonth3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB 2nd Prior Year",
+   "master": "TDB前々期",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBProfit3__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB 2nd Prior After-Tax Profit (JPYmm)",
+   "master": "TDB前々期税引後利益(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBAmountOfSales3__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB 2nd Prior-Year Revenue (JPYmm)",
+   "master": "TDB前々期売上高(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBAmountOfSales2__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Prior-Year Revenue (JPYmm)",
+   "master": "TDB前期売上(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBcode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Company Code",
+   "master": "TDB企業コード",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBProfit2__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Prior-Year After-Tax Profit (JPYmm)",
+   "master": "TDB前期税引後利益(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBProfit__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Latest-Year After-Tax Profit (JPYmm)",
+   "master": "TDB最新期税引後利益(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBAmountOfSales__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Latest-Year Revenue (JPYmm)",
+   "master": "TDB最新期売上(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBOffice__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "# of Offices",
+   "master": "事業所数",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBLegalPersonality__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Legal Entity Type",
+   "master": "法人格",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSurveyDay__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Survey Date",
+   "master": "調査日",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBFoundingYear__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Founding Year",
+   "master": "設立年",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBCapital__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Capital (JPYmm)",
+   "master": "資本金(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "# of Employees",
+   "master": "従業員数",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepYear__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Rep's Birth Year",
+   "master": "代表者生年",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepDay__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Rep's Birth Day",
+   "master": "代表者生日",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepMonth__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Rep's Birth Month",
+   "master": "代表者生月",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBFoundingMonth__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Founding Month",
+   "master": "設立月",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBForeign__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Foreign/Domestic(TDB)",
+   "master": "外資系・国内系",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_documents__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "NDA URL",
+   "master": "NDA契約書",
+   "jaT": null,
+   "vis": true
+  },
+  "NDADateCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "NDA",
+   "master": "NDA",
+   "jaT": null,
+   "vis": true
+  },
+  "SourceURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Source URL",
+   "master": "ソースURL",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBPhone__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Company Phone Number",
+   "master": "企業電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "ExternalID1st__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "External ID",
+   "master": "外部ID",
+   "jaT": null,
+   "vis": false
+  },
+  "BuyAD_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Buy Agreement Execution Date",
+   "master": "買AD締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBKana__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Company Name (Kana)",
+   "master": "カナ商号",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBPostalCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Postal Code",
+   "master": "郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBLocation__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Location",
+   "master": "所在地",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyAD_documents__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Buy Agreement URL",
+   "master": "買AD契約書",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADCrossboader_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Cross-Border Buy Agreement Date",
+   "master": "クロスボーダー買AD締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSurveyYear__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Survey Year",
+   "master": "調査年",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSurveyMonth__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Survey Month",
+   "master": "調査月",
+   "jaT": null,
+   "vis": false
+  },
+  "BuyADCrossboader_documents__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cross-Border Buy Agreement URL",
+   "master": "クロスボーダー買AD契約書",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADSmall_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Small Buy Agreement Execution Date",
+   "master": "スモール買AD締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBPrefectures__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Prefecture",
+   "master": "都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADSmall_documents__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Small Buy Agreement URL",
+   "master": "スモール買AD契約書",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADContractCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Buy Agreement Execution Date Check",
+   "master": "買AD締結日チェック",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADCrossboaderContractCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Cross-Border Buy Agreement Check",
+   "master": "クロスボーダー買ADチェック",
+   "jaT": null,
+   "vis": true
+  },
+  "SmallBuyADContractCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Small Buy Agreement Check",
+   "master": "スモール買ADチェック",
+   "jaT": null,
+   "vis": true
+  },
+  "SFID18__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18",
+   "master": "SFID18",
+   "jaT": null,
+   "vis": true
+  },
+  "Buy_MatchingNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Buyer Matching Count",
+   "master": "譲受マッチング件数",
+   "jaT": null,
+   "vis": true
+  },
+  "Buy_NeedsDetail__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "[Test] M&A Needs Details",
+   "master": "※テスト中_譲受ニーズ詳細",
+   "jaT": null,
+   "vis": false
+  },
+  "contactExistFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Contact Registered Flag",
+   "master": "担当者登録フラグ",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyMatchingCreateFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "[Test] Create Buyer Matching",
+   "master": "※テスト中_譲受マッチング作成",
+   "jaT": null,
+   "vis": false
+  },
+  "ID2__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "External ID 2",
+   "master": "外部ID2",
+   "jaT": null,
+   "vis": false
+  },
+  "LeadType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Method",
+   "master": "リード種類",
+   "jaT": null,
+   "vis": true
+  },
+  "Apo_ActionRecord__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Meeting/Activity Record",
+   "master": "面談/行動記録",
+   "jaT": null,
+   "vis": false
+  },
+  "ContactName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Counterparty Contact",
+   "master": "相手先担当者",
+   "jaT": null,
+   "vis": false
+  },
+  "MA_Intention__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "M&A Intention",
+   "master": "M&amp;A意向",
+   "jaT": null,
+   "vis": false
+  },
+  "Conclusion__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Conclusion",
+   "master": "結果",
+   "jaT": null,
+   "vis": false
+  },
+  "ConclusionReason__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Reason for Conclusion",
+   "master": "結果判断理由",
+   "jaT": null,
+   "vis": false
+  },
+  "NextPlan__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Next Action Details",
+   "master": "次回行動内容",
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerImporting__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Account Owner",
+   "master": "※インポート用_取引先所有者",
+   "jaT": null,
+   "vis": true
+  },
+  "ID3__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "External ID 3",
+   "master": "外部ID3",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementYear3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB 2nd Prior-Year Fiscal Year",
+   "master": "TDB前々期業績決算期年",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementMonth3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB 2nd Prior-Year Fiscal Month",
+   "master": "TDB前々期業績決算期月",
+   "jaT": null,
+   "vis": false
+  },
+  "DomesticArea_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Target Area(JP)",
+   "master": "希望エリア(国内)",
+   "jaT": null,
+   "vis": false
+  },
+  "DomesticIndustry_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Target Industry(JP)",
+   "master": "希望業種(国内)",
+   "jaT": null,
+   "vis": false
+  },
+  "DomesticFreeDescription_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Free Notes(JP Buy)",
+   "master": "自由記述欄(国内買)",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementYear2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Prior-Year Fiscal Year",
+   "master": "TDB前期業績決算期年",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementMonth2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Prior-Year Fiscal Month",
+   "master": "TDB前期業績決算期月",
+   "jaT": null,
+   "vis": false
+  },
+  "NNOrMoreExistFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Has Reached Teaser Stage",
+   "master": "NN以降有無",
+   "jaT": null,
+   "vis": true
+  },
+  "InternationalArea_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Target Area(Intl)",
+   "master": "希望エリア(海外)",
+   "jaT": null,
+   "vis": false
+  },
+  "InterNationalIndustry_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Target Industry(Intl)",
+   "master": "希望業種(海外)",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementYear__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Latest-Year Fiscal Year",
+   "master": "TDB最新期業績決算期年",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBSettlementMonth__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Latest-Year Fiscal Month",
+   "master": "TDB最新期業績決算期月",
+   "jaT": null,
+   "vis": false
+  },
+  "InternationalFreeDescription_BuyNeeds__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Free Notes(Intl Buy)",
+   "master": "自由記述欄(海外買)",
+   "jaT": null,
+   "vis": false
+  },
+  "Field_memo__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Memo",
+   "master": "メモ",
+   "jaT": null,
+   "vis": true
+  },
+  "newMatching__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Latest Matching Created Date",
+   "master": "最新マッチング作成年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "Field1__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Test",
+   "master": "テスト",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBDISY__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Latest Reported Income Settlement Year",
+   "master": "最新法人申告所得決算期年",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBDISM__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TDB Latest Income Settlement Month",
+   "master": "TDB最新法人申告所得決算期月",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBCompanies__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "National Company Count",
+   "master": "全国社数",
+   "jaT": null,
+   "vis": false
+  },
+  "DomesticArea_BuyNeeds2__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Area (JP, Multi-Select)",
+   "master": "希望エリア(国内)(選択)",
+   "jaT": null,
+   "vis": false
+  },
+  "InternationalArea_BuyNeeds2__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Area (Intl, Multi-Select)",
+   "master": "希望エリア(海外)(選択)",
+   "jaT": null,
+   "vis": false
+  },
+  "CorporateNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Corporate Number",
+   "master": "法人番号",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize_Domestic__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Deal Size (Domestic)",
+   "master": "ディールサイズ(国内)",
+   "jaT": null,
+   "vis": false
+  },
+  "DealSize_International__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Deal Size (International)",
+   "master": "ディールサイズ(海外)",
+   "jaT": null,
+   "vis": false
+  },
+  "Field2__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Watchlist",
+   "master": "要注意先",
+   "jaT": null,
+   "vis": true
+  },
+  "Field3__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Watchlist Reason",
+   "master": "要注意先理由",
+   "jaT": null,
+   "vis": true
+  },
+  "M_AContact__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "M&A Contact",
+   "master": "M&amp;A担当者",
+   "jaT": null,
+   "vis": false
+  },
+  "cb_M_Aneeds__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "No International M&A Interest",
+   "master": "海外M&amp;Aニーズなし",
+   "jaT": null,
+   "vis": true
+  },
+  "cb_M_Aneedsriyuu__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Reason for No Interest(Intl.)",
+   "master": "海外M&amp;Aニーズなし理由",
+   "jaT": null,
+   "vis": true
+  },
+  "fd_M_Aneeds__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "No Japan M&A Interest",
+   "master": "国内M&amp;Aニーズなし",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRanking__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "National Ranking",
+   "master": "全国ランキング",
+   "jaT": null,
+   "vis": false
+  },
+  "fd_M_Aneedsriyuu__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Reason for No Interest(JP)",
+   "master": "国内M&amp;Aニーズなし理由",
+   "jaT": null,
+   "vis": true
+  },
+  "Field4__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Mid-Term Plan Link",
+   "master": "中計リンク",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepDirector__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Title",
+   "master": "代表者役職名",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepKana__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Name (Kana)",
+   "master": "代表者カナ氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepKanji__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Name (Kanji)",
+   "master": "代表者漢字氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepPostal__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Postal Code",
+   "master": "代表者自宅郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepAdress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Address",
+   "master": "代表者自宅住所",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepPhone__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Phone Number",
+   "master": "代表者自宅電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "NewOpportunityDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Project Created Date",
+   "master": "譲渡案件作成年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "X2405__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "240502 DM Sent Date",
+   "master": "240502DM送付日",
+   "jaT": null,
+   "vis": false
+  },
+  "X240502DM__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "240502 DM Pattern",
+   "master": "240502DM送付パターン",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBRepGender__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Rep's Gender",
+   "master": "代表者性別",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSupplier__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Major Suppliers",
+   "master": "主要仕入先",
+   "jaT": null,
+   "vis": true
+  },
+  "DMTIMES__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "DM Send Count",
+   "master": "DM送付回数",
+   "jaT": null,
+   "vis": false
+  },
+  "X2407DM__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "2407 DM Sent Date",
+   "master": "2407DM送付日",
+   "jaT": null,
+   "vis": false
+  },
+  "X240607DM__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "240607 DM Sent Date",
+   "master": "240607DM送付日",
+   "jaT": null,
+   "vis": false
+  },
+  "DMupDATE__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Second Previous DM Sent Date",
+   "master": "前々回DM送付日",
+   "jaT": null,
+   "vis": false
+  },
+  "DMupPATTERN__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Second Previous DM Pattern",
+   "master": "前々回DMパターン",
+   "jaT": null,
+   "vis": false
+  },
+  "DMDATE240216__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Previous DM Sent Date",
+   "master": "前回DM送付日",
+   "jaT": null,
+   "vis": false
+  },
+  "X240607DMpattern__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "240607 DM Pattern",
+   "master": "240607DM送付パターン",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBClient__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Major Customers",
+   "master": "主要販売先",
+   "jaT": null,
+   "vis": true
+  },
+  "DMPATTERN240216__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Latest DM Pattern (Discontinued)",
+   "master": "最新DMパターン名（使用停止中）",
+   "jaT": null,
+   "vis": false
+  },
+  "NominationDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Nominated Buyer Registered Date",
+   "master": "正式指名買手登録日",
+   "jaT": null,
+   "vis": true
+  },
+  "NominationBuyer__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Officially Nominated Buyer Name",
+   "master": "正式指名買手社名",
+   "jaT": null,
+   "vis": true
+  },
+  "DMtag__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "DM Business Tag",
+   "master": "DM用事業タグ",
+   "jaT": null,
+   "vis": true
+  },
+  "kensetsu_number__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Construction License Number",
+   "master": "建設業許可番号",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_Start_Date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "NDA Effective Date",
+   "master": "NDA開始日",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_End_Date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "NDA Expiration Date",
+   "master": "NDA終了日",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_Automatic_Update__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Auto-Renewal",
+   "master": "自動更新の有無",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_Type_of_Contract__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Agreement Type",
+   "master": "包括or個別契約",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_Template__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "NDA Template",
+   "master": "NDAひな型",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_Template_Change__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "NDA Template Modifications",
+   "master": "NDAひな型変更内容",
+   "jaT": null,
+   "vis": true
+  },
+  "DMDATE240329__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Latest DM Sent Date",
+   "master": "最新DM送付日",
+   "jaT": null,
+   "vis": true
+  },
+  "DMPATTERN240329__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Latest DM Pattern",
+   "master": "最新DMパターン",
+   "jaT": null,
+   "vis": true
+  },
+  "DMDATE240411__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Newest DM Sent Date",
+   "master": "超最新DM送信日",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBBoardMember__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Board Member",
+   "master": "役員",
+   "jaT": null,
+   "vis": true
+  },
+  "Field5__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Raia Request Date",
+   "master": "ライア依頼日",
+   "jaT": null,
+   "vis": true
+  },
+  "DMPATTERN240411__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Newest DM Pattern",
+   "master": "超最新DMパターン",
+   "jaT": null,
+   "vis": false
+  },
+  "Field6__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Raia Memo",
+   "master": "ライアメモ",
+   "jaT": null,
+   "vis": true
+  },
+  "X2407DMpatern__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "2407 DM Pattern",
+   "master": "2407DM送付パターン",
+   "jaT": null,
+   "vis": false
+  },
+  "Field7__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "DoGather Request Date",
+   "master": "ドゥギャザー依頼日",
+   "jaT": null,
+   "vis": true
+  },
+  "Field8__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "DoGather Memo",
+   "master": "ドゥギャザーメモ",
+   "jaT": null,
+   "vis": true
+  },
+  "parent_check__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Parent Company Duplicate Flag",
+   "master": "親会社重複フラグ",
+   "jaT": null,
+   "vis": true
+  },
+  "SCUEL_code__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SCUEL Corporation Code",
+   "master": "SCUEL法人コード",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_establisher__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Service Founder Name",
+   "master": "サービス_開設者氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_establisher_post__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Service Founder Position",
+   "master": "サービス_開設者役職",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBIPO__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Publicly Listed(TDB)",
+   "master": "株式公開",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBShareholders__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shareholders",
+   "master": "株主",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_offices__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "# of Offices 2 (Unused)",
+   "master": "事業所数2（使ってない）",
+   "jaT": null,
+   "vis": false
+  },
+  "Name_of_Facility__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Facility Name",
+   "master": "施設名前",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_1_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Service-Providing Senior Housing",
+   "master": "サービス付き高齢者向け住宅",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_2_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Dementia Care Group Home",
+   "master": "認知症対応型共同生活介護",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_3_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Specified Facility Care (Paid Home)",
+   "master": "特定施設入居者生活介護_有料老人ホーム",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_4_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Specified Facility Care (Senior Housing)",
+   "master": "特定施設入居者生活介護_サービス付き高齢者向け住宅",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_5_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "CB Specified Facility Care (Paid Home)",
+   "master": "地域密着型特定施設入居者生活介護_有料老人ホーム",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_6_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Specified Facility Care (Low-Cost Home)",
+   "master": "特定施設入居者生活介護_軽費老人ホーム",
+   "jaT": null,
+   "vis": true
+  },
+  "Number_of_Type_7_facilities__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "CB Specified Facility Care (Sr Housing)",
+   "master": "地域密着型特定施設入居者生活介護_サービス付き高齢者向け住宅",
+   "jaT": null,
+   "vis": true
+  },
+  "Purpose__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Purpose",
+   "master": "目的",
+   "jaT": null,
+   "vis": true
+  },
+  "domestic_is_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "In-House IS Request Date",
+   "master": "社内IS依頼日",
+   "jaT": null,
+   "vis": true
+  },
+  "domestic_is_memo__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "In-House IS Request Memo",
+   "master": "社内IS依頼メモ",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSubCategory__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Sub-Category(TDB)",
+   "master": "小分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSubclassification__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Detailed Category(TDB)",
+   "master": "細分類",
+   "jaT": null,
+   "vis": true
+  },
+  "PartnerBank__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Partner Bank",
+   "master": "取引銀行",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBAmountOfSalesAvg__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Average Revenue (3-Yr)",
+   "master": "TDB三期売上高平均",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBProfitAvg__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TDB Average Net Income (3-Yr)",
+   "master": "TDB三期純利益平均",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_caution__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "NDA Special Provisions",
+   "master": "NDA注意事項あり",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA_note__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "NDA Remarks",
+   "master": "NDA備考",
+   "jaT": null,
+   "vis": true
+  },
+  "representative_phone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Phone (Where Rep Is Located)",
+   "master": "電話（代表者いる場所）",
+   "jaT": null,
+   "vis": true
+  },
+  "approach_caution_select__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Approach Caution (Select)",
+   "master": "アプローチ注意選択",
+   "jaT": null,
+   "vis": true
+  },
+  "approach_caution_detail__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Approach Caution Detail",
+   "master": "アプローチ注意詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "representative_phone_memo__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Memo (Where Rep Is Located)",
+   "master": "メモ（代表者いる場所）",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRcode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Company Code",
+   "master": "TSR企業コード",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepLocal__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Prefecture",
+   "master": "代表者出身県",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBRepEducation__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's School",
+   "master": "代表者出身校",
+   "jaT": null,
+   "vis": true
+  },
+  "HanshaCheckProcess__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Anti-Social Forces Check Method",
+   "master": "反社チェック方法",
+   "jaT": null,
+   "vis": false
+  },
+  "HanshaCheck__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Anti-Social Forces Check Result",
+   "master": "反社チェック結果",
+   "jaT": null,
+   "vis": false
+  },
+  "HanshaCheckDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Anti-Social Forces Check Date",
+   "master": "反社チェック実行日",
+   "jaT": null,
+   "vis": false
+  },
+  "NGDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "NG Date",
+   "master": "NG追加日",
+   "jaT": null,
+   "vis": true
+  },
+  "NGCause__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "NG Reason",
+   "master": "NG理由",
+   "jaT": null,
+   "vis": true
+  },
+  "NGDetail__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "NG Reason(Text)",
+   "master": "NG理由詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRIPO__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Listing Status",
+   "master": "TSR上場",
+   "jaT": null,
+   "vis": true
+  },
+  "fd_NeedsDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "M&A Needs Update Date (Domestic)",
+   "master": "M&amp;Aニーズ更新日(国内)",
+   "jaT": null,
+   "vis": false
+  },
+  "TSRKana__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Company Name (Kana)",
+   "master": "TSR商号(カナ)",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepKana__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Rep's Name (Kana)",
+   "master": "TSR代表者カナ",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRKanji__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Company Name (Kanji)",
+   "master": "TSR商号(漢字)",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepKanji__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Rep's Name",
+   "master": "TSR代表者氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRPostalCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Postal Code",
+   "master": "TSR郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRLocation__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Location",
+   "master": "TSR所在地",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "TSR Phone Number",
+   "master": "TSR電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "cd_NeedsDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "M&A Needs Update Date (Intl)",
+   "master": "M&amp;Aニーズ更新日(海外)",
+   "jaT": null,
+   "vis": false
+  },
+  "TSRSettlementDate1__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Fiscal Year/Month 1",
+   "master": "TSR決算年月1",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRCapital__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Capital (JPYmm)",
+   "master": "TSR資本金(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TSREmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR # of Employees",
+   "master": "TSR従業員数",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRIndustry1__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Industry 1",
+   "master": "TSR業種1",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRIndustry2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Industry 2",
+   "master": "TSR業種2",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRIndustry3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Industry 3",
+   "master": "TSR業種3",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRPurpose__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Business Type",
+   "master": "TSR営業種目",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRBranches__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Branches/Offices",
+   "master": "TSR営業所・支店",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRBoardMember__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Board Member",
+   "master": "TSR役員",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRSupplier__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Suppliers",
+   "master": "TSR仕入先",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRShareholders__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Major Shareholders",
+   "master": "TSR大株主",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRClient__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Customers",
+   "master": "TSR販売先",
+   "jaT": null,
+   "vis": true
+  },
+  "TSR_corporate_type__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Corporate Type",
+   "master": "TSR法人種別",
+   "jaT": null,
+   "vis": true
+  },
+  "TSR_name_without_corporate_type__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Company Name (No Entity Type)",
+   "master": "TSR_商号（法人種別抜き）",
+   "jaT": null,
+   "vis": true
+  },
+  "TSR_prefecture__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "TSR Prefecture",
+   "master": "TSR_都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRAmountOfSales1__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Revenue 1 (JPYmm)",
+   "master": "TSR売上(百万円)1",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRAmountOfSales2__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Revenue 2 (JPYmm)",
+   "master": "TSR売上(百万円)2",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRAmountOfSales3__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Revenue 3 (JPYmm)",
+   "master": "TSR売上(百万円)3",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRProfit1__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Net Income 1 (JPYmm)",
+   "master": "TSR当期純利益(百万円)1",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRProfit2__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Net Income 2 (JPYmm)",
+   "master": "TSR当期純利益(百万円)2",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRProfit3__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Net Income 3 (JPYmm)",
+   "master": "TSR当期純利益(百万円)3",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRDescription__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "TSR Overview",
+   "master": "TSR概況",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRSalesGrowthRate__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Revenue Growth Rate",
+   "master": "TSR売上伸長率",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRProfitGrowthRate__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Net Income Growth Rate",
+   "master": "TSR当期純利益伸長率",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Representative",
+   "master": "TSR代表者",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepAdress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Current Address",
+   "master": "TSR現住所",
+   "jaT": null,
+   "vis": true
+  },
+  "TSR_largest_shareholder__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Largest Shareholder",
+   "master": "TSR_筆頭株主",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRAnimalZodiac__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Zodiac Sign",
+   "master": "TSR干支",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepLocal__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Hometown",
+   "master": "TSR出身地",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepEducation__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR School",
+   "master": "TSR出身校",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRLaunchDate__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Launch Year/Month",
+   "master": "TSR創業年月",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRSettlementDate2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Fiscal Year/Month 2",
+   "master": "TSR決算年月2",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRSettlementDate3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Fiscal Year/Month 3",
+   "master": "TSR決算年月3",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRRepDay__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Date of Birth",
+   "master": "TSR生年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRLFoundingDate__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Founding Year/Month",
+   "master": "TSR設立年月",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRSurveyDay__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Survey Date",
+   "master": "TSR調査年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "TSR_largest_shareholder_type__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "TSR Largest Shareholder Type",
+   "master": "TSR_筆頭株主種別",
+   "jaT": null,
+   "vis": true
+  },
+  "mail_DM_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Latest Email DM Sent Date",
+   "master": "最新メールDM送付日",
+   "jaT": null,
+   "vis": true
+  },
+  "mail_DM_pattern__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Latest Email DM Pattern",
+   "master": "最新メールDMパターン",
+   "jaT": null,
+   "vis": true
+  },
+  "TSRAmountOfSales_average__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "TSR Average Revenue (3-Yr)",
+   "master": "TSR三期売上高平均",
+   "jaT": null,
+   "vis": true
+  },
+  "FolderURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Folder URL",
+   "master": "フォルダーURL",
+   "jaT": null,
+   "vis": true
+  },
+  "AcquisitionsPerformed__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Acquisitions Performed",
+   "master": "買収経験",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_Address__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Address",
+   "master": "Address",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_CIQId__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "CIQ ID",
+   "master": "CIQ ID",
+   "jaT": null,
+   "vis": true
+  },
+  "Country__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Country",
+   "master": "Country",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_DunsNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "DUNS Number",
+   "master": "DUNS Number",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_MarketCapUSDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Market Cap(USD mm)",
+   "master": "Market Cap(USD mm)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_Postalcode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Postalcode",
+   "master": "Postalcode",
+   "jaT": null,
+   "vis": true
+  },
+  "PowerBuyer__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Power Buyer",
+   "master": "Power Buyer",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_CurrentRevenueUSDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Current Revenue(USD M)",
+   "master": "Current Revenue(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_IndustryText__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Industry(Text)",
+   "master": "Industry(Text)",
+   "jaT": null,
+   "vis": true
+  },
+  "SectorGICS__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sector(GICS)",
+   "master": "Sector(GICS)",
+   "jaT": null,
+   "vis": true
+  },
+  "Industry_GroupGICS__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Industry Group(GICS)",
+   "master": "Industry Group(GICS)",
+   "jaT": null,
+   "vis": true
+  },
+  "IndustryGICS__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Industry(GICS)",
+   "master": "Industry(GICS)",
+   "jaT": null,
+   "vis": true
+  },
+  "SubIndustryGICS__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sub-Industry(GICS)",
+   "master": "Sub-Industry(GICS)",
+   "jaT": null,
+   "vis": true
+  },
+  "NumberofEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Number of Employees",
+   "master": "Number of Employees",
+   "jaT": null,
+   "vis": true
+  },
+  "FundDelete__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Fund(Delete)",
+   "master": "Fund(Delete)",
+   "jaT": null,
+   "vis": true
+  },
+  "FundStatus__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Fund Status",
+   "master": "Fund Status",
+   "jaT": null,
+   "vis": true
+  },
+  "stock_code__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Stock Code",
+   "master": "証券コード",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_OwnershipStatus__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Ownership Status",
+   "master": "Ownership Status",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_CompanyStatus__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Company Status",
+   "master": "Company Status",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_CompanyType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Company Type",
+   "master": "Company Type",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_EBITDA_USDmm__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "EBITDA(USD M)",
+   "master": "EBITDA(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_EnterpriseValue_USDmm__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Enterprise Value(USD M)",
+   "master": "Enterprise Value(USD M)",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_Description_Long__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Long Description",
+   "master": "Long Description",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_UltimateParent__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Ultimate Parent",
+   "master": "Ultimate Parent",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_SICcodes__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SIC Codes",
+   "master": "SIC Codes",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_NativeLanguageCompanyName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Native Language Company Name",
+   "master": "Native Language Company Name",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_PreviousPeriodRevenue_USDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Previous Period Revenue(USD M)",
+   "master": "Previous Period Revenue(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_TwoPeriodsPrior_RevenueUSDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Two Periods Prior Revenue(USD M)",
+   "master": "Two Periods Prior Revenue(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_Investors__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Investors",
+   "master": "Investors",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_CurrentPeriod__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Current Period",
+   "master": "Current Period",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_PreviousPeriod__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Previous Period",
+   "master": "Previous Period",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_TwoPeriodsPrior__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Two Periods Prior",
+   "master": "Two Periods Prior",
+   "jaT": null,
+   "vis": true
+  },
+  "AcquiringCompanyPersona__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Estimated Buyer Company Profile Persona",
+   "master": "想定される譲受企業の会社概要のペルソナ",
+   "jaT": null,
+   "vis": true
+  },
+  "CompanyProfileForMatching__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Company Profile for Matching",
+   "master": "(マッチング用)会社概要",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchCapital__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Capital (For Search)",
+   "master": "(検索用)資本金",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchIndustry__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "TSR Industry (For Search)",
+   "master": "(検索用)TSR業種",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchPrefecture__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Prefecture (For Search)",
+   "master": "(検索用)都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchTDBAmountOfSalesAvg__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Avg Revenue 3-Yr (For Search)",
+   "master": "(検索用)三期売上高平均",
+   "jaT": null,
+   "vis": true
+  },
+  "MAForMatching__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "M&A Case for Matching",
+   "master": "(マッチング用)M&amp;A事例",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyNeedsForMatching__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "M&A Needs for Matching",
+   "master": "(マッチング用)買収ニーズ",
+   "jaT": null,
+   "vis": true
+  },
+  "AcquiringCompanyMAPersona__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Estimated Buyer M&A Case Persona",
+   "master": "想定される譲受企業のM&amp;A事例のペルソナ",
+   "jaT": null,
+   "vis": true
+  },
+  "AcquiringCompanyBuyNeedsPersona__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Estimated Buyer M&A Needs Persona",
+   "master": "想定される譲受企業の買収ニーズのペルソナ",
+   "jaT": null,
+   "vis": true
+  },
+  "CompanyProfileForMatchingIntl__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Company Profile for Intl Matching",
+   "master": "(海外マッチング用)会社概要",
+   "jaT": null,
+   "vis": true
+  },
+  "SellCallNGReason__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sell Call NG Reason",
+   "master": "売コールNG理由",
+   "jaT": null,
+   "vis": true
+  },
+  "SellCallNGDetail__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Sell Call NG Reason Detail",
+   "master": "売コールNG理由詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "SellCallNGDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Sell Call NG Date",
+   "master": "売コールNG日",
+   "jaT": null,
+   "vis": true
+  },
+  "dupcount__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "dupcount",
+   "master": "dupcount",
+   "jaT": null,
+   "vis": false
+  },
+  "MAForMatchingIntl__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "M&A Case for Intl Matching",
+   "master": "(海外マッチング用)M&amp;A事例",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_AverageRevenueUSDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Average Revenue(USD M)",
+   "master": "Average Revenue(USD M)",
+   "jaT": null,
+   "vis": false
+  },
+  "FundType__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Fund Type",
+   "master": "Fund Type",
+   "jaT": null,
+   "vis": true
+  },
+  "Fund__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Fund",
+   "master": "Fund",
+   "jaT": null,
+   "vis": true
+  },
+  "for_backup__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Backup for Deletion (Delete After Use)",
+   "master": "削除対象用バックアップ(使ったら消す)",
+   "jaT": null,
+   "vis": false
+  },
+  "has_high_volume_prescription_site__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Has 10,000+ Annual Prescriptions",
+   "master": "年間処方箋枚数1万枚以上",
+   "jaT": null,
+   "vis": true
+  },
+  "Cognism_CompanyAlias__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Alias",
+   "master": "Cognism_Company Alias",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQCountry__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ Country",
+   "master": "Cognism_Company HQ Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyCognismID__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Cognism_ID",
+   "master": "Cognism_Company Cognism_ID",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyDomain__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Company Domain",
+   "master": "Cognism_Company Domain",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyFullAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Full Address",
+   "master": "Cognism_Company Full Address",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ Address",
+   "master": "Cognism_Company HQ Address",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQCity__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ City",
+   "master": "Cognism_Company HQ City",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQISOCountryCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ ISO Country Code",
+   "master": "Cognism_Company HQ ISO Country Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQPostcode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ Postcode",
+   "master": "Cognism_Company HQ Postcode",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyHQState__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company HQ State",
+   "master": "Cognism_Company HQ State",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyISICCode__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Company ISIC Code",
+   "master": "Cognism_Company ISIC Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyLinkedin__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Company Linkedin",
+   "master": "Cognism_Company Linkedin",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyNAICSCode__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Company NAICS Code",
+   "master": "Cognism_Company NAICS Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Name",
+   "master": "Cognism_Company Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeCity__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office City",
+   "master": "Cognism_Company Office City",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeCountry__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office Country",
+   "master": "Cognism_Company Office Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeFullAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office Full Address",
+   "master": "Cognism_Company Office Full Address",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeState__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office State",
+   "master": "Cognism_Company Office State",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeStreet__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office Street",
+   "master": "Cognism_Company Office Street",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyOfficeZipCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Office Zip Code",
+   "master": "Cognism_Company Office Zip Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyPhoneExtension__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_Company Phone Extension",
+   "master": "Cognism_Company Phone Extension",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_Company Phone",
+   "master": "Cognism_Company Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyRevenue__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Cognism_Company Revenue",
+   "master": "Cognism_Company Revenue",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanySICCode__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Company SIC Code",
+   "master": "Cognism_Company SIC Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanySize__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Size",
+   "master": "Cognism_Company Size",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyType__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Type",
+   "master": "Cognism_Company Type",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyWebsite__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Company Website",
+   "master": "Cognism_Company Website",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_CompanyYearFounded__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Company Year Founded",
+   "master": "Cognism_Company Year Founded",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Headcount__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Headcount",
+   "master": "Cognism_Headcount",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Industry_Text__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Industry_Text",
+   "master": "Cognism_Industry_Text",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_IntentData__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Intent Data",
+   "master": "Cognism_Intent Data",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_LastUpdatedDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Cognism_Last Updated Date",
+   "master": "Cognism_Last Updated Date",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_NumberofEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Cognism_Number of Employees",
+   "master": "Cognism_Number of Employees",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_City__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_City",
+   "master": "Apollo_City",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Source__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Source",
+   "master": "Cognism_Source",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Country__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Country",
+   "master": "Apollo_Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_PrimaryIndustry_Text__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Cognism_Primary Industry_Text",
+   "master": "Cognism_Primary Industry_Text",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_PrimaryIndustry__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Cognism_Primary Industry",
+   "master": "Cognism_Primary Industry",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Industry__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Cognism_Industry",
+   "master": "Cognism_Industry",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Domain__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Domain",
+   "master": "Apollo_Domain",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_FoundedYear__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Founded Year",
+   "master": "Apollo_Founded Year",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LatestFundingAmount__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Latest Funding Amount",
+   "master": "Apollo_Latest Funding Amount",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LatestFundingDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Apollo_Latest Funding Date",
+   "master": "Apollo_Latest Funding Date",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LatestFundingStage__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Latest Funding Stage",
+   "master": "Apollo_Latest Funding Stage",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LinkedinURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Apollo_Linkedin URL",
+   "master": "Apollo_Linkedin URL",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Lists__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Lists",
+   "master": "Apollo_Lists",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Name__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Name",
+   "master": "Apollo_Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_NumberOfEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Number Of Employees",
+   "master": "Apollo_Number Of Employees",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_NumberOfJobPostings__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Number Of Job Postings",
+   "master": "Apollo_Number Of Job Postings",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_NumberOfLanguages__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Number Of Languages",
+   "master": "Apollo_Number Of Languages",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_NumberOfRetailLocations__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Number Of Retail Locations",
+   "master": "Apollo_Number Of Retail Locations",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PhoneNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Phone Number",
+   "master": "Apollo_Phone Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PostalCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Postal Code",
+   "master": "Apollo_Postal Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PrimaryIndustry__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Primary Industry",
+   "master": "Apollo_Primary Industry",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Revenue__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Revenue",
+   "master": "Apollo_Revenue",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Score__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Score",
+   "master": "Apollo_Score",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_State__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_State",
+   "master": "Apollo_State",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_StreetAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Street Address",
+   "master": "Apollo_Street Address",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_TotalFundingAmount__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Total Funding Amount",
+   "master": "Apollo_Total Funding Amount",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_WebsiteURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Apollo_Website URL",
+   "master": "Apollo_Website URL",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Address1__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Address 1",
+   "master": "Hoovers_Address 1",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_City__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_City",
+   "master": "Hoovers_City",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_CompanyName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Company Name",
+   "master": "Hoovers_Company Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_CoorporateFamilyMembers__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Coorporate Family Members",
+   "master": "Hoovers_Coorporate Family Members",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Country__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Country",
+   "master": "Hoovers_Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_DUNSNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_DUNS Number",
+   "master": "Hoovers_DUNS Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_DomesticUltimateEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Domestic Ultimate Employees",
+   "master": "Hoovers_Domestic Ultimate Employees",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_DomesticUltimateSales__c": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Hoovers_Domestic Ultimate Sales",
+   "master": "Hoovers_Domestic Ultimate Sales",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_EmployeesHere__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Employees Here",
+   "master": "Hoovers_Employees Here",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_EntityType__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Entity Type",
+   "master": "Hoovers_Entity Type",
+   "jaT": null,
+   "vis": false
+  },
+  "CDCS_Industry_Token__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "CDCS Industry Token",
+   "master": "CDCS Industry Token",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_GlobalUltimateDUNSNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Global Ultimate D-U-N-S Number",
+   "master": "Hoovers_Global Ultimate D-U-N-S Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_GlobalUltimateEmployees__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Global Ultimate Employees",
+   "master": "Hoovers_Global Ultimate Employees",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_GlobalUltimateParentCompany__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Global Ultimate Parent Company",
+   "master": "Hoovers_Global Ultimate Parent Company",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_GlobalUltimateSales__c": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Hoovers_Global Ultimate Sales",
+   "master": "Hoovers_Global Ultimate Sales",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_OwnershipType__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Ownership Type",
+   "master": "Hoovers_Ownership Type",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_ParentCompanyDUNSNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Parent Company D-U-N-S Number",
+   "master": "Hoovers_Parent Company D-U-N-S Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_ParentCompany__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Parent Company",
+   "master": "Hoovers_Parent Company",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_ApolloRecordId__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Apollo Record Id",
+   "master": "Apollo_Apollo Record Id",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_PostalCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Postal Code",
+   "master": "Hoovers_Postal Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_PrimaryURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Hoovers_Primary URL",
+   "master": "Hoovers_Primary URL",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Sales__c": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Hoovers_Sales",
+   "master": "Hoovers_Sales",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_State__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_State",
+   "master": "Hoovers_State",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_TickerSymbol__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Ticker Symbol",
+   "master": "Hoovers_Ticker Symbol",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_TradeStyle__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Trade Style",
+   "master": "Hoovers_Trade Style",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Description__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Description",
+   "master": "Apollo_Description",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Keywords__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Keywords",
+   "master": "Apollo_Keywords",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_ListOfLanguages__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_List Of Languages",
+   "master": "Apollo_List Of Languages",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PrereqDetermineResearchGuidelines__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Prereq:Determine Research Guide",
+   "master": "Apollo_Prereq:Determine Research Guide",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PrerequisiteResearchTargetCompany__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Prereq:Research Target Company",
+   "master": "Apollo_Prereq:Research Target Company",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_QualifyAccount__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Qualify Account",
+   "master": "Apollo_Qualify Account",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_SampleJobPostingTitles__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Sample Job Posting Titles",
+   "master": "Apollo_Sample Job Posting Titles",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_SecondaryIndustries__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Secondary Industries",
+   "master": "Apollo_Secondary Industries",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Technologies__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Technologies",
+   "master": "Apollo_Technologies",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_BusinessDescription__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Hoovers_Business Description",
+   "master": "Hoovers_Business Description",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_SICCode__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Hoovers_SIC Code",
+   "master": "Hoovers_SIC Code",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_SICDescription__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Hoovers_SIC Description",
+   "master": "Hoovers_SIC Description",
+   "jaT": null,
+   "vis": false
+  },
+  "IsNeedPhoneCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Phone Number Check Required",
+   "master": "電話番号チェック必須",
+   "jaT": null,
+   "vis": true
+  },
+  "Apollo_DataSource__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Data Source",
+   "master": "Apollo_Data Source",
+   "jaT": null,
+   "vis": false
+  },
+  "IS_Buy_Notes__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "IS (Buy) Memo",
+   "master": "IS(Buy)メモ",
+   "jaT": null,
+   "vis": true
+  },
+  "Hoovers_Fax__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Fax",
+   "master": "Hoovers_Fax",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Phone__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Phone",
+   "master": "Hoovers_Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "CompanyLinkedInURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Company LinkedIn URL",
+   "master": "Company LinkedIn URL",
+   "jaT": null,
+   "vis": false
+  },
+  "Domain__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Domain",
+   "master": "Domain",
+   "jaT": null,
+   "vis": false
+  }
+ },
+ "Contact": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Contact ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MasterRecordId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Master Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AccountId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Account ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastName": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Last Name",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "FirstName": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "First Name",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Salutation": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Salutation",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MiddleName": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Middle Name",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Suffix": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Suffix",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Full Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "OtherStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Other Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Other City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Other State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Other Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Other Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Other Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Other Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Other Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OtherAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Other Address",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "MailingStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Mailing Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Mailing City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Mailing State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Mailing Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Mailing Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Mailing Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Mailing Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Mailing Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "MailingAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Mailing Address",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Phone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Business Phone",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Fax": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Business Fax",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "MobilePhone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Mobile Phone",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "HomePhone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Home Phone",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "OtherPhone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Other Phone",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AssistantPhone": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Asst. Phone",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ReportsToId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Reports To ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Email": {
+   "type": "email",
+   "filterable": true,
+   "enLabel": "Email",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Title": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Title",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Department": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Department",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "AssistantName": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Assistant's Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LeadSource": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Lead Source",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Birthdate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Birthdate",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Description": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Contact Description",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Contact Currency",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "HasOptedOutOfEmail": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Email Opt Out",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "HasOptedOutOfFax": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Fax Opt Out",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "DoNotCall": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Do Not Call",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastCURequestDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Stay-in-Touch Request Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastCUUpdateDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Stay-in-Touch Save Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "EmailBouncedReason": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Email Bounced Reason",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "EmailBouncedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Email Bounced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsEmailBounced": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Is Email Bounced",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "PhotoUrl": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Photo URL",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Jigsaw": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Data.com Key",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "JigsawContactId": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Jigsaw Contact ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IndividualId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Individual ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsPriorityRecord": {
+   "type": "boolean",
+   "filterable": false,
+   "enLabel": "Important",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ContactSource": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Creation Source",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "TitleType": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Seniority Level",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "DepartmentGroup": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Department Group",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BuyerAttributes": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Buyer Attributes",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "KanaName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Name (Kana)",
+   "master": "カナ氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "Gender__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Gender",
+   "master": "性別",
+   "jaT": null,
+   "vis": true
+  },
+  "ComeFrom__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Home Prefecture",
+   "master": "出身県",
+   "jaT": null,
+   "vis": true
+  },
+  "Graduated__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "School Attended",
+   "master": "出身校",
+   "jaT": null,
+   "vis": true
+  },
+  "RepresentativeAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Address",
+   "master": "代表者自宅住所",
+   "jaT": null,
+   "vis": true
+  },
+  "HomePostalCode__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Rep's Home Postal Code",
+   "master": "代表者自宅郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Detail__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Memo",
+   "master": "備考",
+   "jaT": null,
+   "vis": true
+  },
+  "FullName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "FullName",
+   "master": "FullName",
+   "jaT": null,
+   "vis": false
+  },
+  "M_AResponsible__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "M&A Contact",
+   "master": "M&amp;A案件担当者",
+   "jaT": null,
+   "vis": true
+  },
+  "sansancard__CreatedByScanToSalesforce__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Created by Scan to Salesforce",
+   "master": "Created by Scan to Salesforce",
+   "jaT": null,
+   "vis": false
+  },
+  "DepartmentPhone__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Department Tel",
+   "master": "部署電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Flow_MACheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "[Flow] M&A Contact",
+   "master": "※フロー用_M＆A担当者",
+   "jaT": null,
+   "vis": false
+  },
+  "speedma_umu__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Speed M&A Registration",
+   "master": "スピードM&amp;A登録",
+   "jaT": null,
+   "vis": true
+  },
+  "speedM_A_ID__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Speed M&A ID",
+   "master": "スピードM&amp;A会員ID",
+   "jaT": null,
+   "vis": true
+  },
+  "Bizbank_Id__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Bizbank Member ID",
+   "master": "Bizbank会員ID",
+   "jaT": null,
+   "vis": true
+  },
+  "Bizbank_umu__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Bizbank Registered",
+   "master": "Bizbank登録",
+   "jaT": null,
+   "vis": true
+  },
+  "ToCC__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "To/CC",
+   "master": "To/CC",
+   "jaT": null,
+   "vis": true
+  },
+  "No_Contact__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Unavailable",
+   "master": "連絡不可",
+   "jaT": null,
+   "vis": true
+  },
+  "LinkedIn__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "LinkedIn",
+   "master": "LinkedIn",
+   "jaT": null,
+   "vis": true
+  },
+  "Email_Bounce_Type__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Email Bounce Type",
+   "master": "メールバウンス種別",
+   "jaT": null,
+   "vis": true
+  },
+  "Cognism_City__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_City",
+   "master": "Cognism_City",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Country__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Cognism_Country",
+   "master": "Cognism_Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Department__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Department",
+   "master": "Cognism_Department",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_DiamondRecord__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Diamond Record",
+   "master": "Cognism_Diamond Record",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_DirectPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_Direct Phone",
+   "master": "Cognism_Direct Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_EmailStatus__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Email Status",
+   "master": "Cognism_Email Status",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Email__c": {
+   "type": "email",
+   "filterable": true,
+   "enLabel": "Cognism_Email",
+   "master": "Cognism_Email",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_FirstName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_First Name",
+   "master": "Cognism_First Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_FullName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Full Name",
+   "master": "Cognism_Full Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_HQPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_HQ Phone",
+   "master": "Cognism_HQ Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_JobTitle__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Job Title",
+   "master": "Cognism_Job Title",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_LastName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Last Name",
+   "master": "Cognism_Last Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Linkedin__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Linkedin",
+   "master": "Cognism_Linkedin",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_MobilePhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_MobilePhone",
+   "master": "Cognism_MobilePhone",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_OfficePhoneExtension__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_Office Phone Extension",
+   "master": "Cognism_Office Phone Extension",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_OfficePhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Cognism_Office Phone",
+   "master": "Cognism_Office Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_School__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_School",
+   "master": "Cognism_School",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Seniority__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Seniority",
+   "master": "Cognism_Seniority",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_State__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_State",
+   "master": "Cognism_State",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Street__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Cognism_Street",
+   "master": "Cognism_Street",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Twitter__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Twitter",
+   "master": "Cognism_Twitter",
+   "jaT": null,
+   "vis": false
+  },
+  "Cognism_Website__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Cognism_Website",
+   "master": "Cognism_Website",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_City__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_City",
+   "master": "Apollo_City",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_CorporateNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Corporate Number",
+   "master": "Apollo_Corporate Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Country__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Country",
+   "master": "Apollo_Country",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_CurrentJob__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Current Job",
+   "master": "Apollo_Current Job",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_DefaultNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Default Number",
+   "master": "Apollo_Default Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_DoNotCall__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Apollo_Do Not Call",
+   "master": "Apollo_Do Not Call",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_FirstName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_First Name",
+   "master": "Apollo_First Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_HomeNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Home Number",
+   "master": "Apollo_Home Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LastName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Last Name",
+   "master": "Apollo_Last Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_LinkedinURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Apollo_Linkedin URL",
+   "master": "Apollo_Linkedin URL",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Lists__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Lists",
+   "master": "Apollo_Lists",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_MobileNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Mobile Number",
+   "master": "Apollo_Mobile Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_OtherNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Other Number",
+   "master": "Apollo_Other Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PrimaryEmail__c": {
+   "type": "email",
+   "filterable": true,
+   "enLabel": "Apollo_Primary Email",
+   "master": "Apollo_Primary Email",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_QualifyContact__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Apollo_Qualify Contact",
+   "master": "Apollo_Qualify Contact",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Score__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Apollo_Score",
+   "master": "Apollo_Score",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_State__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_State",
+   "master": "Apollo_State",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_WorkNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Apollo_Work Number",
+   "master": "Apollo_Work Number",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_DataSource__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Data Source",
+   "master": "Apollo_Data Source",
+   "jaT": null,
+   "vis": true
+  },
+  "Hoovers_DirectPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Hoovers_Direct Phone",
+   "master": "Hoovers_Direct Phone",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Email__c": {
+   "type": "email",
+   "filterable": true,
+   "enLabel": "Hoovers_Email",
+   "master": "Hoovers_Email",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_FirstName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_First Name",
+   "master": "Hoovers_First Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_LastName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Last Name",
+   "master": "Hoovers_Last Name",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_Title__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Hoovers_Title",
+   "master": "Hoovers_Title",
+   "jaT": null,
+   "vis": false
+  },
+  "Hoovers_CorporateFamilyMembers__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Hoovers_Corporate Family Members",
+   "master": "Hoovers_Corporate Family Members",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_PrimaryDepartment__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Primary Department",
+   "master": "Apollo_Primary Department",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_SubDepartments__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Sub Departments",
+   "master": "Apollo_Sub Departments",
+   "jaT": null,
+   "vis": false
+  },
+  "Apollo_Seniority__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Apollo_Seniority",
+   "master": "Apollo_Seniority",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Account__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Account",
+   "master": "ZB Account",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Activity_Data_Channels__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Activity Data Channels",
+   "master": "ZB Activity Data Channels",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Activity_Data_Count__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Activity Data Count",
+   "master": "ZB Activity Data Count",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Activity_Data_Types__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Activity Data Types",
+   "master": "ZB Activity Data Types",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Activity_First_Seen__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Activity First Seen",
+   "master": "ZB Activity First Seen",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Catch_All_Domain__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Catch-All Domain",
+   "master": "ZB Catch-All Domain",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Did_You_Mean__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Did You Mean",
+   "master": "ZB Did You Mean",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Domain_Age_Days__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Domain Age Days",
+   "master": "ZB Domain Age Days",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Domain__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "ZB Domain",
+   "master": "ZB Domain",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_First_Name__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB First Name",
+   "master": "ZB First Name",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Free_Email__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Free Email",
+   "master": "ZB Free Email",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Last_Known_Activity__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Last Known Activity",
+   "master": "ZB Last Known Activity",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Last_Name__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Last Name",
+   "master": "ZB Last Name",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Status__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Status",
+   "master": "ZB Status",
+   "jaT": null,
+   "vis": false
+  },
+  "ZB_Sub_Status__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "ZB Sub status",
+   "master": "ZB Sub status",
+   "jaT": null,
+   "vis": false
+  }
+ },
+ "Opportunity": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Opportunity ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AccountId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Account ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "RecordTypeId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Record Type ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Description": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Description",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "StageName": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Stage",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Amount": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Amount",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Probability": {
+   "type": "percent",
+   "filterable": true,
+   "enLabel": "Probability (%)",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CloseDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Close Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Type": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Opportunity Type",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "NextStep": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Next Step",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LeadSource": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Lead Source",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsClosed": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Closed",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsWon": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Won",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ForecastCategory": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Forecast Category",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ForecastCategoryName": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Forecast Category",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Opportunity Currency",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CampaignId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Campaign ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "HasOpportunityLineItem": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Has Line Item",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Pricebook2Id": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Price Book ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "PushCount": {
+   "type": "int",
+   "filterable": true,
+   "enLabel": "Push Count",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastStageChangeDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Stage Change Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "FiscalQuarter": {
+   "type": "int",
+   "filterable": true,
+   "enLabel": "Fiscal Quarter",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "FiscalYear": {
+   "type": "int",
+   "filterable": true,
+   "enLabel": "Fiscal Year",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Fiscal": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Fiscal Period",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ContactId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Contact ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "SyncedQuoteId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Quote ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "HasOpenActivity": {
+   "type": "boolean",
+   "filterable": false,
+   "enLabel": "Has Open Activity",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "HasOverdueTask": {
+   "type": "boolean",
+   "filterable": false,
+   "enLabel": "Has Overdue Task",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastAmountChangedHistoryId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Opportunity History ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastCloseDateChangedHistoryId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Opportunity History ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Budget_Confirmed__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Budget Confirmed",
+   "master": "予算確認",
+   "jaT": null,
+   "vis": false
+  },
+  "Discovery_Completed__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Needs Confirmed",
+   "master": "ニーズ確認",
+   "jaT": null,
+   "vis": false
+  },
+  "ROI_Analysis_Completed__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "ROI Analysis Completed",
+   "master": "ROI分析完了可否",
+   "jaT": null,
+   "vis": false
+  },
+  "Field1__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Likelihood",
+   "master": "見込み",
+   "jaT": null,
+   "vis": false
+  },
+  "Loss_Reason__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Loss Reason",
+   "master": "失注理由",
+   "jaT": null,
+   "vis": false
+  },
+  "Field2__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Conclusion",
+   "master": "結果",
+   "jaT": null,
+   "vis": false
+  },
+  "Field3__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Conclusion Details",
+   "master": "結果詳細",
+   "jaT": null,
+   "vis": false
+  },
+  "Field4__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Success Probability",
+   "master": "成約確度",
+   "jaT": null,
+   "vis": true
+  },
+  "Field5__c": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Interim Fee",
+   "master": "中間報酬",
+   "jaT": null,
+   "vis": false
+  },
+  "Field6__c": {
+   "type": "currency",
+   "filterable": true,
+   "enLabel": "Success Fee",
+   "master": "成約報酬",
+   "jaT": null,
+   "vis": false
+  },
+  "SellsideMainManager__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Sell-Side Manager",
+   "master": "セルサイド主担当",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBMajorClassification__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sector(TDB)",
+   "master": "大分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBMiddleClassification__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Industry Group(TDB)",
+   "master": "中分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSubCategory__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Sub-Category(TDB)",
+   "master": "小分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBSubclassification__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Detailed Category(TDB)",
+   "master": "細分類",
+   "jaT": null,
+   "vis": true
+  },
+  "Field11__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Business Details",
+   "master": "事業詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "Prefectures__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Prefecture",
+   "master": "都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "AskingPrice__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Asking Price(JPY M)",
+   "master": "譲渡希望価格(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "SP_FolderURLProject__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Folder URL(Project)",
+   "master": "資料格納先",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_Fees_USDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Fees(USD M)",
+   "master": "Fees(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "SellerMiddleMargin__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Seller Interim Fee(JPY M)",
+   "master": "売手中間報酬(百万円)",
+   "jaT": null,
+   "vis": false
+  },
+  "BuyerSuccessMargin__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Buyer Estimated Fee(M)",
+   "master": "買手想定フィー(M)",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyerMiddleMargin__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Buyer Interim Fee(JPY M)",
+   "master": "買手中間報酬(百万円)",
+   "jaT": null,
+   "vis": false
+  },
+  "SellerSuccessMargin__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Seller Estimated Fee(M)",
+   "master": "売手想定フィー(M)",
+   "jaT": null,
+   "vis": true
+  },
+  "SellerMiddleMarginDepositDay__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Seller Interim Fee Deposit Date",
+   "master": "売手中間報酬入金予定日",
+   "jaT": null,
+   "vis": false
+  },
+  "BuyerSuccessMarginDepositDay__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Buyer Fee Deposit Date(Est.)",
+   "master": "買手フィー入金想定日",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyerMiddleMarginDepositDay__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Buyer Interim Fee Deposit Date",
+   "master": "買手中間報酬入金予定日",
+   "jaT": null,
+   "vis": false
+  },
+  "SellerSuccessMarginDepositDay__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Seller Fee Deposit Date(Est.)",
+   "master": "売手フィー入金想定日",
+   "jaT": null,
+   "vis": true
+  },
+  "SellADContractDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Sell Agreement Singed Date",
+   "master": "売AD契約締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "Dept__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Borrowings(JPY K)",
+   "master": "借入金(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "CashDeposit__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Cash and Deposits(JPY K)",
+   "master": "現預金(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "NetWorth__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Net Assets(JPY K)",
+   "master": "純資産(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "EBITDA__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "EBITDA(JPY K)",
+   "master": "EBITDA(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesAmount__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Revenue(JPY K)",
+   "master": "売上高(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TotalAsset__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Total Assets, Latest FY(JPY K)",
+   "master": "総資産_直近期末(千円)",
+   "jaT": null,
+   "vis": true
+  },
+  "LongTermFollow__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Long-Term Follow-up",
+   "master": "長期フォロー",
+   "jaT": null,
+   "vis": true
+  },
+  "Pending__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Pending",
+   "master": "ペンディング",
+   "jaT": null,
+   "vis": true
+  },
+  "LongTermReason__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Long-Term Follow-up Reason",
+   "master": "長期フォロー理由",
+   "jaT": null,
+   "vis": true
+  },
+  "PendingMethod__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Pending Method",
+   "master": "ペンディング方法",
+   "jaT": null,
+   "vis": true
+  },
+  "OnHoldReason__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "On-Hold Reason",
+   "master": "On-Hold Reason",
+   "jaT": null,
+   "vis": true
+  },
+  "LongTermMethod__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Long-Term Follow-up Method",
+   "master": "長期フォロー方法",
+   "jaT": null,
+   "vis": true
+  },
+  "SellADContract_URL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Sell Agreement URL",
+   "master": "売AD契約書URL",
+   "jaT": null,
+   "vis": true
+  },
+  "Comment__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Comment",
+   "master": "★コメント",
+   "jaT": null,
+   "vis": false
+  },
+  "Subject__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Title",
+   "master": "★件名",
+   "jaT": null,
+   "vis": false
+  },
+  "Team__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Team",
+   "master": "チーム",
+   "jaT": null,
+   "vis": true
+  },
+  "UserTeam__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "User's Team",
+   "master": "ユーザのチーム",
+   "jaT": null,
+   "vis": false
+  },
+  "SFID18__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18(Opportunity)",
+   "master": "譲渡案件SFID18",
+   "jaT": null,
+   "vis": true
+  },
+  "LeadTypeMemo__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Method Notes",
+   "master": "リード種類補足",
+   "jaT": null,
+   "vis": true
+  },
+  "Field15__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Project Info",
+   "master": "概況",
+   "jaT": null,
+   "vis": true
+  },
+  "AD__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Sell Agreement Timing",
+   "master": "売AD契約時期",
+   "jaT": null,
+   "vis": true
+  },
+  "Field16__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Total Estimated Fee(M)",
+   "master": "合計想定フィー(M)",
+   "jaT": null,
+   "vis": true
+  },
+  "BuysideMainManager__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Buy-Side Out-Out Manager",
+   "master": "バイサイド主担当",
+   "jaT": null,
+   "vis": true
+  },
+  "Fee_Probability_USDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Fee x Probability(USD M)",
+   "master": "Fee x Probability(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "predictiveAmount__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Probability-Adjusted Revenue(M)",
+   "master": "確度勘案後売上高(M)",
+   "jaT": null,
+   "vis": true
+  },
+  "Field17__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Next Stage",
+   "master": "次フェーズ",
+   "jaT": null,
+   "vis": true
+  },
+  "opportunity_acquirer__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Opportunity Originator",
+   "master": "商談獲得担当者",
+   "jaT": null,
+   "vis": true
+  },
+  "termination_reason__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Drop Reason",
+   "master": "終了理由(100字以上)",
+   "jaT": null,
+   "vis": true
+  },
+  "ApproachStatus__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Approach Status(for domestic team)",
+   "master": "アプローチ状況",
+   "jaT": null,
+   "vis": true
+  },
+  "LeadType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Method",
+   "master": "リード種類",
+   "jaT": null,
+   "vis": true
+  },
+  "OwnerfullName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Manager",
+   "master": "案件所有者名",
+   "jaT": null,
+   "vis": true
+  },
+  "ApproachCount__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Approach Count(for domestic team)",
+   "master": "アプローチ周回数",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_P_AcquiringCompany__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Acquiring Company",
+   "master": "Acquiring Company",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_ExpectedPayout_Yen__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Expected Payout(JPY 10K)",
+   "master": "Expected Payout(万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "S_CriteriaText__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Criteria(Text)",
+   "master": "Criteria(Text)",
+   "jaT": null,
+   "vis": true
+  },
+  "MANeeds__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "M&A Needs",
+   "master": "M&amp;A Needs",
+   "jaT": null,
+   "vis": true
+  },
+  "TeaserURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Teaser URL",
+   "master": "Teaser URL",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_BuysideProgress__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Buy-Side Progress",
+   "master": "Buy-Side Progress",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_EVValue_USDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "EV Value(USD M)",
+   "master": "EV Value(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "SP_Website__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Website",
+   "master": "Website",
+   "jaT": null,
+   "vis": true
+  },
+  "SP_FolderURLCompany__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "FolderURL(Company)",
+   "master": "FolderURL(Company)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_P_AcquiringCompanyMatchingInfo__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Acquiring Company(Matching Info)",
+   "master": "Acquiring Company(Matching Info)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_SP_Country__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Country",
+   "master": "Country",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_BizBank__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "BizBank(Published Date)",
+   "master": "BizBank(Published Date)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_ExpectedRevenue_Yen__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Expected Revenue(万円)",
+   "master": "Expected Revenue(万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "StartDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Start Date",
+   "master": "Start Date",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_SellsideProgress__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Sell-Side Progress",
+   "master": "Sell-Side Progress",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_MeetingMemo__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Meeting Memo",
+   "master": "Meeting Memo",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_P_TossupDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Toss up Date",
+   "master": "Toss up Date",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_P_TopMeetingDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Top Meeting Date",
+   "master": "Top Meeting Date",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_P_ResponseDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Response Date",
+   "master": "Response Date",
+   "jaT": null,
+   "vis": false
+  },
+  "Valuation_Date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Valuation Date",
+   "master": "Valuation Date",
+   "jaT": null,
+   "vis": true
+  },
+  "tossup__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Toss Up(TU)",
+   "master": "トスアップ(TU)",
+   "jaT": null,
+   "vis": true
+  },
+  "appointment_from_tossup__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Appointment from Toss Up",
+   "master": "TUからのアポ獲得",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_P_TossUp__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Toss Up",
+   "master": "Toss Up",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_P_TopMeeting__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Top Meeting",
+   "master": "Top Meeting",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_P_Appointment__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Appointment",
+   "master": "Appointment",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_P_PotentialBuyers__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Potential Buyers",
+   "master": "Potential Buyers",
+   "jaT": null,
+   "vis": true
+  },
+  "BuysideSubManager__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Buy-Side In-Out Manager",
+   "master": "バイサイド副担当",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchSalesMax__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Search Revenue(JPY M): Max",
+   "master": "(検索用)売上高_最大（百万円）",
+   "jaT": null,
+   "vis": true
+  },
+  "SearchSalesMinimum__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Search Revenue(JPY M): Min",
+   "master": "(検索用)売上高_最小（百万円）",
+   "jaT": null,
+   "vis": true
+  },
+  "DisclosureStatementURL_Sell__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Disclosure Statement URL(Sell)",
+   "master": "重要事項説明書URL",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_SpreadsheetProgressLog__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Spreadsheet Progress Log",
+   "master": "Spreadsheet Progress Log",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Cash__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Cash",
+   "master": "Cash",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Debt__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Debt",
+   "master": "Debt",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Depreciation__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Depreciation",
+   "master": "Depreciation",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Equity__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Equity",
+   "master": "Equity",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_PAT__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Profit After Tax",
+   "master": "Profit After Tax",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_PBT__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Profit Before Tax",
+   "master": "Profit Before Tax",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Revenue__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Revenue",
+   "master": "Revenue",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_ActivitiesByStage__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_ActivitiesByStage",
+   "master": "Check_ActivitiesByStage",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_FS__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_FS",
+   "master": "Check_DocUploaded_FS",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_IM__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_IM",
+   "master": "Check_DocUploaded_IM",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_Teaser__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_Teaser",
+   "master": "Check_DocUploaded_Teaser",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_MatchingStage__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_MatchingStage",
+   "master": "Check_MatchingStage",
+   "jaT": null,
+   "vis": true
+  },
+  "VerifyWireTransferPayment__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Verify Wire Transfer/Payment",
+   "master": "送金/入金の履歴確認",
+   "jaT": null,
+   "vis": true
+  },
+  "UpdateShareholderRegistry__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Update Shareholder Registry",
+   "master": "株主名簿の登記の書き換え",
+   "jaT": null,
+   "vis": true
+  },
+  "Confirm_SellersBank_POC__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Confirm Seller's Bank & POC",
+   "master": "銀行/担当者の確認(売主)",
+   "jaT": null,
+   "vis": true
+  },
+  "Confirm_BuyersBank_POC__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Confirm Buyer's Bank & POC",
+   "master": "銀行/担当者の確認(買主)",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_QA__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_QA",
+   "master": "Check_DocUploaded_QA",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_MOU__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_MOU",
+   "master": "Check_DocUploaded_MOU",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_LOI__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_LOI",
+   "master": "Check_DocUploaded_LOI",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_Agenda__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_Agenda",
+   "master": "Check_DocUploaded_Agenda",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_SPA__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_SPA",
+   "master": "Check_DocUploaded_SPA",
+   "jaT": null,
+   "vis": true
+  },
+  "Check_DocUploaded_Valuation__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Check_DocUploaded_Valuation",
+   "master": "Check_DocUploaded_Valuation",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_Methods__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Valuation Methods",
+   "master": "Valuation Methods",
+   "jaT": null,
+   "vis": true
+  },
+  "EV_USDmm__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "EV(USD M)",
+   "master": "EV(USD M)",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation_FiscalYearEnd__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Fiscal Year End",
+   "master": "Fiscal Year End",
+   "jaT": null,
+   "vis": true
+  },
+  "NDA__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "NDA",
+   "master": "NDA",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Address_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Address",
+   "master": "Inquiry_Address",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Address_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Address(JP)",
+   "master": "Inquiry_住所",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Body_En__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Inquiry_Body",
+   "master": "Inquiry_Body",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Body_Ja__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Inquiry Body(JP)",
+   "master": "Inquiry_本文",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Company_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Company",
+   "master": "Inquiry_Company",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Company_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Company(JP)",
+   "master": "Inquiry_会社名",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Department_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Department",
+   "master": "Inquiry_Department",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Department_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Department(JP)",
+   "master": "Inquiry_所属",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Email_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Email",
+   "master": "Inquiry_Email",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Email_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Email(JP)",
+   "master": "Inquiry_メール",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Mobile_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Mobile",
+   "master": "Inquiry_Mobile",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Mobile_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Mobile Tel(JP)",
+   "master": "Inquiry_TEL(携帯)",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Name_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Name",
+   "master": "Inquiry_Name",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Name_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Name(JP)",
+   "master": "Inquiry_名前",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Postalcode_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Postalcode",
+   "master": "Inquiry_Postalcode",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Postalcode_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Postal Code(JP)",
+   "master": "Inquiry_郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Spelling_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Name Reading(JP)",
+   "master": "Inquiry_フリガナ",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Subject_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Subject",
+   "master": "Inquiry_Subject",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Subject_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Subject(JP)",
+   "master": "Inquiry_タイトル",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Title_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Title",
+   "master": "Inquiry_Title",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Title_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Job Title(JP)",
+   "master": "Inquiry_役職",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Work_En__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry_Work",
+   "master": "Inquiry_Work",
+   "jaT": null,
+   "vis": true
+  },
+  "Inquiry_Work_Ja__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Inquiry Work Tel(JP)",
+   "master": "Inquiry_TEL(会社)",
+   "jaT": null,
+   "vis": true
+  },
+  "ApproachType__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Approach Type",
+   "master": "アプローチ種別",
+   "jaT": null,
+   "vis": true
+  }
+ },
+ "Matching__c": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Matching No.",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Currency ISO Code",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "RecordTypeId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Record Type ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Sell__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Project",
+   "master": "譲渡案件",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyingCompanyPrefecture__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Buyer Company Prefecture",
+   "master": "譲受企業都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "Buy_Company__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Buyer",
+   "master": "譲受希望会社",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_Company__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Seller",
+   "master": "譲渡希望会社",
+   "jaT": null,
+   "vis": true
+  },
+  "phase_match__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Stage",
+   "master": "フェーズ",
+   "jaT": null,
+   "vis": true
+  },
+  "description_matching__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Description",
+   "master": "説明",
+   "jaT": null,
+   "vis": false
+  },
+  "buyer_industry_middle__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Buyer Industry Group",
+   "master": "譲受企業業種(中分類)",
+   "jaT": null,
+   "vis": false
+  },
+  "MainPhoneNumber__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Tel",
+   "master": "代表電話",
+   "jaT": null,
+   "vis": true
+  },
+  "Buy_Needs__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "M&A Needs",
+   "master": "譲受ニーズ",
+   "jaT": null,
+   "vis": false
+  },
+  "MatchingReason__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Matching Reason",
+   "master": "マッチング理由",
+   "jaT": null,
+   "vis": true
+  },
+  "NNPassReason__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Teaser Pass Reason",
+   "master": "NN見送り理由",
+   "jaT": null,
+   "vis": true
+  },
+  "IMPassReason__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "IM Pass Reason",
+   "master": "IM見送り理由",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBAmountOfSales__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Latest Revenue(JPYmm)",
+   "master": "最新期売上(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBProfit__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Latest Net Income(JPYmm)",
+   "master": "最新期税引後利益(百万円)",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBForeign__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Foreign/Domestic(TDB)",
+   "master": "外資系・国内系",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBIPO__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Publicly Listed(TDB)",
+   "master": "株式公開",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBMajorClassification__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Sector(TDB)",
+   "master": "大分類",
+   "jaT": null,
+   "vis": true
+  },
+  "TDBMiddleClassification__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Industry Group(TDB)",
+   "master": "中分類",
+   "jaT": null,
+   "vis": true
+  },
+  "Purpose__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Purpose",
+   "master": "目的",
+   "jaT": null,
+   "vis": true
+  },
+  "Detail__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Details",
+   "master": "詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "InportPhoneNumber__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "[Import] Phone Number",
+   "master": "※インポートデータ：電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "IPRep__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] IP Rep",
+   "master": "※インポートデータ：IP担当者",
+   "jaT": null,
+   "vis": true
+  },
+  "ClientInportName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Client Contact",
+   "master": "※インポートデータ：クライアント担当者",
+   "jaT": null,
+   "vis": true
+  },
+  "InportAddress__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Contact Address",
+   "master": "※インポート用：担当者アドレス",
+   "jaT": null,
+   "vis": true
+  },
+  "AteName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Addressee Name",
+   "master": "宛名",
+   "jaT": null,
+   "vis": true
+  },
+  "ClientDepartment__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Contact Department",
+   "master": "担当者部署",
+   "jaT": null,
+   "vis": true
+  },
+  "AccountID__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Account ID",
+   "master": "取引先ID",
+   "jaT": null,
+   "vis": false
+  },
+  "OppID__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project ID",
+   "master": "譲渡案件ID",
+   "jaT": null,
+   "vis": false
+  },
+  "NextActionDay__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Next Action Date",
+   "master": "次回行動予定日",
+   "jaT": null,
+   "vis": true
+  },
+  "LastCalledRep__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Last Activity User",
+   "master": "最終活動者",
+   "jaT": null,
+   "vis": true
+  },
+  "Detail2__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "[Import] Other Info 2",
+   "master": "※インポートデータ:その他情報2",
+   "jaT": null,
+   "vis": true
+  },
+  "SFID18__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18",
+   "master": "SFID18",
+   "jaT": null,
+   "vis": true
+  },
+  "OtherDetail__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "[Import] Other Information",
+   "master": "※インポートデータ:その他情報",
+   "jaT": null,
+   "vis": false
+  },
+  "InportURL__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] URL",
+   "master": "※インポートデータ：URL",
+   "jaT": null,
+   "vis": false
+  },
+  "InportPosition__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Contact Title",
+   "master": "※インポートデータ：担当者役職",
+   "jaT": null,
+   "vis": false
+  },
+  "InportTel__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Tel",
+   "master": "※インポートデータ：電話番号",
+   "jaT": null,
+   "vis": false
+  },
+  "InportDepartmentTel__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Import] Department Tel",
+   "master": "※インポートデータ：部署電話番号",
+   "jaT": null,
+   "vis": false
+  },
+  "M_WebSite__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Website",
+   "master": "Webサイト",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyCompany_SFID18__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18(Buyer)",
+   "master": "譲受希望会社SFID18",
+   "jaT": null,
+   "vis": true
+  },
+  "phaseColor__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Stage Category",
+   "master": "フェーズ分類",
+   "jaT": null,
+   "vis": false
+  },
+  "listUnique__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "List Count",
+   "master": "リスト数",
+   "jaT": null,
+   "vis": false
+  },
+  "NN_date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Teaser Sent Date",
+   "master": "NN送信日",
+   "jaT": null,
+   "vis": false
+  },
+  "approachNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Approach Count",
+   "master": "アプローチ数",
+   "jaT": null,
+   "vis": false
+  },
+  "approachEnd__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Approach End Count",
+   "master": "アプローチ終了数",
+   "jaT": null,
+   "vis": false
+  },
+  "NNSendNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Teaser Sent Count",
+   "master": "NN送信数",
+   "jaT": null,
+   "vis": false
+  },
+  "NNEndNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Teaser Pass Count",
+   "master": "NN見送り数",
+   "jaT": null,
+   "vis": false
+  },
+  "IMSendNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "IM Sent Count",
+   "master": "IM送信数",
+   "jaT": null,
+   "vis": false
+  },
+  "IMEndNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "IM Pass Count",
+   "master": "IM見送り数",
+   "jaT": null,
+   "vis": false
+  },
+  "IMSendDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "IM Proposal Date",
+   "master": "IM提案日",
+   "jaT": null,
+   "vis": false
+  },
+  "NNDateFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Show Teaser Sent Comment",
+   "master": "NN送信コメント表示",
+   "jaT": null,
+   "vis": false
+  },
+  "IMSendDateFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Show IM Proposal Comment",
+   "master": "IM提案コメント表示",
+   "jaT": null,
+   "vis": false
+  },
+  "approachMethod__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Approach Method",
+   "master": "アプローチ手段",
+   "jaT": null,
+   "vis": false
+  },
+  "formSentNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Form Sent Count",
+   "master": "フォーム送信数",
+   "jaT": null,
+   "vis": false
+  },
+  "callNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Call Count",
+   "master": "架電数",
+   "jaT": null,
+   "vis": false
+  },
+  "dealMailSentNumber__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Deal Email Sent Count",
+   "master": "案件メール送信数",
+   "jaT": null,
+   "vis": false
+  },
+  "recordCount__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Flow] Record Creation Count",
+   "master": "※フロー用_レコード作成数カウント",
+   "jaT": null,
+   "vis": false
+  },
+  "NNOrMore__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "[Flow] At Teaser Stage+",
+   "master": "※フロー用_NN以上",
+   "jaT": null,
+   "vis": false
+  },
+  "Flow_WEBSite__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "[Flow] Website",
+   "master": "※フロー用_WEBサイト",
+   "jaT": null,
+   "vis": false
+  },
+  "gaikyo_matching__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Project Details",
+   "master": "概況",
+   "jaT": null,
+   "vis": true
+  },
+  "status__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Status",
+   "master": "ステータス",
+   "jaT": null,
+   "vis": true
+  },
+  "IS_Memo__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "IS Memo",
+   "master": "ISメモ",
+   "jaT": null,
+   "vis": true
+  },
+  "FlowComment__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "[Flow] Comment",
+   "master": "※フロー用_コメント",
+   "jaT": null,
+   "vis": false
+  },
+  "FlowUseActivityDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "[Flow] Activity Date",
+   "master": "※フロー用_活動日",
+   "jaT": null,
+   "vis": false
+  },
+  "termination_reason__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Drop Reason",
+   "master": "終了理由",
+   "jaT": null,
+   "vis": true
+  },
+  "other_termination_reason__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Drop Reason Comments",
+   "master": "終了理由コメント",
+   "jaT": null,
+   "vis": true
+  },
+  "NDADateCheck__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "NDA",
+   "master": "NDA",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_ApproachStatus__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Approaching Status",
+   "master": "案件アプローチ状況",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_OwnerfullName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Manager",
+   "master": "案件所有者",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_StageName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Phase",
+   "master": "譲渡案件フェーズ",
+   "jaT": null,
+   "vis": true
+  },
+  "Status_Date__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Status Change Date",
+   "master": "ステータス更新日",
+   "jaT": null,
+   "vis": true
+  },
+  "Advisor_Memo__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Memo(Manager)",
+   "master": "案件MGメモ",
+   "jaT": null,
+   "vis": true
+  },
+  "Matching_Memo__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Matching Notes",
+   "master": "マッチング備考欄",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_TM_Progress__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Progress(Date, Description)",
+   "master": "Progress(Date, Description)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_ResponseDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Response Date",
+   "master": "Response Date",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_TossUpDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Toss Up Date",
+   "master": "Toss Up Date",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_M_TopMtgDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Top Mtg Date",
+   "master": "Top Mtg Date",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_TossUp__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Toss Up",
+   "master": "Toss Up",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_M_TopMTG__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Top MTG",
+   "master": "Top MTG",
+   "jaT": null,
+   "vis": false
+  },
+  "DisclosureStatementURL_Buy__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Disclosure Statement URL(Buy)",
+   "master": "重要事項説明書URL",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_ValuationDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Valuation Date",
+   "master": "Valuation Date",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_ValuationDetail__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Valuation Detail",
+   "master": "Valuation Detail",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_M_CountryBuyer__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Country(Buyer)",
+   "master": "Country(Buyer)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_CountryTarget__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Country(Target)",
+   "master": "Country(Target)",
+   "jaT": null,
+   "vis": true
+  },
+  "T_SourcingInfo__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Sourcing Info",
+   "master": "Sourcing Info",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_T_Method__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Method",
+   "master": "Method",
+   "jaT": null,
+   "vis": true
+  },
+  "T_FolderURLTarget__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Folder URL(Target)",
+   "master": "Folder URL(Target)",
+   "jaT": null,
+   "vis": true
+  },
+  "TM_FolderURLProject__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Folder URL(Project)",
+   "master": "Folder URL(Project)",
+   "jaT": null,
+   "vis": true
+  },
+  "TM_Contact__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Contact",
+   "master": "Contact",
+   "jaT": null,
+   "vis": true
+  },
+  "NDADate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "NDA Date",
+   "master": "NDA Date",
+   "jaT": null,
+   "vis": true
+  },
+  "TM_NextStep__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "NextStep",
+   "master": "NextStep",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyerFAAgreement__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Buyer FA Agreement",
+   "master": "Buyer FA Agreement",
+   "jaT": null,
+   "vis": false
+  },
+  "BuyerFAAgreementDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Buyer FA Agreement Date",
+   "master": "Buyer FA Agreement Date",
+   "jaT": null,
+   "vis": true
+  },
+  "BuyADContractURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Buy Agreement URL",
+   "master": "買AD契約書URL",
+   "jaT": null,
+   "vis": true
+  },
+  "T_TargetCompany__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Target Company",
+   "master": "Target Company",
+   "jaT": null,
+   "vis": true
+  },
+  "S_Website__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Website",
+   "master": "Website",
+   "jaT": null,
+   "vis": true
+  },
+  "M_FolderURLCompany__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "FolderURL(Company)",
+   "master": "FolderURL(Company)",
+   "jaT": null,
+   "vis": true
+  },
+  "T_SFID18Target__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18(Target)",
+   "master": "SFID18(Target)",
+   "jaT": null,
+   "vis": false
+  },
+  "T_PowerBuyer__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Power Buyer",
+   "master": "Power Buyer",
+   "jaT": null,
+   "vis": true
+  },
+  "T_TargetMemo__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Target Memo",
+   "master": "Target Memo",
+   "jaT": null,
+   "vis": true
+  },
+  "T_SFIDSourcing__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID(Sourcing)",
+   "master": "SFID(Sourcing)",
+   "jaT": null,
+   "vis": false
+  },
+  "CB_Yokohama__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Bank of Yokohama(Approached Date)",
+   "master": "Bank of Yokohama(Approached Date)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_Kyoto__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Bank of Kyoto(Approached Date)",
+   "master": "Bank of Kyoto(Approached Date)",
+   "jaT": null,
+   "vis": true
+  },
+  "CB_StartDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Start Date",
+   "master": "Start Date",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_New__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Project (New)",
+   "master": "(新)譲渡案件",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_OwnerfullName_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Manager(New)",
+   "master": "案件所有者",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_ApproachStatus_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Approaching Status(New)",
+   "master": "案件アプローチ状況",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_StageName_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project Phase(New)",
+   "master": "譲渡案件フェーズ",
+   "jaT": null,
+   "vis": true
+  },
+  "OppID_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Project ID(New)",
+   "master": "譲渡案件ID",
+   "jaT": null,
+   "vis": true
+  },
+  "TM_FolderURLProject_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Folder URL(Project)",
+   "master": "Folder URL(Project)",
+   "jaT": null,
+   "vis": true
+  },
+  "AccountID_New__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Account ID(New)",
+   "master": "取引先ID",
+   "jaT": null,
+   "vis": true
+  },
+  "Sell_Company_New__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Seller",
+   "master": "譲渡希望会社",
+   "jaT": null,
+   "vis": true
+  },
+  "ExternalID1st__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "External ID",
+   "master": "外部ID",
+   "jaT": null,
+   "vis": true
+  }
+ },
+ "Buy_Needs__c": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "買収ニーズ名",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Currency ISO Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "RecordTypeId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Record Type ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "N_AccountName__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Company Name",
+   "master": "取引先名",
+   "jaT": null,
+   "vis": true
+  },
+  "Status__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Status",
+   "master": "ステータス",
+   "jaT": null,
+   "vis": true
+  },
+  "NeedsType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Needs Type",
+   "master": "ニーズタイプ",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Deal Size(Select)",
+   "master": "希望ディールサイズ",
+   "jaT": null,
+   "vis": true
+  },
+  "ClassificationText__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Target Industry(Text)",
+   "master": "希望業種",
+   "jaT": null,
+   "vis": true
+  },
+  "N_Website__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Website",
+   "master": "Website",
+   "jaT": null,
+   "vis": true
+  },
+  "AreaText__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Target Area(Aux)",
+   "master": "希望エリア(補足)",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesVolume__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Revenue(Select)",
+   "master": "希望売上規模",
+   "jaT": null,
+   "vis": true
+  },
+  "BusinessSummary__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Business Description",
+   "master": "事業概要",
+   "jaT": null,
+   "vis": false
+  },
+  "TDBAmountOfSales__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Latest Revenue(JPYmm)",
+   "master": "最新期業績売上高(百万円)",
+   "jaT": null,
+   "vis": false
+  },
+  "Impossible__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Deal Breakers",
+   "master": "検討不可要件",
+   "jaT": null,
+   "vis": true
+  },
+  "Valuation__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Valuation Method",
+   "master": "評価方法",
+   "jaT": null,
+   "vis": true
+  },
+  "AcountSFID18__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID(Account)",
+   "master": "取引先SFID18",
+   "jaT": null,
+   "vis": true
+  },
+  "AddAccountFlag__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Account Matching Fields Added",
+   "master": "取引先マッチング項目追記済み",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesVolume_JPYmm_Min__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Revenue(JPY M): Min",
+   "master": "希望売上規模(百万円):下限",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesVolume_JPYmm_Max__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Revenue(JPY M): Max",
+   "master": "希望売上規模(百万円):上限",
+   "jaT": null,
+   "vis": true
+  },
+  "Deficit__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Decision on Deficit",
+   "master": "赤字・債務超過あり",
+   "jaT": null,
+   "vis": true
+  },
+  "Purpose__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "M&A Purpose",
+   "master": "買収目的",
+   "jaT": null,
+   "vis": true
+  },
+  "Merits__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Merits for M&A",
+   "master": "グループ参画のメリット",
+   "jaT": null,
+   "vis": true
+  },
+  "PaymentFlow__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Payment Flow",
+   "master": "決済フロー",
+   "jaT": null,
+   "vis": true
+  },
+  "Audit__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Audit Approach",
+   "master": "監査対応",
+   "jaT": null,
+   "vis": true
+  },
+  "Fundraising__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Fundraising",
+   "master": "資金調達",
+   "jaT": null,
+   "vis": true
+  },
+  "Memo__c": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Memo",
+   "master": "買収ニーズ備考欄",
+   "jaT": null,
+   "vis": true
+  },
+  "Cautions__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Notes on Contacting",
+   "master": "連絡時注意事項",
+   "jaT": null,
+   "vis": true
+  },
+  "AreaCB__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Area(Intl)",
+   "master": "希望エリア(海外)",
+   "jaT": null,
+   "vis": true
+  },
+  "AreaDOM__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Target Area(JP)",
+   "master": "希望エリア(国内)",
+   "jaT": null,
+   "vis": true
+  },
+  "MainCategory__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Sector(TDB)",
+   "master": "大分類",
+   "jaT": null,
+   "vis": true
+  },
+  "MiddleCategory__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Industry Group(TDB)",
+   "master": "中分類",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesVolume_USDmm_Min__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Revenue(USD M): Min",
+   "master": "希望売上規模(USD M):下限",
+   "jaT": null,
+   "vis": true
+  },
+  "SalesVolume_USDmm_Max__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Revenue(USD M): Max",
+   "master": "希望売上規模(USD M):上限",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize_JPYmm_Min__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Deal Size(JPY M): Min",
+   "master": "希望ディールサイズ(百万円):下限",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize_JPYmm_Max__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Deal Size(JPY M): Max",
+   "master": "希望ディールサイズ(百万円):上限",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize_USDmm_Min__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Deal Size(USD M): Min",
+   "master": "希望ディールサイズ(USD M):下限",
+   "jaT": null,
+   "vis": true
+  },
+  "DealSize_USDmm_Max__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Target Deal Size(USD M): Max",
+   "master": "希望ディールサイズ(USD M):上限",
+   "jaT": null,
+   "vis": true
+  }
+ },
+ "Establishments__c": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Establishment Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Currency ISO Code",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Scuel_ServiceCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "SCUEL Service Code",
+   "master": "SCUELサービスコード",
+   "jaT": null,
+   "vis": true
+  },
+  "Scuel_EstablishmentCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "SCUEL Establishment Code",
+   "master": "SCUEL事業所コード",
+   "jaT": null,
+   "vis": true
+  },
+  "Scuel_CorporationCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "SCUEL Corporation Code",
+   "master": "SCUEL法人コード",
+   "jaT": null,
+   "vis": true
+  },
+  "Scuel_Id__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "SCUEL_ID",
+   "master": "SCUEL_ID",
+   "jaT": null,
+   "vis": true
+  },
+  "Name_Kana__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Name (Kana)",
+   "master": "事業所_名称カナ",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_PostalCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Postal Code",
+   "master": "事業所_郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_PrefectureCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Prefecture Code",
+   "master": "事業所_都道府県コード",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_CityCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment City Code",
+   "master": "事業所_市区町村コード",
+   "jaT": null,
+   "vis": true
+  },
+  "FounderName_Text__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Founder Name (Text)",
+   "master": "開設者_テキスト",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_City__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment City",
+   "master": "事業所_市区町村",
+   "jaT": null,
+   "vis": true
+  },
+  "Address__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Establishment Address",
+   "master": "事業所_住所",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_Transportation__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Transportation",
+   "master": "事業所_交通手段",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_Station__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Nearest Station",
+   "master": "事業所_最寄駅名",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_DistanceFromStation__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Distance from Station",
+   "master": "事業所_最寄駅との距離",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_StationGroupCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Establishment Station Group Code",
+   "master": "事業所_駅グループコード",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_FounderName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Service Founder Name",
+   "master": "サービス_開設者氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_FounderPosition__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Founder Position",
+   "master": "サービス_開設者役職",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_AdministratorName__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Service Administrator Name",
+   "master": "サービス_管理者氏名",
+   "jaT": null,
+   "vis": true
+  },
+  "ServicePhoneNumber__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Service Phone Number",
+   "master": "サービス_電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Category__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Category",
+   "master": "サービス_区分",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_TypeName__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Type Name",
+   "master": "サービス_種類名",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_TypeCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Type Code",
+   "master": "サービス_種類コード",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_TypeDetails__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Type Name Details",
+   "master": "サービス_種類名詳細",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Business_Name__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Establishment Name",
+   "master": "サービス_事業所_名称",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Business_Name_Kana__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Establishment Name (Kana)",
+   "master": "サービス_事業所_名称カナ",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_BusinessNumber__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Establishment Number",
+   "master": "サービス_事業所番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_CompanyName__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Founding Corp Name",
+   "master": "サービス_開設法人名",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Fax__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Service Fax Number",
+   "master": "サービス_FAX番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Website__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Service Website",
+   "master": "サービス_ホームページ",
+   "jaT": null,
+   "vis": true
+  },
+  "RegReason__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Registration Reason",
+   "master": "登録理由",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_CorpPhone__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Service Corp Phone Number",
+   "master": "サービス_法人電話番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_CorpFax__c": {
+   "type": "phone",
+   "filterable": true,
+   "enLabel": "Service Corp Fax Number",
+   "master": "サービス_法人FAX番号",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_PostalCode__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Postal Code",
+   "master": "サービス_郵便番号",
+   "jaT": null,
+   "vis": true
+  },
+  "PeriodStart__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Designated Period Start Date",
+   "master": "指定期間始",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_City__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service City",
+   "master": "サービス_市区町村",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Address__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Service Address",
+   "master": "サービス_住所",
+   "jaT": null,
+   "vis": true
+  },
+  "Specialty__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Medical Department Name",
+   "master": "診療科名",
+   "jaT": null,
+   "vis": true
+  },
+  "Estb_Status__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Establishment Status",
+   "master": "事業所_ステータス",
+   "jaT": null,
+   "vis": true
+  },
+  "Rx_EstUnit__c": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Est. Total Rx Count Unit",
+   "master": "総取扱処方箋数_推測単位",
+   "jaT": null,
+   "vis": true
+  },
+  "FullTime_Medical__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Full-Time Physicians",
+   "master": "常勤_医科",
+   "jaT": null,
+   "vis": true
+  },
+  "FullTime_Dental__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Full-Time Dentists",
+   "master": "常勤_歯科",
+   "jaT": null,
+   "vis": true
+  },
+  "PartTime_Medical__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Part-Time Physicians",
+   "master": "非常勤_医科",
+   "jaT": null,
+   "vis": true
+  },
+  "PartTime_Dental__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Part-Time Dentists",
+   "master": "非常勤_歯科",
+   "jaT": null,
+   "vis": true
+  },
+  "FullTime_Total__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Full-Time Total",
+   "master": "常勤_合計",
+   "jaT": null,
+   "vis": true
+  },
+  "PartTime_Total__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Part-Time Total",
+   "master": "非常勤_合計",
+   "jaT": null,
+   "vis": true
+  },
+  "Doctor_Total_c__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Staff Doctor Count",
+   "master": "勤務医数",
+   "jaT": null,
+   "vis": true
+  },
+  "FacilityType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Facility Type",
+   "master": "施設種別",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_UpdateDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Bed Data Update Date",
+   "master": "病床数データ更新年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "UpdateDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Data Update Date",
+   "master": "データ更新年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Gen__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed General Beds",
+   "master": "一般病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Inf__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Infectious Disease Beds",
+   "master": "感染病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Nurs__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Long-Term Care Beds",
+   "master": "療養型病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Oth__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Other Beds",
+   "master": "その他病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Psych__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Psychiatric Beds",
+   "master": "精神病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_TB__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Tuberculosis Beds",
+   "master": "結核病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Total__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Total Licensed Beds",
+   "master": "総病床数_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "Rx_EstAnnual__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Est. Annual Total Rx Count",
+   "master": "総取扱処方箋数_推測年間換算",
+   "jaT": null,
+   "vis": true
+  },
+  "Rx_Total__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Total Rx Count",
+   "master": "総取扱処方箋数",
+   "jaT": null,
+   "vis": true
+  },
+  "Rx_UpdateDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Rx Data Update Date",
+   "master": "処方箋データ更新年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_StartDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Service Start Date",
+   "master": "サービス_開始年月日",
+   "jaT": null,
+   "vis": true
+  },
+  "Address_Prefecture__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Establishment Prefecture",
+   "master": "事業所_都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "Service_Prefecture__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Service Prefecture",
+   "master": "サービス_都道府県",
+   "jaT": null,
+   "vis": true
+  },
+  "Estb_Account__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Establishment Account",
+   "master": "事業所_取引先",
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": "最終更新日",
+   "jaT": null,
+   "vis": true
+  },
+  "SFID18_Establishments__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18 (Establishment)",
+   "master": "SFID18(事業所)",
+   "jaT": null,
+   "vis": true
+  },
+  "Estb_Category__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Establishment Category",
+   "master": "事業所_区分",
+   "jaT": null,
+   "vis": true
+  },
+  "Estb_DataSource__c": {
+   "type": "multipicklist",
+   "filterable": true,
+   "enLabel": "Establishment Data Source",
+   "master": "事業所_データソース",
+   "jaT": null,
+   "vis": true
+  },
+  "Integrated__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Co-Located Facility",
+   "master": "併設",
+   "jaT": null,
+   "vis": true
+  },
+  "SFID18_Copy__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18 Copy (For Deletion)",
+   "master": "削除SFID18コピー",
+   "jaT": null,
+   "vis": true
+  },
+  "SFID18_Copy2__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "SFID18 Copy",
+   "master": "SFID18コピー",
+   "jaT": null,
+   "vis": true
+  },
+  "Beds_Care__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Licensed Care Beds",
+   "master": "介護病床_許可病床数",
+   "jaT": null,
+   "vis": true
+  },
+  "RegistraitonYear_Text__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Registration Year",
+   "master": "登録年",
+   "jaT": null,
+   "vis": true
+  },
+  "Rx_Text__c": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "# of Prescriptions (Text)",
+   "master": "処方箋数(Text)",
+   "jaT": null,
+   "vis": true
+  }
+ },
+ "Contract": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Contract ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "AccountId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Account ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Currency ISO Code",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Pricebook2Id": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Price Book ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "OwnerExpirationNotice": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Owner Expiration Notice",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "StartDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Contract Start Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "EndDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Contract End Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "BillingStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Billing Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Billing Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Billing Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Billing Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Billing Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "BillingAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Billing Address",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ShippingStreet": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Shipping Street",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingCity": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping City",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingState": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping State/Province",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingPostalCode": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping Zip/Postal Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingCountry": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Shipping Country",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingLatitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Shipping Latitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingLongitude": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Shipping Longitude",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingGeocodeAccuracy": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Shipping Geocode Accuracy",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ShippingAddress": {
+   "type": "address",
+   "filterable": true,
+   "enLabel": "Shipping Address",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ContractTerm": {
+   "type": "int",
+   "filterable": true,
+   "enLabel": "Contract Term",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "Status": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Status",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CompanySignedId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Company Signed By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CompanySignedDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Company Signed Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CustomerSignedId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Customer Signed By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CustomerSignedTitle": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Customer Signed Title",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CustomerSignedDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Customer Signed Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SpecialTerms": {
+   "type": "textarea",
+   "filterable": true,
+   "enLabel": "Special Terms",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ActivatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Activated By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "ActivatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Activated Date",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "StatusCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Status Category",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Description": {
+   "type": "textarea",
+   "filterable": false,
+   "enLabel": "Description",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "ContractNumber": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Contract Number",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastApprovedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Approved Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  }
+ },
+ "ContractFile__c": {
+  "Id": {
+   "type": "id",
+   "filterable": true,
+   "enLabel": "Record ID",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "OwnerId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Owner ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "IsDeleted": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Deleted",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "Name": {
+   "type": "string",
+   "filterable": true,
+   "enLabel": "Contract Name",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CurrencyIsoCode": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Currency ISO Code",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "RecordTypeId": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Record Type ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "CreatedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Created Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "CreatedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Created By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "LastModifiedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Modified Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastModifiedById": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Last Modified By ID",
+   "master": null,
+   "jaT": null,
+   "vis": true
+  },
+  "SystemModstamp": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "System Modstamp",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastActivityDate": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Last Activity Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastViewedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Viewed Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "LastReferencedDate": {
+   "type": "datetime",
+   "filterable": true,
+   "enLabel": "Last Referenced Date",
+   "master": null,
+   "jaT": null,
+   "vis": false
+  },
+  "IsFileUploaded__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "File Uploaded",
+   "master": "ファイルアップロード済",
+   "jaT": null,
+   "vis": true
+  },
+  "ContractType__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Contract Type",
+   "master": "契約種別",
+   "jaT": null,
+   "vis": true
+  },
+  "ContractScope__c": {
+   "type": "picklist",
+   "filterable": true,
+   "enLabel": "Contract Scope",
+   "master": "契約範囲",
+   "jaT": null,
+   "vis": true
+  },
+  "Account__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Account",
+   "master": "取引先",
+   "jaT": null,
+   "vis": true
+  },
+  "Opportunity__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Project",
+   "master": "譲渡案件",
+   "jaT": null,
+   "vis": true
+  },
+  "Project__c": {
+   "type": "reference",
+   "filterable": true,
+   "enLabel": "Project (New)",
+   "master": "(新)譲渡案件",
+   "jaT": null,
+   "vis": true
+  },
+  "ExecutionDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Execution Date",
+   "master": "締結日",
+   "jaT": null,
+   "vis": true
+  },
+  "EndDate__c": {
+   "type": "date",
+   "filterable": true,
+   "enLabel": "Contract End Date",
+   "master": "契約終了日",
+   "jaT": null,
+   "vis": true
+  },
+  "IsActive__c": {
+   "type": "boolean",
+   "filterable": true,
+   "enLabel": "Active Flag",
+   "master": "有効性フラグ",
+   "jaT": null,
+   "vis": false
+  },
+  "GoogleDriveURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Google Drive URL",
+   "master": "GoogleDriveリンク",
+   "jaT": null,
+   "vis": true
+  },
+  "ExpirationDate__c": {
+   "type": "double",
+   "filterable": true,
+   "enLabel": "Contract Term (Months)",
+   "master": "契約期限(月単位)",
+   "jaT": null,
+   "vis": true
+  },
+  "SlackURL__c": {
+   "type": "url",
+   "filterable": true,
+   "enLabel": "Slack Seal Request Link",
+   "master": "Slack押印申請リンク",
+   "jaT": null,
+   "vis": true
+  }
+ }
+}

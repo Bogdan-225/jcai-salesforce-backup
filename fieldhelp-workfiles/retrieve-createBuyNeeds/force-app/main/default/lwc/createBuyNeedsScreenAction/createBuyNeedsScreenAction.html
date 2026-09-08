@@ -1,0 +1,290 @@
+<template>
+	<lightning-record-edit-form
+		object-api-name="Buy_Needs__c"
+		onsuccess={handle_success}
+	>
+		<lightning-quick-action-panel header="買収ニーズクイック登録 | Quick Create M&amp;A Needs">
+			<lightning-messages></lightning-messages>
+			<div class="slds-form_stacked">
+				<div class="_form slds-form-element_stacked">
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="N_AccountName__c"
+							value={account_id}
+						></lightning-input-field>
+					</div>
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="OwnerId"
+							value={current_user_id}
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="NeedsType__c"
+							onchange={handle_needs_type_change}
+							value={needs_type_default}
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Status__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item wide _headline">ニーズ概要 | Needs Summary</div>
+
+					<div class="_form_item wide" if:true={is_domestic}>
+						<lightning-input-field
+							field-name="AreaDOM__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide" if:true={is_cb}>
+						<lightning-input-field
+							field-name="AreaCB__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="AreaText__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="MainCategory__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="MiddleCategory__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="ClassificationText__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="SalesVolume__c"
+						></lightning-input-field>
+					</div>
+
+					<div></div>
+
+					<div class="_form_item" if:true={is_domestic}>
+						<lightning-input-field
+							field-name="SalesVolume_JPYmm_Min__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_domestic}>
+						<lightning-input-field
+							field-name="SalesVolume_JPYmm_Max__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_domestic}>
+						<lightning-input-field
+							field-name="DealSize_JPYmm_Min__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_domestic}>
+						<lightning-input-field
+							field-name="DealSize_JPYmm_Max__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item" if:true={is_cb}>
+						<lightning-input-field
+							field-name="SalesVolume_USDmm_Min__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_cb}>
+						<lightning-input-field
+							field-name="SalesVolume_USDmm_Max__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_cb}>
+						<lightning-input-field
+							field-name="DealSize_USDmm_Min__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item" if:true={is_cb}>
+						<lightning-input-field
+							field-name="DealSize_USDmm_Max__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="BuyBudget__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Purpose__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Deficit__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="Impossible__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="Memo__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item wide _headline">ニーズ詳細 | Needs Details</div>
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Fundraising__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Audit__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="Valuation__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item">
+						<lightning-input-field
+							field-name="PaymentFlow__c"
+						></lightning-input-field>
+					</div>
+
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="Cautions__c"
+						></lightning-input-field>
+					</div>
+					<div class="_form_item wide">
+						<lightning-input-field
+							field-name="Merits__c"
+						></lightning-input-field>
+					</div>
+
+					<div
+						class="_form_item _blank wide"
+						if:false={is_choice_needs_type}
+					></div>
+				</div>
+
+				<div slot="footer">
+					<lightning-button
+						variant="neutral"
+						label="キャンセル | Cancel"
+						onclick={handle_cancel}
+					></lightning-button>
+					<lightning-button
+						variant="brand"
+						type="submit"
+						label="保存 | Save"
+					></lightning-button>
+				</div>
+			</div>
+		</lightning-quick-action-panel>
+	</lightning-record-edit-form>
+</template>
+<!--
+<html>
+	<head>
+		<link rel="stylesheet" href="./createBuyNeedsAction.css" />
+	</head>
+	<body>
+		<div class="_container">
+			<div class="_modal"></div>
+			<div class="_content">
+				<div class="_header">custom</div>
+				<div class="_body">Record Id: {recordId}</div>
+				<div class="_footer">f</div>
+			</div>
+		</div>
+	</body>
+</html>
+-->
+<!--
+<template>
+	<div class="_container">
+		<div class="_modal" onclick={handle_cancel}></div>
+		<lightning-record-edit-form
+			object-api-name="Buy_Needs__c"
+			onsuccess={handleSuccess}
+		>
+			<div class="_content">
+				<div class="_header">Record Id: {recordId}</div>
+				<div class="_body">
+					<lightning-messages></lightning-messages>
+
+					<div class="_form">
+						<div class="_form_item">
+							<lightning-input-field
+								field-name="Name"
+							></lightning-input-field>
+						</div>
+						<div class="_form_item">
+							<lightning-input-field
+								field-name="Status__c"
+							></lightning-input-field>
+						</div>
+
+						<div class="_form_item">
+							<lightning-input-field
+								field-name="NeedsType__c"
+								onchange={handle_needs_type_change}
+								value="国内"
+							></lightning-input-field>
+						</div>
+
+						<div class="_form_item _blank"></div>
+
+						<div class="_form_item wide" if:true={is_domestic}>
+							<lightning-input-field
+								field-name="AreaDOM__c"
+							></lightning-input-field>
+						</div>
+						<div class="_form_item wide" if:true={is_cb}>
+							<lightning-input-field
+								field-name="AreaCB__c"
+							></lightning-input-field>
+						</div>
+						<div
+							class="_form_item _blank wide"
+							if:false={is_choice_needs_type}
+						></div>
+					</div>
+				</div>
+				<div class="_footer">
+					<lightning-button
+						class="slds-m-top_small"
+						variant="brand"
+						type="submit"
+						label="Save"
+					></lightning-button>
+					<lightning-button
+						label="Close Quick Action"
+						onclick={handle_cancel}
+						>ばつ</lightning-button
+					>
+				</div>
+			</div>
+		</lightning-record-edit-form>
+	</div>
+</template>
+-->

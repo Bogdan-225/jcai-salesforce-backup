@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FillApproachMethodWhenApproathSelected</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISBLANK(text( approachMethod__c)  ),
+RecordType.DeveloperName =&quot;XBorderType&quot;,
+ISpickval( phase_match__c ,&quot;アプローチ&quot;))</errorConditionFormula>
+    <errorDisplayField>approachMethod__c</errorDisplayField>
+    <errorMessage>フェーズ「アプローチ」を選択時はアプローチ手段を入力してください。</errorMessage>
+</ValidationRule>

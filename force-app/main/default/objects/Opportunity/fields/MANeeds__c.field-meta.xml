@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MANeeds__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>M&amp;A Needs</label>
+    <referenceTo>Buy_Needs__c</referenceTo>
+    <relationshipLabel>買収ニーズ</relationshipLabel>
+    <relationshipName>MANeeds</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X241205_102454</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>TDBRepKanji__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>TDBLocation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NGDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>TDBMiddleClassification__c</field>
+        <operation>equals</operation>
+        <value>土木建築サービス業</value>
+    </filters>
+    <filters>
+        <field>TDBAmountOfSalesAvg__c</field>
+        <operation>lessThan</operation>
+        <value>1000</value>
+    </filters>
+    <filters>
+        <field>TDBParent__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>TDBShareholdersNumber1__c</field>
+        <operation>equals</operation>
+        <value>個人</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>株式会社,有限会社</value>
+    </filters>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>熊谷依頼リスト241206_建築サービス業_10億</label>
+</ListView>

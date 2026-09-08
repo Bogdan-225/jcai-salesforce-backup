@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DealConflictWarned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Deal Conflict警告(活動)を受けたマッチの印。Clearedの対象判定用。フロー管理・手動編集不可</description>
+    <label>重複警告済み(内部)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

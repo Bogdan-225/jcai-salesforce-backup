@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FolderURL__c</fullName>
+    <inlineHelpText>Insert the shared URL from the [Share] button in Google Drive or Box. (Note for Box: Please disable the expiration date under [Link Settings] &gt; [Link Expiration] by unchecking the box.)</inlineHelpText>
+    <label>フォルダーURL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Url</type>
+</CustomField>

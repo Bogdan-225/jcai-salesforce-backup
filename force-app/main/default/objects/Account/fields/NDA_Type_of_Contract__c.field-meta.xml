@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NDA_Type_of_Contract__c</fullName>
+    <label>包括or個別契約</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>指定なし</fullName>
+                <default>true</default>
+                <label>指定なし</label>
+            </value>
+            <value>
+                <fullName>包括契約</fullName>
+                <default>false</default>
+                <label>包括契約</label>
+            </value>
+            <value>
+                <fullName>個別契約</fullName>
+                <default>false</default>
+                <label>個別契約</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

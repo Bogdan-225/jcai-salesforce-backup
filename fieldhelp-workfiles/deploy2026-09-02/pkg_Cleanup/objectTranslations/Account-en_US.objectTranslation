@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Enter "None" if the company has no website.</help>
+        <name>Website</name>
+    </fields>
+    <fields>
+        <help>For past-data reference only. Going forward, manage this in the M&amp;A Needs object.</help>
+        <name>DomesticFreeDescription_BuyNeeds__c</name>
+    </fields>
+    <fields>
+        <help>For past-data reference only. Going forward, manage this in the M&amp;A Needs object.</help>
+        <name>InternationalFreeDescription_BuyNeeds__c</name>
+    </fields>
+    <fields>
+        <help>Memo field for notes such as group-company business relationships or cautionary buyers.</help>
+        <name>Field_memo__c</name>
+    </fields>
+    <fields>
+        <help>Parent company account ID, used to build the corporate hierarchy.</help>
+        <name>ParentId</name>
+    </fields>
+    <fields>
+        <help>Stock code identifier</help>
+        <name>TickerSymbol</name>
+    </fields>
+    <fields>
+        <help>From which source</help>
+        <name>AccountSource</name>
+    </fields>
+</CustomObjectTranslation>

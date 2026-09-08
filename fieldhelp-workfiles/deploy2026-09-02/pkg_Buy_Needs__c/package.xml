@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Buy_Needs__c.AcountSFID18__c</members>
+        <members>Buy_Needs__c.AddAccountFlag__c</members>
+        <members>Buy_Needs__c.AreaDOM__c</members>
+        <members>Buy_Needs__c.AreaText__c</members>
+        <members>Buy_Needs__c.Audit__c</members>
+        <members>Buy_Needs__c.Cautions__c</members>
+        <members>Buy_Needs__c.ClassificationText__c</members>
+        <members>Buy_Needs__c.Fundraising__c</members>
+        <members>Buy_Needs__c.MainCategory__c</members>
+        <members>Buy_Needs__c.Merits__c</members>
+        <members>Buy_Needs__c.MiddleCategory__c</members>
+        <members>Buy_Needs__c.N_AccountName__c</members>
+        <members>Buy_Needs__c.NeedsType__c</members>
+        <members>Buy_Needs__c.PaymentFlow__c</members>
+        <members>Buy_Needs__c.Purpose__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Buy_Needs__c-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <version>62.0</version>
+</Package>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <label>失注理由</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>競合に敗退</fullName>
+                <default>false</default>
+                <label>競合に敗退</label>
+            </value>
+            <value>
+                <fullName>機能不足</fullName>
+                <default>false</default>
+                <label>機能不足</label>
+            </value>
+            <value>
+                <fullName>先送り / 無回答</fullName>
+                <default>false</default>
+                <label>先送り / 無回答</label>
+            </value>
+            <value>
+                <fullName>価格</fullName>
+                <default>false</default>
+                <label>価格</label>
+            </value>
+            <value>
+                <fullName>その他</fullName>
+                <default>false</default>
+                <label>その他</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
