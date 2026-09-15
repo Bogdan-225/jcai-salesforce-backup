@@ -49,6 +49,21 @@ private class AccountNormalizerTest {
     }
 
     @IsTest
+    static void name_keepsDesignatorWhenStrippedKeyIsTooShort() {
+        // real 1-2 letter names: stripping the designator would leave a key that collides with every other "LA"/"TC"
+        System.assertEquals('lacorporation', AccountNormalizer.normalizeName('L&A CORPORATION'));
+        System.assertEquals('tclimited', AccountNormalizer.normalizeName('TC Limited'));
+        System.assertEquals('kxinc', AccountNormalizer.normalizeName('KX Inc.'));
+        System.assertEquals('株式会社ab', AccountNormalizer.normalizeName('株式会社AB'));
+        // nothing to strip: the short key stays as it is
+        System.assertEquals('om', AccountNormalizer.normalizeName('O&M'));
+        System.assertEquals('5b', AccountNormalizer.normalizeName('5B'));
+        // 3+ chars after stripping: designator goes as usual
+        System.assertEquals('tks', AccountNormalizer.normalizeName('TKS株式会社'));
+        System.assertEquals('abc', AccountNormalizer.normalizeName('ABC Ltd.'));
+    }
+
+    @IsTest
     static void name_blankOrOnlyDesignatorIsNull() {
         System.assertEquals(null, AccountNormalizer.normalizeName(null));
         System.assertEquals(null, AccountNormalizer.normalizeName('   '));

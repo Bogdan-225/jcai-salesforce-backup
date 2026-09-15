@@ -25,18 +25,40 @@ public with sharing class AccountNormalizer {
 
     // ---------------------------------------------------------------- Name
 
+    /** Minimum length of the key after designators are stripped; below it the designators are kept. */
+    public static final Integer MIN_STRIPPED_LENGTH = 3;
+
     public static String normalizeName(String raw) {
         if (String.isBlank(raw)) return null;
-        String s = toHalfWidth(raw).toLowerCase();
+        String base = toHalfWidth(raw).toLowerCase();
+        base = base.replaceAll('(?<=\\b[a-z])\\.(?=[a-z]\\b)', ''); // dotted abbreviations: n.v. -> nv, k.k. -> kk
+
+        // key WITH designators: letters/digits only
+        String withDesignators = base.replaceAll('[^\\p{L}\\p{N}]+', '');
+
+        // key WITHOUT designators
+        String s = base;
         for (String t : JP_TOKENS) {
             s = s.replace(t, ' ');
         }
-        s = s.replaceAll('(?<=\\b[a-z])\\.(?=[a-z]\\b)', ''); // dotted abbreviations: n.v. -> nv, k.k. -> kk
         s = s.replaceAll('[^\\p{L}\\p{N}]+', ' ');       // punctuation -> space
-        s = EN_TOKENS.matcher(s).replaceAll(' ');        // drop inc/corp/co/ltd...
+        s = EN_TOKENS.matcher(s).replaceAll(' ');        // drop inc/corp/co/ltd/pvt...
         s = s.replaceAll('\\s+', '');                    // remove all spaces
-        if (String.isBlank(s)) return null;
+
+        if (s.length() < MIN_STRIPPED_LENGTH) {
+            // "L&A Corporation" -> "la" would collide with every other "LA"; "株式会社AB" -> "" because AB is
+            // also a Swedish designator. In both cases keep the designators instead.
+            s = withDesignators;
+        }
+        if (String.isBlank(s) || isSingleDesignator(s)) return null;   // name is nothing but "株式会社" / "Inc"
         return s.length() > 255 ? s.substring(0, 255) : s;
+    }
+
+    private static Boolean isSingleDesignator(String key) {
+        for (String t : JP_TOKENS) {
+            if (key == t.replaceAll('[^\\p{L}\\p{N}]', '')) return true;   // (株) -> 株
+        }
+        return EN_TOKENS.matcher(key).matches();
     }
 
     // --------------------------------------------------------------- Phone
