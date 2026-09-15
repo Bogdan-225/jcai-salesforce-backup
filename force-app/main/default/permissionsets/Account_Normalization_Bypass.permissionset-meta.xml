@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Account_Normalization</name>
+    </customPermissions>
+    <description>Grants Bypass_Account_Normalization: the Account normalization trigger is skipped for assigned users. Assign temporarily for controlled data loads only.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Account Normalization Bypass</label>
+</PermissionSet>

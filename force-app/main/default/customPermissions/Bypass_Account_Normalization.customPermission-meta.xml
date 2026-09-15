@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users with this permission skip the Account normalization trigger (AccountNormalizationHandler). Intended for controlled data loads only.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Account Normalization</label>
+</CustomPermission>
