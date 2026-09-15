@@ -1,0 +1,45 @@
+<template>
+    <lightning-card icon-name="standard:file">
+        <h2 slot="title" class="slds-card__header-title">{headerTitle}</h2>
+
+        <template lwc:if={error}>
+            <div class="slds-p-horizontal_medium slds-text-color_error">{error}</div>
+        </template>
+
+        <template lwc:if={hasFiles}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col"><div class="slds-truncate" title="Title">Title</div></th>
+                        <th scope="col" style="width: 5rem"><div class="slds-truncate" title="Type">Type</div></th>
+                        <th scope="col" style="width: 6rem"><div class="slds-truncate" title="Size">Size</div></th>
+                        <th scope="col" style="width: 9rem"><div class="slds-truncate" title="Last Modified">Last Modified</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={files} for:item="file">
+                        <tr key={file.id} class="slds-hint-parent">
+                            <th scope="row" data-label="Title">
+                                <div class="slds-truncate" title={file.title}>
+                                    <a href="#" data-id={file.id} onclick={handleOpen}>{file.title}</a>
+                                </div>
+                            </th>
+                            <td data-label="Type"><div class="slds-truncate" title={file.type}>{file.type}</div></td>
+                            <td data-label="Size"><div class="slds-truncate" title={file.size}>{file.size}</div></td>
+                            <td data-label="Last Modified">
+                                <div class="slds-truncate">
+                                    <lightning-formatted-date-time value={file.modified}
+                                        year="numeric" month="2-digit" day="2-digit"></lightning-formatted-date-time>
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <template lwc:if={showEmpty}>
+            <div class="slds-p-horizontal_medium slds-text-color_weak">No files. Use the "Upload Files" action above to add one.</div>
+        </template>
+    </lightning-card>
+</template>
