@@ -16,7 +16,7 @@ public with sharing class AccountNormalizer {
 
     // English corporate designators removed as whole words (after punctuation -> space).
     private static final Pattern EN_TOKENS = Pattern.compile(
-        '\\b(inc|corp|corporation|co|ltd|limited|kk|k k|llc|gmbh|plc)\\b'
+        '\\b(inc|corp|corporation|co|ltd|limited|kk|k k|llc|llp|gmbh|plc|pvt|pte|pty|sdn|bhd|ag|bv|nv|sa|srl|sarl|sas|oy|ab)\\b'
     );
 
     private static final Set<String> WEBSITE_PLACEHOLDERS = new Set<String>{
@@ -31,6 +31,7 @@ public with sharing class AccountNormalizer {
         for (String t : JP_TOKENS) {
             s = s.replace(t, ' ');
         }
+        s = s.replaceAll('(?<=\\b[a-z])\\.(?=[a-z]\\b)', ''); // dotted abbreviations: n.v. -> nv, k.k. -> kk
         s = s.replaceAll('[^\\p{L}\\p{N}]+', ' ');       // punctuation -> space
         s = EN_TOKENS.matcher(s).replaceAll(' ');        // drop inc/corp/co/ltd...
         s = s.replaceAll('\\s+', '');                    // remove all spaces
@@ -78,11 +79,31 @@ public with sharing class AccountNormalizer {
 
     // -------------------------------------------------------------- Postal
 
-    /** Source priority: TDBPostalCode__c, then TSRPostalCode__c, then CB_Postalcode__c. */
+    /**
+     * Source priority: TDBPostalCode__c, then TSRPostalCode__c (Japanese: must yield exactly 7 digits,
+     * otherwise the value is an address or junk and the next source is tried), then CB_Postalcode__c
+     * (international: 3-20 letters/digits, no CJK text).
+     */
     public static String normalizePostal(String tdb, String tsr, String cb) {
-        String raw = String.isNotBlank(tdb) ? tdb : (String.isNotBlank(tsr) ? tsr : cb);
+        String s = japanesePostal(tdb);
+        if (s == null) s = japanesePostal(tsr);
+        if (s == null) s = internationalPostal(cb);
+        return s;
+    }
+
+    private static String japanesePostal(String raw) {
         if (String.isBlank(raw)) return null;
-        String s = toHalfWidth(raw).toUpperCase().replaceAll('[^A-Z0-9]', '');
+        String s = toHalfWidth(raw).replaceAll('[^0-9]', '');
+        if (!Pattern.matches('^\\d{7}$', s)) return null;                 // 7 digits, always
+        if (Pattern.matches('^0+$', s)) return null;
+        return s;
+    }
+
+    private static String internationalPostal(String raw) {
+        if (String.isBlank(raw)) return null;
+        String half = toHalfWidth(raw);
+        if (Pattern.compile('[\\p{IsHan}\\p{IsHiragana}\\p{IsKatakana}]').matcher(half).find()) return null; // address text
+        String s = half.toUpperCase().replaceAll('[^A-Z0-9]', '');
         if (s.length() < 3 || s.length() > 20) return null;
         if (Pattern.matches('^0+$', s)) return null;
         return s;

@@ -14,7 +14,7 @@ private class AccountNormalizationBatchTest {
             accs.add(new Account(RecordTypeId = DOMESTIC_RT, Name = '株式会社テスト' + i,
                                  Phone = '03-3603-' + String.valueOf(1000 + i),
                                  Website = 'https://www.test' + i + '.co.jp/',
-                                 TDBPostalCode__c = '100-00' + String.valueOf(i).leftPad(2, '0'),
+                                 TDBPostalCode__c = '100-00' + String.valueOf(Math.mod(i, 100)).leftPad(2, '0'),   // always 7 digits
                                  CorporateNumber__c = '7030001026885'));
         }
         for (Integer i = 0; i < 150; i++) {

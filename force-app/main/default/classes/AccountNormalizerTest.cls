@@ -27,6 +27,21 @@ private class AccountNormalizerTest {
     }
 
     @IsTest
+    static void name_stripsAsianAndEuropeanDesignators() {
+        // seen in the partial sandbox: Pvt/Pty/Sdn Bhd/Pte are on ~93K prod accounts
+        System.assertEquals('vighnahartatechnologies', AccountNormalizer.normalizeName('Vighnaharta Technologies Pvt Ltd'));
+        System.assertEquals('elixirengineering', AccountNormalizer.normalizeName('ELIXIR ENGINEERING PVT.LTD'));
+        System.assertEquals('ninetwofiveinteriors', AccountNormalizer.normalizeName('Ninetwofive Interiors Pty Ltd.'));
+        System.assertEquals('maybank', AccountNormalizer.normalizeName('Maybank Sdn. Bhd.'));
+        System.assertEquals('dbs', AccountNormalizer.normalizeName('DBS Pte. Ltd.'));
+        System.assertEquals('siemens', AccountNormalizer.normalizeName('Siemens AG'));
+        System.assertEquals('philips', AccountNormalizer.normalizeName('Philips N.V.'));
+        System.assertEquals('volvo', AccountNormalizer.normalizeName('AB Volvo'));
+        // "Sabre" keeps "sa" inside the word
+        System.assertEquals('sabre', AccountNormalizer.normalizeName('Sabre Inc.'));
+    }
+
+    @IsTest
     static void name_doesNotStripDesignatorInsideWords() {
         // "co" inside "Coca" must survive; only whole-word tokens go
         System.assertEquals('cocacola', AccountNormalizer.normalizeName('Coca-Cola Co.'));
@@ -124,6 +139,18 @@ private class AccountNormalizerTest {
         System.assertEquals(null, AccountNormalizer.normalizePostal('-', null, null));
         System.assertEquals(null, AccountNormalizer.normalizePostal('000-0000', null, null));
         System.assertEquals(null, AccountNormalizer.normalizePostal('12', null, null));
+    }
+
+    @IsTest
+    static void postal_japaneseSourceMustBeSevenDigitsElseFallsThrough() {
+        // seen in the partial sandbox: a street address typed into TDBPostalCode__c
+        System.assertEquals(null, AccountNormalizer.normalizePostal('東京都北区東十条6−4−2', null, null));
+        System.assertEquals('1600023', AccountNormalizer.normalizePostal('東京都北区東十条6−4−2', '160-0023', null));
+        System.assertEquals(null, AccountNormalizer.normalizePostal('160-002', null, null));      // 6 digits
+        System.assertEquals(null, AccountNormalizer.normalizePostal('1600-0023', null, null));    // 8 digits
+        // international source rejects Japanese address text but accepts short codes
+        System.assertEquals(null, AccountNormalizer.normalizePostal(null, null, '大阪市北区'));
+        System.assertEquals('2609', AccountNormalizer.normalizePostal(null, null, '2609'));
     }
 
     // ------------------------------------------------- Corporate Number
