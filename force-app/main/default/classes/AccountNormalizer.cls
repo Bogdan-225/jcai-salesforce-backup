@@ -14,10 +14,19 @@ public with sharing class AccountNormalizer {
         '(株)', '(有)', '㈱', '㈲'
     };
 
-    // English corporate designators removed as whole words (after punctuation -> space).
+    // Corporate designators removed as whole words / phrases (after punctuation -> space). Multi-word
+    // phrases first so "joint stock company" is consumed before "company". Counts are prod occurrences.
     private static final Pattern EN_TOKENS = Pattern.compile(
-        '\\b(inc|corp|corporation|co|ltd|limited|kk|k k|llc|llp|gmbh|plc|pvt|pte|pty|sdn|bhd|ag|bv|nv|sa|srl|sarl|sas|oy|ab)\\b'
+        '\\b(joint stock company|limited liability company|limited liability partnership|limited liability corporation'
+        + '|private limited|public company limited|company limited|one member'
+        + '|inc|incorporated|corp|corporation|company|co|ltd|ltda|limited|kk|k k|llc|llp|lp|gmbh|plc|pvt|pte|pty|sdn|bhd'
+        + '|ag|bv|b v|nv|n v|sa|s a|de c v|de cv|c v|cv|srl|sarl|sas|spa|oy|ab|ooo|zao|oao|pao|doo|d o o)\\b'
     );
+    // leading "The " ("The Sun Chemical Co" vs "Sun Chemical Co")
+    private static final Pattern LEADING_THE = Pattern.compile('^the\\s+');
+
+    // Han, Hiragana, Katakana (incl. half-width katakana), Hangul
+    private static final Pattern CJK = Pattern.compile('[\\p{IsHan}\\p{IsHiragana}\\p{IsKatakana}\\p{IsHangul}]');
 
     private static final Set<String> WEBSITE_PLACEHOLDERS = new Set<String>{
         'none', 'nothing', 'na', 'n/a', 'null', 'なし', '無し', '-', '−', 'ー', '－'
@@ -31,7 +40,10 @@ public with sharing class AccountNormalizer {
     public static String normalizeName(String raw) {
         if (String.isBlank(raw)) return null;
         String base = toHalfWidth(raw).toLowerCase();
-        base = base.replaceAll('(?<=\\b[a-z])\\.(?=[a-z]\\b)', ''); // dotted abbreviations: n.v. -> nv, k.k. -> kk
+        // dotted abbreviations: s.p.a. -> spa, n.v. -> nv, k.k. -> kk, b.v -> bv (longest run first)
+        base = base.replaceAll('\\b([a-z])\\.([a-z])\\.([a-z])\\.([a-z])\\b\\.?', '$1$2$3$4');
+        base = base.replaceAll('\\b([a-z])\\.([a-z])\\.([a-z])\\b\\.?', '$1$2$3');
+        base = base.replaceAll('\\b([a-z])\\.([a-z])\\b\\.?', '$1$2');
 
         // key WITH designators: letters/digits only
         String withDesignators = base.replaceAll('[^\\p{L}\\p{N}]+', '');
@@ -41,13 +53,17 @@ public with sharing class AccountNormalizer {
         for (String t : JP_TOKENS) {
             s = s.replace(t, ' ');
         }
-        s = s.replaceAll('[^\\p{L}\\p{N}]+', ' ');       // punctuation -> space
-        s = EN_TOKENS.matcher(s).replaceAll(' ');        // drop inc/corp/co/ltd/pvt...
+        s = s.replaceAll('[^\\p{L}\\p{N}]+', ' ').trim();  // punctuation -> space
+        s = LEADING_THE.matcher(s).replaceFirst('');
+        s = EN_TOKENS.matcher(s).replaceAll(' ');        // drop inc/corp/co/ltd/pvt/company/...
         s = s.replaceAll('\\s+', '');                    // remove all spaces
 
-        if (s.length() < MIN_STRIPPED_LENGTH) {
-            // "L&A Corporation" -> "la" would collide with every other "LA"; "株式会社AB" -> "" because AB is
-            // also a Swedish designator. In both cases keep the designators instead.
+        // "L&A Corporation" -> "la" would collide with every other "LA"; "株式会社AB" -> "" because AB is
+        // also a Swedish designator. In both cases keep the designators instead. Japanese names of two
+        // kanji/kana (東武, 共立, サン) are real, information-rich names, so the minimum applies to
+        // Latin-only keys; CJK keys only need to be non-empty.
+        Integer minLen = CJK.matcher(s).find() ? 1 : MIN_STRIPPED_LENGTH;
+        if (s.length() < minLen) {
             s = withDesignators;
         }
         if (String.isBlank(s) || isSingleDesignator(s)) return null;   // name is nothing but "株式会社" / "Inc"

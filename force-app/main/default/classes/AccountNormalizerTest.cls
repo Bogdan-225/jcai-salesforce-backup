@@ -42,10 +42,32 @@ private class AccountNormalizerTest {
     }
 
     @IsTest
+    static void name_stripsMultiWordDesignatorsAndLeadingThe() {
+        // from the full prod export: 61K "Company", 33K "Private Limited", 8K "Joint Stock Company", 6K "Ooo"
+        System.assertEquals('sunchemical', AccountNormalizer.normalizeName('THE SUN CHEMICAL CO., LTD.'));
+        System.assertEquals('sunchemical', AccountNormalizer.normalizeName('Sun Chemical Co. Ltd'));
+        System.assertEquals('brandstudiolifestyle', AccountNormalizer.normalizeName('BRAND STUDIO LIFESTYLE PRIVATE LIMITED'));
+        System.assertEquals('tvl', AccountNormalizer.normalizeName('TVL Joint Stock Company'));
+        System.assertEquals('valueholdings', AccountNormalizer.normalizeName('Value Holdings, Limited Liability Company'));
+        System.assertEquals('spektrum', AccountNormalizer.normalizeName('Spektrum, Ooo'));
+        System.assertEquals('straitswine', AccountNormalizer.normalizeName('Straits Wine Company'));
+        System.assertEquals('bangkokgen', AccountNormalizer.normalizeName('BANGKOKGEN COMPANY LIMITED'));
+        System.assertEquals('kaczmarekelectric', AccountNormalizer.normalizeName('Kaczmarek Electric S A'));
+        System.assertEquals('spepenergynetherlands', AccountNormalizer.normalizeName('Spep Energy Netherlands B V'));
+        System.assertEquals('grupofinancierocitibanamex', AccountNormalizer.normalizeName('Grupo Financiero Citibanamex, S. A. de C. V.'));
+        System.assertEquals('brf', AccountNormalizer.normalizeName('BRF S.A.'));
+        System.assertEquals('brembo', AccountNormalizer.normalizeName('Brembo S.p.A.'));
+        // "the" only at the start; "company" only as a whole word
+        System.assertEquals('thermofisher', AccountNormalizer.normalizeName('Thermo Fisher Inc.'));
+        System.assertEquals('companionpet', AccountNormalizer.normalizeName('Companion Pet Ltd'));
+    }
+
+    @IsTest
     static void name_doesNotStripDesignatorInsideWords() {
         // "co" inside "Coca" must survive; only whole-word tokens go
         System.assertEquals('cocacola', AccountNormalizer.normalizeName('Coca-Cola Co.'));
-        System.assertEquals('incorporated', AccountNormalizer.normalizeName('Incorporated'));
+        System.assertEquals('limitless', AccountNormalizer.normalizeName('Limitless Ltd'));
+        System.assertEquals(null, AccountNormalizer.normalizeName('Incorporated'));   // a lone designator is no key
     }
 
     @IsTest
@@ -61,6 +83,17 @@ private class AccountNormalizerTest {
         // 3+ chars after stripping: designator goes as usual
         System.assertEquals('tks', AccountNormalizer.normalizeName('TKS株式会社'));
         System.assertEquals('abc', AccountNormalizer.normalizeName('ABC Ltd.'));
+    }
+
+    @IsTest
+    static void name_twoKanjiJapaneseNamesKeepStrippingDesignators() {
+        // 2-character Japanese names are real names (4,109 such groups in prod); the minimum applies to Latin keys only
+        System.assertEquals('東武', AccountNormalizer.normalizeName('株式会社東武'));
+        System.assertEquals('東武', AccountNormalizer.normalizeName('(株)東武'));
+        System.assertEquals('東武', AccountNormalizer.normalizeName('東武(株)'));
+        System.assertEquals('共立', AccountNormalizer.normalizeName('有限会社共立'));
+        System.assertEquals('サン', AccountNormalizer.normalizeName('株式会社サン'));
+        System.assertEquals('大', AccountNormalizer.normalizeName('株式会社大'));
     }
 
     @IsTest
