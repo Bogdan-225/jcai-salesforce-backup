@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordTypeDevName__c</fullName>
+    <description>System formula: record type developer name as text (blank when the account has no record type). Used by the duplicate rule conditions to split Domestic / International. Not on layouts.</description>
+    <externalId>false</externalId>
+    <formula>RecordType.DeveloperName</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>レコードタイプ API名</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
