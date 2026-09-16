@@ -13,7 +13,7 @@
                         <th scope="col" class="col-title"><div class="slds-truncate" title="Title">Title</div></th>
                         <th scope="col" class="col-doctype"><div class="slds-truncate" title="Type">Type</div></th>
                         <th scope="col" class="col-format"><div class="slds-truncate" title="Format">Format</div></th>
-                        <th scope="col" class="col-date slds-text-align_right"><div class="slds-truncate" title="Last Modified">Last Modified</div></th>
+                        <th scope="col" class="col-date slds-text-align_right"><div class="slds-truncate" title="Modified">Modified</div></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@
                             </th>
                             <td data-label="Type"><div class="slds-truncate" title={file.docType}>{file.docType}</div></td>
                             <td data-label="Format"><div class="slds-truncate" title={file.type}>{file.type}</div></td>
-                            <td data-label="Last Modified" class="slds-text-align_right">
+                            <td data-label="Modified" class="slds-text-align_right">
                                 <div class="slds-truncate">
                                     <lightning-formatted-date-time value={file.modified}
                                         year="numeric" month="2-digit" day="2-digit"></lightning-formatted-date-time>
