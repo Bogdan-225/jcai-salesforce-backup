@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Read/edit access to the five hidden *_Normalized__c Account fields used by the duplicate matching rules. For admins and reporting only.</description>
+    <description>Read/edit access to the five hidden *_Normalized__c Account fields used by the duplicate matching rules, and to User.Skip_Duplicate_Alerts__c (per-user exclusion from the duplicate rules). For admins and reporting only.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Name_Normalized__c</field>
@@ -24,6 +24,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.CorporateNumber_Normalized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Skip_Duplicate_Alerts__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

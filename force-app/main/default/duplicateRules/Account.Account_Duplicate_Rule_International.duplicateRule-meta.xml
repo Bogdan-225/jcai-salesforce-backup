@@ -3,14 +3,22 @@
     <actionOnInsert>Allow</actionOnInsert>
     <actionOnUpdate>Allow</actionOnUpdate>
     <alertText>This account may already exist. Please check the possible duplicates below before saving. | 同じ取引先が既に存在する可能性があります。既存レコードの利用をご検討ください。</alertText>
-    <description>International accounts (record type International). Uses matching rule Account_Match_International: website/phone only together with a fuzzy company-name match. Alert + Report on create, Report on edit. dup_rules.docx v3 section 4.</description>
+    <description>International accounts. Matching rule Account_Match_International: website/phone only with a fuzzy company-name match. Alert + Report on create, Report on edit. Skipped for users with Skip_Duplicate_Alerts__c checked. dup_rules.docx v5 section 4.</description>
     <duplicateRuleFilter>
+        <booleanFilter>1 AND 2</booleanFilter>
         <duplicateRuleFilterItems>
             <field>RecordTypeDevName__c</field>
             <operation>equals</operation>
             <value>International</value>
             <sortOrder>1</sortOrder>
             <table>Account</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Skip_Duplicate_Alerts__c</field>
+            <operation>equals</operation>
+            <value>false</value>
+            <sortOrder>2</sortOrder>
+            <table>User</table>
         </duplicateRuleFilterItems>
     </duplicateRuleFilter>
     <duplicateRuleMatchRules>

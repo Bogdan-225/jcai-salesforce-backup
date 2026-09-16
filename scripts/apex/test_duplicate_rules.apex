@@ -2,6 +2,10 @@
 // Through the API an "Alert" duplicate rule returns a DUPLICATES_DETECTED error, so every scenario
 // is an insert attempt: ALERT = the rule fired (nothing saved), NO ALERT = saved and deleted again.
 // Run: sf apex run --target-org partial --file scripts/apex/test_duplicate_rules.apex
+// If the running user has Skip_Duplicate_Alerts__c checked, the rules must not fire at all:
+// every ALERT expectation flips to NO ALERT (set the flag in a separate transaction, e.g. sf data update record).
+Boolean skip = [SELECT Skip_Duplicate_Alerts__c FROM User WHERE Id = :UserInfo.getUserId()].Skip_Duplicate_Alerts__c;
+System.debug(LoggingLevel.INFO, 'RUN MODE: Skip_Duplicate_Alerts__c = ' + skip + ' for ' + UserInfo.getUserName());
 Id DOM = '012BL0000004I8fYAE';
 Id INTL = '012RA00000AVG7ZYAX';
 
@@ -46,6 +50,7 @@ Integer pass = 0, fail = 0;
 for (Object[] c : cases) {
     String label = (String) c[0];
     String expected = (String) c[1];
+    if (skip && expected == 'ALERT') expected = 'NO ALERT';
     Account a = (Account) c[2];
     Database.SaveResult sr = Database.insert(a, false);
     String outcome; String detail = '';
