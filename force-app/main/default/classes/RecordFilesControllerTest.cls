@@ -9,7 +9,8 @@ private class RecordFilesControllerTest {
             Title = 'Test File',
             PathOnClient = 'test_file.pdf',
             VersionData = Blob.valueOf('hello'),
-            IsMajorVersion = true
+            IsMajorVersion = true,
+            DocType__c = 'IM'
         );
         insert cv;
 
@@ -21,6 +22,7 @@ private class RecordFilesControllerTest {
         System.assertEquals(1, items.size(), 'Expected exactly one file linked to the running user');
         System.assertEquals('Test File', items[0].title);
         System.assertEquals('pdf', items[0].fileType);
+        System.assertEquals('IM', items[0].docType, 'Document type of the latest version expected');
         System.assertNotEquals(null, items[0].id);
         System.assertNotEquals(null, items[0].lastModified);
     }

@@ -1,12 +1,14 @@
 /**
  * Read-only list of files attached to a record, for the recordFilesReadOnly LWC.
  * Runs with sharing so users only see files they can already access.
+ * docType = ContentVersion.DocType__c of the latest version (set by the Upload Files flow).
  */
 public with sharing class RecordFilesController {
 
     public class FileItem {
         @AuraEnabled public String id;
         @AuraEnabled public String title;
+        @AuraEnabled public String docType;
         @AuraEnabled public String fileType;
         @AuraEnabled public Integer contentSize;
         @AuraEnabled public Datetime lastModified;
@@ -26,7 +28,8 @@ public with sharing class RecordFilesController {
                    ContentDocument.FileType,
                    ContentDocument.FileExtension,
                    ContentDocument.ContentSize,
-                   ContentDocument.LastModifiedDate
+                   ContentDocument.LastModifiedDate,
+                   toLabel(ContentDocument.LatestPublishedVersion.DocType__c)
             FROM ContentDocumentLink
             WHERE LinkedEntityId = :recordId
             ORDER BY ContentDocument.LastModifiedDate DESC
@@ -35,6 +38,9 @@ public with sharing class RecordFilesController {
             FileItem fi = new FileItem();
             fi.id = cdl.ContentDocumentId;
             fi.title = cdl.ContentDocument.Title;
+            fi.docType = cdl.ContentDocument.LatestPublishedVersion == null
+                ? null
+                : cdl.ContentDocument.LatestPublishedVersion.DocType__c;
             fi.fileType = String.isNotBlank(cdl.ContentDocument.FileExtension)
                 ? cdl.ContentDocument.FileExtension
                 : cdl.ContentDocument.FileType;

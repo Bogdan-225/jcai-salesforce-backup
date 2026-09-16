@@ -11,9 +11,9 @@
                 <thead>
                     <tr class="slds-line-height_reset">
                         <th scope="col"><div class="slds-truncate" title="Title">Title</div></th>
-                        <th scope="col" style="width: 5rem"><div class="slds-truncate" title="Type">Type</div></th>
-                        <th scope="col" style="width: 6rem"><div class="slds-truncate" title="Size">Size</div></th>
-                        <th scope="col" style="width: 9rem"><div class="slds-truncate" title="Last Modified">Last Modified</div></th>
+                        <th scope="col" class="col-doctype"><div class="slds-truncate" title="Type">Type</div></th>
+                        <th scope="col" class="col-format"><div class="slds-truncate" title="Format">Format</div></th>
+                        <th scope="col" class="col-date slds-text-align_right"><div class="slds-truncate" title="Last Modified">Last Modified</div></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,9 +24,9 @@
                                     <a href="#" data-id={file.id} onclick={handleOpen}>{file.title}</a>
                                 </div>
                             </th>
-                            <td data-label="Type"><div class="slds-truncate" title={file.type}>{file.type}</div></td>
-                            <td data-label="Size"><div class="slds-truncate" title={file.size}>{file.size}</div></td>
-                            <td data-label="Last Modified">
+                            <td data-label="Type"><div class="slds-truncate" title={file.docType}>{file.docType}</div></td>
+                            <td data-label="Format"><div class="slds-truncate" title={file.type}>{file.type}</div></td>
+                            <td data-label="Last Modified" class="slds-text-align_right">
                                 <div class="slds-truncate">
                                     <lightning-formatted-date-time value={file.modified}
                                         year="numeric" month="2-digit" day="2-digit"></lightning-formatted-date-time>

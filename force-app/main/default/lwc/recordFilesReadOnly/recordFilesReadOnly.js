@@ -19,8 +19,8 @@ export default class RecordFilesReadOnly extends NavigationMixin(LightningElemen
             this.files = data.map((f) => ({
                 id: f.id,
                 title: f.title,
+                docType: f.docType || '',
                 type: (f.fileType || '').toUpperCase(),
-                size: this.formatSize(f.contentSize),
                 modified: f.lastModified
             }));
         } else if (error) {
@@ -39,13 +39,6 @@ export default class RecordFilesReadOnly extends NavigationMixin(LightningElemen
 
     get showEmpty() {
         return this.loaded && !this.error && !this.hasFiles;
-    }
-
-    formatSize(bytes) {
-        if (bytes === null || bytes === undefined) return '';
-        if (bytes < 1024) return `${bytes} B`;
-        if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-        return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
     }
 
     handleOpen(event) {
