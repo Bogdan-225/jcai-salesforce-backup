@@ -1,9 +1,12 @@
+.col-title {
+    width: 46%;
+}
 .col-doctype {
-    width: 9.5rem;
+    width: 20%;
 }
 .col-format {
-    width: 4.5rem;
+    width: 12%;
 }
 .col-date {
-    width: 7rem;
+    width: 22%;
 }
