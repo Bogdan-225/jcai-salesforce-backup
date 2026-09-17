@@ -36,16 +36,10 @@
                         <valueListItems>
                             <value>Opportunity.Create_KPI_Activity</value>
                             <visibilityRule>
-                                <booleanFilter>1 OR 2</booleanFilter>
                                 <criteria>
-                                    <leftValue>{!$User.Profile.Name}</leftValue>
+                                    <leftValue>{!$Permission.CustomPermission.KPI_Activity_Admin}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>システム管理者</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!$User.Profile.Name}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>System Administrator</rightValue>
+                                    <rightValue>true</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -2267,6 +2261,20 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>pageSize</name>
+                    <value>20</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Files</value>
+                </componentInstanceProperties>
+                <componentName>recordFilesReadOnly</componentName>
+                <identifier>c_recordFilesReadOnly</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
