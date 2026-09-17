@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KPI Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KPI Activities</value>
+    </caseValues>
+    <fields>
+        <label>Activity Date/Time</label>
+        <name>Activity_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label>Allocation Count</label>
+        <name>Allocation_Count__c</name>
+    </fields>
+    <fields>
+        <label>Assignee</label>
+        <name>Assignee__c</name>
+        <relationshipLabel>KPI Activities</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Attribution Role</label>
+        <name>Attribution_Role__c</name>
+        <picklistValues>
+            <masterLabel>Buyer</masterLabel>
+            <translation><!-- Buyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seller</masterLabel>
+            <translation><!-- Seller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>通常</masterLabel>
+            <translation>Standard</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Buyer Account</label>
+        <name>Buyer_Account__c</name>
+        <relationshipLabel>KPI Activities (Buyer)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Count Target</label>
+        <name>Count_Target__c</name>
+    </fields>
+    <fields>
+        <label>KPI Cycle</label>
+        <name>KPI_Cycle__c</name>
+    </fields>
+    <fields>
+        <label>Matching</label>
+        <name>Matching__c</name>
+        <relationshipLabel>KPI Activities</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Migration Key</label>
+        <name>Migration_Key__c</name>
+    </fields>
+    <fields>
+        <label>Notes</label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label>Project</label>
+        <name>Opportunity__c</name>
+        <relationshipLabel>KPI Activities</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Top Meeting Group ID</label>
+        <name>Top_Meeting_Group_Id__c</name>
+    </fields>
+    <nameFieldLabel>KPI Activity Number</nameFieldLabel>
+    <recordTypes>
+        <description><!-- Appointment KPI --></description>
+        <label><!-- Appointment --></label>
+        <name>Appointment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Lead KPI --></description>
+        <label><!-- Lead --></label>
+        <name>Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- TopMeeting KPI。Seller/Buyerへ各0.5件を配賦する。 --></description>
+        <label><!-- TopMeeting --></label>
+        <name>TopMeeting</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Tossup KPI --></description>
+        <label><!-- Tossup --></label>
+        <name>Tossup</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>Please enter an Assignee.</errorMessage>
+        <name>Require_Assignee</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Please enter the Top Meeting Group ID.</errorMessage>
+        <name>Require_Top_Meeting_Group_Id</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>TopMeeting requires Seller or Buyer; every other KPI type must be Standard.</errorMessage>
+        <name>Validate_Attribution_Role</name>
+    </validationRules>
+</CustomObjectTranslation>

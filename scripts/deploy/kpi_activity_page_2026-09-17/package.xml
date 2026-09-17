@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types><members>KPI_Activity_Record_Page1</members><name>FlexiPage</name></types>
+    <types><members>KPI_Activity__c-KPI実績レイアウト</members><name>Layout</name></types>
+    <types><members>KPI_Activity__c-en_US</members><name>CustomObjectTranslation</name></types>
+    <version>67.0</version>
+</Package>
