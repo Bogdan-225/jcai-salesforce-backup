@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Matching__c.MustFillNNReason</members>
+        <members>Matching__c.MustFillIMReason</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Matching__c.NNPassReason__c</members>
+        <members>Matching__c.IMPassReason__c</members>
+        <name>CustomField</name>
+    </types>
+    <version>62.0</version>
+</Package>

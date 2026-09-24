@@ -8,8 +8,6 @@
     <columns>NextActionDay__c</columns>
     <columns>LAST_UPDATE</columns>
     <columns>LAST_ACTIVITY</columns>
-    <columns>NNPassReason__c</columns>
-    <columns>IMPassReason__c</columns>
     <columns>UPDATEDBY_USER</columns>
     <columns>UPDATEDBY_USER.ALIAS</columns>
     <filterScope>Everything</filterScope>
