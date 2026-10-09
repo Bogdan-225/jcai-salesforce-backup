@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <errorMessage>Please upload either the LOI or the MOU using the [Upload Files] button.</errorMessage>
+        <name>Required_MOU_LOI</name>
+    </validationRules>
+</CustomObjectTranslation>

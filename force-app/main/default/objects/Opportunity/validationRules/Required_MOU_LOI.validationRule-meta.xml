@@ -5,7 +5,8 @@
     <errorConditionFormula>AND(
     ISCHANGED(StageName),
     ISPICKVAL(StageName, &quot;DD&quot;),
-    Check_DocUploaded_MOU__c = FALSE
+    Check_DocUploaded_MOU__c = FALSE,
+    Check_DocUploaded_LOI__c = FALSE
 )</errorConditionFormula>
-    <errorMessage>LOIとMOUを[Upload Files]ボタンからアップロードしてください。</errorMessage>
+    <errorMessage>LOIまたはMOUのいずれかを[Upload Files]ボタンからアップロードしてください。</errorMessage>
 </ValidationRule>
