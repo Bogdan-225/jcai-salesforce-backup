@@ -160,7 +160,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
-        <label>カスタムリンク</label>
+        <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
@@ -187,13 +187,24 @@
         <relatedList>ContentDocumentRelatedList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Activity_Date_Time__c</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Assignee__c</fields>
+        <fields>Attribution_Role__c</fields>
+        <fields>Buyer_Account__c</fields>
+        <fields>Count_Target__c</fields>
+        <relatedList>KPI_Activity__c.Opportunity__c</relatedList>
+        <sortField>Activity_Date_Time__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <relatedList>Matching__c.Sell__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <relatedList>ContractFile__c.Opportunity__c</relatedList>
     </relatedLists>

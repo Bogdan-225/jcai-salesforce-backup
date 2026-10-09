@@ -131,7 +131,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>概況</label>
+        <label>Overview</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -148,7 +148,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>アプローチ情報</label>
+        <label>Approach Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -167,7 +167,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>報酬</label>
+        <label>Fees</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -209,7 +209,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>売AD契約</label>
+        <label>Sell Agreement</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -236,7 +236,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>案件詳細</label>
+        <label>Project Details</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -279,7 +279,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>直近財務情報</label>
+        <label>Latest Financials</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -314,7 +314,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>長期フォロー</label>
+        <label>Long-Term Follow-up</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -340,7 +340,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>ペンディング</label>
+        <label>Pending</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -366,7 +366,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>検索用</label>
+        <label>For Search</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -498,11 +498,22 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <relatedList>ContractFile__c.Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Activity_Date_Time__c</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Assignee__c</fields>
+        <fields>Attribution_Role__c</fields>
+        <fields>Buyer_Account__c</fields>
+        <fields>Count_Target__c</fields>
+        <relatedList>KPI_Activity__c.Opportunity__c</relatedList>
+        <sortField>Activity_Date_Time__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
