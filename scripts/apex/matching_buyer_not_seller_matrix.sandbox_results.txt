@@ -1,0 +1,15 @@
+# sandbox bogdan, 2026-10-14, deploy 0AfBK00000CsxDv0AJ, run as en_US user (English message = translation works)
+project insert ok=true
+A MatchingMaster seller-as-buyer blocked=true msg=The seller of this project cannot be selected as the buyer. Please choose another account. fields=(Buy_Company__c)
+B MatchingMaster other-buyer saved=true
+A XBorderType seller-as-buyer blocked=true msg=The seller of this project cannot be selected as the buyer. Please choose another account. fields=(Buy_Company__c)
+B XBorderType other-buyer saved=true
+A Matching_Out_Out seller-as-buyer blocked=true msg=The seller of this project cannot be selected as the buyer. Please choose another account. fields=(Buy_Company__c)
+B Matching_Out_Out other-buyer saved=true
+C Sell_New__c seller-as-buyer blocked=true
+D no-project saved=true
+E1 existing offender, edit other field saved=true
+E2 change buyer to a valid one saved=true
+E3 change buyer back to seller blocked=true
+F change project to buyer-owned one blocked=true
+rolled back

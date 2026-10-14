@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyer_Not_Seller</fullName>
+    <active>true</active>
+    <description>譲渡案件（Opportunity または (新)譲渡案件）の売り手企業を譲受希望会社に選択できないようにする。新規作成時、または譲受希望会社・譲渡案件が変更されたときのみ評価する（既存データの編集を妨げない）。</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Buy_Company__c)),
+    OR(ISNEW(), ISCHANGED(Buy_Company__c), ISCHANGED(Sell__c), ISCHANGED(Sell_New__c)),
+    OR(
+        AND(NOT(ISBLANK(Sell__c)), Buy_Company__c = Sell__r.AccountId),
+        AND(NOT(ISBLANK(Sell_New__c)), Buy_Company__c = Sell_New__r.Account__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Buy_Company__c</errorDisplayField>
+    <errorMessage>譲渡案件の売り手企業は譲受希望会社に選択できません。別の企業を選択してください。</errorMessage>
+</ValidationRule>
