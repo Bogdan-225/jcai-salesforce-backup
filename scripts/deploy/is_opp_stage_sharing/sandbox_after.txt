@@ -1,0 +1,14 @@
+== 005RA00000M3rEUYAZ:IS_Buy_Matsui
+SellingOpp/Post Top MTG              read 0 / 2
+SellingOpp/資料作成                      read 2 / 2
+SellingOpp/面談前                       read 5 / 5
+XBorderType/Converted to Buyer       read 0 / 10
+XBorderType/FS Request               read 15 / 15
+XBorderType/ISマッチング中                 read 2 / 2
+XBorderType/On Hold                  read 0 / 11
+XBorderType/Post Top MTG             read 0 / 1
+XBorderType/Pre Top MTG              read 0 / 1
+XBorderType/バリュエーション済み               read 5 / 5
+XBorderType/案件化                      read 5 / 5
+XBorderType/案件終了                     read 0 / 15
+== 005RA00000Ak9ybYAB:IS_Sell_Sano

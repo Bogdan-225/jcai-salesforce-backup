@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Account.Read_Advisor_Advisor</members>
+        <members>Account.Read_Apprach_Manager_Apprach_Manager</members>
+        <members>Account.Read_IS_Buy_Advisor</members>
+        <members>Account.Read_IS_Sell_Advisor</members>
+        <members>Account.Read_System_Admin_System_Admin</members>
+        <members>Account.Write_Inactive_All</members>
+        <members>Account.Write_Advisor_IS_Sell</members>
+        <members>Account.Write_Apprach_Manager_IS_Sell</members>
+        <members>Account.Write_System_Admin_IS_Sell</members>
+        <name>SharingOwnerRule</name>
+    </types>
+    <types>
+        <members>Opportunity.IS_Buy_PreTopMtg_Read</members>
+        <name>SharingCriteriaRule</name>
+    </types>
+    <types>
+        <members>IS_Buy</members>
+        <members>IS_Sell</members>
+        <name>Role</name>
+    </types>
+    <version>62.0</version>
+</Package>
