@@ -1,0 +1,12 @@
+/* Mimic the record detail look: label column left, value right, hairline between rows. */
+.field-row {
+    border-bottom: 1px solid var(--slds-g-color-border-base-1, #e5e5e5);
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0;
+}
+.field-row .slds-form-element__label {
+    color: var(--slds-g-color-neutral-base-30, #444);
+}
+.slds-section__content {
+    padding-top: 0;
+}

@@ -1,0 +1,81 @@
+== 005RA00000M3rEUYAZ:IS_Buy_Matsui
+CB_Sourcing_Path/Ongoing             read 8 / 8
+SellingOpp/DD                        read 0 / 4
+SellingOpp/ISマッチング中                  read 8 / 8
+SellingOpp/MGマッチング中                  read 8 / 8
+SellingOpp/MOU/LOI                   read 0 / 3
+SellingOpp/Post Top MTG              read 0 / 2
+SellingOpp/SPA                       read 0 / 2
+SellingOpp/トップ面談                     read 0 / 6
+SellingOpp/成約                        read 0 / 8
+SellingOpp/案件終了                      read 0 / 8
+SellingOpp/資料作成                      read 7 / 7
+SellingOpp/面談前                       read 8 / 8
+XBorderType/DD                       read 0 / 6
+XBorderType/ISマッチング中                 read 1 / 2
+XBorderType/MGマッチング中                 read 8 / 8
+XBorderType/MOU/LOI                  read 0 / 2
+XBorderType/Ongoing                  read 1 / 1
+XBorderType/Post Top MTG             read 0 / 7
+XBorderType/Pre Top MTG              read 0 / 7
+XBorderType/SPA                      read 0 / 1
+XBorderType/トップ面談                    read 0 / 2
+XBorderType/リード反響                    read 8 / 8
+XBorderType/成約                       read 0 / 3
+XBorderType/案件終了                     read 0 / 8
+XBorderType/資料作成                     read 1 / 1
+XBorderType/面談前                      read 8 / 8
+== 005RA00000Ak9ybYAB:IS_Sell_Sano
+CB_Sourcing_Path/Ongoing             read 0 / 8
+SellingOpp/DD                        read 0 / 4
+SellingOpp/ISマッチング中                  read 0 / 8
+SellingOpp/MGマッチング中                  read 0 / 8
+SellingOpp/MOU/LOI                   read 0 / 3
+SellingOpp/Post Top MTG              read 0 / 2
+SellingOpp/SPA                       read 0 / 2
+SellingOpp/トップ面談                     read 0 / 6
+SellingOpp/成約                        read 0 / 8
+SellingOpp/案件終了                      read 0 / 8
+SellingOpp/資料作成                      read 0 / 7
+SellingOpp/面談前                       read 0 / 8
+XBorderType/DD                       read 0 / 6
+XBorderType/ISマッチング中                 read 0 / 2
+XBorderType/MGマッチング中                 read 0 / 8
+XBorderType/MOU/LOI                  read 0 / 2
+XBorderType/Ongoing                  read 0 / 1
+XBorderType/Post Top MTG             read 0 / 7
+XBorderType/Pre Top MTG              read 0 / 7
+XBorderType/SPA                      read 0 / 1
+XBorderType/トップ面談                    read 0 / 2
+XBorderType/リード反響                    read 0 / 8
+XBorderType/成約                       read 0 / 3
+XBorderType/案件終了                     read 0 / 8
+XBorderType/資料作成                     read 0 / 1
+XBorderType/面談前                      read 0 / 8
+== 005RA00000Hd1AZYAZ:Nishio_now_IS_Buy_profile
+CB_Sourcing_Path/Ongoing             read 8 / 8
+SellingOpp/DD                        read 0 / 4
+SellingOpp/ISマッチング中                  read 8 / 8
+SellingOpp/MGマッチング中                  read 8 / 8
+SellingOpp/MOU/LOI                   read 0 / 3
+SellingOpp/Post Top MTG              read 0 / 2
+SellingOpp/SPA                       read 0 / 2
+SellingOpp/トップ面談                     read 0 / 6
+SellingOpp/成約                        read 0 / 8
+SellingOpp/案件終了                      read 0 / 8
+SellingOpp/資料作成                      read 7 / 7
+SellingOpp/面談前                       read 8 / 8
+XBorderType/DD                       read 0 / 6
+XBorderType/ISマッチング中                 read 1 / 2
+XBorderType/MGマッチング中                 read 8 / 8
+XBorderType/MOU/LOI                  read 0 / 2
+XBorderType/Ongoing                  read 1 / 1
+XBorderType/Post Top MTG             read 0 / 7
+XBorderType/Pre Top MTG              read 0 / 7
+XBorderType/SPA                      read 0 / 1
+XBorderType/トップ面談                    read 0 / 2
+XBorderType/リード反響                    read 8 / 8
+XBorderType/成約                       read 0 / 3
+XBorderType/案件終了                     read 0 / 8
+XBorderType/資料作成                     read 1 / 1
+XBorderType/面談前                      read 8 / 8

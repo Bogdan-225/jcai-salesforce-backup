@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>IS_Buy_PreTopMtg_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>IS向け: 商談をPre Top MTG手前のフェーズのみ参照共有（全レコードタイプ共通）。Pre Top MTG以降（成約・案件終了含む）は非表示。OngoingはSourcing用。2026-10-13</description>
+        <label>IS_Buy_PreTopMtg_Read</label>
+        <sharedTo>
+            <role>IS_Buy</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>IS戻し,リード反響,NDA締結,FS Request,バリュエーション済み,トスアップ,面談前,長期フォロー,案件化,資料作成,ISマッチング中,MGマッチング中,Ongoing</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

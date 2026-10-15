@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>MatchingInquiryController</members>
+        <members>MatchingInquiryControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>matchingInquiryMessage</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Matching_Advisor</members>
+        <members>Matching_Advisor_M_CB</members>
+        <members>Matching_IS_Buy</members>
+        <name>FlexiPage</name>
+    </types>
+    <version>62.0</version>
+</Package>

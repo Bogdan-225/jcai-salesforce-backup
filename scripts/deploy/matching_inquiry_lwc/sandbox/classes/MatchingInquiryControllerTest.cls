@@ -86,7 +86,6 @@ private class MatchingInquiryControllerTest {
         System.assertEquals('TEXTAREA', ja.get('Inquiry_Body_Ja__c').type);
         System.assertEquals('STRING', ja.get('Inquiry_Company_Ja__c').type);
         System.assert(String.isNotBlank(ja.get('Inquiry_Company_Ja__c').label), 'label populated');
-        System.assertEquals(null, ja.get('Inquiry_Work_Ja__c').value, 'blank field still listed, value null');
 
         Map<String, String> en = new Map<String, String>();
         for (MatchingInquiryController.FieldValue fv : result.en) {

@@ -1,0 +1,61 @@
+<template>
+    <template lwc:if={error}>
+        <div class="slds-p-around_medium slds-text-color_error">{error}</div>
+    </template>
+
+    <template lwc:if={showEmpty}>
+        <div class="slds-p-around_medium slds-text-color_weak">
+            案件（Project）が紐づいていないため、問い合わせ項目はありません。 | No Project linked, so there is no inquiry message.
+        </div>
+    </template>
+
+    <template lwc:if={hasProject}>
+        <div class={jaSectionClass}>
+            <h3 class="slds-section__title">
+                <button class="slds-button slds-section__title-action" onclick={toggleJa} aria-expanded={jaOpen}>
+                    <lightning-icon icon-name="utility:switch" size="x-small" class="slds-section__title-action-icon slds-button__icon_left"></lightning-icon>
+                    <span class="slds-truncate" title={jaTitle}>{jaTitle}</span>
+                </button>
+            </h3>
+            <div class="slds-section__content">
+                <template for:each={ja} for:item="f">
+                    <div key={f.apiName} class="slds-form-element slds-form-element_horizontal slds-form-element_readonly field-row">
+                        <span class="slds-form-element__label">{f.label}</span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">
+                                <template lwc:if={f.isEmail}><lightning-formatted-email value={f.value} hide-icon></lightning-formatted-email></template>
+                                <template lwc:if={f.isPhone}><lightning-formatted-phone value={f.value}></lightning-formatted-phone></template>
+                                <template lwc:if={f.isTextArea}><lightning-formatted-text value={f.value} linkify></lightning-formatted-text></template>
+                                <template lwc:if={f.isPlain}>{f.value}</template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class={enSectionClass}>
+            <h3 class="slds-section__title">
+                <button class="slds-button slds-section__title-action" onclick={toggleEn} aria-expanded={enOpen}>
+                    <lightning-icon icon-name="utility:switch" size="x-small" class="slds-section__title-action-icon slds-button__icon_left"></lightning-icon>
+                    <span class="slds-truncate" title={enTitle}>{enTitle}</span>
+                </button>
+            </h3>
+            <div class="slds-section__content">
+                <template for:each={en} for:item="f">
+                    <div key={f.apiName} class="slds-form-element slds-form-element_horizontal slds-form-element_readonly field-row">
+                        <span class="slds-form-element__label">{f.label}</span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">
+                                <template lwc:if={f.isEmail}><lightning-formatted-email value={f.value} hide-icon></lightning-formatted-email></template>
+                                <template lwc:if={f.isPhone}><lightning-formatted-phone value={f.value}></lightning-formatted-phone></template>
+                                <template lwc:if={f.isTextArea}><lightning-formatted-text value={f.value} linkify></lightning-formatted-text></template>
+                                <template lwc:if={f.isPlain}>{f.value}</template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>
