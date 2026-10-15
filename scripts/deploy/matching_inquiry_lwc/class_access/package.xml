@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Active%5F%5FIS_Buy</members>
+        <members>Active_IS_Sell</members>
+        <members>Active_IS_Sell_pf</members>
+        <members>Active_アドバイザー</members>
+        <members>Active_アドバイザー_pf</members>
+        <members>Active_アプローチ管理者</members>
+        <members>Active_インターン</members>
+        <members>Admin</members>
+        <members>Analytics Cloud Integration User</members>
+        <members>Analytics Cloud Security User</members>
+        <members>Anypoint Integration</members>
+        <members>Chatter External User</members>
+        <members>Chatter Free User</members>
+        <members>Chatter Moderator User</members>
+        <members>ContractManager</members>
+        <members>Customer Community User</members>
+        <members>Einstein Agent User</members>
+        <members>External Apps Login User</members>
+        <members>External Einstein Agent User</members>
+        <members>Guest License User</members>
+        <members>IPインポートユーザ</members>
+        <members>IP一般プラットフォーム版</members>
+        <members>IP一般ユーザ</members>
+        <members>Identity User</members>
+        <members>MarketingProfile</members>
+        <members>Minimum Access - API Only Integrations</members>
+        <members>Minimum Access - Salesforce</members>
+        <members>Read Only</members>
+        <members>Sales Insights Integration User</members>
+        <members>Salesforce API Only System Integrations</members>
+        <members>SalesforceIQ Integration User</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        <members>StandardAul</members>
+        <members>システム管理者</members>
+        <members>ソリューション管理者</members>
+        <members>マーケティングユーザー</members>
+        <members>レイアウト確認用</members>
+        <members>契約 管理者</members>
+        <members>標準 Platform ユーザー</members>
+        <members>標準ユーザー</members>
+        <name>Profile</name>
+    </types>
+    <version>62.0</version>
+</Package>
