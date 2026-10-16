@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DealConflict_M__c</fullName>
+    <description>買い手(譲受希望会社)のDealConflict__cを表示(マッチングのレポート/リストビューで「他案件進行中(重複注意)」を列表示するため)。※数式のためリストビューの絞り込み条件には使用不可。</description>
+    <formula>Buy_Company__r.DealConflict__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Active in another deal (Top Meeting stage or later) = beware of duplicate proposals. *Set automatically on/off — do not edit manually.</inlineHelpText>
+    <label>他案件進行中(重複注意)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -131,3 +131,16 @@ In this order:
 - LastModifiedDate restarts the 90-day window: any system update (e.g. the Stalled flag) extends it.
 - Not instant, but fixed by the 05:00 run: Opportunity delete, Account merge, Account re-parenting, revival by activity alone.
 - Add the flow Opportunity_AfterSave_RecomputeSellSideConflict to the pause list for bulk Opportunity loads (next to StampDeal and CheckStage).
+
+### 7b. Full revert (if something is badly broken)
+
+Order: kill switch first, then restore, then (optionally) delete the new parts. All reversible within minutes; nothing here touches DealConflict__c behaviour.
+
+1. Kill switch (stops all new flag writes immediately):
+   `! sf api request rest -o prod --method PATCH "services/data/v62.0/tooling/sobjects/FlowDefinition/<FlowDefinitionId>" --body '{"Metadata":{"activeVersionNumber":0}}'`
+   `! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/rollback_abort_job.apex`
+2. Clear the flags: `! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/rollback_clear_flags.apex`
+3. Restore every whole-file component to its pre-deploy state (prod snapshot of 2026-10-16, source format, deployable as is):
+   `! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/prod/revert --wait 15`
+   This puts back: Account pages Japan/International, the 5 Matching layouts, the 3 Matching pages, perm set DealConflict_Access, the 3 en_US translations (old "Deal Conflict" label/help), and the 2 buyer fields' old labels. The new fields, Apex classes and the (now inactive) flow remain but are inert and hidden; the 8 partial-profile FLS grants remain harmless.
+4. Optional cleanup later (not needed for safety): delete the flow, then the 3 Apex classes, then the 4 new fields via Setup (fields go to the recycle bin for 15 days). Profiles keep no reference once the fields are deleted.
