@@ -1,16 +1,685 @@
 {
-  "name": "INVALID_FIELD",
-  "message": "\nId, Name, SellSideConflict__c, DealConflict__c FROM Account WHERE\n                               ^\nERROR at Row:1:Column:39\nNo such column 'DealConflict__c' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.",
-  "exitCode": 1,
-  "context": "DataSoqlQueryCommand",
-  "data": {
-    "message": "\nId, Name, SellSideConflict__c, DealConflict__c FROM Account WHERE\n                               ^\nERROR at Row:1:Column:39\nNo such column 'DealConflict__c' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.",
-    "errorCode": "INVALID_FIELD"
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002AEqrDYAT"
+        },
+        "Id": "001RA00002AEqrDYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002AlT31YAF"
+        },
+        "Id": "001RA00002AlT31YAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002C5B1KYAV"
+        },
+        "Id": "001RA00002C5B1KYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002C7AFeYAN"
+        },
+        "Id": "001RA00002C7AFeYAN",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002CEVLpYAP"
+        },
+        "Id": "001RA00002CEVLpYAP",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002CFmqnYAD"
+        },
+        "Id": "001RA00002CFmqnYAD",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002CXYNxYAP"
+        },
+        "Id": "001RA00002CXYNxYAP",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002D2yCVYAZ"
+        },
+        "Id": "001RA00002D2yCVYAZ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002DMBM6YAP"
+        },
+        "Id": "001RA00002DMBM6YAP",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002DwFr0YAF"
+        },
+        "Id": "001RA00002DwFr0YAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002E0NYEYA3"
+        },
+        "Id": "001RA00002E0NYEYA3",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002E1UuDYAV"
+        },
+        "Id": "001RA00002E1UuDYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002E3VW1YAN"
+        },
+        "Id": "001RA00002E3VW1YAN",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002EKuQ3YAL"
+        },
+        "Id": "001RA00002EKuQ3YAL",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002EMFycYAH"
+        },
+        "Id": "001RA00002EMFycYAH",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002EYJIUYA5"
+        },
+        "Id": "001RA00002EYJIUYA5",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002FbJ2BYAV"
+        },
+        "Id": "001RA00002FbJ2BYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002GRbhCYAT"
+        },
+        "Id": "001RA00002GRbhCYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002GRf6ZYAT"
+        },
+        "Id": "001RA00002GRf6ZYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002GSTZVYA5"
+        },
+        "Id": "001RA00002GSTZVYA5",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002H84lCYAR"
+        },
+        "Id": "001RA00002H84lCYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002HmqpXYAR"
+        },
+        "Id": "001RA00002HmqpXYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002I5AZdYAN"
+        },
+        "Id": "001RA00002I5AZdYAN",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002I8wElYAJ"
+        },
+        "Id": "001RA00002I8wElYAJ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002IUTxHYAX"
+        },
+        "Id": "001RA00002IUTxHYAX",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002J6egNYAR"
+        },
+        "Id": "001RA00002J6egNYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002J6xvvYAB"
+        },
+        "Id": "001RA00002J6xvvYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002JlA6QYAV"
+        },
+        "Id": "001RA00002JlA6QYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002JmfHtYAJ"
+        },
+        "Id": "001RA00002JmfHtYAJ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KKC6yYAH"
+        },
+        "Id": "001RA00002KKC6yYAH",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KL2n7YAD"
+        },
+        "Id": "001RA00002KL2n7YAD",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KL9gVYAT"
+        },
+        "Id": "001RA00002KL9gVYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KLw9LYAT"
+        },
+        "Id": "001RA00002KLw9LYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KMyXHYA1"
+        },
+        "Id": "001RA00002KMyXHYA1",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KPhjaYAD"
+        },
+        "Id": "001RA00002KPhjaYAD",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KhUfsYAF"
+        },
+        "Id": "001RA00002KhUfsYAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KhlIVYAZ"
+        },
+        "Id": "001RA00002KhlIVYAZ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002Ki63aYAB"
+        },
+        "Id": "001RA00002Ki63aYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002KvyiwYAB"
+        },
+        "Id": "001RA00002KvyiwYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002LjJr1YAF"
+        },
+        "Id": "001RA00002LjJr1YAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002LtTNhYAN"
+        },
+        "Id": "001RA00002LtTNhYAN",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002MEEBwYAP"
+        },
+        "Id": "001RA00002MEEBwYAP",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002MJfeZYAT"
+        },
+        "Id": "001RA00002MJfeZYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002Mt91oYAB"
+        },
+        "Id": "001RA00002Mt91oYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002O5V4QYAV"
+        },
+        "Id": "001RA00002O5V4QYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002O6g2ZYAR"
+        },
+        "Id": "001RA00002O6g2ZYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OCYNMYA5"
+        },
+        "Id": "001RA00002OCYNMYA5",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OO2jOYAT"
+        },
+        "Id": "001RA00002OO2jOYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OSPavYAH"
+        },
+        "Id": "001RA00002OSPavYAH",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OgE1LYAV"
+        },
+        "Id": "001RA00002OgE1LYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OgWizYAF"
+        },
+        "Id": "001RA00002OgWizYAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002OpQb7YAF"
+        },
+        "Id": "001RA00002OpQb7YAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002PidvzYAB"
+        },
+        "Id": "001RA00002PidvzYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002PihpqYAB"
+        },
+        "Id": "001RA00002PihpqYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002PjPPSYA3"
+        },
+        "Id": "001RA00002PjPPSYA3",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002PjYsYYAV"
+        },
+        "Id": "001RA00002PjYsYYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002PnnbOYAR"
+        },
+        "Id": "001RA00002PnnbOYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002Q9cvmYAB"
+        },
+        "Id": "001RA00002Q9cvmYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002QTACDYA5"
+        },
+        "Id": "001RA00002QTACDYA5",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002QfDkUYAV"
+        },
+        "Id": "001RA00002QfDkUYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002R4v3zYAB"
+        },
+        "Id": "001RA00002R4v3zYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002R7wt9YAB"
+        },
+        "Id": "001RA00002R7wt9YAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002RjserYAB"
+        },
+        "Id": "001RA00002RjserYAB",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002RlcHPYAZ"
+        },
+        "Id": "001RA00002RlcHPYAZ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002RzAhqYAF"
+        },
+        "Id": "001RA00002RzAhqYAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002S43NzYAJ"
+        },
+        "Id": "001RA00002S43NzYAJ",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002S5OrlYAF"
+        },
+        "Id": "001RA00002S5OrlYAF",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002SJ4TNYA1"
+        },
+        "Id": "001RA00002SJ4TNYA1",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002SKFueYAH"
+        },
+        "Id": "001RA00002SKFueYAH",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002SjxpBYAR"
+        },
+        "Id": "001RA00002SjxpBYAR",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002SlVTrYAN"
+        },
+        "Id": "001RA00002SlVTrYAN",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002SzHkLYAV"
+        },
+        "Id": "001RA00002SzHkLYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002TG1wBYAT"
+        },
+        "Id": "001RA00002TG1wBYAT",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002U9QvXYAV"
+        },
+        "Id": "001RA00002U9QvXYAV",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00002VXFF8YAP"
+        },
+        "Id": "001RA00002VXFF8YAP",
+        "SellSideConflict__c": true,
+        "DealConflict__c": false
+      }
+    ],
+    "totalSize": 75,
+    "done": true
   },
-  "stack": "INVALID_FIELD: \nId, Name, SellSideConflict__c, DealConflict__c FROM Account WHERE\n                               ^\nERROR at Row:1:Column:39\nNo such column 'DealConflict__c' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.\n    at SfCommandError.from (file:///C:/Users/BogdanBrezeanu/AppData/Roaming/npm/node_modules/@salesforce/cli/node_modules/@salesforce/sf-plugins-core/lib/SfCommandError.js:48:16)\n    at DataSoqlQueryCommand.catch (file:///C:/Users/BogdanBrezeanu/AppData/Roaming/npm/node_modules/@salesforce/cli/node_modules/@salesforce/sf-plugins-core/lib/sfCommand.js:332:47)\n    at DataSoqlQueryCommand._run (C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@oclif\\core\\lib\\command.js:187:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Config.runCommand (C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@oclif\\core\\lib\\config\\config.js:422:25)\n    at async run (C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@oclif\\core\\lib\\main.js:97:16)\n    at async file:///C:/Users/BogdanBrezeanu/AppData/Roaming/npm/node_modules/@salesforce/cli/bin/run.js:15:1",
-  "cause": "INVALID_FIELD: \nId, Name, SellSideConflict__c, DealConflict__c FROM Account WHERE\n                               ^\nERROR at Row:1:Column:39\nNo such column 'DealConflict__c' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.\n    at HttpApi.getError (C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@jsforce\\jsforce-node\\lib\\http-api.js:315:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@jsforce\\jsforce-node\\lib\\http-api.js:127:33\n    at async Query._execute (C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@jsforce\\jsforce-node\\lib\\query.js:373:22)\n    at async C:\\Users\\BogdanBrezeanu\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\node_modules\\@jsforce\\jsforce-node\\lib\\query.js:305:17 {\n  data: {\n    message: '\\n' +\n      'Id, Name, SellSideConflict__c, DealConflict__c FROM Account WHERE\\n' +\n      '                               ^\\n' +\n      'ERROR at Row:1:Column:39\\n' +\n      \"No such column 'DealConflict__c' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.\",\n    errorCode: 'INVALID_FIELD'\n  },\n  errorCode: 'INVALID_FIELD'\n}",
-  "warnings": [],
-  "code": "1",
-  "status": 1,
-  "commandName": "DataSoqlQueryCommand"
+  "warnings": []
 }
