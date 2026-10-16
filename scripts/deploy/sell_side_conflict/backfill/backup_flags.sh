@@ -7,7 +7,7 @@ org="$1"; out="$2"
 [ ! -e "$out" ] || { echo "refusing to overwrite existing $out"; exit 1; }
 f2="${SSC_BACKUP_FIELD:-DealConflict__c}"
 tmp="$(mktemp)"
-sf data query -o "$org" -q "SELECT Id, Name, SellSideConflict__c, $f2 FROM Account WHERE SellSideConflict__c = true OR $f2 = true" --json > "$tmp" 2>/dev/null
+sf data query -o "$org" -q "SELECT Id, SellSideConflict__c, $f2 FROM Account WHERE SellSideConflict__c = true OR $f2 = true" --json > "$tmp" 2>/dev/null
 if n=$(node -e '
 const fs=require("fs");let j;
 try{j=JSON.parse(fs.readFileSync(process.argv[1],"utf8"));}catch(e){console.error("unparseable output");process.exit(1);}

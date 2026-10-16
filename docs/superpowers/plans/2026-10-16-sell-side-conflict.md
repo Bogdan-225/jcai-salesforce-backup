@@ -161,7 +161,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Consumes: `Opportunity.SellSideActive__c` (Task 1), `Account.SellSideConflict__c` (Task 1).
 - Produces:
-  - `SellSideConflictRecalculator.Request { Id accountId; Id priorAccountId; }`
+  - `SellSideConflictRecalculator.Request { String accountId; String priorAccountId; }` (String, not Id: Flow passes an empty string for a null $Record__Prior.AccountId on create, which fails Id-typed inputs with "Invalid id:"; Apex converts with a blank-safe toId helper)
   - `@InvocableMethod public static void recalculateForAccounts(List<Request> requests)` — used by the flow in Task 3.
   - `public static Integer recalculate(Set<Id> accountIds)` — recomputes the given accounts and their direct parents; returns number of accounts updated.
   - `public static Integer recalculateAll()` — full recompute; returns number updated.
@@ -338,9 +338,9 @@ public without sharing class SellSideConflictRecalculator {
 
     public class Request {
         @InvocableVariable(required=false label='Account Id (current seller)')
-        public Id accountId;
+        public String accountId;   // String: Flow sends '' for a null $Record__Prior.AccountId on create
         @InvocableVariable(required=false label='Prior Account Id (seller before the change, may be blank)')
-        public Id priorAccountId;
+        public String priorAccountId;
     }
 
     @InvocableMethod(label='売り手SellSideConflictを再計算' description='渡された取引先(現在・変更前)とその親取引先の SellSideConflict__c を再計算する。')
@@ -349,11 +349,18 @@ public without sharing class SellSideConflictRecalculator {
         if (requests != null) {
             for (Request r : requests) {
                 if (r == null) continue;
-                if (r.accountId != null) ids.add(r.accountId);
-                if (r.priorAccountId != null) ids.add(r.priorAccountId);
+                Id a = toId(r.accountId);
+                Id p = toId(r.priorAccountId);
+                if (a != null) ids.add(a);
+                if (p != null) ids.add(p);
             }
         }
         if (!ids.isEmpty()) recalculate(ids);
+    }
+
+    private static Id toId(String s) {
+        if (String.isBlank(s)) return null;
+        try { return Id.valueOf(s.trim()); } catch (Exception e) { return null; }
     }
 
     /** Recompute the given accounts plus their direct parents. Returns number of accounts updated. */
@@ -806,6 +813,8 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 ---
 
 ### Task 6: Account record pages + compact layout (sandbox bogdan)
+
+> Execution note 2026-10-16: the compact layout part was dropped by controller ruling. Account_Compact_Layout already holds the platform maximum of 10 fields (deploy error "Cannot have more than 10 fields in compact layout"); Bogdan decides at Task 8 whether to swap a field out. The brief's regex was replaced by a tempered pattern that clones the whole `<itemInstances>` block containing DealConflict__c (the original lazy regex matched from the first `<fieldInstance>` in the file).
 
 **Files:**
 - Create: `scripts/deploy/sell_side_conflict/pages/transform_account_page.js`

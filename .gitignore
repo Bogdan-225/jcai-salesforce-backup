@@ -49,3 +49,7 @@ $RECYCLE.BIN/
 
 # Excel lock files (created while a workbook is open)
 ~$*
+
+# sell-side conflict: Id-only backups and after-snapshot stay local
+scripts/deploy/sell_side_conflict/backfill/prod_before_flags.json
+scripts/deploy/sell_side_conflict/prod/snapshot_after/
