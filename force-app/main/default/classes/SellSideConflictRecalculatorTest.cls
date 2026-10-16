@@ -156,6 +156,17 @@ private class SellSideConflictRecalculatorTest {
     }
 
     @isTest
+    static void invocableIgnoresBlankIds() {
+        SellSideConflictRecalculator.Request req = new SellSideConflictRecalculator.Request();
+        req.accountId = '';
+        req.priorAccountId = null;
+        Boolean reached = false;
+        SellSideConflictRecalculator.recalculateForAccounts(new List<SellSideConflictRecalculator.Request>{ req });
+        reached = true;
+        System.assertEquals(true, reached, 'blank/null ids are ignored without exception');
+    }
+
+    @isTest
     static void schedulerRuns() {
         Test.startTest();
         String jobId = System.schedule('SSC test ' + Datetime.now().getTime(), '0 0 20 * * ?', new SellSideConflictScheduler());

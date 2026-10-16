@@ -10,6 +10,8 @@
  *   - recalculateForAccounts (invocable): called by flow Opportunity_AfterSave_RecomputeSellSideConflict
  *     with the opportunity's current and prior AccountId.
  *   - recalculateAll(): called daily by SellSideConflictScheduler (05:00 JST) for the 90-day expiry.
+ * Request inputs are String (not Id): Flow passes an empty string for a null $Record__Prior.AccountId
+ * on create, which fails Id-typed inputs ("Invalid id:"). toId() maps blank/invalid to null.
  * without sharing: the flag must not depend on the saving user's record visibility (T-002 hides
  * opportunities from IS users). Only differing accounts are updated (idempotent, no recursion).
  */
@@ -17,9 +19,9 @@ public without sharing class SellSideConflictRecalculator {
 
     public class Request {
         @InvocableVariable(required=false label='Account Id (current seller)')
-        public Id accountId;
+        public String accountId;
         @InvocableVariable(required=false label='Prior Account Id (seller before the change, may be blank)')
-        public Id priorAccountId;
+        public String priorAccountId;
     }
 
     @InvocableMethod(label='売り手SellSideConflictを再計算' description='渡された取引先(現在・変更前)とその親取引先の SellSideConflict__c を再計算する。')
@@ -28,11 +30,18 @@ public without sharing class SellSideConflictRecalculator {
         if (requests != null) {
             for (Request r : requests) {
                 if (r == null) continue;
-                if (r.accountId != null) ids.add(r.accountId);
-                if (r.priorAccountId != null) ids.add(r.priorAccountId);
+                Id a = toId(r.accountId);
+                Id p = toId(r.priorAccountId);
+                if (a != null) ids.add(a);
+                if (p != null) ids.add(p);
             }
         }
         if (!ids.isEmpty()) recalculate(ids);
+    }
+
+    private static Id toId(String s) {
+        if (String.isBlank(s)) return null;
+        try { return Id.valueOf(s.trim()); } catch (Exception e) { return null; }
     }
 
     /** Recompute the given accounts plus their direct parents. Returns number of accounts updated. */
