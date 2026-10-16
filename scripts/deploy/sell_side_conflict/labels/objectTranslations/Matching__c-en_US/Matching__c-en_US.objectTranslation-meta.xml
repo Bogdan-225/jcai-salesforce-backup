@@ -13,6 +13,11 @@
         <label>Buyer Conflict (Caution)</label>
         <name>DealConflict_M__c</name>
     </fields>
+    <fields>
+        <help>This buyer candidate is currently a seller in another active project. Do not send buyer-side proposals to it. *Reflected automatically.</help>
+        <label>Seller Conflict (Caution)</label>
+        <name>SellSideConflict_M__c</name>
+    </fields>
     <nameFieldLabel>Matching No.</nameFieldLabel>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

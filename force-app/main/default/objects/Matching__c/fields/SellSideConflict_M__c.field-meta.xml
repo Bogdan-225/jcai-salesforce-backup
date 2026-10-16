@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideConflict_M__c</fullName>
+    <description>買い手(譲受希望会社)の進行中売り手フラグ(Account.SellSideConflict__c)を表示(マッチングのレポート/リストビューで列表示するため)。※数式のためリストビューの絞り込み条件には使用不可。</description>
+    <externalId>false</externalId>
+    <formula>Buy_Company__r.SellSideConflict__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>この買い手候補は別の譲渡案件で売り手として進行中です。買い手としての案内は送らないでください。※自動で反映されます</inlineHelpText>
+    <label>進行中売り手(接触注意)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

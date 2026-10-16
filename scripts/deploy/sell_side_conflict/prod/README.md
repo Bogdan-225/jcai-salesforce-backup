@@ -3,7 +3,7 @@
 Prod was only READ for this package (retrieve + SELECT). Nothing has been deployed. Run every command yourself with the `!` prefix, from the repo root, in the order below.
 
 ## 1. Summary
-New checkbox `Account.SellSideConflict__c` (label ja 進行中売り手(接触注意) / en "Seller Conflict (Caution)") marks accounts that are the seller (or parent of the seller) in an active project. Two helper fields on Opportunity (`SellSideActive__c`, `SellSideBaseDate__c`), an Apex recalculator, a record-triggered Opportunity flow (instant ON/OFF) and a daily scheduled Apex (90-day expiry + safety net) drive it. Existing `DealConflict__c` / `DealConflict_M__c` only get new labels/help (ja 進行中買い手(接触注意), en "Buyer Conflict (Caution)").
+New checkbox `Account.SellSideConflict__c` (label ja 進行中売り手(接触注意) / en "Seller Conflict (Caution)") marks accounts that are the seller (or parent of the seller) in an active project. Two helper fields on Opportunity (`SellSideActive__c`, `SellSideBaseDate__c`), an Apex recalculator, a record-triggered Opportunity flow (instant ON/OFF) and a daily scheduled Apex (90-day expiry + safety net) drive it. A read-only formula mirror `Matching__c.SellSideConflict_M__c` (= `Buy_Company__r.SellSideConflict__c`, label ja 進行中売り手(接触注意) / en "Seller Conflict (Caution)") shows the buyer's seller flag on Matching records, next to `DealConflict_M__c`, on 5 layouts + 3 Lightning pages. Existing `DealConflict__c` / `DealConflict_M__c` only get new labels/help (ja 進行中買い手(接触注意), en "Buyer Conflict (Caution)").
 
 Deliberate deviations from the colleague's spec:
 - NO API rename (BuySideConflict__c is not created; labels only).
@@ -13,14 +13,17 @@ Deliberate deviations from the colleague's spec:
 ## 2. Pre-conditions (already done)
 - `backfill/prod_before.json` is only the hand-made DealConflict baseline (12 rows, status 0) captured BEFORE the deploy, because `backup_flags.sh` cannot run until SellSideConflict__c exists. The real two-flag backup is taken in the deploy order below, after the fields/pages are live and before the backfill. Before-state of the new flag = all false.
 - Decision needed BEFORE the flow step: your explicit go for flow activation (section 6, item 3). The prod flow package is a Draft copy, so deploying it does not make it live.
-- Snapshot `prod/snapshot_before/` (committed): the 3 en_US translations (full, with field entries; retrieved together with their CustomObjects), 2 DealConflict fields, Account compact layout, FlexiPages Japan + International, perm set DealConflict_Access, 8 profiles. The CustomObject files themselves were not kept (very large; only needed to get the translation field entries).
+- Snapshot `prod/snapshot_before/` (committed): the 3 en_US translations (full, with field entries; retrieved together with their CustomObjects), 2 DealConflict fields, Account compact layout, FlexiPages Japan + International, the 5 Matching layouts + 3 Matching FlexiPages (Matching_Advisor, Matching_Advisor_M_CB, Matching_IS_Buy), perm set DealConflict_Access, 8 profiles. The CustomObject files themselves were not kept (very large; only needed to get the translation field entries).
 
 ## 3. Deploy order (one command per line)
 ```
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/fields --wait 10
+! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/mirror/field --wait 10
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/apex --test-level RunSpecifiedTests --tests SellSideConflictRecalculatorTest --wait 15
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/flow/prod --wait 10
 ```
+`mirror/field` (Matching__c.SellSideConflict_M__c) is deployed here, with the other fields, because `labels/prod` (its en_US entry) and `access/prod` (its perm set entry) reference it and would fail if the field did not exist yet. `mirror/access` deliberately holds profiles only: its perm set file would be the sandbox one, so for prod the perm set always comes from `access/prod`.
+
 `flow/prod` is an exact copy of the sandbox flow with `<status>Draft</status>` (only that line differs), so it deploys inactive. Check the state, and do not activate without your go:
 ```
 ! sf data query -o prod --use-tooling-api -q "SELECT Id, DeveloperName, ActiveVersionId, LatestVersionId FROM FlowDefinition WHERE DeveloperName='Opportunity_AfterSave_RecomputeSellSideConflict'"
@@ -34,6 +37,11 @@ Then:
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/labels/prod --wait 10
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/access/prod --wait 10
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/pages/prod --wait 10
+```
+Matching mirror: access (profiles only; the perm set entry already came with `access/prod`) and the 5 layouts + 3 pages. These must be live BEFORE the backup/backfill below:
+```
+! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/mirror/access --wait 10
+! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/mirror/prod --wait 10
 ```
 Backup of both flags (new file name; the script refuses to overwrite prod_before.json). Expected: `saved 12 rows to ...prod_before_flags.json`, DealConflict__c true on all 12, SellSideConflict__c all false while the flow is not active:
 ```
@@ -65,20 +73,24 @@ Touched components:
 | Flow Opportunity_AfterSave_RecomputeSellSideConflict | new |
 | Account.DealConflict__c, Matching__c.DealConflict_M__c | label / description / help only (+ `externalId false`, the default) |
 | CustomObjectTranslation Account-en_US, Matching__c-en_US, Opportunity-en_US | relabel DealConflict blocks, add 3 new field blocks (diffs below) |
-| Perm set DealConflict_Access | +3 read-only field permissions, new description |
-| 8 profiles (Admin, Active__IS_Buy, Active_インターン, Active_アプローチ管理者, Active_アドバイザー, Active_アドバイザー_pf, Active_IS_Sell, Active_IS_Sell_pf) | partial: 2 class accesses + 3 read-only FLS each |
+| Perm set DealConflict_Access | +4 read-only field permissions (3 + Matching__c.SellSideConflict_M__c), new description |
+| 8 profiles (Admin, Active__IS_Buy, Active_インターン, Active_アプローチ管理者, Active_アドバイザー, Active_アドバイザー_pf, Active_IS_Sell, Active_IS_Sell_pf) | partial: 2 class accesses + 3 read-only FLS each, plus 1 read-only FLS (Matching__c.SellSideConflict_M__c) via mirror/access |
 | FlexiPage Account Japan, International | + SellSideConflict__c read-only after DealConflict__c |
+| Matching__c.SellSideConflict_M__c | new formula checkbox (Buy_Company__r.SellSideConflict__c), read-only FLS via mirror/access (8 profiles + DealConflict_Access), en_US label/help in Matching__c-en_US |
+| 5 Matching layouts (Advisor, CB_Matching(In-Out), CB_Matching(Out-Out), IS_Buy, 国内案件) | + SellSideConflict_M__c Readonly item after DealConflict_M__c |
+| 3 Matching FlexiPages (Matching_Advisor, Matching_Advisor_M_CB, Matching_IS_Buy) | + Record.SellSideConflict_M__c read-only fieldInstance (identifier RecordSellSideConflict_M_cField) after DealConflict_M__c |
 | Scheduled job "SellSideConflict Daily" | new |
 
-Expected UNCHANGED (API names do not change; verify by opening after deploy): 4+2 flows referencing DealConflict__c, Apex DealConflictRecalculator (+Test), Account compact layout, 5 Matching layouts + 4 Matching flexipages, report type Account_Matching, 18 reports (SatoMizuki/MatchingTest + LongList), the other Account/Matching en_US translation entries, all profiles other than the 8 above.
+Expected UNCHANGED (API names do not change; verify by opening after deploy): 4+2 flows referencing DealConflict__c, Apex DealConflictRecalculator (+Test), Account compact layout, the 4th Matching flexipage (not in the mirror set), report type Account_Matching, 18 reports (SatoMizuki/MatchingTest + LongList), the other Account/Matching en_US translation entries, all profiles other than the 8 above.
 
 ### Diffs of prod package vs prod snapshot (added/changed lines only)
 - labels/prod Account-en_US: DealConflict__c help+label replaced (Deal Conflict -> Buyer Conflict (Caution)); +1 block SellSideConflict__c (Seller Conflict (Caution)) at line 4833. Nothing else.
-- labels/prod Matching__c-en_US: DealConflict_M__c help+label replaced. Nothing else (caseValues Match/Matches untouched).
+- labels/prod Matching__c-en_US: DealConflict_M__c help+label replaced; +1 block SellSideConflict_M__c (Seller Conflict (Caution)) inserted after S_Website__c (the file's ASCII order). Nothing else (caseValues Match/Matches untouched).
 - labels/prod Opportunity-en_US: +2 blocks SellSideActive__c, SellSideBaseDate__c. Nothing else.
-- access/prod DealConflict_Access: description replaced; +Account.SellSideConflict__c, +Opportunity.SellSideActive__c, +Opportunity.SellSideBaseDate__c (editable false, readable true). Nothing else.
+- access/prod DealConflict_Access: description replaced; +Account.SellSideConflict__c, +Opportunity.SellSideActive__c, +Opportunity.SellSideBaseDate__c, +Matching__c.SellSideConflict_M__c (editable false, readable true). Nothing else.
 - pages/prod Japan: +10 lines (fieldInstance Record.SellSideConflict__c, readonly) after DealConflict__c. Nothing else.
 - pages/prod International: +10 lines, same. Nothing else.
+- mirror/prod 5 layouts: +4 lines each (layoutItems Readonly SellSideConflict_M__c) after DealConflict_M__c, 0 lines removed. mirror/prod 3 FlexiPages: +10 lines each (fieldInstance Record.SellSideConflict_M__c, readonly), 0 lines removed. Both vs prod/snapshot_before.
 - labels/prod field files: same text as sandbox; vs prod snapshot only description, inlineHelpText, label changed (+ `<externalId>false</externalId>`).
 
 ## 5. Expected backfill size
@@ -86,8 +98,7 @@ About 337 accounts ON (334 sellers + 3 parents) from the 2026-10-16 sizing; the 
 
 ## 6. Open decisions for Bogdan
 1. Compact layout (NOT in the package): Account_Compact_Layout already has 10 fields: Name, TDBAmountOfSales__c, NGDate__c, NDA_date__c, NDA_caution__c, NDA_note__c, approach_caution_select__c, DealConflict__c, fd_M_Aneeds__c, cb_M_Aneeds__c. Swap one of them for SellSideConflict__c, or leave it?
-2. Matching mirror field (Task 10): build now or later?
-3. Flow activation: your explicit go, needed before the activation step (the deployed flow is Draft until then).
+2. Flow activation: your explicit go, needed before the activation step (the deployed flow is Draft until then).
 
 ## 7. Rollback
 In this order:

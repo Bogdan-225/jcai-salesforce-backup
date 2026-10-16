@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Admin</members>
+        <members>Active%5F%5FIS_Buy</members>
+        <members>Active_インターン</members>
+        <members>Active_アプローチ管理者</members>
+        <members>Active_アドバイザー</members>
+        <members>Active_アドバイザー_pf</members>
+        <members>Active_IS_Sell</members>
+        <members>Active_IS_Sell_pf</members>
+        <name>Profile</name>
+    </types>
+    <version>62.0</version>
+</Package>
