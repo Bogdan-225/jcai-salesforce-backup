@@ -1,0 +1,106 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001otdMYAQ"
+        },
+        "Id": "001BL000001otdMYAQ",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pH9LYAU"
+        },
+        "Id": "001BL000001pH9LYAU",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pWWUYA2"
+        },
+        "Id": "001BL000001pWWUYA2",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001plkuYAA"
+        },
+        "Id": "001BL000001plkuYAA",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pmtLYAQ"
+        },
+        "Id": "001BL000001pmtLYAQ",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pnHsYAI"
+        },
+        "Id": "001BL000001pnHsYAI",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pnNiYAI"
+        },
+        "Id": "001BL000001pnNiYAI",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pnTYYAY"
+        },
+        "Id": "001BL000001pnTYYAY",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pnq4YAA"
+        },
+        "Id": "001BL000001pnq4YAA",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pnsQYAQ"
+        },
+        "Id": "001BL000001pnsQYAQ",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001BL000001pqBEYAY"
+        },
+        "Id": "001BL000001pqBEYAY",
+        "DealConflict__c": true
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v68.0/sobjects/Account/001RA00001SbRv3YAF"
+        },
+        "Id": "001RA00001SbRv3YAF",
+        "DealConflict__c": true
+      }
+    ],
+    "totalSize": 12,
+    "done": true
+  },
+  "warnings": []
+}

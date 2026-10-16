@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DealConflict__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>買い手が「①重複元マッチ1件以上(phase_match__cがトップ面談〜CPかつDeal_Is_TopStage__c=true)」かつ「②重複元以外につながっているマッチ1件以上(Deal_Is_Dead__c=falseかつ、マッチ終了でないか自動終了(復活待ち)のいずれか)」を満たすときフローが自動でON/OFF(=別案件と重複提案になりうる状態)。手動終了されたものはカウントしない。自動終了してもフラグはONのまま(復活待ち)。手動編集不可(フロー管理)。</description>
+    <inlineHelpText>Active in another deal (Top Meeting stage or later) = beware of duplicate proposals. *Set automatically on/off — do not edit manually.</inlineHelpText>
+    <label>他案件進行中(重複注意)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>
