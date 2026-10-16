@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideBaseDate__c</fullName>
+    <description>進行中売り手判定の基準日時。最終フェーズ変更日(LastStageChangeDate)・最終更新日(LastModifiedDate)・最終活動更新日時(LastActivityUpdate__c)のうち最も新しいもの。Account.SellSideConflict__c の判定(SellSideActive__c)に使用。</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  BLANKVALUE(LastStageChangeDate, LastModifiedDate) &gt;= BLANKVALUE(LastActivityUpdate__c, LastModifiedDate),
+  IF(BLANKVALUE(LastStageChangeDate, LastModifiedDate) &gt;= LastModifiedDate, BLANKVALUE(LastStageChangeDate, LastModifiedDate), LastModifiedDate),
+  IF(BLANKVALUE(LastActivityUpdate__c, LastModifiedDate) &gt;= LastModifiedDate, BLANKVALUE(LastActivityUpdate__c, LastModifiedDate), LastModifiedDate)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>進行中売り手判定の基準日時（フェーズ変更・最終更新・活動更新の最新）。自動計算。</inlineHelpText>
+    <label>進行中判定基準日</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

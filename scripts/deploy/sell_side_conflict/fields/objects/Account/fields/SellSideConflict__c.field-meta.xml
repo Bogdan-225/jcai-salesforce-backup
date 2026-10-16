@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideConflict__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>別の譲渡案件で売り手として進行中の会社（またはその親会社）。Apex(SellSideConflictRecalculator)が商談の保存時と毎日05:00(JST)に自動でON/OFF。判定: 譲渡案件(Opportunity、Sourcing以外)のフェーズが進行中(NDA締結〜成約)かつ基準日(最終フェーズ変更日・最終更新日・最終活動更新日時の最大)が90日以内 = Opportunity.SellSideActive__c。案件終了・Converted to Buyer・Ongoing・On Hold・リード反響・長期フォロー・トスアップ・IS戻しは対象外。手動編集不可。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>別の譲渡案件で売り手として進行中の会社（またはその親会社）です。買い手としての案内は送らないでください。案件終了・Converted to Buyer・Ongoing の案件は対象外です。※商談の保存時と毎日自動でON/OFFされます（手動で変更しないでください）</inlineHelpText>
+    <label>進行中売り手(接触注意)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideActive__c</fullName>
+    <description>この譲渡案件が「売り手として進行中」と判定されるか。レコードタイプがSourcing以外、フェーズが進行中(NDA締結〜成約)、かつ進行中判定基準日(SellSideBaseDate__c)が90日以内でTRUE。取引先(売り手・その親)の SellSideConflict__c はこの値から Apex(SellSideConflictRecalculator) が計算する。</description>
+    <externalId>false</externalId>
+    <formula>AND(
+  RecordType.DeveloperName &lt;&gt; "CB_Sourcing_Path",
+  CASE(TEXT(StageName),
+    "NDA締結", 1, "FS Request", 1, "バリュエーション済み", 1, "面談前", 1, "案件化", 1, "資料作成", 1,
+    "ISマッチング中", 1, "MGマッチング中", 1, "Pre Top MTG", 1, "トップ面談", 1, "Post Top MTG", 1,
+    "MOU/LOI", 1, "DD", 1, "SPA", 1, "CP", 1, "成約", 1,
+    0) = 1,
+  SellSideBaseDate__c &gt;= NOW() - 90
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>売り手として進行中の案件ならON（Sourcing以外・フェーズNDA締結〜成約・基準日が90日以内）。自動計算。</inlineHelpText>
+    <label>進行中売り手判定(自動)</label>
+    <type>Checkbox</type>
+</CustomField>
