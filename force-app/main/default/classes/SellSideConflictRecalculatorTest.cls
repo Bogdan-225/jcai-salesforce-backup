@@ -138,6 +138,24 @@ private class SellSideConflictRecalculatorTest {
     }
 
     @isTest
+    static void siblingKeepsParentOn() {
+        Account parent = newAccount('SSC Sib Parent', null);
+        insert parent;
+        Account c1 = newAccount('SSC Sib C1', parent.Id);
+        Account c2 = newAccount('SSC Sib C2', parent.Id);
+        insert new List<Account>{ c1, c2 };
+        insert newOpp('SSC Sib opp', c1.Id, '案件化', sellingRt());
+        SellSideConflictRecalculator.recalculate(new Set<Id>{ c1.Id });
+        System.assertEquals(true, flag(c1.Id), 'C1 on after its own recompute');
+
+        SellSideConflictRecalculator.recalculate(new Set<Id>{ c2.Id });
+
+        System.assertEquals(true, flag(parent.Id), 'parent stays on because sibling C1 is active');
+        System.assertEquals(true, flag(c1.Id), 'C1 unchanged by recomputing C2');
+        System.assertEquals(false, flag(c2.Id), 'C2 has no opportunity of its own');
+    }
+
+    @isTest
     static void schedulerRuns() {
         Test.startTest();
         String jobId = System.schedule('SSC test ' + Datetime.now().getTime(), '0 0 20 * * ?', new SellSideConflictScheduler());
