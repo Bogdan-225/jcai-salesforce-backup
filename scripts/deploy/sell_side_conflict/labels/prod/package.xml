@@ -11,5 +11,5 @@
         <members>Opportunity-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
-    <version>67.0</version>
+    <version>62.0</version>
 </Package>

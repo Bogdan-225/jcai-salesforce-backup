@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Recalculate_SellSide_Conflict</name>
+        <label>Recalculate Seller Conflict</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <actionName>SellSideConflictRecalculator</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>accountId</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>priorAccountId</name>
+            <value>
+                <elementReference>$Record__Prior.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SellSideConflictRecalculator</nameSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <description>譲渡案件(Opportunity)の作成時、またはフェーズ・取引先・レコードタイプの変更時に Apex(SellSideConflictRecalculator)を呼び、売り手取引先(現在・変更前)とその親取引先の SellSideConflict__c(進行中売り手(接触注意))を即時再計算する。90日経過によるOFFは日次ジョブ(SellSideConflictScheduler)が担当。</description>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity AfterSave Recompute SellSide Conflict {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity AfterSave Recompute SellSide Conflict</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value><stringValue>LightningFlowBuilder</stringValue></value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value><stringValue>AUTO_LAYOUT_CANVAS</stringValue></value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value><stringValue>LightningFlowBuilder</stringValue></value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Recalculate_SellSide_Conflict</targetReference>
+        </connector>
+        <filterFormula>OR( ISNEW(), ISCHANGED({!$Record.StageName}), ISCHANGED({!$Record.AccountId}), ISCHANGED({!$Record.RecordTypeId}) )</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

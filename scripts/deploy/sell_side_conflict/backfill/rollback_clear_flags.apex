@@ -6,5 +6,8 @@ for (Account a : onAccts) { a.SellSideConflict__c = false; }
 Database.SaveResult[] res = Database.update(onAccts, false);
 Integer ok = 0;
 Integer ng = 0;
-for (Database.SaveResult r : res) { if (r.isSuccess()) { ok++; } else { ng++; } }
+for (Integer i = 0; i < res.size(); i++) {
+    if (res[i].isSuccess()) { ok++; }
+    else { ng++; System.debug(LoggingLevel.ERROR, 'SellSideConflict rollback failed ' + onAccts[i].Id + ': ' + res[i].getErrors()); }
+}
 System.debug('SellSideConflict rollback: cleared=' + ok + ' failed=' + ng);

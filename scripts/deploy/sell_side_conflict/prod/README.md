@@ -11,16 +11,17 @@ Deliberate deviations from the colleague's spec:
 - Hybrid instant (flow) + daily (Apex) instead of formula/scheduled flow only.
 
 ## 2. Pre-conditions (already done)
-- Backup `backfill/prod_before.json`: 12 rows (the 12 DealConflict accounts), status 0. SellSideConflict__c does not exist in prod yet, so the stock `backup_flags.sh` fails on the missing column; the file was produced by the same query without that column (DealConflict only). Before-state of the new flag = all false.
+- `backfill/prod_before.json` is only the hand-made DealConflict baseline (12 rows, status 0) captured BEFORE the deploy, because `backup_flags.sh` cannot run until SellSideConflict__c exists. The real two-flag backup is taken in the deploy order below, after the fields/pages are live and before the backfill. Before-state of the new flag = all false.
+- Decision needed BEFORE the flow step: your explicit go for flow activation (section 6, item 3). The prod flow package is a Draft copy, so deploying it does not make it live.
 - Snapshot `prod/snapshot_before/` (committed): the 3 en_US translations (full, with field entries; retrieved together with their CustomObjects), 2 DealConflict fields, Account compact layout, FlexiPages Japan + International, perm set DealConflict_Access, 8 profiles. The CustomObject files themselves were not kept (very large; only needed to get the translation field entries).
 
 ## 3. Deploy order (one command per line)
 ```
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/fields --wait 10
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/apex --test-level RunSpecifiedTests --tests SellSideConflictRecalculatorTest --wait 15
-! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/flow --wait 10
+! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/flow/prod --wait 10
 ```
-The flow file says `status Active`. In this org flows have deployed as Draft before; check right after the deploy, and do not activate without your go:
+`flow/prod` is an exact copy of the sandbox flow with `<status>Draft</status>` (only that line differs), so it deploys inactive. Check the state, and do not activate without your go:
 ```
 ! sf data query -o prod --use-tooling-api -q "SELECT Id, DeveloperName, ActiveVersionId, LatestVersionId FROM FlowDefinition WHERE DeveloperName='Opportunity_AfterSave_RecomputeSellSideConflict'"
 ```
@@ -34,6 +35,10 @@ Then:
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/access/prod --wait 10
 ! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/pages/prod --wait 10
 ```
+Backup of both flags (new file name; the script refuses to overwrite prod_before.json). Expected: `saved 12 rows to ...prod_before_flags.json`, DealConflict__c true on all 12, SellSideConflict__c all false while the flow is not active:
+```
+! bash scripts/deploy/sell_side_conflict/backfill/backup_flags.sh prod scripts/deploy/sell_side_conflict/backfill/prod_before_flags.json
+```
 Backfill and report:
 ```
 ! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/run_recalculate_all.apex
@@ -44,11 +49,10 @@ Schedule the daily job and verify (expect State WAITING, NextFireTime = next 20:
 ! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/schedule_job.apex
 ! sf data query -o prod -q "SELECT Id, CronJobDetail.Name, CronExpression, State, NextFireTime FROM CronTrigger WHERE CronJobDetail.Name = 'SellSideConflict Daily'"
 ```
-After-snapshot (same retrieve as before, into snapshot_after, then `git diff --no-index prod/snapshot_before/<file> prod/snapshot_after/<file>` per file):
+After-snapshot (manifest retrieve so translations carry their field entries; the compact layout is included and expected unchanged). Files land in mdapi layout under snapshot_after/unpackaged/unpackaged/; compare with `git diff --no-index` against the matching files in snapshot_before (new fields appear inside Account.object / Opportunity.object):
 ```
-! sf project retrieve start -o prod -m "CustomField:Account.DealConflict__c" -m "CustomField:Account.SellSideConflict__c" -m "CustomField:Opportunity.SellSideActive__c" -m "CustomField:Opportunity.SellSideBaseDate__c" -m "CustomField:Matching__c.DealConflict_M__c" -m "FlexiPage:Japan" -m "FlexiPage:International" -m "PermissionSet:DealConflict_Access" -m "Profile:Admin" -m "Profile:Active%5F%5FIS_Buy" -m "Profile:Active_インターン" -m "Profile:Active_アプローチ管理者" -m "Profile:Active_アドバイザー" -m "Profile:Active_アドバイザー_pf" -m "Profile:Active_IS_Sell" -m "Profile:Active_IS_Sell_pf" -r scripts/deploy/sell_side_conflict/prod/snapshot_after
+! sf project retrieve start -o prod --manifest scripts/deploy/sell_side_conflict/prod/snapshot_before/retrieve_package.xml --target-metadata-dir scripts/deploy/sell_side_conflict/prod/snapshot_after --unzip --wait 20
 ```
-Translations only carry field entries when retrieved together with the CustomObject: use `--manifest` (CustomObject Account/Matching__c/Opportunity + CustomObjectTranslation, same as `prod/snapshot_before/retrieve_package.xml`) with `--target-metadata-dir <dir> --unzip`.
 
 ## 4. Impact analysis
 Touched components:
@@ -83,12 +87,11 @@ About 337 accounts ON (334 sellers + 3 parents) from the 2026-10-16 sizing; the 
 ## 6. Open decisions for Bogdan
 1. Compact layout (NOT in the package): Account_Compact_Layout already has 10 fields: Name, TDBAmountOfSales__c, NGDate__c, NDA_date__c, NDA_caution__c, NDA_note__c, approach_caution_select__c, DealConflict__c, fd_M_Aneeds__c, cb_M_Aneeds__c. Swap one of them for SellSideConflict__c, or leave it?
 2. Matching mirror field (Task 10): build now or later?
-3. Flow activation: your explicit go after the flow deploy check.
-4. The flow file has status Active: confirm you accept it live right after deploy if prod does not turn it into Draft; otherwise I ship a Draft copy.
+3. Flow activation: your explicit go, needed before the activation step (the deployed flow is Draft until then).
 
 ## 7. Rollback
 In this order:
 1. Deactivate the flow: `! sf api request rest -o prod --method PATCH "services/data/v62.0/tooling/sobjects/FlowDefinition/<FlowDefinitionId>" --body '{"Metadata":{"activeVersionNumber":0}}'`
-2. Abort the job: `! sf data query -o prod -q "SELECT Id FROM CronTrigger WHERE CronJobDetail.Name = 'SellSideConflict Daily'"`, then run anonymous Apex `System.abortJob('<CronTriggerId>');`
+2. Abort the job: `! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/rollback_abort_job.apex`
 3. Clear the flag: `! sf apex run -o prod --file scripts/deploy/sell_side_conflict/backfill/rollback_clear_flags.apex` (sets SellSideConflict__c false everywhere; before-state was "field did not exist", so all-false is the restore). DealConflict__c is not touched by this change; `backfill/prod_before.json` lists its 12 ON accounts for reference.
 4. Labels / page / permissions can stay (harmless). To revert them, redeploy the files in `prod/snapshot_before/`.
