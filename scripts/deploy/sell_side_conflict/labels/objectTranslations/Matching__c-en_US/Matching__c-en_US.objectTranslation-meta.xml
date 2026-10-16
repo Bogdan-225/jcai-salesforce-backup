@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Matching</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Matchings</value>
+    </caseValues>
+    <fields>
+        <help>This company is a buyer in another deal at Top Meeting stage or later and is also connected to a further deal = beware of duplicate proposals. *Set automatically on/off — do not edit manually.</help>
+        <label>Buyer Conflict (Caution)</label>
+        <name>DealConflict_M__c</name>
+    </fields>
+    <nameFieldLabel>Matching No.</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

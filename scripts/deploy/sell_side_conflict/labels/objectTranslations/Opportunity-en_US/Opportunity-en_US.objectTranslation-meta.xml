@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>ON when this project counts as an active sell-side project (not Sourcing, stage NDA締結〜成約, base date within 90 days). Auto-calculated.</help>
+        <label>Seller Active (auto)</label>
+        <name>SellSideActive__c</name>
+    </fields>
+    <fields>
+        <help>Latest of: last stage change, last modified, last activity update. Used for the Seller Conflict flag. Auto-calculated.</help>
+        <label>Seller-Active Base Date</label>
+        <name>SellSideBaseDate__c</name>
+    </fields>
+</CustomObjectTranslation>

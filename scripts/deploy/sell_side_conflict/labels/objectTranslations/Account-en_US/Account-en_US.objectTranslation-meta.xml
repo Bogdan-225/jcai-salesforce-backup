@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>This company is a buyer in another deal at Top Meeting stage or later and is also connected to a further deal = beware of duplicate proposals. *Set automatically on/off — do not edit manually.</help>
+        <label>Buyer Conflict (Caution)</label>
+        <name>DealConflict__c</name>
+    </fields>
+    <fields>
+        <help>This company (or its parent) is currently a seller in another active project. Do not send buyer-side proposals to it. Projects at 案件終了 / Converted to Buyer / Ongoing are excluded. *Set automatically when a project is saved and once a day — do not edit manually.</help>
+        <label>Seller Conflict (Caution)</label>
+        <name>SellSideConflict__c</name>
+    </fields>
+</CustomObjectTranslation>
