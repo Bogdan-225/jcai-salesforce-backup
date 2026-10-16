@@ -8,6 +8,9 @@
         <actionName>SellSideConflictRecalculator</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <faultConnector>
+            <targetReference>Swallow_Fault</targetReference>
+        </faultConnector>
         <inputParameters>
             <name>accountId</name>
             <value>
@@ -23,7 +26,20 @@
         <nameSegment>SellSideConflictRecalculator</nameSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
-    <description>譲渡案件(Opportunity)の作成時、またはフェーズ・取引先・レコードタイプの変更時に Apex(SellSideConflictRecalculator)を呼び、売り手取引先(現在・変更前)とその親取引先の SellSideConflict__c(進行中売り手(接触注意))を即時再計算する。90日経過によるOFFは日次ジョブ(SellSideConflictScheduler)が担当。</description>
+    <assignments>
+        <name>Swallow_Fault</name>
+        <label>Swallow Fault (do not block the save)</label>
+        <locationX>440</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>FaultMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>譲渡案件(Opportunity)の作成時、またはフェーズ・取引先・レコードタイプの変更時に Apex(SellSideConflictRecalculator)を呼び、売り手取引先(現在・変更前)とその親取引先の SellSideConflict__c(進行中売り手(接触注意))を即時再計算する。90日経過によるOFFは日次ジョブ(SellSideConflictScheduler)が担当。Apex呼び出しにフォルトパスあり: 再計算が失敗しても商談の保存は巻き込まない（取りこぼしは日次ジョブ SellSideConflictScheduler が翌朝に補正）。</description>
     <environments>Default</environments>
     <interviewLabel>Opportunity AfterSave Recompute SellSide Conflict {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity AfterSave Recompute SellSide Conflict</label>
@@ -52,4 +68,11 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Draft</status>
+    <variables>
+        <name>FaultMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
