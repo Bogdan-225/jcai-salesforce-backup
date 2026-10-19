@@ -165,3 +165,12 @@ exit=0
 ```
 Reactivate B -> A/B/C all active. Report after (17:38:32): same as above. +25 Events = the 25 re-fired accounts of chunk 3 only
 (chunks 1-2 were not repeated). No temp `chunk_*.apex` left.
+
+Fault-path re-test after the `|| true` fix (scratch copy, template `System.debug('no sweep line here');`, no data written, B off then back on):
+```
+chunk 2/3: FAILED
+resume with: run_sweep.sh partial scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before_run3 2
+(fix or remove the offending Account Id in .../partial_before_run3/accounts_flagged.csv first, keep a copy of the original; never restart from chunk 1)
+== flow B is still INACTIVE — reactivate it after you resolve this (README.md step 5)
+exit=5
+```

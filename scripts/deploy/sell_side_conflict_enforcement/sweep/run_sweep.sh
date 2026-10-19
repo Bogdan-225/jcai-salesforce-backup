@@ -31,7 +31,7 @@ echo "OK: flow B inactive"
 
 fail() { # $1 = chunk number, $2 = output
   echo "chunk $1/$n: FAILED"
-  echo "$2" | grep -E "Error|error|FIELD_|EXCEPTION|VALIDATION" | head -20
+  echo "$2" | grep -E "Error|error|FIELD_|EXCEPTION|VALIDATION" | head -20 || true
   echo "resume with: run_sweep.sh $org $dir $1"
   echo "(fix or remove the offending Account Id in $csv first, keep a copy of the original; never restart from chunk 1)"
   echo "== flow B is still INACTIVE — reactivate it after you resolve this (README.md step 5)"
