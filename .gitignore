@@ -53,3 +53,6 @@ $RECYCLE.BIN/
 # sell-side conflict: Id-only backups and after-snapshot stay local
 scripts/deploy/sell_side_conflict/backfill/prod_before_flags.json
 scripts/deploy/sell_side_conflict/prod/snapshot_after/
+
+# sell-side conflict enforcement: scratch perm set retrieve
+scripts/deploy/sell_side_conflict_enforcement/access_bogdan/retrieve/

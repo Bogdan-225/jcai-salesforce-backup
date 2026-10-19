@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideConflictSourceId__c</fullName>
+    <description>進行中売り手フラグがONになった時点の売り手側案件(商談)ID。SellSideConflict_AutoTerminate が設定、SellSideConflict_AutoReactivate が解除。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>売り手重複の元となった案件のID。自動設定・編集不可。</inlineHelpText>
+    <label>売り手重複元案件ID(内部)</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

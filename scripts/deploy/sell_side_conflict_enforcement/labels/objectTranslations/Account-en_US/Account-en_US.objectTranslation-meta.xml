@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Id of the sell-side project that turned the Seller Conflict flag on. Set automatically.</help>
+        <label>Seller Conflict Source Deal Id (internal)</label>
+        <name>SellSideConflictSourceId__c</name>
+    </fields>
+    <fields>
+        <help>Name of the sell-side project that turned the Seller Conflict flag on; used by the "cleared" memo. Set automatically.</help>
+        <label>Seller Conflict Source Deal (internal)</label>
+        <name>SellSideConflictSourceName__c</name>
+    </fields>
+</CustomObjectTranslation>

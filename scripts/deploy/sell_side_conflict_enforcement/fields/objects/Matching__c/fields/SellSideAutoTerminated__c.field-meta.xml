@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideAutoTerminated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>進行中売り手フラグ(Account.SellSideConflict__c)により自動終了されたマッチングの内部マーカー。フロー SellSideConflict_AutoTerminate が設定し、SellSideConflict_AutoReactivate が解除。買い手側の AutoTerminated__c とは独立。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>売り手重複により自動終了されたことを示す内部項目。自動設定・編集不可。</inlineHelpText>
+    <label>売り手重複_自動終了(内部制御)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

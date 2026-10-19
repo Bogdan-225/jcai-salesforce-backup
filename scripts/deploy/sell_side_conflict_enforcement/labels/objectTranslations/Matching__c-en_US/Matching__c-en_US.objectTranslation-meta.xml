@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Internal marker: this Matching was auto-terminated because the buyer is an active seller elsewhere. Set automatically, do not edit.</help>
+        <label>Seller Conflict Auto-Terminated (internal)</label>
+        <name>SellSideAutoTerminated__c</name>
+    </fields>
+    <fields>
+        <help>Internal marker: a Seller Conflict memo task was created on this Matching. Set automatically, do not edit.</help>
+        <label>Seller Conflict Warned (internal)</label>
+        <name>SellSideConflictWarned__c</name>
+    </fields>
+    <fields>
+        <help>Name of the buyer's own sell-side project at the time of auto-termination. Set automatically.</help>
+        <label>Seller Conflict Source Deal (internal)</label>
+        <name>SellSideConflictSourceName__c</name>
+    </fields>
+</CustomObjectTranslation>

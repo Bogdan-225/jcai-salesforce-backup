@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideConflictSourceName__c</fullName>
+    <description>自動終了時点の売り手側案件(商談)名。SellSideConflict_AutoTerminate / Matching_AfterSave_TerminateNewOnSellSideConflict が設定。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>売り手重複の元となった売り手側案件名。自動設定・編集不可。</inlineHelpText>
+    <label>売り手重複元案件名(内部)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

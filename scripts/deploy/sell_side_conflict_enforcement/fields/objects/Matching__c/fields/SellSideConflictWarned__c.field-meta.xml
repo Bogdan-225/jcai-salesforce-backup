@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideConflictWarned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>買い手が進行中売り手になった際にメモ(ToDo)で警告済みであることを示す内部マーカー。SellSideConflict_AutoTerminate が設定、SellSideConflict_AutoReactivate が解除。</description>
+    <externalId>false</externalId>
+    <inlineHelpText>売り手重複の警告メモ作成済みを示す内部項目。自動設定・編集不可。</inlineHelpText>
+    <label>売り手重複_警告済み(内部)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

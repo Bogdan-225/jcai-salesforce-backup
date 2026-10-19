@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SellSideSellerParentId__c</fullName>
+    <description>売り手取引先の親取引先ID(Account.ParentId)。フローの Get Records で親会社がフラグONの場合に子会社の案件を検索するために使用(フローは関連項目で絞り込めないため)。</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(Account.ParentId)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>売り手の親取引先ID。自動計算。</inlineHelpText>
+    <label>売り手親取引先ID(自動)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

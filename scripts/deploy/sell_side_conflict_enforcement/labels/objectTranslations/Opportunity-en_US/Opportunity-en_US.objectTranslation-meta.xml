@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Parent account Id of the seller (Account.ParentId); lets flows find a subsidiary's project when the parent is flagged. Auto-calculated.</help>
+        <label>Seller Parent Account Id (auto)</label>
+        <name>SellSideSellerParentId__c</name>
+    </fields>
+</CustomObjectTranslation>
