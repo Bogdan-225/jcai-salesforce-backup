@@ -376,7 +376,7 @@
     </recordLookups>
     <recordLookups>
         <name>Get_Survivors</name>
-        <label>Get Survivor Matchings (non-source, active)</label>
+        <label>Get Survivor Matchings (active, not yet warned)</label>
         <locationX>176</locationX>
         <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -515,8 +515,8 @@
         <name>AcctTermDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!Get_SourceOpp.Name}: {!Get_SourceOpp.Id}
-Seller Conflict: this buyer is active in another deal (Top-Meeting stage or later). Beware of duplicate proposals.
-この買い手は他案件でTopMeeting以降で進行中。重複提案に注意。</text>
+This buyer is currently a seller in another active project ({!Get_SourceOpp.Name}); buyer-side approach stopped automatically.
+この買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）のため、買い手としての案内を自動停止しました。</text>
     </textTemplates>
     <textTemplates>
         <name>AcctTermSubject</name>
@@ -527,15 +527,15 @@ Seller Conflict: this buyer is active in another deal (Top-Meeting stage or late
         <name>SurvivorDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!Get_SourceOpp.Name}: {!Get_SourceOpp.Id}
-Seller Conflict: this buyer is active in another deal (Top-Meeting stage or later). Beware of duplicate proposals.
-この買い手は他案件でTopMeeting以降で進行中。重複提案に注意。</text>
+This buyer is currently a seller in another active project ({!Get_SourceOpp.Name}). Do not send buyer-side proposals.
+この買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）です。買い手としての案内は送らないでください。</text>
     </textTemplates>
     <textTemplates>
         <name>TermDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!Get_SourceOpp.Name}: {!Get_SourceOpp.Id}
-Seller Conflict: this buyer is active in another deal (Top-Meeting stage or later). Beware of duplicate proposals.
-この買い手は他案件でTopMeeting以降で進行中。重複提案に注意。</text>
+This buyer is currently a seller in another active project ({!Get_SourceOpp.Name}); buyer-side approach stopped automatically.
+この買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）のため、買い手としての案内を自動停止しました。</text>
     </textTemplates>
     <textTemplates>
         <name>TermSubject</name>

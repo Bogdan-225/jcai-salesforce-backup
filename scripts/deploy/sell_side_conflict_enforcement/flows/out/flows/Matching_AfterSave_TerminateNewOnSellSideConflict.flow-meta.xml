@@ -224,8 +224,8 @@
         <name>TermDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!Get_SourceOpp.Name}: {!Get_SourceOpp.Id}
-Seller Conflict: this buyer is active in another deal (Top-Meeting stage or later). Beware of duplicate proposals.
-この買い手は他案件でTopMeeting以降で進行中。重複提案に注意。</text>
+This buyer is currently a seller in another active project ({!Get_SourceOpp.Name}); buyer-side approach stopped automatically.
+この買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）のため、買い手としての案内を自動停止しました。</text>
     </textTemplates>
     <textTemplates>
         <name>TermSubject</name>

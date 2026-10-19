@@ -10,7 +10,9 @@ const C = read('Matching_AfterSave_TerminateNewOnSellSideConflict.flow-meta.xml'
 
 // literal buyer-side tokens that must not survive anywhere in a generated flow
 const LEFTOVER = ['DealConflict__c', '<field>AutoTerminated__c</field>', '.AutoTerminated__c', 'DealConflictWarned__c',
-  'Is_DealConflictSource__c', 'Deal_Is_TopStage__c', 'DealName__c', 'Get_ConflictSrc', '他案件進行中のため', 'Deal Conflict'];
+  'Is_DealConflictSource__c', 'Deal_Is_TopStage__c', 'DealName__c', 'Get_ConflictSrc', '他案件進行中のため', 'Deal Conflict',
+  // buyer-side memo wording
+  'TopMeeting', 'Top-Meeting', '他案件で', 'another deal', 'The buyer is now approachable', 'non-source'];
 // ConflictSrcId (Sato's source-Matching formula) must be gone; B's own local variable ConflictSrcIdSaved is legitimate
 const leftoverFormula = s => /ConflictSrcId(?!Saved)/.test(s);
 
@@ -38,3 +40,8 @@ must(B.includes('<field>SellSideAutoTerminated__c</field>'), 'B revives on SellS
 must(A.includes('<label>SellSideConflict AutoTerminate</label>') && B.includes('<label>SellSideConflict AutoReactivate</label>') && C.includes('<label>Matching AfterSave Terminate New On SellSideConflict</label>'), 'labels');
 // the Account-side field names collide with the Matching-side ones on purpose (same API name on both objects)
 must(A.includes('<field>SellSideConflictSourceId__c</field>') && B.includes('$Record.SellSideConflictSourceId__c') && B.includes('$Record.SellSideConflictSourceName__c'), 'Account source fields');
+must((A.match(/buyer-side approach stopped automatically./g) || []).length === 2 && (A.match(/買い手としての案内を自動停止しました。/g) || []).length === 2, 'A terminate memo bodies (AcctTermDesc, TermDesc)');
+must(A.includes('Do not send buyer-side proposals.') && A.includes('買い手としての案内は送らないでください。'), 'A survivor memo body');
+must((C.match(/buyer-side approach stopped automatically./g) || []).length === 1, 'C terminate memo body');
+must(B.includes('seller conflict cleared ({!$Record.SellSideConflictSourceName__c})') && B.includes('seller conflict cleared ({!ConflictSrcNameSaved})') && (B.match(/売り手重複が解消されました/g) || []).length === 2, 'B cleared memo bodies');
+must(A.includes('<label>Get Survivor Matchings (active, not yet warned)</label>'), 'A survivor lookup label');

@@ -28,6 +28,23 @@ function replaceN(xml, re, repl, expected, what) {
   return xml.replace(re, repl);
 }
 
+// replace the whole <text> of the textTemplate named `name`; throw unless exactly one such template exists
+function replaceTemplate(xml, name, text) {
+  const re = new RegExp('(<textTemplates>\\s*<name>' + name + '</name>[\\s\\S]*?<text>)[\\s\\S]*?(</text>)', 'g');
+  return replaceN(xml, re, (m, a, b) => a + text + b, 1, 'textTemplate ' + name);
+}
+// seller-side memo bodies (same layout as the source: reference line, English line, Japanese line)
+const OPP_REF = '{!Get_SourceOpp.Name}: {!Get_SourceOpp.Id}';
+const TERM_BODY = OPP_REF
+  + '\nThis buyer is currently a seller in another active project ({!Get_SourceOpp.Name}); buyer-side approach stopped automatically.'
+  + '\nこの買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）のため、買い手としての案内を自動停止しました。';
+const SURVIVOR_BODY = OPP_REF
+  + '\nThis buyer is currently a seller in another active project ({!Get_SourceOpp.Name}). Do not send buyer-side proposals.'
+  + '\nこの買い手は売り手として別案件で進行中（{!Get_SourceOpp.Name}）です。買い手としての案内は送らないでください。';
+const clearedBody = (nameRef, idRef) => '{!' + nameRef + '}: {!' + idRef + '}'
+  + "\nThe buyer's own sell-side project is no longer active; seller conflict cleared ({!" + nameRef + '}).'
+  + '\n売り手としての案件が終了したため、売り手重複が解消されました（{!' + nameRef + '}）。';
+
 // Opportunity lookup replacing Sato's "Get_ConflictSrc" (source Matching). keyRef = $Record.Id (Account flows) or $Record.Buy_Company__c (Matching flow)
 const sourceOpp = (keyRef, next) => `    <recordLookups>
         <name>Get_SourceOpp</name>
@@ -108,6 +125,10 @@ function buildA() {
         </filters>
 `, 2, 'Is_DealConflictSource__c filters');
   x = common(x);
+  x = replaceTemplate(x, 'AcctTermDesc', TERM_BODY);
+  x = replaceTemplate(x, 'TermDesc', TERM_BODY);
+  x = replaceTemplate(x, 'SurvivorDesc', SURVIVOR_BODY);
+  x = replaceN(x, /<label>Get Survivor Matchings \(non-source, active\)<\/label>/g, '<label>Get Survivor Matchings (active, not yet warned)</label>', 1, 'survivor lookup label');
   x = replaceN(x, /<label>DealConflict AutoTerminate<\/label>/g, '<label>SellSideConflict AutoTerminate</label>', 1, 'flow label');
   x = replaceN(x, /<interviewLabel>DealConflict AutoTerminate /g, '<interviewLabel>SellSideConflict AutoTerminate ', 1, 'interviewLabel');
   x = replaceN(x, /<description>[\s\S]*?<\/description>/g, '<description>買い手(譲受希望会社)が進行中売り手(Account.SellSideConflict__c)になった時、その買い手の生きている「アプローチ」マッチングを自動終了(マッチ終了/アプローチ&gt;終了/リスト除外/売り手として進行中のため)し、それ以外の生きているマッチングには警告メモを作成する。Sato作 DealConflict_AutoTerminate のミラー(2026-10-19)。</description>', 1, 'description');
@@ -116,6 +137,8 @@ function buildA() {
 function buildB() {
   let x = fs.readFileSync(path.join(SRC, 'DealConflict_AutoReactivate.flow'), 'utf8');
   x = common(x);
+  x = replaceTemplate(x, 'AcctReactDesc', clearedBody('$Record.SellSideConflictSourceName__c', '$Record.SellSideConflictSourceId__c'));
+  x = replaceTemplate(x, 'ReactDesc', clearedBody('ConflictSrcNameSaved', 'ConflictSrcIdSaved'));
   x = replaceN(x, /<label>DealConflict AutoReactivate<\/label>/g, '<label>SellSideConflict AutoReactivate</label>', 1, 'flow label');
   x = replaceN(x, /<interviewLabel>DealConflict AutoReactivate /g, '<interviewLabel>SellSideConflict AutoReactivate ', 1, 'interviewLabel');
   x = replaceN(x, /<description>[\s\S]*?<\/description>/g, '<description>買い手の進行中売り手フラグ(Account.SellSideConflict__c)がtrue→falseになった時、売り手重複で自動終了したマッチング(SellSideAutoTerminated__c)を MG対応/未確認 に戻し、警告済みマッチングに解消メモを作成する。Sato作 DealConflict_AutoReactivate のミラー(2026-10-19)。</description>', 1, 'description');
@@ -127,6 +150,7 @@ function buildC() {
   x = replaceBlock(x, 'recordLookups', '<name>Get_ConflictSrc</name>', sourceOpp('$Record.Buy_Company__c', 'Terminate_Self'));
   x = removeBlock(x, 'formulas', '<name>ConflictSrcId</name>');
   x = common(x);
+  x = replaceTemplate(x, 'TermDesc', TERM_BODY);
   x = replaceN(x, /<label>Matching AfterSave Terminate New On Conflict<\/label>/g, '<label>Matching AfterSave Terminate New On SellSideConflict</label>', 1, 'flow label');
   x = replaceN(x, /<interviewLabel>Matching AfterSave Terminate New On Conflict /g, '<interviewLabel>Matching AfterSave Terminate New On SellSideConflict ', 1, 'interviewLabel');
   x = replaceN(x, /<description>[\s\S]*?<\/description>/g, '<description>新規マッチングがアプローチ段階で、買い手が既に進行中売り手(Account.SellSideConflict__c)の時、そのマッチングを自動終了する。Sato作 Matching_AfterSave_TerminateNewOnConflict のミラー(2026-10-19)。</description>', 1, 'description');

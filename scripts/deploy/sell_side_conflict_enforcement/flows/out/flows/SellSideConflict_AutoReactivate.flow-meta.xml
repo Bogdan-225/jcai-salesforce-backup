@@ -400,8 +400,8 @@
         <name>AcctReactDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!$Record.SellSideConflictSourceName__c}: {!$Record.SellSideConflictSourceId__c}
-The buyer is now approachable. Please have the Manager confirm.
-進行中案件がアプローチ可能。案件MGは確認してください。</text>
+The buyer's own sell-side project is no longer active; seller conflict cleared ({!$Record.SellSideConflictSourceName__c}).
+売り手としての案件が終了したため、売り手重複が解消されました（{!$Record.SellSideConflictSourceName__c}）。</text>
     </textTemplates>
     <textTemplates>
         <name>AcctReactSubject</name>
@@ -412,8 +412,8 @@ The buyer is now approachable. Please have the Manager confirm.
         <name>ReactDesc</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>{!ConflictSrcNameSaved}: {!ConflictSrcIdSaved}
-The buyer is now approachable. Please have the Manager confirm.
-進行中案件がアプローチ可能。案件MGは確認してください。</text>
+The buyer's own sell-side project is no longer active; seller conflict cleared ({!ConflictSrcNameSaved}).
+売り手としての案件が終了したため、売り手重複が解消されました（{!ConflictSrcNameSaved}）。</text>
     </textTemplates>
     <textTemplates>
         <name>ReactSubject</name>
