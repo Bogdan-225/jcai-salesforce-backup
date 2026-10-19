@@ -1,5 +1,7 @@
 # Sweep rehearsal in `partial` (2026-10-19)
 
+Run 1 below used the first, guard-driven `sweep_chunk.apex` (since replaced). Run 2 at the end is the current Id-list driven sweep.
+
 Ids and counts only. Runner: Bogdan's admin user in `partial` (Admin profile; reads the hidden fields via Task 1's Admin FLS).
 
 ## Preconditions (Tasks 1-2 deployed to partial)
@@ -94,3 +96,42 @@ Warned: none (no other live rows in the backup).
   runs for every account it fires on, whether or not it touched any matching). In prod this means one memo per flagged
   seller (~337) on sweep day.
 - Flow B re-enabled after the sweep did not revive anything (terminated count unchanged).
+
+# Run 2 (Id-list driven), 17:31-17:33 JST
+
+`sweep_chunk.apex` replaced by `sweep_chunk.apex.tmpl` (`{{IDS}}`); `run_sweep.sh <org> <backup_dir>` works through
+`accounts_flagged.csv` in slices of 25, no sleep. All 75 accounts already had a source, so this run simply re-fired A.
+
+Refusal tests (B active):
+```
+run_sweep.sh partial sweep/nonexistent  -> REFUSED: .../accounts_flagged.csv missing or has no Ids   exit=4
+run_sweep.sh partial sweep/partial_before -> 75 account Ids; REFUSED: flow B is ACTIVE (ActiveVersionId 301BK000015iWopYAE)   exit=3
+```
+
+Report before (17:31:59):
+```
+terminated 1 | warned 0 | with source 75 | without source 0 | memo events today 75 | live アプローチ on flagged buyer 0
+```
+
+Deactivate B: `SellSideConflict_AutoReactivate  null  1` (A 301BK000015iWoqYAE, C 301BK000015iWooYAE active).
+
+Backup (after B off): `matchings: 0  accounts: 75` (the only matching was already マッチ終了 from Run 1).
+
+`run_sweep.sh partial sweep/partial_before_run2` (36 s wall clock):
+```
+OK: flow B inactive
+chunk 1/3: swept 25 (17:32:32)
+chunk 2/3: swept 25 (17:32:36)
+chunk 3/3: swept 25 (17:32:40)
+== swept total: 75 of 75 Ids in backup
+report: terminated 1 | warned 0 | with source 75 | without source 0 | memo events today 150 | live アプローチ on flagged buyer 0
+exit=0
+```
+
+Reactivate B: all three active (A 301BK000015iWoqYAE, B 301BK000015iWopYAE, C 301BK000015iWooYAE).
+
+Report after (17:33:15): identical to the in-script report (terminated 1, warned 0, 75/0, events 150, last 0).
+
+Reconciliation: backup rows 0 -> nothing new terminated or warned (1 from Run 1 unchanged); 75 swept = 75 flagged;
++75 Events = one account-level memo per re-fired account (expected, partial only).
+Temp Apex files: created under `mktemp -d`, removed on exit (no `chunk_*.apex` left in /tmp).

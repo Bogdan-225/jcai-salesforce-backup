@@ -1,3 +1,3 @@
 # keep shell scripts runnable in Git Bash on Windows (no CRLF on checkout)
 *.sh text eol=lf
-*.apex text eol=lf
+*.tmpl text eol=lf

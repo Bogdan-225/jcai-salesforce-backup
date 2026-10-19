@@ -60,3 +60,4 @@ scripts/deploy/sell_side_conflict_enforcement/access_partial/retrieve/
 # sell-side conflict enforcement: Id-only sweep backups stay local
 scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before/
 scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before/
+scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before_run2/

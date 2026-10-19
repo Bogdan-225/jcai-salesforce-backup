@@ -1,0 +1,7 @@
+Set<Id> ids = new Set<Id>{ {{IDS}} };
+List<Account> chunk = [SELECT Id, SellSideConflict__c FROM Account WHERE Id IN :ids AND SellSideConflict__c = true];
+for (Account a : chunk) a.SellSideConflict__c = false;
+update chunk;
+for (Account a : chunk) a.SellSideConflict__c = true;
+update chunk;
+System.debug('swept ' + chunk.size());
