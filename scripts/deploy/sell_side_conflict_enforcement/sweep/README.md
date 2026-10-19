@@ -43,18 +43,33 @@ Re-run the FlowDefinition query: B's `ActiveVersionId` must be null; A and C mus
 bash $P/sweep/backup_before_sweep.sh <org> $P/sweep/<org>_before    # prints "matchings: N  accounts: M"
 ```
 
-`<org>_before/accounts_flagged.csv` is the Id list the sweep works through.
+`<org>_before/accounts_flagged.csv` is the Id list the sweep works through. `matchings_before.csv` also carries
+record type and both deal stages (to derive the expected terminated/warned counts), plus deal names
+(`SellSideConflictSourceName__c`) and free text (`other_termination_reason__c`): it must stay local. The folder is
+git-ignored (`sweep/partial_before*/`, `sweep/prod_before/`); never commit, attach or share it.
 
 ## 4. Sweep
 
 ```bash
-bash $P/sweep/run_sweep.sh <org> $P/sweep/<org>_before
+bash $P/sweep/run_sweep.sh <org> $P/sweep/<org>_before            # optional 3rd arg = start_chunk (default 1)
 ```
 
-Exit codes: 4 = Id file missing/empty, 3 = B is active, 2 = flow B not found, 5 = an Apex chunk failed (stop, keep
-the output; B is still off so nothing revives). Each slice prints `chunk i/n: swept N`; no sleep between slices. Accounts
-cleared (e.g. by the nightly job) between backup and their slice are skipped. Then the report is printed.
-Temp Apex files go to `mktemp -d` and are deleted on exit.
+Each slice of 25 Ids prints `chunk i/n: swept N`; no sleep between slices. Accounts cleared (e.g. by the nightly job)
+between backup and their slice are skipped. Then the report is printed. Temp Apex files go to `mktemp -d` and are
+deleted on exit.
+
+Exit codes: 4 = Id file missing/empty, a line that is not a 15/18-char Id, or bad start_chunk; 3 = B is active;
+2 = flow B not found; 5 = an Apex chunk failed.
+
+On exit 5 the script prints the failed chunk and `resume with: run_sweep.sh <org> <backup_dir> <k>`, and reminds you
+that flow B is still INACTIVE (nothing revives while it is off). Then:
+1. Copy `accounts_flagged.csv` to `accounts_flagged.orig.csv` (keep the original).
+2. Fix the offending Account (from the error lines) or remove its Id from `accounts_flagged.csv`.
+   Remove only Ids in chunk k or later (removal shifts later Ids up by one; chunk k still starts at the same position, so earlier
+   chunks are not repeated).
+3. Resume with the printed command. Never restart from chunk 1: flow A would re-fire on already-swept accounts and
+   duplicate their memo Events.
+4. Only after the sweep finishes (or you decide to stop), reactivate B (step 5).
 
 ## 5. Reactivate flow B (manual)
 

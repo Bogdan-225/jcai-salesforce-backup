@@ -135,3 +135,33 @@ Report after (17:33:15): identical to the in-script report (terminated 1, warned
 Reconciliation: backup rows 0 -> nothing new terminated or warned (1 from Run 1 unchanged); 75 swept = 75 flagged;
 +75 Events = one account-level memo per re-fired account (expected, partial only).
 Temp Apex files: created under `mktemp -d`, removed on exit (no `chunk_*.apex` left in /tmp).
+
+# Run 3 (resume path, start_chunk=3), 17:37-17:38 JST
+
+Refusal tests (B active): missing Id file -> exit 4; CSV with one 19-char line -> "has 3 data lines but only 2 valid Ids" exit 4;
+start_chunk 9 -> "start_chunk 9 > 3 chunks" exit 4; B active -> "REFUSED: flow B is ACTIVE (ActiveVersionId 301BK000015iWopYAE)" exit 3.
+
+Report before: terminated 1 | warned 0 | with source 75 | without 0 | events today 150 | last 0.
+Deactivate B -> `SellSideConflict_AutoReactivate null`. Backup `partial_before_run3`: `matchings: 0  accounts: 75`.
+
+Fault-path test (scratch copy of the scripts with a template that does not compile; no data written), start_chunk 2:
+```
+chunk 2/3: FAILED
+Error (executeCompileFailure): Compilation failed at Line 1 column 9 with the error:
+resume with: run_sweep.sh partial scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before_run3 2
+(fix or remove the offending Account Id in .../partial_before_run3/accounts_flagged.csv first, keep a copy of the original; never restart from chunk 1)
+== flow B is still INACTIVE — reactivate it after you resolve this (README.md step 5)
+exit=5
+```
+
+Resume run `run_sweep.sh partial sweep/partial_before_run3 3`:
+```
+75 account Ids, 3 chunks, starting at chunk 3
+OK: flow B inactive
+chunk 3/3: swept 25 (17:38:16)
+== swept total this run: 25 (chunks 3-3)
+report: terminated 1 | warned 0 | with 75 | without 0 | events today 175 | last 0
+exit=0
+```
+Reactivate B -> A/B/C all active. Report after (17:38:32): same as above. +25 Events = the 25 re-fired accounts of chunk 3 only
+(chunks 1-2 were not repeated). No temp `chunk_*.apex` left.

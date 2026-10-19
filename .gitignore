@@ -57,7 +57,6 @@ scripts/deploy/sell_side_conflict/prod/snapshot_after/
 # sell-side conflict enforcement: scratch perm set retrieve
 scripts/deploy/sell_side_conflict_enforcement/access_bogdan/retrieve/
 scripts/deploy/sell_side_conflict_enforcement/access_partial/retrieve/
-# sell-side conflict enforcement: Id-only sweep backups stay local
-scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before/
+# sell-side conflict enforcement: sweep backups (Ids plus deal names/free text) stay local
+scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before*/
 scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before/
-scripts/deploy/sell_side_conflict_enforcement/sweep/partial_before_run2/
