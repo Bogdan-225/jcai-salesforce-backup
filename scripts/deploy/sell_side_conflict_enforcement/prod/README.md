@@ -13,7 +13,7 @@ Mirror of the buyer-side auto-terminate for the seller flag `Account.SellSideCon
 - Acknowledged by Bogdan: the sweep creates one memo Event `Seller Conflict: <deal>` on EVERY flagged Account (about 339), whether or not it has a Matching to touch. By design (mirror of the buyer side).
 - Prod today (2026-10-19): about 339 accounts flagged (check with the backup), 0 stale flags. 21 live Matchings whose buyer is a flagged seller; expected outcome 6 terminated, 6 warned, 9 untouched (dead deal or Target). Re-derive from the backup (step 3.9), do not trust these numbers blindly.
 - Staleness reference (only whole-file component): perm set `DealConflict_Access`, prod `LastModifiedDate = 2026-10-19T05:37:42.000+0000` (14:37:42 JST, deploy 0AfRA000003345N0AQ of the first project). `access_prod/` = that prod file (`prod/snapshot_before/permissionsets/DealConflict_Access.permissionset`) +30/−0 lines (the 6 read-only field permissions). `access/` (Admin profile partial) and `labels/` (3 partial translations) are not whole-file replacements: no snapshot needed.
-- The 05:00 JST job `SellSideConflict Daily` and the Opportunity flow keep flipping flags. A change between backup and sweep is harmless: the sweep skips accounts no longer flagged; a newly flagged account is handled by A directly (once A is active).
+- The 05:00 JST job `SellSideConflict Daily` and the Opportunity flow keep flipping flags. A change between backup and sweep is harmless: the sweep skips accounts no longer flagged; a newly flagged account is handled by A directly (once A is active). Do NOT run the sweep across 05:00 JST: if the nightly job unflags an account while B is still inactive, the Matchings A terminated for it are revived only after B is active AND that account's flag next changes. The runbook activates B right after the sweep, so schedule the run away from 05:00 JST.
 - Decisions needed: your explicit go before activating A and C (step 3.8), and before the sweep (step 3.11).
 
 ## 3. Deploy order (one command per line)
@@ -50,14 +50,14 @@ P=scripts/deploy/sell_side_conflict_enforcement
 ```
 ! sf data query -o prod --use-tooling-api -q "SELECT Id, DeveloperName, ActiveVersionId, LatestVersion.VersionNumber FROM FlowDefinition WHERE DeveloperName IN ('SellSideConflict_AutoTerminate','SellSideConflict_AutoReactivate','Matching_AfterSave_TerminateNewOnSellSideConflict')"
 ```
-3.8 **GATE: your go.** Activate A and C only (no leading slash). B stays Draft:
+3.8 **GATE: your go.** Activate A and C only (no leading slash). B stays Draft. Use `LatestVersion.VersionNumber` from 3.7 if it is not 1:
 ```
 ! sf api request rest -o prod --method PATCH "services/data/v62.0/tooling/sobjects/FlowDefinition/<A id>" --body '{"Metadata":{"activeVersionNumber":1}}'
 ! sf api request rest -o prod --method PATCH "services/data/v62.0/tooling/sobjects/FlowDefinition/<C id>" --body '{"Metadata":{"activeVersionNumber":1}}'
 ```
 Re-run the 3.7 query: A and C have an `ActiveVersionId`, B empty.
 
-3.9 Baseline report, then backup, immediately after 3.8. Report: expect terminated 0, warned 0, flagged with source 0 (non-zero = an account flagged naturally since 3.8, fine), last count = expected terminated (about 6). Backup: prints `matchings: N  accounts: M` (expect about 21 / 339). The folder `sweep/prod_before/` is git-ignored (deal names, free text): never commit or share it.
+3.9 Baseline report, then backup, immediately after 3.8. Report: expect terminated 0, warned 0, flagged with source 0 (non-zero = an account flagged naturally since 3.8, fine), last count = expected terminated (about 6). An account flagged naturally between 3.8 and the backup is already handled by A and gets flipped once more by the sweep, so "memo events today" may end slightly above the account count; harmless. Backup: prints `matchings: N  accounts: M` (expect about 21 / 339). The folder `sweep/prod_before/` is git-ignored (deal names, free text): never commit or share it.
 ```
 ! bash scripts/deploy/sell_side_conflict_enforcement/sweep/report_sweep.sh prod
 ! bash scripts/deploy/sell_side_conflict_enforcement/sweep/backup_before_sweep.sh prod scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before
@@ -74,11 +74,11 @@ Write down the three counts; terminate + warn + untouched = N from the backup.
 ```
 Expect exit 0, swept total ≈ accounts in the backup (minus any unflagged since). Exit 5 = a chunk failed: see section 4. Do NOT activate B until the sweep has finished.
 
-3.12 Report. Expect terminated = your 3.10 terminate count, warned (live) = warn count, flagged with source ≈ 339 / without 0, memo events today ≈ 339, last count 0:
+3.12 Report. Expect terminated = your 3.10 terminate count, warned (live) = warn count, flagged with source ≈ 339 / without 0, memo events today ≈ 339 (slightly more if accounts were flagged naturally between 3.8 and the backup; harmless), last count 0:
 ```
 ! bash scripts/deploy/sell_side_conflict_enforcement/sweep/report_sweep.sh prod
 ```
-3.13 Activate B, then re-run the 3.7 query (all three active, version 1):
+3.13 Activate B (use `LatestVersion.VersionNumber` from 3.7 if it is not 1), then re-run the 3.7 query (all three active):
 ```
 ! sf api request rest -o prod --method PATCH "services/data/v62.0/tooling/sobjects/FlowDefinition/<B id>" --body '{"Metadata":{"activeVersionNumber":1}}'
 ! sf data query -o prod --use-tooling-api -q "SELECT Id, DeveloperName, ActiveVersionId, LatestVersion.VersionNumber FROM FlowDefinition WHERE DeveloperName IN ('SellSideConflict_AutoTerminate','SellSideConflict_AutoReactivate','Matching_AfterSave_TerminateNewOnSellSideConflict')"

@@ -39,11 +39,11 @@ Debug line `cleared N, remaining 0`:
 ```
 
 ## 4. Optional: memo cleanup (your call)
-Memo Tasks (on Matchings) and Events (on Accounts) of the sweep day. Replace the range with the sweep day in UTC
-(JST day D = `D-1T15:00:00Z` to `DT15:00:00Z`). Review before deleting; this also matches genuine memos A/C wrote that day.
+Memo Tasks (on Matchings) and Events (on Accounts) of the sweep day. Replace `<D-1>` and `<D>` in the range below.
+D = the sweep date in JST. The JST day D spans UTC D-1 15:00 → D 15:00; e.g. D = 2026-10-19 → `2026-10-18T15:00:00Z` to `2026-10-19T15:00:00Z`. Review before deleting; this also matches genuine memos A/C wrote that day.
 ```
-! sf data query -o prod -q "SELECT COUNT(Id) FROM Task WHERE Subject LIKE 'Seller Conflict%' AND CreatedDate >= 2026-10-19T15:00:00Z AND CreatedDate < 2026-10-20T15:00:00Z"
-! sf data query -o prod -q "SELECT COUNT(Id) FROM Event WHERE Subject LIKE 'Seller Conflict%' AND CreatedDate >= 2026-10-19T15:00:00Z AND CreatedDate < 2026-10-20T15:00:00Z"
+! sf data query -o prod -q "SELECT COUNT(Id) FROM Task WHERE Subject LIKE 'Seller Conflict%' AND CreatedDate >= <D-1>T15:00:00Z AND CreatedDate < <D>T15:00:00Z"
+! sf data query -o prod -q "SELECT COUNT(Id) FROM Event WHERE Subject LIKE 'Seller Conflict%' AND CreatedDate >= <D-1>T15:00:00Z AND CreatedDate < <D>T15:00:00Z"
 ```
 To delete: export the Ids (`sf data query ... -q "SELECT Id FROM Event WHERE ..." -r csv > <file>` into `sweep/prod_before/`,
 convert to CRLF) and `sf data delete bulk -o prod -s Event -f <file> --wait 10` (same for Task).
