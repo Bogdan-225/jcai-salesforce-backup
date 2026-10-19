@@ -21,6 +21,7 @@ Expect `ActiveVersionId` empty on all three.
    as `new List<String>{'<Id>', '<phase>', '<status>', '<reason>', '<other reason>'}`, comma between lines, none after the last.
    Empty cell → `''`. Escape `'` as `\'`; a line break inside a quoted cell → `\n`. Pasting all rows is fine: the script
    restores phase/status/reasons only on rows still marked `SellSideAutoTerminated__c = true`, and only clears markers on the rest.
+   Rows that B already revived after go-live (now `MG対応` / `未確認`, markers cleared) are skipped by `restore_matchings.apex` and are not put back to their backup phase/status; if that matters, restore them by hand from the backup CSV.
 3. If the restore hits validation errors (stage moves back from マッチ終了 to アプローチ), pause the Matching flows
    `CheckStage` and `OBEditingActions` first (as for earlier bulk Matching updates), rerun, then re-activate them.
 4. Run (all-or-nothing; the debug lines list rows restored, rows not found, and terminated rows NOT in the backup,

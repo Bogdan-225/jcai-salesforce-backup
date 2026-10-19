@@ -2,9 +2,11 @@
 # usage: run_sweep.sh <org> <backup_dir> [start_chunk=1]
 # 1) reads <backup_dir>/accounts_flagged.csv (Ids only, written by backup_before_sweep.sh); every data line must be a 15/18-char Id
 # 2) refuses to start unless flow SellSideConflict_AutoReactivate (B) is INACTIVE (deactivate it by hand first, see README.md)
+# 2b) refuses (exit 6) unless flow SellSideConflict_AutoTerminate (A) is ACTIVE (prod runbook 3.8)
 # 3) per slice of 25 Ids, renders sweep_chunk.apex.tmpl ({{IDS}} -> 'id1','id2',...) and runs it: flag off then on, so
 #    flow A fires once each. Accounts no longer flagged when their slice runs are skipped by the template's WHERE.
 #    On a failed chunk it stops (exit 5) and prints the resume command; start_chunk resumes there.
+# Exit codes: 4 bad input, 2 flow B not found, 3 B active, 6 A not active, 5 chunk failed.
 # 4) prints report_sweep.sh. Reactivating B afterwards is a manual step (README.md).
 set -euo pipefail
 usage="usage: run_sweep.sh <org> <backup_dir> [start_chunk]"
@@ -28,13 +30,16 @@ echo "FlowDefinition Id,ActiveVersionId: ${row:-<none>}"
 if [[ -z "$row" ]]; then echo "REFUSED: flow SellSideConflict_AutoReactivate not found in $org"; exit 2; fi
 if [[ -n "${row#*,}" ]]; then echo "REFUSED: flow B is ACTIVE (ActiveVersionId ${row#*,}); deactivate it first (README.md step 2)"; exit 3; fi
 echo "OK: flow B inactive"
+rowA=$(sf data query -o "$org" --use-tooling-api -r csv -q "SELECT Id, ActiveVersionId FROM FlowDefinition WHERE DeveloperName = 'SellSideConflict_AutoTerminate'" | tail -n +2 | tr -d '\r')
+if [[ -z "$rowA" || -z "${rowA#*,}" ]]; then echo "REFUSED: flow A is not active — activate it first (prod runbook 3.8)"; exit 6; fi
+echo "OK: flow A active"
 
 fail() { # $1 = chunk number, $2 = output
   echo "chunk $1/$n: FAILED"
   echo "$2" | grep -E "Error|error|FIELD_|EXCEPTION|VALIDATION" | head -20 || true
-  echo "resume with: run_sweep.sh $org $dir $1"
+  echo "resume with: bash scripts/deploy/sell_side_conflict_enforcement/sweep/run_sweep.sh $org $dir $1"
   echo "(fix or remove the offending Account Id in $csv first, keep a copy of the original; never restart from chunk 1)"
-  echo "== flow B is still INACTIVE — reactivate it after you resolve this (README.md step 5)"
+  echo "== flow B is still INACTIVE — reactivate it after you resolve this (see sweep/README.md step 5; prod runbook: 3.13)"
   exit 5
 }
 
@@ -56,4 +61,4 @@ echo "== swept total this run: $total (chunks $start-$n; Ids not swept = no long
 
 echo "== report after sweep"
 bash "$here/report_sweep.sh" "$org"
-echo "== reminder: reactivate SellSideConflict_AutoReactivate now (README.md step 5)"
+echo "== reminder: reactivate SellSideConflict_AutoReactivate now (see sweep/README.md step 5; prod runbook: 3.13)"

@@ -13,7 +13,7 @@ Mirror of the buyer-side auto-terminate for the seller flag `Account.SellSideCon
 - Acknowledged by Bogdan: the sweep creates one memo Event `Seller Conflict: <deal>` on EVERY flagged Account (about 339), whether or not it has a Matching to touch. By design (mirror of the buyer side).
 - Prod today (2026-10-19): about 339 accounts flagged (check with the backup), 0 stale flags. 21 live Matchings whose buyer is a flagged seller; expected outcome 6 terminated, 6 warned, 9 untouched (dead deal or Target). Re-derive from the backup (step 3.9), do not trust these numbers blindly.
 - Staleness reference (only whole-file component): perm set `DealConflict_Access`, prod `LastModifiedDate = 2026-10-19T05:37:42.000+0000` (14:37:42 JST, deploy 0AfRA000003345N0AQ of the first project). `access_prod/` = that prod file (`prod/snapshot_before/permissionsets/DealConflict_Access.permissionset`) +30/−0 lines (the 6 read-only field permissions). `access/` (Admin profile partial) and `labels/` (3 partial translations) are not whole-file replacements: no snapshot needed.
-- The 05:00 JST job `SellSideConflict Daily` and the Opportunity flow keep flipping flags. A change between backup and sweep is harmless: the sweep skips accounts no longer flagged; a newly flagged account is handled by A directly (once A is active). Do NOT run the sweep across 05:00 JST: if the nightly job unflags an account while B is still inactive, the Matchings A terminated for it are revived only after B is active AND that account's flag next changes. The runbook activates B right after the sweep, so schedule the run away from 05:00 JST.
+- The 05:00 JST job `SellSideConflict Daily` and the Opportunity flow keep flipping flags. A change between backup and sweep is harmless: the sweep skips accounts no longer flagged; a newly flagged account is handled by A directly (once A is active). Any flag drop during the 3.8 to 3.13 window (B inactive) has the same effect, not only the 05:00 JST job: the Opportunity after-save flow can drop a flag whenever a deal closes or changes stage. The Matchings A terminated for such an account are revived only after B is active AND that account's flag next changes. This is why 3.13 follows the sweep immediately, and why the two checks in 3.14 (leftover terminated Matchings, leftover source names) catch whatever slipped through. Schedule the run away from 05:00 JST.
 - Decisions needed: your explicit go before activating A and C (step 3.8), and before the sweep (step 3.11).
 
 ## 3. Deploy order (one command per line)
@@ -68,7 +68,7 @@ Re-run the 3.7 query: A and C have an `ActiveVersionId`, B empty.
 - untouched = the rest (a dead deal stage).
 Write down the three counts; terminate + warn + untouched = N from the backup.
 
-3.11 **GATE: your go.** Sweep. The script first checks that B has no `ActiveVersionId` (exit 3 otherwise), then runs slices of 25 Ids (about 14 chunks), each printing `chunk i/n: swept k`, then prints the report:
+3.11 **GATE: your go.** Sweep. The script first checks that B has no `ActiveVersionId` (exit 3 otherwise) and that A has one (exit 6 otherwise: activate A first, step 3.8), then runs slices of 25 Ids (about 14 chunks), each printing `chunk i/n: swept k`, then prints the report:
 ```
 ! bash scripts/deploy/sell_side_conflict_enforcement/sweep/run_sweep.sh prod scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before
 ```
@@ -96,14 +96,34 @@ Expect exit 0, swept total ≈ accounts in the backup (minus any unflagged since
 ! bash scripts/deploy/sell_side_conflict_enforcement/sweep/report_sweep.sh prod
 ```
 (the second: last count still 0, terminated/warned unchanged by activating B).
+- Leftover checks, both expected 0:
+```
+! sf data query -o prod -q "SELECT COUNT() FROM Matching__c WHERE SellSideAutoTerminated__c = true AND SellSideConflict_M__c = false"
+! sf data query -o prod -q "SELECT COUNT() FROM Account WHERE SellSideConflict__c = false AND SellSideConflictSourceName__c != null"
+```
+The first counts Matchings left terminated for a buyer whose seller flag already dropped while B was inactive; the second counts accounts whose flag dropped while B was inactive. Remedy if either is non-zero (B is active by now): run this anonymous Apex once (`! sf apex run -o prod --file <file>`). It sets the flag true then false in the same run for those accounts: A fires first (no Matching change, one extra memo Event), then B revives and clears.
+```apex
+List<Account> accs = [SELECT Id FROM Account WHERE SellSideConflict__c = false AND SellSideConflictSourceName__c != null];
+for (Account a : accs) { a.SellSideConflict__c = true; }
+update accs;
+for (Account a : accs) { a.SellSideConflict__c = false; }
+update accs;
+System.debug('flipped ' + accs.size());
+```
+Re-run both checks: 0 / 0.
 
 ## 4. A failed chunk (run_sweep.sh exit 5)
 B is still inactive: nothing revives while it is off, so there is no hurry.
+If the chunk output shows `UNABLE_TO_LOCK_ROW` (someone was editing one of the records), simply rerun the printed resume line unchanged; do not remove the Id. The steps below are for validation errors.
 1. Read the error lines (typically a validation rule or trigger error on one Account; the first project's backfill updated the same accounts without errors, so this is unlikely).
 2. `cp scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before/accounts_flagged.csv scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before/accounts_flagged.orig.csv`
 3. Fix that Account, or delete its Id line from `accounts_flagged.csv` (only Ids in chunk k or later).
 4. Resume with the printed command, e.g. `! bash scripts/deploy/sell_side_conflict_enforcement/sweep/run_sweep.sh prod scripts/deploy/sell_side_conflict_enforcement/sweep/prod_before <k>`. Never restart from chunk 1 (A would re-fire on swept accounts and duplicate their memo Events).
-5. Removed Ids: list them for a later manual flip; then continue with 3.12.
+5. Removed Ids: flip each one later by hand, with B active (after 3.13): create a one-Id file from the template and run it, e.g.
+```
+! sed "s/{{IDS}}/'<AccountId>'/" scripts/deploy/sell_side_conflict_enforcement/sweep/sweep_chunk.apex.tmpl > /tmp/flip_one.apex && sf apex run -o prod --file /tmp/flip_one.apex
+```
+Expected effect: A fires for that account (terminates/warns its Matchings, one memo Event); B then does nothing for it because the flag ends true. Then continue with 3.12.
 If you decide to stop instead: go to 3.12/3.13 anyway (B must end up active) or roll back (section 5).
 
 ## 5. Rollback

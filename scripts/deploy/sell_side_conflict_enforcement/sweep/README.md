@@ -59,10 +59,11 @@ between backup and their slice are skipped. Then the report is printed. Temp Ape
 deleted on exit.
 
 Exit codes: 4 = Id file missing/empty, a line that is not a 15/18-char Id, or bad start_chunk; 3 = B is active;
-2 = flow B not found; 5 = an Apex chunk failed.
+2 = flow B not found; 6 = flow A is not active; 5 = an Apex chunk failed.
 
 On exit 5 the script prints the failed chunk and `resume with: run_sweep.sh <org> <backup_dir> <k>`, and reminds you
-that flow B is still INACTIVE (nothing revives while it is off). Then:
+that flow B is still INACTIVE (nothing revives while it is off).
+If the chunk output shows `UNABLE_TO_LOCK_ROW` (someone was editing one of the records), simply rerun the printed resume line unchanged; do not remove the Id. The steps below are for validation errors:
 1. Copy `accounts_flagged.csv` to `accounts_flagged.orig.csv` (keep the original).
 2. Fix the offending Account (from the error lines) or remove its Id from `accounts_flagged.csv`.
    Remove only Ids in chunk k or later (removal shifts later Ids up by one; chunk k still starts at the same position, so earlier
@@ -70,6 +71,11 @@ that flow B is still INACTIVE (nothing revives while it is off). Then:
 3. Resume with the printed command. Never restart from chunk 1: flow A would re-fire on already-swept accounts and
    duplicate their memo Events.
 4. Only after the sweep finishes (or you decide to stop), reactivate B (step 5).
+5. An Id you removed is flipped later by hand, with B active (after step 5): create a one-Id file from the template and run it, e.g.
+```bash
+! sed "s/{{IDS}}/'<AccountId>'/" scripts/deploy/sell_side_conflict_enforcement/sweep/sweep_chunk.apex.tmpl > /tmp/flip_one.apex && sf apex run -o <org> --file /tmp/flip_one.apex
+```
+   Expected effect: A fires for that account; B then does nothing for it because the flag ends true.
 
 ## 5. Reactivate flow B (manual)
 
