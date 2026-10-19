@@ -144,3 +144,31 @@ Order: kill switch first, then restore, then (optionally) delete the new parts. 
    `! sf project deploy start -o prod --source-dir scripts/deploy/sell_side_conflict/prod/revert --wait 15`
    This puts back: Account pages Japan/International, the 5 Matching layouts, the 3 Matching pages, perm set DealConflict_Access, the 3 en_US translations (old "Deal Conflict" label/help), and the 2 buyer fields' old labels. The new fields, Apex classes and the (now inactive) flow remain but are inert and hidden; the 8 partial-profile FLS grants remain harmless.
 4. Optional cleanup later (not needed for safety): delete the flow, then the 3 Apex classes, then the 4 new fields via Setup (fields go to the recycle bin for 15 days). Profiles keep no reference once the fields are deleted.
+
+## 8. Prod deploy record (2026-10-19, 13:30-15:10 JST)
+All steps of section 3 ran in order, each Succeeded with 0 component errors. Tracker row T-005.
+
+| Step | Package | Deploy id | Result |
+|---|---|---|---|
+| 1 | fields | 0AfRA00000333qr0AA | 3/3 |
+| 2 | mirror/field | 0AfRA00000333u50AA | 1/1 |
+| 3 | apex (RunSpecifiedTests) | 0AfRA00000333xJ0AQ | 3/3, tests 8/8 |
+| 4 | flow/prod (Draft) | 0AfRA00000333yv0AA | FlowDefinition 300RA000023A5IEYA0, v1 |
+| 5 | staleness check | – | nothing newer than the snapshot |
+| 6 | labels/prod | 0AfRA000003340X0AQ | 5/5 |
+| 7 | apex run test (both classes) | test run 707RA00005KDS5F | 16/16 pass |
+| 8 | access/prod | 0AfRA000003345N0AQ | 9/9 |
+| 9 | pages/prod | 0AfRA000003346z0AA | 2/2 |
+| 10 | mirror/access | 0AfRA00000334DR0AY | 8/8 |
+| 11 | mirror/prod | 0AfRA00000334F30AI | 8/8 |
+| 12 | backup_flags.sh | backfill/prod_before_flags.json (git-ignored) | 12 rows, DealConflict true, SellSideConflict false |
+| 13 | flow activation (Tooling PATCH activeVersionNumber 1) | – | ActiveVersion 1 Active |
+| 14 | run_recalculate_all.apex + report_flags.sh | – | 338 updated = 335 sellers + 3 parents; completeness 0 / 0 |
+| 15 | schedule_job.apex | CronTrigger 08eRA00001kaoZcYAI | WAITING, first fire 2026-10-19T20:00Z |
+| 16 | after-snapshot diff | prod/snapshot_after (git-ignored) | only intended lines (notes below) |
+
+Added during Task 11 verification (not in section 3):
+- `access/admin_dealconflict_m` — 0AfRA000003356H0AQ: System Administrator profile had no read access to `Matching__c.DealConflict_M__c` since 2026-07 (the field was on the pages but hidden for admins). Read-only granted, same as the 7 Active_ profiles.
+- `reporttype` — 0AfRA00000335Fx0AI: report type `Account_Matching` (取引先とマッチング) did not expose the new fields (custom report types do not pick up new fields). Added `Account.SellSideConflict__c` and `Account.matching_BuyCompany__r.SellSideConflict_M__c` next to the DealConflict columns, unchecked by default; existing reports unchanged. Before-copy in `reporttype/snapshot_before/`.
+
+After-snapshot notes (no action): (1) FlexiPages Japan/International lost the default `label = Tabs` componentInstanceProperty on retrieve although the package still contained it — API 67 normalisation, no visible effect. (2) `Matching__c-en_US` now shows `<layouts>` section translations only because the after-manifest included the layouts; they pre-existed in prod and were not deployed by us. Compact layout confirmed identical. Class access = 8 profiles per class (perm set carries FLS only, by design).
