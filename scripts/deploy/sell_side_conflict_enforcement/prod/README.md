@@ -134,3 +134,26 @@ See `prod/revert/README.md`: deactivate A, B, C → restore the swept Matchings 
 - Commit the README update (Ids and counts only, no account or company names).
 - Tracker: one row (next free ID, check with `tracker lists`), 種別 追加, 対象 Matching / Account flows.
 - Memory: project file for this project (Flow Ids, pause list: add A/B/C to bulk Account and Matching loads next to CheckStage / OBEditingActions).
+
+## 7. Deploy record (prod, 2026-10-20, 09:14-09:35 JST, no incidents)
+Pre-checks (read-only, 09:10 JST): perm set `DealConflict_Access` LastModifiedDate still `2026-10-19T05:37:42Z`; the 3 flows and 6 fields absent; no Apex / Matching / Account metadata changed since 2026-10-19 by others (Sato's 2026-10-19 deploys = ContractFile__c work + `Matching_AfterSave_LinkUnresolvedContracts`, a create-only Matching flow that updates ContractFile__c, no interaction with the sweep); daily job `SellSideConflict Daily` fired once (2026-10-19T20:00Z), report_flags completeness 0/0, 340 accounts ON.
+
+| Step | Component | Deploy id | Result |
+|---|---|---|---|
+| 3.1 | fields | 0AfRA0000033JfV0AU | Succeeded 6/6 |
+| 3.2 | labels | 0AfRA0000033Jij0AE | Succeeded 3/3 |
+| 3.3 | access (Admin partial) | 0AfRA0000033JnZ0AU | Succeeded 1/1 |
+| 3.4 | staleness | query | unchanged, 2026-10-19T05:37:42Z |
+| 3.5 | access_prod (perm set) | 0AfRA0000033JpB0AU | Succeeded 1/1 |
+| 3.6 | flows/out (Draft) | 0AfRA0000033Jqn0AE | Succeeded 3/3 |
+
+FlowDefinition Ids / active versions (all `activeVersionNumber` 1 via Tooling PATCH):
+- A `SellSideConflict_AutoTerminate` 300RA000023MSKhYAO / 301RA00002nemAOYAY (activated 3.8)
+- C `Matching_AfterSave_TerminateNewOnSellSideConflict` 300RA000023MSKfYAO / 301RA00002nemAMYAY (activated 3.8)
+- B `SellSideConflict_AutoReactivate` 300RA000023MSKgYAO / 301RA00002nemANYAY (activated 3.13, after the sweep)
+
+Baseline (3.9, after A+C): terminated 0, warned 0, source 0, flagged 340, last count 6. Backup: matchings 21, accounts 340 (`sweep/prod_before/`, git-ignored). Expected split (3.10): terminate 6 / warn 6 / untouched 9.
+Sweep (3.11, 09:25:56-09:27:14 JST): 14 chunks, 340 swept, exit 0, no lock or validation errors.
+Report (3.12 and again after B): terminated 6, warned 6, flagged with source 340 / without 0, memo Events today 340, last count 0. Actual = expected.
+After-checks (3.14): leftover Matchings 0, leftover Account sources 0; report_flags completeness 0/0; terminated sample = phase マッチ終了 / status アプローチ>終了 / reason リスト除外 with memo Task `Seller Conflict: <deal>` (Status 完了); warned sample = phase unchanged with the same memo Task; 340 memo Events `Seller Conflict: <deal>` on the Accounts. Note: `SellSideConflictWarned__c` is true on terminated rows too (by design; `report_sweep.sh` "warned (live)" excludes terminated ones).
+Not done / open: none from this runbook. Accepted gaps unchanged (see design spec §gaps). Bulk-load pause list: deactivate A, B and C before bulk Account flag writes or Matching loads, same way as CheckStage / OBEditingActions.
